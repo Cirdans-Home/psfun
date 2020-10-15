@@ -12,7 +12,7 @@
 #
 import os
 import sys
-# sys.path.insert(0, os.path.abspath('.'))
+#sys.path.insert(0, os.path.abspath('.'))
 
 
 # -- Project information -----------------------------------------------------
@@ -65,9 +65,8 @@ fortran_ext = ['f90', 'F90', 'f95', 'F95']
 # It is also possible to specify a directory name; in this case, all files than
 # have an extension matching those define by the config variable `fortran_ext`
 # are used.
-fortran_src = [ os.path.abspath('../../src/'),
-   os.path.abspath('../../krylov'),
-   os.path.abspath('../../krylov/polynomial') ]
+fortran_src = [ os.path.abspath('@CMAKE_SOURCE_DIR@/serial/psfun_d_serial_mod.f90'),
+    os.path.abspath('@CMAKE_SOURCE_DIR@/krylov/psfun_d_krylov_mod.f90')]
 
 # Indentation string or length (default 4). If it is an integer,
 # indicates the number of spaces.

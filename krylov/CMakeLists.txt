@@ -4,14 +4,15 @@
 # submodules in the various folders, therefore we use some variable with local
 # scope containing the files in the subdirectories
 
-set(POLYNOMIAL_SUBMODULES polynomial/d_lanczos.f90)
+set(SERIAL_DIR "${CMAKE_BINARY_DIR}/serial")
 
 # Now we can compile the library with all its dependencies
-add_library(psfun_krylov psfun_krylov_mod.f90 ${POLYNOMIAL_SUBMODULES})
+add_library(psfun_krylov psfun_d_krylov_mod.f90)
 add_compile_definitions(${PSBFDEFINES})
 target_include_directories(psfun_krylov PUBLIC ${PSBLAS_MODULES})
 target_include_directories(psfun_krylov PUBLIC ${PSBLAS_INCLUDE})
-target_link_libraries(psfun_krylov PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS})
+target_include_directories(psfun_krylov PUBLIC ${SERIAL_DIR})
+target_link_libraries(psfun_krylov PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} psfun_serial)
 
 if(MPI_COMPILE_FLAGS)
   set_target_properties(psfun_krylov PROPERTIES

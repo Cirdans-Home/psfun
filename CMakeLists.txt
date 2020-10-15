@@ -43,6 +43,7 @@ find_package(PSBLAS REQUIRED)
 # ---------------------------------------------------------------------------- #
 # Now we can start the compilation of all the bit and pieces (hope for the best)
 # ---------------------------------------------------------------------------- #
+add_subdirectory(serial)
 add_subdirectory(krylov)
 
 # --------------------------------------------------------------------------- #
