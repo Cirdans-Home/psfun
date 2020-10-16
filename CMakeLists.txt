@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.15)
-project(psfun VERSION 1.0 LANGUAGES Fortran C HOMEPAGE_URL https://github.com/Cirdans-Home/psfun)
+project(psfun VERSION 0.1 LANGUAGES Fortran C HOMEPAGE_URL https://github.com/Cirdans-Home/psfun)
 
 # Directory with CMAKE modules, used to search for libraries
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
