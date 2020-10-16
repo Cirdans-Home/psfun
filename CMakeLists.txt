@@ -39,12 +39,17 @@ add_compile_options(${MPI_Fortran_COMPILE_FLAGS})
 set(PSBLAS_DIR /usr/lib CACHE PATH "/usr/lib")
 find_package(PSBLAS REQUIRED)
 
+#------------------------------------------------------------------------------#
+# Options to be set by the user
+#------------------------------------------------------------------------------#
+option(BUILD_EXAMPLES "Build example programs" OFF)
 
 # ---------------------------------------------------------------------------- #
 # Now we can start the compilation of all the bit and pieces (hope for the best)
 # ---------------------------------------------------------------------------- #
 add_subdirectory(serial)
 add_subdirectory(krylov)
+add_subdirectory(examples)
 
 # --------------------------------------------------------------------------- #
 # Sphinx autodoc

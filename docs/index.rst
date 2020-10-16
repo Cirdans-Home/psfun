@@ -16,6 +16,7 @@ The parallel environment is managed through the `PSBLAS library <https://psctool
 
    serial
    krylov
+   examples
 
 
 

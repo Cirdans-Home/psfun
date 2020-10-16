@@ -1,0 +1,6 @@
+5             ! Number of lines under the present one
+laplacian.mtx ! Name of the matrix on which the program is executed
+EXP           ! Function to be computed
+GENPADE       ! Variant of the algorithm for the given function
+1             ! Scaling for the function
+T             ! Dump the result on file? T/F
