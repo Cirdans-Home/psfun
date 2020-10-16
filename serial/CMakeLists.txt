@@ -1,5 +1,7 @@
 # CMakeList for the Krylov module
 
+message("Compile and Link Serial Library")
+
 # We first have to compile the outher module by compiling against all the
 # submodules in the various folders, therefore we use some variable with local
 # scope containing the files in the subdirectories
