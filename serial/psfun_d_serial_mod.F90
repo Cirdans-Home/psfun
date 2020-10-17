@@ -118,6 +118,10 @@ contains
         select case (psb_toupper(what))
         case("PADE_DEGREE")
             fun%padedegree = val
+#if defined(WITHPHILIBRARY)
+        case("PHIORDER")
+            fun%phiorder = val
+#endif
         case default
             info = psb_err_invalid_args_combination_
         end select
