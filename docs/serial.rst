@@ -53,6 +53,12 @@ subspace method.
      - "EXP"
      - "CHBSYM"
      - :cite:`expokit`
+   * - :math:`\phi`-function
+     -
+     - Symmetric
+     - "PHI"
+     - "CHBSYM"
+     - :cite:`10.1145/1499096.1499101`  
 
 
 Module

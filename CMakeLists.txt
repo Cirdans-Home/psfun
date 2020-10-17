@@ -43,6 +43,18 @@ find_package(PSBLAS REQUIRED)
 # Options to be set by the user
 #------------------------------------------------------------------------------#
 option(BUILD_EXAMPLES "Build example programs" OFF)
+option(EXTERNAL_PHI "Use Koikari codes for Phi Functiions" OFF)
+
+#------------------------------------------------------------------------------#
+# Look for auxiliary libraries
+#------------------------------------------------------------------------------#
+IF(EXTERNAL_PHI)
+	set(PHIFUNCTION_DIR /usr/lib CACHE PATH "/usr/lib")
+	find_package(PHIFUNCTION)
+ENDIF()
+add_compile_definitions(${PHIDEFINES})
+set(AUXILINCLUDE ${INCLUDEPHI})
+set(AUXILLINK ${LINKPHI})
 
 #------------------------------------------------------------------------------#
 # Set the folders that will contain modules, library, and include files in the

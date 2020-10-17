@@ -13,13 +13,19 @@ set(SERIAL_SUBMODULES exponential/r8lib.f90
                       exponential/dschbv.f
                       exponential/dgchbv.f)
 
+# For the computation of the ϕ functions we use the code from
+# Koikari, Souji. "Algorithm 894: On a block Schur--Parlett algorithm
+# for ϕ-functions based on the sep-inverse estimate." ACM Transactions
+# on Mathematical Software (TOMS) 36.2 (2009): 1-20.
+
+
 # Now we can compile the library with all its dependencies
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
-add_library(psfun_serial psfun_d_serial_mod.f90 ${SERIAL_SUBMODULES})
+add_library(psfun_serial psfun_d_serial_mod.F90 ${SERIAL_SUBMODULES})
 add_compile_definitions(${PSBFDEFINES})
-target_include_directories(psfun_serial PUBLIC ${PSBLAS_MODULES})
+target_include_directories(psfun_serial PUBLIC ${PSBLAS_MODULES} ${AUXILINCLUDE})
 target_include_directories(psfun_serial PUBLIC ${PSBLAS_INCLUDE})
-target_link_libraries(psfun_serial PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS})
+target_link_libraries(psfun_serial PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} ${AUXILLINK})
 
 if(MPI_COMPILE_FLAGS)
   set_target_properties(psfun_serial PROPERTIES

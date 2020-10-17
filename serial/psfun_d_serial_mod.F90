@@ -33,6 +33,11 @@ module psfun_d_serial_mod
     ! modules computes, in a serial way, :math:`y = f(\alpha A)x`.
 
     use psb_base_mod
+#if defined(WITHPHILIBRARY)
+    use scalesquare
+#endif
+
+
     implicit none
 
     type, public :: psfun_d_serial
@@ -40,6 +45,7 @@ module psfun_d_serial_mod
         character(len=20)   :: variant = 'EXPOKIT'
         real(psb_dpk_)      :: scaling = 1.0_psb_dpk_
         integer(psb_ipk_)   :: padedegree = 6_psb_ipk_
+        integer(psb_ipk_)   :: phiorder = 1_psb_ipk_
     contains
         ! Set the options
         procedure, pass(fun) :: setstring  => psfun_d_setstring
@@ -126,6 +132,9 @@ contains
         ! available or a new algorithm (variant) for an already existing
         ! function.
         use psb_base_mod
+#if defined(WITHPHILIBRARY)
+        use scalesquare
+#endif
         implicit none
 
         class(psfun_d_serial), intent(inout) :: fun ! Function information
@@ -136,7 +145,7 @@ contains
 
         ! local variables
         integer(psb_ipk_)               :: n,m,lwsp,iexph,ns,shapes(2)
-        real(psb_dpk_), allocatable     :: fA(:,:),wsp(:),iwsp(:)
+        real(psb_dpk_), allocatable     :: fA(:,:),wsp(:),iwsp(:),phiA(:,:,:)
         integer(psb_ipk_), allocatable  :: ipiv(:)
         ! local constants
         integer(psb_ipk_)       :: err_act, i, j
@@ -324,12 +333,38 @@ contains
                     call psb_errpush(info,name,a_err=trim(fun%variant))
                     goto 9999
                 end if
-
             case default
                 info = psb_err_from_subroutine_
                 call psb_errpush(info,name,a_err=trim(fun%variant))
                 goto 9999
             end select
+        case('PHI')
+#if defined(WITHPHILIBRARY)
+            ! Interface to the ϕ-function from Koikari, Souji.
+            !"Algorithm 894: On a block Schur--Parlett algorithm
+            ! for ϕ-functions based on the sep-inverse estimate."
+            !ACM Transactions on Mathematical Software (TOMS) 36.2
+            ! (2009): 1-20.
+            allocate(phiA(n,m,fun%phiorder), stat=info)
+            if ( info /= 0) then
+            call psb_errpush(info,name,a_err=trim(fun%variant))
+            goto 9999
+            end if
+
+            phiA = sasmtrphif(fun%phiorder,fun%scaling,a)
+            y = matmul(phiA(:,:,fun%phiorder),x)
+
+            if(allocated(phiA)) deallocate(phiA,stat=info)
+            if ( info /= 0) then
+            call psb_errpush(info,name,a_err=trim(fun%variant))
+            goto 9999
+            end if
+#else
+            write(psb_err_unit,*)'Warning: no suitable PHIFUNCTION interface'
+            info = psb_err_from_subroutine_
+            call psb_errpush(info,name,a_err=trim(fun%variant))
+            goto 9999
+#endif
         case default
             info = psb_err_from_subroutine_
             call psb_errpush(info,name,a_err=trim(fun%fname))
