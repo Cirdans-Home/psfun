@@ -26,11 +26,17 @@ if(PSBLAS_BASE_LIBRARY AND PSBLAS_CBIND_LIBRARY AND PSBLAS_UTIL_LIBRARY AND PSBL
 	file(STRINGS ${PSBLAS_DIR}/include/Make.inc.psblas PSBFDEFINES REGEX "${regex}")
 	set(regex "PSBFDEFINES=")
 	string(REGEX REPLACE "${regex}" "" PSBFDEFINES "${PSBFDEFINES}")
+	set(regex "-D")
+	string(REGEX REPLACE "${regex}" "" PSBFDEFINES "${PSBFDEFINES}")
+	separate_arguments(PSBFDEFINES)
 
 	set(regex "PSBCDEFINES=.*")
 	file(STRINGS ${PSBLAS_DIR}/include/Make.inc.psblas PSBCDEFINES REGEX "${regex}")
 	set(regex "PSBCDEFINES=")
 	string(REGEX REPLACE "${regex}" "" PSBCDEFINES "${PSBCDEFINES}")
+	set(regex "-D")
+	string(REGEX REPLACE "${regex}" "" PSBCDEFINES "${PSBFDEFINES}")
+	separate_arguments(PSBCDEFINES)
 
 	set(LINK_PSBLAS -L${PSBLAS_DIR}/lib -lpsb_base -lpsb_util -lpsb_cbind -lpsb_krylov)
 
