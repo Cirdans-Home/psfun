@@ -136,7 +136,7 @@ contains
 
         ! local variables
         integer(psb_ipk_)               :: n,m,lwsp,iexph,ns,shapes(2)
-        real(psb_dpk_), allocatable     :: fA(:,:),wsp(:)
+        real(psb_dpk_), allocatable     :: fA(:,:),wsp(:),iwsp(:)
         integer(psb_ipk_), allocatable  :: ipiv(:)
         ! local constants
         integer(psb_ipk_)       :: err_act, i, j
@@ -161,6 +161,8 @@ contains
         case ('EXP')
             select case (fun%variant)
             case ('TAYLOR')
+                ! INTERFACE for the John Burkardt Taylor code for
+                ! the matrix exponential.
                 allocate(fA(n,m), stat=info)
                 if ( info /= 0) then
                     call psb_errpush(info,name,a_err=trim(fun%variant))
@@ -175,7 +177,9 @@ contains
                     call psb_errpush(info,name,a_err=trim(fun%variant))
                     goto 9999
                 end if
-            case ('MATLAB')
+            case ('SASQ')
+                ! INTERFACE for the John Burkardt scaling and squaring code for
+                ! the matrix exponential.
                 allocate(fA(n,m), stat=info)
                 if ( info /= 0) then
                     call psb_errpush(info,name,a_err=trim(fun%variant))
@@ -191,6 +195,10 @@ contains
                     goto 9999
                 end if
             case('GENPADE')
+                ! INTERFACE for the EXPOKIT package computes the matrix
+                ! exponential using the irreducible rational Pade approximation
+                ! to the exponential function exp(x) = r(x) = (+/-)( I + 2*(q(x)/p(x)) ),
+                ! combined with scaling-and-squaring.
                 lwsp = 4*n*m+fun%padedegree+1
                 allocate(wsp(lwsp), stat=info)
                 if (info /= 0) then
@@ -237,6 +245,86 @@ contains
                     call psb_errpush(info,name,a_err=trim(fun%variant))
                     goto 9999
                 end if
+            case ("CHBHES")
+                ! INTERFACE for the EXPOKIT package computes the matrix
+                ! exponential using the partial fraction expansion of the
+                ! uniform rational Chebyshev approximation for an Hessenberg
+                ! matrix.
+                allocate(wsp(2*m*(m+2)), stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+                y = x
+                call DNCHBV( n, fun%scaling, a, m, y, wsp )
+
+                if (allocated(wsp)) deallocate(wsp, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+            case ("CHBGEN")
+                ! INTERFACE for the EXPOKIT package computes the matrix
+                ! exponential using the partial fraction expansion of the
+                ! uniform rational Chebyshev approximation for a general
+                ! matrix.
+                allocate(wsp(2*m*(m+2)), stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                allocate(iwsp(m), stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+                y = x
+                call DGCHBV( n, fun%scaling, a, m, y, wsp, iwsp, info )
+
+                if (allocated(wsp)) deallocate(wsp, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                if (allocated(iwsp)) deallocate(iwsp, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+            case ("CHBSYM")
+                ! INTERFACE for the EXPOKIT package computes the matrix
+                ! exponential using the partial fraction expansion of the
+                ! uniform rational Chebyshev approximation for a symmetric
+                ! matrix.
+                allocate(wsp(2*m*(m+2)), stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                allocate(iwsp(m), stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+                y = x
+                call DSCHBV( n, fun%scaling, a, m, y, wsp, iwsp, info )
+
+                if (allocated(wsp)) deallocate(wsp, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                if (allocated(iwsp)) deallocate(iwsp, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
             case default
                 info = psb_err_from_subroutine_
                 call psb_errpush(info,name,a_err=trim(fun%variant))

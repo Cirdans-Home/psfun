@@ -8,7 +8,10 @@ message("Compile and Link Serial Library")
 
 set(SERIAL_SUBMODULES exponential/r8lib.f90
                       exponential/taylor.f90
-                      exponential/dgpadm.f)
+                      exponential/dgpadm.f
+                      exponential/dnchbv.f
+                      exponential/dschbv.f
+                      exponential/dgchbv.f)
 
 # Now we can compile the library with all its dependencies
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
