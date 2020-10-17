@@ -34,7 +34,7 @@ module psfun_d_serial_mod
 
     use psb_base_mod
 #if defined(WITHPHILIBRARY)
-    use scalesquare
+    use scalesquare ! loaded only if compiled with PHI-FUNCTION library
 #endif
 
 

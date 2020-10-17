@@ -22,7 +22,7 @@ copyright = '2020, Fabio Durastante'
 author = 'Fabio Durastante'
 
 # The full version, including alpha/beta/rc tags
-release = '1.0'
+release = '0.1'
 
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -43,6 +43,7 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = []
+numfig = True
 
 
 # -- Options for HTML output -------------------------------------------------
@@ -65,7 +66,7 @@ fortran_ext = ['f90', 'F90', 'f95', 'F95']
 # It is also possible to specify a directory name; in this case, all files than
 # have an extension matching those define by the config variable `fortran_ext`
 # are used.
-fortran_src = [ os.path.abspath('@CMAKE_SOURCE_DIR@/serial/psfun_d_serial_mod.f90'),
+fortran_src = [ os.path.abspath('@CMAKE_SOURCE_DIR@/serial/psfun_d_serial_mod.F90'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/krylov/psfun_d_krylov_mod.f90'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/serial'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/polynomial')]
