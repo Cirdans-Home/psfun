@@ -52,7 +52,7 @@ module psfun_d_krylov_mod
     ! orthogonalization method in the same submodule
   interface
       module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
-          type(psfun_d_serial), intent(in)     :: fun  ! Function object
+          type(psfun_d_serial), intent(inout)  :: fun  ! Function object
           type(psb_dspmat_type), intent(in)    :: a    ! Distribute sparse matrix
           type(psb_desc_type), intent(in)      :: desc_a ! Descriptor for the sparse matrix
           type(psb_d_vect_type), intent(inout) :: y ! Output vector
@@ -119,7 +119,7 @@ contains
       implicit none
 
       class(psfun_d_krylov), intent(in)    :: meth ! Krylov method object
-      type(psfun_d_serial), intent(in)     :: fun  ! Function object
+      type(psfun_d_serial), intent(inout)  :: fun  ! Function object
       type(psb_dspmat_type), intent(in)    :: a    ! Distribute sparse matrix
       type(psb_desc_type), intent(in)      :: desc_a ! Descriptor for the sparse matrix
       type(psb_d_vect_type), intent(inout) :: y ! Output vector

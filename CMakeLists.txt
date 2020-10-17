@@ -44,6 +44,14 @@ find_package(PSBLAS REQUIRED)
 #------------------------------------------------------------------------------#
 option(BUILD_EXAMPLES "Build example programs" OFF)
 
+#------------------------------------------------------------------------------#
+# Set the folders that will contain modules, library, and include files in the
+# building phase
+#------------------------------------------------------------------------------#
+set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
+set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
+set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
+
 # ---------------------------------------------------------------------------- #
 # Now we can start the compilation of all the bit and pieces (hope for the best)
 # ---------------------------------------------------------------------------- #

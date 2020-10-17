@@ -11,6 +11,7 @@ set(SERIAL_SUBMODULES exponential/r8lib.f90
                       exponential/dgpadm.f)
 
 # Now we can compile the library with all its dependencies
+set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 add_library(psfun_serial psfun_d_serial_mod.f90 ${SERIAL_SUBMODULES})
 add_compile_definitions(${PSBFDEFINES})
 target_include_directories(psfun_serial PUBLIC ${PSBLAS_MODULES})

@@ -190,8 +190,7 @@ program serialtest
       write(iout,*)'     mname:    MatrixMarket file name'
       write(iout,*)'     fname :   Matrix function name'
       write(iout,*)'     variant : Variant of the algorithm for the fname function'
-      write(iout,*)'     scaling : Scalar scaling parameter '
-      write(iout,*)'               system is dim**3'
+      write(iout,*)'     scaling : Scalar scaling parameter  '
       write(iout,*)'     dump :    Save result on file T/F   '
     end subroutine pr_usage
 
