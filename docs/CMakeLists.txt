@@ -9,6 +9,9 @@ endif()
 if(NOT DEFINED SPHINX_THEME_DIR)
     set(SPHINX_THEME_DIR)
 endif()
+# Look for PdfLatex
+find_package(LATEX COMPONENTS PDFLATEX)
+set (LATEX_PDFLATEX_FOUND "${LATEX_PDFLATEX_FOUND}" PARENT_SCOPE)
 
 # configured documentation tools and intermediate build results
 set(BINARY_BUILD_DIR "${CMAKE_CURRENT_BINARY_DIR}/_build")
@@ -18,6 +21,9 @@ set(SPHINX_CACHE_DIR "${CMAKE_CURRENT_BINARY_DIR}/_static")
 
 # HTML output directory
 set(SPHINX_HTML_DIR "${CMAKE_CURRENT_BINARY_DIR}/html")
+
+# Latex output directory
+set(SPHINX_LATEX_DIR "${CMAKE_CURRENT_BINARY_DIR}/latex")
 
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/conf.py.in"
@@ -32,3 +38,16 @@ add_custom_target(psfun_html_docs ALL
         "${CMAKE_CURRENT_SOURCE_DIR}"
         "${SPHINX_HTML_DIR}"
     COMMENT "Building HTML documentation with Sphinx")
+
+if (LATEX_PDFLATEX_FOUND)
+	add_custom_target(psfun_pdf_docs ALL
+	    ${SPHINX_EXECUTABLE}
+	        -c "${BINARY_BUILD_DIR}"
+			-b latex
+	        -d "${SPHINX_CACHE_DIR}"
+	        "${CMAKE_CURRENT_SOURCE_DIR}"
+	        "${SPHINX_LATEX_DIR}"
+	    COMMENT "Building LATEX documentation with Sphinx")
+else()
+	message(WARNING "PDF generation tools are missing. PDF document generation target is not created.")
+endif()

@@ -26,6 +26,12 @@ Table :ref:`implemented_methods`.
      - fname
      - variant
      - Source
+   * - :math:`f(\alpha A)`
+     - Diagonalization
+     - Symmetric
+     - "USERF"
+     - "SYM"
+     -
    * - :math:`\exp(\alpha A)`
      - Taylor
      - General
