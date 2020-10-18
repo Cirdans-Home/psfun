@@ -41,24 +41,44 @@ module psfun_d_serial_mod
     implicit none
 
     type, public :: psfun_d_serial
-        character(len=20)   :: fname   = 'EXP'
-        character(len=20)   :: variant = 'EXPOKIT'
-        real(psb_dpk_)      :: scaling = 1.0_psb_dpk_
-        integer(psb_ipk_)   :: padedegree = 6_psb_ipk_
-        integer(psb_ipk_)   :: phiorder = 1_psb_ipk_
+        character(len=20)         :: fname   = 'EXP'
+        character(len=20)         :: variant = 'EXPOKIT'
+        real(psb_dpk_)            :: scaling = 1.0_psb_dpk_
+        integer(psb_ipk_)         :: padedegree = 6_psb_ipk_
+        integer(psb_ipk_)         :: phiorder = 1_psb_ipk_
+        procedure (func), pointer, nopass :: f_ptr => null()
     contains
         ! Set the options
         procedure, pass(fun) :: setstring  => psfun_d_setstring
         procedure, pass(fun) :: setreal    => psfun_d_setreal
         procedure, pass(fun) :: setinteger => psfun_d_setinteger
-        generic, public :: set => setstring, setreal, setinteger
+        procedure, pass(fun) :: setfunction => psfun_d_setpointer
+        generic, public :: set => setstring, setreal, setinteger, setfunction
         ! Computes the function
         procedure, pass(fun) :: applya      => psfun_d_serial_apply_array
         procedure, pass(fun) :: applys      => psfun_d_serial_apply_sparse
         generic, public :: apply => applya, applys
     end type psfun_d_serial
 
-    private :: psfun_d_setstring, psfun_d_setreal, psfun_d_setinteger
+    ! For symmetric matrices we implement the Schur algorithm for the
+    ! computation of y=f(α⋅A)x. For this reason we need the psfun_d_serial
+    ! type to have a member pointing to a function name for f. It is already
+    ! defined to get also a second optional argument that tells the function
+    ! to compute instead the kth derivative of f. This is done in light of
+    ! the nonsymmetric case in which the Schur-Parlett algorithm should be used
+    ! instead.
+    abstract interface
+        function func (x,k)
+            use psb_base_mod
+            implicit none
+
+            real(psb_dpk_)                          :: func
+            real(psb_dpk_), intent (in)             :: x    ! Value to be computed
+            integer(psb_ipk_), intent(in), optional :: k    ! Computes kth derivative :math:`f^{(k)}(x)`
+        end function func
+    end interface
+
+    private :: psfun_d_setstring, psfun_d_setreal, psfun_d_setinteger, psfun_d_setpointer
 
 contains
 
@@ -128,6 +148,26 @@ contains
 
     end subroutine psfun_d_setinteger
 
+    subroutine psfun_d_setpointer(fun,what,val,info)
+        ! To set the function pointer inside the type
+        use psb_base_mod
+        implicit none
+
+        class(psfun_d_serial), intent(inout) :: fun   ! Function object
+        character(len=*), intent(in)         :: what  ! String of option to set
+        procedure (func)                     :: val   ! Function to set
+        integer(psb_ipk_), intent(out)       :: info  ! Output flag
+
+        info = psb_success_
+        select case(psb_toupper(what))
+        case ('FPOINTER')
+            fun%f_ptr => val
+        case default
+            info = psb_err_invalid_args_combination_
+        end select
+
+    end subroutine psfun_d_setpointer
+
     subroutine psfun_d_serial_apply_array(fun,a,y,x,info)
         ! This is the core of the function apply on a serial matrix to compute
         ! :math:`y = f(\alpha*A) x`. It calls on the specific routines
@@ -148,8 +188,8 @@ contains
         integer(psb_ipk_), intent(out)       :: info ! Information on the output
 
         ! local variables
-        integer(psb_ipk_)               :: n,m,lwsp,iexph,ns,shapes(2)
-        real(psb_dpk_), allocatable     :: fA(:,:),wsp(:),iwsp(:),phiA(:,:,:)
+        integer(psb_ipk_)               :: n,m,lwsp,iexph,ns,shapes(2),lwork
+        real(psb_dpk_), allocatable     :: fA(:,:),wsp(:),iwsp(:),phiA(:,:,:),work(:),ytmp(:)
         integer(psb_ipk_), allocatable  :: ipiv(:)
         ! local constants
         integer(psb_ipk_)       :: err_act, i, j
@@ -351,8 +391,8 @@ contains
             ! (2009): 1-20.
             allocate(phiA(n,m,fun%phiorder), stat=info)
             if ( info /= 0) then
-            call psb_errpush(info,name,a_err=trim(fun%variant))
-            goto 9999
+                call psb_errpush(info,name,a_err=trim(fun%variant))
+                goto 9999
             end if
 
             phiA = sasmtrphif(fun%phiorder,fun%scaling,a)
@@ -360,8 +400,8 @@ contains
 
             if(allocated(phiA)) deallocate(phiA,stat=info)
             if ( info /= 0) then
-            call psb_errpush(info,name,a_err=trim(fun%variant))
-            goto 9999
+                call psb_errpush(info,name,a_err=trim(fun%variant))
+                goto 9999
             end if
 #else
             write(psb_err_unit,*)'Warning: no suitable PHIFUNCTION interface'
@@ -369,6 +409,89 @@ contains
             call psb_errpush(info,name,a_err=trim(fun%variant))
             goto 9999
 #endif
+        case ('USERF')
+            select case (fun%variant)
+            case('SYM')
+                ! For a symmetric matrix we need only to compute the function
+                ! values, and not also its derivatives. We use LAPACK to compute
+                ! the Schur decomposition of the input matrix, apply f on the
+                ! eigenvalues and return the computation
+
+                allocate(fA(n,m), stat = info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                allocate(wsp(n), stat = info) ! Will contain the eigenvalues
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                allocate(ytmp(n), stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+                fA = a ! We need to work on a copy of a since the Lapack routine
+                       ! will destroy it
+
+                ! First we query the Lapack routine for the size of the
+                ! auxiliary working vectors
+                allocate(work(1), stat = info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+
+                call DSYEV('V','U',n,fA,n,wsp,work,-1,info)
+                lwork = work(1) ! Store the optimal work-size
+                ! We free the dummy work vectors and the reallocate them to the
+                ! corrected size
+                if (allocated(work)) deallocate(work, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                allocate(work(lwork), stat = info)
+                ! We can now do the proper computation
+                call DSYEV('V','U',n,fA,n,wsp,work,lwork,info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                ! a = fA diag(wsp) fA^T in three steps
+                call DGEMV('T', m, n, done, fA, n, x, 1, dzero, ytmp, 1) ! ytmp = A^t x
+                do i=1,n,1
+                    ytmp(i) = fun%f_ptr(fun%scaling*wsp(i))*ytmp(i)      ! ytmp(i) = f(α λ_i) ytmp(i)
+                end do
+                call DGEMV('N', m, n, done, fA, n, ytmp, 1, dzero, y, 1) ! y = A ytmp
+
+                if (allocated(fA)) deallocate(fA, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                if (allocated(wsp)) deallocate(wsp, stat = info )
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                if (allocated(work)) deallocate(work, stat = info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+                if (allocated(ytmp)) deallocate(ytmp, stat=info)
+                if ( info /= 0) then
+                    call psb_errpush(info,name,a_err=trim(fun%variant))
+                    goto 9999
+                end if
+            case default
+                info = psb_err_from_subroutine_
+                call psb_errpush(info,name,a_err=trim(fun%variant))
+                goto 9999
+            end select
         case default
             info = psb_err_from_subroutine_
             call psb_errpush(info,name,a_err=trim(fun%fname))
