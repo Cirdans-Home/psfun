@@ -10,14 +10,14 @@ for the computation of the matrix exponential, together with the scaling and
 squaring and Taylor algorithms :cite:`MR508383,MR1981253` by `J. Burkardt <https://people.sc.fsu.edu/~jburkardt/f_src/matrix_exponential/matrix_exponential.html>`_.
 For using the phi functions, the code from :cite:`10.1145/1499096.1499101` is needed.
 It can be `downloaded <https://dl.acm.org/doi/10.1145/1499096.1499101>`_,
-compiled and linked to the main library in the install phase.
+compiled and linked to the main library in the install phase. bla bla
 
 All the implemented functions and the keywords needed to load the are given in
 Table :ref:`implemented_methods`.
 
 .. list-table:: Implemented Methods
    :name: implemented_methods
-   :widths: 25 25 25 50 10 10
+   :widths: 10 10 10 10 10 10
    :header-rows: 1
 
    * - Function

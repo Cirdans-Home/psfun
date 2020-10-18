@@ -58,6 +58,17 @@ html_theme = 'sphinx_rtd_theme'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = [ ]
 
+
+# -- Options for LATEX output -------------------------------------------------
+latex_elements = {
+        'preamble':r'''
+        \usepackage[LGR,X2,T1]{fontenc}
+        \usepackage{textgreek}
+        \renewcommand{\textphisymbol}{$\phi$}
+        ''',
+        'textgreek':r'\usepackage{textalpha,alphabeta}'
+        }
+
 ## -- Options for Sphinx-Fortran ---------------------------------------------
 # List of possible extensions in the case of a directory listing
 fortran_ext = ['f90', 'F90', 'f95', 'F95']

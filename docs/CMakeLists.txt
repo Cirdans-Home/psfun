@@ -48,6 +48,17 @@ if (LATEX_PDFLATEX_FOUND)
 	        "${CMAKE_CURRENT_SOURCE_DIR}"
 	        "${SPHINX_LATEX_DIR}"
 	    COMMENT "Building LATEX documentation with Sphinx")
+	# We then compile the latex documentation
+	add_custom_command(
+					TARGET psfun_pdf_docs POST_BUILD
+        	COMMAND make
+        	WORKING_DIRECTORY ${SPHINX_LATEX_DIR}
+	)
+	add_custom_command(
+	        TARGET psfun_pdf_docs POST_BUILD
+	        COMMAND ${CMAKE_COMMAND} -E copy
+	                ${SPHINX_LATEX_DIR}/psfun.pdf
+	                ${CMAKE_SOURCE_DIR}/docs/psfun_guide.pdf)
 else()
 	message(WARNING "PDF generation tools are missing. PDF document generation target is not created.")
 endif()
