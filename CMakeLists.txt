@@ -44,6 +44,7 @@ find_package(PSBLAS REQUIRED)
 #------------------------------------------------------------------------------#
 option(BUILD_EXAMPLES "Build example programs" OFF)
 option(EXTERNAL_PHI "Use Koikari codes for Phi Functiions" OFF)
+option(BUILD_DOCUMENTATION "Build Sphinx Documentation" ON)
 
 #------------------------------------------------------------------------------#
 # Look for auxiliary libraries
@@ -74,4 +75,6 @@ add_subdirectory(examples)
 # --------------------------------------------------------------------------- #
 # Sphinx autodoc
 # --------------------------------------------------------------------------- #
-add_subdirectory(docs)
+IF(BUILD_DOCUMENTATION)
+	add_subdirectory(docs)
+ENDIF()
