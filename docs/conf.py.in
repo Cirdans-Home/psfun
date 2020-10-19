@@ -17,7 +17,7 @@ import sys
 
 # -- Project information -----------------------------------------------------
 
-project = 'psfun'
+project = 'PSFUN'
 copyright = '2020, Fabio Durastante'
 author = 'Fabio Durastante'
 
@@ -66,8 +66,10 @@ latex_elements = {
         \usepackage{textgreek}
         \renewcommand{\textphisymbol}{$\phi$}
         ''',
-        'textgreek':r'\usepackage{textalpha,alphabeta}'
+        'textgreek':r'\usepackage{textalpha,alphabeta}',
+        'figure_align':'htbp'
         }
+latex_toplevel_sectioning = 'chapter'
 
 ## -- Options for Sphinx-Fortran ---------------------------------------------
 # List of possible extensions in the case of a directory listing
