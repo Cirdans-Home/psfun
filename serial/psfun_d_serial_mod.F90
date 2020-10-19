@@ -131,7 +131,7 @@ contains
 
         class(psfun_d_serial), intent(inout) :: fun   ! Function object
         character(len=*), intent(in)         :: what  ! String of option to set
-        integer(psb_dpk_), intent(in)        :: val   ! Integer Value of the option
+        integer(psb_ipk_), intent(in)        :: val   ! Integer Value of the option
         integer(psb_ipk_), intent(out)       :: info  ! Output flag
 
         info = psb_success_
