@@ -1,0 +1,298 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Krylov Module &mdash; PSFUN 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Library Usage Examples" href="examples.html" />
+    <link rel="prev" title="Serial Module" href="serial.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PSFUN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="psfunlibrary.html">Matrix Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">Serial Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Krylov Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#f/psfun_d_krylov_mod">Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSFUN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Krylov Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/krylov.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="krylov-module">
+<h1>Krylov Module<a class="headerlink" href="#krylov-module" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="f/psfun_d_krylov_mod">
+<span id="module"></span><h2>Module<a class="headerlink" href="#f/psfun_d_krylov_mod" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Description</p>
+<p>The psfun_d_krylov_mod contains the generic call to a Krylov subspace
+method for the computation of <img class="math" src="_images/math/1c6810dd0f85abc08cf88e723b9e381816479518.png" alt="y = f(A) x"/>, for <img class="math" src="_images/math/211284f68205c3e66773eaf026f32a0acdd3dfb3.png" alt="A"/> large and
+sparse.</p>
+<p class="rubric">Quick access</p>
+<dl class="field-list simple">
+<dt class="field-odd">Routines</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_d_krylov_mod/psfun_d_parallel_apply" title="f/psfun_d_krylov_mod/psfun_d_parallel_apply"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_parallel_apply()</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Needed modules</p>
+<ul class="simple">
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p></li>
+<li><p><a class="reference internal" href="serial.html#f/psfun_d_serial_mod" title="f/psfun_d_serial_mod: This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, :math:`y = f(\alpha A)x`...."><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_d_serial_mod</span></code></a>: This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, <img class="math" src="_images/math/1e883674d401c5aa0e8d2155075245bc42331fde.png" alt="y = f(\alpha A)x"/>….</p></li>
+</ul>
+<p class="rubric">Types</p>
+<ul>
+<li><dl class="type">
+<dt id="f/psfun_d_krylov_mod/unknown_type">
+<em class="property">type  </em><code class="sig-prename descclassname">psfun_d_krylov_mod/</code><code class="sig-name descname">unknown_type</code><a class="headerlink" href="#f/psfun_d_krylov_mod/unknown_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type fields</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">kname</code><em> [</em><em>character</em><em>,</em><em>optional/default=’arnoldi’</em><em>]</em></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</li>
+</ul>
+<p class="rubric">Variables</p>
+<p class="rubric">Subroutines and functions</p>
+<dl class="subroutine">
+<dt id="f/psfun_d_krylov_mod/psfun_d_setstring">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_d_krylov_mod/</code><code class="sig-name descname">psfun_d_setstring</code><span class="sig-paren">(</span><em class="sig-param">meth</em>, <em class="sig-param">what</em>, <em class="sig-param">val</em>, <em class="sig-param">info</em><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_d_krylov_mod/psfun_d_setstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set function for setting options defined by a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>meth</strong></p></li>
+<li><p><strong>what</strong><em> [</em><em>character</em><em>,</em><em>in</em><em>]</em></p></li>
+<li><p><strong>val</strong><em> [</em><em>character</em><em>,</em><em>in</em><em>]</em></p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/psfun_d_krylov_mod/psfun_d_parallel_apply">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_d_krylov_mod/</code><code class="sig-name descname">psfun_d_parallel_apply</code><span class="sig-paren">(</span><em class="sig-param">meth</em>, <em class="sig-param">fun</em>, <em class="sig-param">a</em>, <em class="sig-param">desc_a</em>, <em class="sig-param">y</em>, <em class="sig-param">x</em>, <em class="sig-param">eps</em>, <em class="sig-param">info</em><span class="optional">[</span>, <em class="sig-param">itmax</em><span class="optional">[</span>, <em class="sig-param">itrace</em><span class="optional">[</span>, <em class="sig-param">istop</em><span class="optional">[</span>, <em class="sig-param">iter</em><span class="optional">[</span>, <em class="sig-param">err</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_d_krylov_mod/psfun_d_parallel_apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the generic function for applying every implemented Krylov
+method. The general iteration parameters (like the number of iteration,
+the stop criterion to be used, and the verbosity of the trace) can be
+passed directly to this routine. All the constitutive parameters of
+the actual method, and the information relative to the function are
+instead contained in the meth and fun objects. The Descriptor object
+:p psb_desc_type desc_a [in]: Descriptor for the sparse matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>meth</strong> :: Krylov method object</p></li>
+<li><p><strong>fun</strong><em> [</em><em>psfun_d_serial</em><em>,</em><em>inout</em><em>]</em> :: Function object</p></li>
+<li><p><strong>a</strong><em> [</em><em>psb_dspmat_type</em><em>,</em><em>in</em><em>]</em> :: Distribute sparse matrix</p></li>
+<li><p><strong>y</strong><em> [</em><em>psb_d_vect_type</em><em>,</em><em>inout</em><em>]</em> :: Output vector</p></li>
+<li><p><strong>x</strong><em> [</em><em>psb_d_vect_type</em><em>,</em><em>inout</em><em>]</em> :: Input vector</p></li>
+<li><p><strong>eps</strong><em> [</em><em>real</em><em>,</em><em>in</em><em>]</em> :: Requested tolerance</p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em> :: Output flag</p></li>
+<li><p><strong>itmax</strong><em> [</em><em>integer</em><em>,</em><em>in,</em><em>]</em> :: Maximum number of iteration</p></li>
+<li><p><strong>itrace</strong><em> [</em><em>integer</em><em>,</em><em>in,</em><em>]</em> :: Trace for logoutput</p></li>
+<li><p><strong>istop</strong><em> [</em><em>integer</em><em>,</em><em>in,</em><em>]</em> :: Stop criterion</p></li>
+<li><p><strong>iter</strong><em> [</em><em>integer</em><em>,</em><em>out,</em><em>]</em> :: Number of iteration</p></li>
+<li><p><strong>err</strong><em> [</em><em>real</em><em>,</em><em>out,</em><em>]</em> :: Last estimate error</p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <a class="reference internal" href="serial.html#f/psfun_d_serial_mod" title="f/psfun_d_serial_mod: This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, :math:`y = f(\alpha A)x`...."><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_d_serial_mod</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Library Usage Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="serial.html" class="btn btn-neutral float-left" title="Serial Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Fabio Durastante
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

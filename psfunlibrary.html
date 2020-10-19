@@ -1,0 +1,315 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Matrix Functions &mdash; PSFUN 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Serial Module" href="serial.html" />
+    <link rel="prev" title="Welcome to the PSFUN Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PSFUN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Matrix Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#the-psfun-library">The PSFUN Library</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-install">How To Install</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">Serial Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="krylov.html">Krylov Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSFUN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Matrix Functions</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/psfunlibrary.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="matrix-functions">
+<h1>Matrix Functions<a class="headerlink" href="#matrix-functions" title="Permalink to this headline">¶</a></h1>
+<p>This library is focused on the computation of matrix-function <a class="bibtex reference internal" href="zreferences.html#mr2396439" id="id1">[1]</a> vector products</p>
+<div class="math" id="equation-eq-problem-to-solve">
+<p><span class="eqno">(1)<a class="headerlink" href="#equation-eq-problem-to-solve" title="Permalink to this equation">¶</a></span><img src="_images/math/b613e1dcabea72bc5d90aff5cbc480f451150b61.png" alt="\mathbf{y} = f(A) \mathbf{x}, A \in \mathbb{R}^{n \times n}, \; \operatorname{nnz}(A) = O(n), \; f:\mathbb{R}\rightarrow \mathbb{R},"/></p>
+</div><p>for large and sparse matrices in a distributed setting. Matrix functions are
+ubiquitous in models for applied sciences. They are involved in the solution of
+ordinary, partial, and fractional differential equations, systems of coupled
+differential equations, hybrid differential-algebraic problems,
+equilibrium problems, measures of complex networks, and many others.</p>
+<p>To perform the computation in <a class="reference internal" href="#equation-eq-problem-to-solve">(1)</a>, we consider here two
+main approaches, the first one makes use of a definition based on the <em>Cauchy integral</em>
+for a matrix function: given a closed contour <img class="math" src="_images/math/e7003fd3463f843ee1e53385878369f078d362ad.png" alt="\Gamma"/> lying in the region of
+analyticity of the function <img class="math" src="_images/math/95aabe3d9002fe03d54b9b9d9fbfc27c0eaeb56f.png" alt="f(x)"/> and containing the spectrum of <img class="math" src="_images/math/211284f68205c3e66773eaf026f32a0acdd3dfb3.png" alt="A"/>,
+<img class="math" src="_images/math/52c1294f17be88a9a28b02f70fb6ec0f68735834.png" alt="f(A)"/> can be defined as</p>
+<div class="math" id="equation-eq-contourint">
+<p><span class="eqno">(2)<a class="headerlink" href="#equation-eq-contourint" title="Permalink to this equation">¶</a></span><img src="_images/math/7887009fdf80d7cae4e6d04bcde8d78a3d9ab469.png" alt="f(A) =\frac{1}{2\pi i} \int_{\Gamma}  f(z) (zI - A)^{-1} dz."/></p>
+</div><p>By applying a quadrature formula on <img class="math" src="_images/math/3bfb3a64189a14b2704f4610827762d5e3145114.png" alt="N"/> points to <a class="reference internal" href="#equation-eq-contourint">(2)</a>,
+with weights <img class="math" src="_images/math/af00d6d4eebb8757253643ec27899ccdc2fc5694.png" alt="\{c_j\}_{j=1}^{N}"/> and nodes <img class="math" src="_images/math/6a73b32124fe7adda9a0a2c0e602b2a6c2b2afb2.png" alt="\{\xi_j\}_{j=1}^{N}"/>,
+it is possible to approximate <a class="reference internal" href="#equation-eq-problem-to-solve">(1)</a> as</p>
+<div class="math">
+<p><img src="_images/math/9c6f15784c80a95a212b84b32422542a25c7e1d8.png" alt="\mathbf{y} = f(A)\mathbf{x} \approx \sum_{j=1}^{N} c_j (A+\xi_j I)^{-1}\mathbf{x},"/></p>
+</div><p>that is then computationally equivalent to the solution of <img class="math" src="_images/math/3bfb3a64189a14b2704f4610827762d5e3145114.png" alt="N"/> linear
+systems with the same right-hand side.</p>
+<p>The second approach to problem <a class="reference internal" href="#equation-eq-problem-to-solve">(1)</a> resides instead on the
+use of projection algorithm. Specifically, we suppose having two <img class="math" src="_images/math/9630132210b904754c9ab272b61cb527d12263ca.png" alt="k"/>-th
+dimensional subspaces <img class="math" src="_images/math/01faf3fd88432e4b26bc2eb0642fd7f812e3df85.png" alt="\mathcal{V}"/> and <img class="math" src="_images/math/2e11369579a37f0257e4f0de3a72923db8f715c8.png" alt="\mathcal{W}"/> spanned by the
+column of the matrices <img class="math" src="_images/math/818aeb16f5dcfa7996350b3b98e94e9a21104f92.png" alt="V,W \in \mathbb{R}^{n \times k}"/>. Then, problem
+<a class="reference internal" href="#equation-eq-problem-to-solve">(1)</a> can be projected and approximated on the two subspaces
+by doing</p>
+<div class="math">
+<p><img src="_images/math/39297e8dd689d0d531316efc49397eecd583e381.png" alt="\mathbf{y} = f(A)\mathbf{x} \approx W f(V^T A W) V^T \mathbf{x},"/></p>
+</div><p>where now <img class="math" src="_images/math/303609539ec72671ad17f9cbf813a362d4a83c13.png" alt="A_k = V^T A W"/> is a small matrix of size <img class="math" src="_images/math/72e194b480d09c85fe8b0f9f1757d77f32f79631.png" alt="k \times k"/>,
+to which we can apply many specific algorithms for the particular choice of
+<img class="math" src="_images/math/95aabe3d9002fe03d54b9b9d9fbfc27c0eaeb56f.png" alt="f(x)"/>, <a class="bibtex reference internal" href="zreferences.html#mr2396439" id="id2">[1]</a>, or again a quadrature formula.</p>
+<div class="section" id="the-psfun-library">
+<h2>The PSFUN Library<a class="headerlink" href="#the-psfun-library" title="Permalink to this headline">¶</a></h2>
+<p>The recent developments on softwares for sparse linear algebra have been made
+essential for a wide variety of scientific applications. Specifically, they have
+been dedicated to the construction of of massively parallel sparse solvers for
+a particular matrix function <img class="math" src="_images/math/5d59e8adb3cccfab61aa4911c38d34fc5cea1315.png" alt="f(x) = x^{-1}"/>, i.e., for the solution of
+large and sparse linear system. A computational framework that lies at the core
+of pretty much all multi-physics and multi-scale simulations.</p>
+<p>With this library, we try to face the analogous challenge of computing
+matrix-function vector products for more general functions than the inverse.</p>
+<p>The library described here is substantially based on the parallel BLAS feature
+for sparse matrices made available by the <a class="reference external" href="https://psctoolkit.github.io/">PSBLAS library</a>,
+and is geared towards the possibility of running on machines with thousands
+of high-performance cores, and is divided in three main modules,</p>
+<dl class="simple">
+<dt>Serial module:</dt><dd><p>this module implements (or interfaces) the computation of <img class="math" src="_images/math/52c1294f17be88a9a28b02f70fb6ec0f68735834.png" alt="f(A)"/>,
+<img class="math" src="_images/math/b404b9727217fa5204a059c35d214c3102f03038.png" alt="f(A)\mathbf{x}"/> for matrices of small-size that can be
+handled in a sequential way,</p>
+</dd>
+<dt>Krylov module:</dt><dd><p>this module implements distributed Krylov based methods for the
+reduction of problem <a class="reference internal" href="#equation-eq-problem-to-solve">(1)</a> to the solution of problems of
+small dimensions,</p>
+</dd>
+<dt>Quadrature module:</dt><dd><p>this module implements the approach in <a class="reference internal" href="#equation-eq-contourint">(2)</a> by implementing
+different quadrature formulas.</p>
+</dd>
+</dl>
+<div class="figure align-default" id="id4">
+<a class="reference internal image-reference" href="_images/librarystructure.png"><img alt="Structure of the PSFUN library." src="_images/librarystructure.png" style="width: 554.4px; height: 259.2px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Structure of the PSFUN library.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="how-to-install">
+<h2>How To Install<a class="headerlink" href="#how-to-install" title="Permalink to this headline">¶</a></h2>
+<p>The first step to install the PSFUN is to obtain and install the PSBLAS library
+from <a class="reference external" href="https://psctoolkit.github.io/">psctoolkit</a>. All the relevant information
+can be found there.</p>
+<p>The actual version of the library works with the development version of PSBLAS,
+this can be done obtained via GitHub by doing</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/sfilippone/psblas3.git</span>
+<span class="go">cd psblas3</span>
+<span class="go">./configure -with-&lt;stuff&gt;=... -prefix=/path/to/psblas</span>
+<span class="go">make -j</span>
+<span class="go">make install</span>
+</pre></div>
+</div>
+<p>in which the various <code class="code docutils literal notranslate"><span class="pre">-with-&lt;stuff&gt;=...</span></code> options can be read from the
+output of the <code class="code docutils literal notranslate"><span class="pre">./configure</span> <span class="pre">-h</span></code>, again please refer to the original
+documentation of PSBLAS for all the relevant information.</p>
+<p>Auxiliary packages that can be used to with the library are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>the package for the computation of <img class="math" src="_images/math/ed710ddac707fcbc540bfe7b354ca2d900f0faa0.png" alt="\varphi"/>-functions from <a class="bibtex reference internal" href="zreferences.html#id1" id="id3">[2]</a>, that can be obtained from the <a class="reference external" href="https://doi.org/10.1145/1499096.1499101">ACM website</a>.</p></li>
+</ul>
+</div></blockquote>
+<p>To build the documentation <a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx</a> and
+<a class="reference external" href="https://sphinx-fortran.readthedocs.io/en/latest/index.html#">Sphinx-Fortran</a> (with the relevant dependencies)
+are needed. Building the documentation is optional, and can be skipped during the
+configuration phase. In every case a copy of the docs is included with the code.</p>
+<p>After having installed all the dependencies, and the auxiliary packages the PSFUN
+library can be installed via <code class="code docutils literal notranslate"><span class="pre">ccmake</span></code> (Version <img class="math" src="_images/math/5029c2c60b99e78ec2ab8c273ff9aa8fdb7edac8.png" alt="\geq"/> 3.15), by setting
+the position of PSBLAS, and all the auxiliary packages.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">git clone https://github.com/Cirdans-Home/psfun.git</span>
+<span class="go">mkdir build</span>
+<span class="go">cd build</span>
+<span class="go">ccmake ../psfun/</span>
+<span class="go">make</span>
+<span class="go">make install</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="serial.html" class="btn btn-neutral float-right" title="Serial Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to the PSFUN Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Fabio Durastante
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
