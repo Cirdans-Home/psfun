@@ -87,7 +87,7 @@ program arnolditest
   !
   ! Read input information from file
   !
-  call get_parms(ictxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling)
+  call get_parms(ictxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
   if(iam == psb_root_) then
     write(psb_out_unit,*)''
     write(psb_out_unit,'("Solving matrix        : ",a)')mname
@@ -250,12 +250,13 @@ program arnolditest
 
   contains
 
-    subroutine  get_parms(ictxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling)
+    subroutine  get_parms(ictxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
       ! This subroutine reads the parameters needed to run the serialtest
       ! program from standard input
       integer(psb_ipk_), intent(in)  :: ictxt
       character(len=*),  intent(out) :: mname,rhs_file,fname,variant,filefmt,part,afmt
-      real(psb_dpk_), intent(out)    :: scaling
+      real(psb_dpk_), intent(out)    :: scaling,eps
+      integer(psb_ipk_), intent(out) :: itmax, itrace, istop
 
       integer(psb_ipk_)   :: ip, inp_unit
       integer(psb_ipk_) :: np, iam
@@ -288,6 +289,23 @@ program arnolditest
           read(inp_unit,*) fname
           read(inp_unit,*) variant
           read(inp_unit,*) scaling
+          eps = 1e-6
+          itmax = 100
+          itrace = 1
+          istop = 1
+        else if (ip == 12) then
+          read(inp_unit,*) mname
+          read(inp_unit,*) rhs_file
+          read(inp_unit,*) filefmt
+          read(inp_unit,*) part
+          read(inp_unit,*) afmt
+          read(inp_unit,*) fname
+          read(inp_unit,*) variant
+          read(inp_unit,*) scaling
+          read(inp_unit,*) eps
+          read(inp_unit,*) itmax
+          read(inp_unit,*) itrace
+          read(inp_unit,*) istop
         else
           ! wrong number of parameters on input: all hopes are lost
           call pr_usage(izero)
@@ -308,6 +326,10 @@ program arnolditest
       call psb_bcast(ictxt,fname)
       call psb_bcast(ictxt,variant)
       call psb_bcast(ictxt,scaling)
+      call psb_bcast(ictxt,eps)
+      call psb_bcast(ictxt,itmax)
+      call psb_bcast(ictxt,itrace)
+      call psb_bcast(ictxt,istop)
       return
 
     end subroutine get_parms

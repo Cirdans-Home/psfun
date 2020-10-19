@@ -1,4 +1,4 @@
-8             ! Number of lines under the present one
+12             ! Number of lines under the present one
 laplacian.mtx ! Filename of the matrix'
 NONE          ! x for y = f(A)x, if NONE then x=(1,1,...,1)^T
 MM            ! Format of the matrix (MM,HB)'
@@ -7,3 +7,7 @@ CSR           ! Storage format of the matrix (CSR COO JAD)'
 EXP           ! Matrix function name'
 GENPADE       ! Variant of the algorithm for the fname function'
 1.0           ! scaling : Scalar scaling parameter '
+1e-6          ! eps : tolerance on convergence criterion
+100           ! itmax : Maximum size of Krylov subspace
+1             ! itrace : Trace for the convergence log
+1             ! istop : Type of stop criterion 1 : f-value 2 : φ-value
