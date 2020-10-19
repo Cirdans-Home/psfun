@@ -11,11 +11,11 @@ set(POLYNOMIAL_METHODS polynomial/psfun_d_arnoldi.f90 polynomial/psfun_d_lanczos
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 add_library(psfun_krylov psfun_d_krylov_mod.f90 ${POLYNOMIAL_METHODS})
 add_compile_definitions(${PSBFDEFINES})
-target_include_directories(psfun_krylov PUBLIC ${PSBLAS_MODULES})
+target_include_directories(psfun_krylov PUBLIC ${PSBLAS_MODULES} ${AUXILINCLUDE})
 target_include_directories(psfun_krylov PUBLIC ${PSBLAS_INCLUDE})
 target_include_directories(psfun_krylov PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(psfun_krylov PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-target_link_libraries(psfun_krylov PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} psfun_serial)
+target_link_libraries(psfun_krylov PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} ${AUXILLINK} psfun_serial)
 
 if(MPI_COMPILE_FLAGS)
   set_target_properties(psfun_krylov PROPERTIES
