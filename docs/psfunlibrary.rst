@@ -91,3 +91,47 @@ Quadrature module:
          :scale: 50%
 
          Structure of the PSFUN library.
+
+How To Install
+==============
+
+The first step to install the PSFUN is to obtain and install the PSBLAS library
+from `psctoolkit <https://psctoolkit.github.io/>`_. All the relevant information
+can be found there.
+
+The actual version of the library works with the development version of PSBLAS,
+this can be done obtained via GitHub by doing
+
+.. code-block:: console
+
+   git clone https://github.com/sfilippone/psblas3.git
+   cd psblas3
+   ./configure -with-<stuff>=... -prefix=/path/to/psblas
+   make -j
+   make install
+
+in which the various :code:`-with-<stuff>=...` options can be read from the
+output of the :code:`./configure -h`, again please refer to the original
+documentation of PSBLAS for all the relevant information.
+
+Auxiliary packages that can be used to with the library are:
+
+   * the package for the computation of :math:`\varphi`-functions from :cite:`10.1145/1499096.1499101`, that can be obtained from the `ACM website <https://doi.org/10.1145/1499096.1499101>`_.
+
+To build the documentation `Sphinx <https://www.sphinx-doc.org/en/master/>`_ and
+`Sphinx-Fortran <https://sphinx-fortran.readthedocs.io/en/latest/index.html#>`_ (with the relevant dependencies)
+are needed. Building the documentation is optional, and can be skipped during the
+configuration phase. In every case a copy of the docs is included with the code.
+
+After having installed all the dependencies, and the auxiliary packages the PSFUN
+library can be installed via :code:`ccmake` (Version :math:`\geq` 3.15), by setting
+the position of PSBLAS, and all the auxiliary packages.
+
+.. code-block:: console
+
+   git clone https://github.com/Cirdans-Home/psfun.git
+   mkdir build
+   cd build
+   ccmake ../psfun/
+   make
+   make install

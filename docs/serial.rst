@@ -3,6 +3,7 @@ Serial Module
 **************
 
 .. highlight:: fortran
+.. role:: fortran(code)
 
 This module contains the routines needed for the computation of :math:`f(A)x`
 for :math:`A` a matrix of small size. It interfaces external codes and algorithms
@@ -15,8 +16,12 @@ For using the :math:`\varphi`-functions, the code from :cite:`10.1145/1499096.14
 It can be `downloaded <https://dl.acm.org/doi/10.1145/1499096.1499101>`_,
 compiled and linked to the main library in the install phase.
 
-All the implemented functions and the keywords needed to load the are given in
-:numref:`implemented_methods`.
+The module is centered on the :code:`psfun_d_serial` type, this module contains
+all the options needed to set a specific matrix function to be computed. Not all
+the options are needed for every type of matrix-function, e.g., the field
+:fortran:`integer(psb_ipk_) :: padedegree` is used only if a Padè type algorithm is
+employed. All the keywords needed to load the implemented functions and algorithic variants are
+given in :numref:`implemented_methods`.
 
 .. list-table:: Implemented Methods
    :name: implemented_methods

@@ -34,7 +34,8 @@ extensions = ['recommonmark',
     'sphinxfortran.fortran_autodoc',
     'sphinx.ext.intersphinx',
     'sphinx.ext.imgmath',
-    'sphinxcontrib.bibtex']
+    'sphinxcontrib.bibtex',
+    'sphinx.ext.githubpages']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -65,9 +66,14 @@ latex_elements = {
         \usepackage[LGR,X2,T1]{fontenc}
         \usepackage{textgreek}
         \renewcommand{\textphisymbol}{$\phi$}
+        \usepackage{footnotebackref}
         ''',
         'textgreek':r'\usepackage{textalpha,alphabeta}',
-        'figure_align':'htbp'
+        'figure_align':'htbp',
+        'fncychap':'\\usepackage[Rejne]{fncychap}',
+        'fontpkg':'\\usepackage{amsmath,amsfonts,amssymb,amsthm}',
+        'papersize':'a4paper',
+        'fvset':'\\fvset{fontsize=\\normalsize}'
         }
 latex_toplevel_sectioning = 'chapter'
 
@@ -79,11 +85,6 @@ fortran_ext = ['f90', 'F90', 'f95', 'F95']
 # It is also possible to specify a directory name; in this case, all files than
 # have an extension matching those define by the config variable `fortran_ext`
 # are used.
-# fortran_src = [ os.path.abspath('@CMAKE_SOURCE_DIR@/serial/psfun_d_serial_mod.F90'),
-#     os.path.abspath('@CMAKE_SOURCE_DIR@/krylov/psfun_d_krylov_mod.f90'),
-#     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/serial'),
-#     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/polynomial')]
-
 fortran_src = [ os.path.abspath('@CMAKE_SOURCE_DIR@/krylov/psfun_d_krylov_mod.f90'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/serial'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/polynomial'),
