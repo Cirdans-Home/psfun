@@ -2,6 +2,11 @@
 Library Usage Examples
 ***********************
 
+Utils examples
+================
+
+.. f:autoprogram:: utiltest
+
 Serial examples
 ================
 

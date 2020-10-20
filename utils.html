@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Fortran Module Index &mdash; PSFUN 0.1 documentation</title>
+  <title>Utils Module &mdash; PSFUN 0.1 documentation</title>
   
 
   
@@ -35,13 +35,8 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
- 
-
-    <script>
-      DOCUMENTATION_OPTIONS.COLLAPSE_INDEX = true;
-    </script>
-
-
+    <link rel="next" title="Library Usage Examples" href="examples.html" />
+    <link rel="prev" title="Krylov Module" href="krylov.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -86,11 +81,14 @@
             
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="psfunlibrary.html">Matrix Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serial.html">Serial Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="krylov.html">Krylov Module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Utils Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#f/psfun_utils_mod">Module</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
 </ul>
@@ -138,10 +136,14 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Fortran Module Index</li>
+      <li>Utils Module</li>
     
     
       <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/utils.rst.txt" rel="nofollow"> View page source</a>
+          
         
       </li>
     
@@ -153,39 +155,51 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
+  <div class="section" id="utils-module">
+<h1>Utils Module<a class="headerlink" href="#utils-module" title="Permalink to this headline">¶</a></h1>
+<p>The utils module contains some functions and subroutines which are used in
+various places in the library and which do not specifically belong to any of the
+other modules. Routines for the computation of some special functions, e.g.,
+elliptic integrals, Jacobi polynomials, etc., together with some internal service
+routines.</p>
+<div class="section" id="f/psfun_utils_mod">
+<span id="module"></span><h2>Module<a class="headerlink" href="#f/psfun_utils_mod" title="Permalink to this headline">¶</a></h2>
+<p class="rubric">Quick access</p>
+<dl class="field-list simple">
+<dt class="field-odd">Variables</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_utils_mod/dpi" title="f/psfun_utils_mod/dpi"><code class="xref f f-var docutils literal notranslate"><span class="pre">dpi</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Needed modules</p>
+<ul class="simple">
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p></li>
+</ul>
+<p class="rubric">Variables</p>
+<ul>
+<li><dl class="f variable">
+<dt id="f/psfun_utils_mod/dpi">
+<code class="sig-prename descclassname">psfun_utils_mod/</code><code class="sig-name descname">dpi</code><em> [</em><em>real</em><em>,</em><em>parameter=</em>4.0_psb_dpk_*atan(1.0_psb_dpk_)<em>]</em><a class="headerlink" href="#f/psfun_utils_mod/dpi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
-   <h1>Fortran Module Index</h1>
-
-   <div class="modindex-jumpbox">
-   <a href="#cap-p"><strong>p</strong></a>
-   </div>
-
-   <table class="indextable modindextable">
-     <tr class="pcap"><td></td><td>&#160;</td><td></td></tr>
-     <tr class="cap" id="cap-p"><td></td><td>
-       <strong>p</strong></td><td></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="krylov.html#f/psfun_d_krylov_mod"><code class="xref">psfun_d_krylov_mod</code></a></td><td>
-       <em>The psfun_d_krylov_mod contains the generic call to a Krylov subspace method for the computation of :math:`y = f(A) x`, for :math:`A` large and sparse....</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="serial.html#f/psfun_d_serial_mod"><code class="xref">psfun_d_serial_mod</code></a></td><td>
-       <em>This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, :math:`y = f(\alpha A)x`....</em></td></tr>
-     <tr>
-       <td></td>
-       <td>
-       <a href="utils.html#f/psfun_utils_mod"><code class="xref">psfun_utils_mod</code></a></td><td>
-       <em></em></td></tr>
-   </table>
+</li>
+</ul>
+</div>
+</div>
 
 
            </div>
            
           </div>
           <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="examples.html" class="btn btn-neutral float-right" title="Library Usage Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="krylov.html" class="btn btn-neutral float-left" title="Krylov Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
   
 
   <hr/>
