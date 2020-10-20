@@ -29,6 +29,7 @@ Welcome to the PSFUN Documentation
    psfunlibrary
    serial
    krylov
+   utils
    examples
    zreferences
 

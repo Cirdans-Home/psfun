@@ -1,0 +1,15 @@
+**************
+Utils Module
+**************
+
+The utils module contains some functions and subroutines which are used in
+various places in the library and which do not specifically belong to any of the
+other modules. Routines for the computation of some special functions, e.g.,
+elliptic integrals, Jacobi polynomials, etc., together with some internal service
+routines.
+
+
+Module
+======
+
+.. f:automodule:: psfun_utils_mod

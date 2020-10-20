@@ -88,7 +88,9 @@ fortran_ext = ['f90', 'F90', 'f95', 'F95']
 fortran_src = [ os.path.abspath('@CMAKE_SOURCE_DIR@/krylov/psfun_d_krylov_mod.f90'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/serial'),
     os.path.abspath('@CMAKE_SOURCE_DIR@/examples/polynomial'),
-    os.path.abspath('@CMAKE_SOURCE_DIR@/serial/psfun_d_serial_mod.F90') ]
+    os.path.abspath('@CMAKE_SOURCE_DIR@/examples/utils'),
+    os.path.abspath('@CMAKE_SOURCE_DIR@/serial/psfun_d_serial_mod.F90'),
+    os.path.abspath('@CMAKE_SOURCE_DIR@/utils/psfun_utils_mod.f90') ]
 
 # Indentation string or length (default 4). If it is an integer,
 # indicates the number of spaces.
