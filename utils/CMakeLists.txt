@@ -4,7 +4,7 @@ message("Compile and Link Utils Library")
 
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 
-set( UTILS_SUBMODULES "psfun_d_utils_mod.f90")
+set( UTILS_SUBMODULES "psfun_d_utils_mod.f90" "psfun_z_utils_mod.f90")
 set( EXTERNAL_LIBRARIES "libraries/elliptic_integral.f90")
 
 add_library(psfun_utils psfun_utils_mod.f90 ${UTILS_SUBMODULES} ${EXTERNAL_LIBRARIES})

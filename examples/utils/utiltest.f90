@@ -38,7 +38,9 @@ program utiltest
   ! flags
   integer(psb_ipk_)           :: info
   ! Variables
-  real(psb_dpk_)              :: K(2),L,u,sn,cn,dn
+  real(psb_dpk_)              :: K(2),L,u,sn,cn,dn,result
+  real(psb_dpk_), parameter :: coeffs(7) = (/132.0,42.0,14.0,5.0,2.0,1.0,0.0/)
+  complex(psb_dpk_)           :: cu,csn,ccn,cdn
 
   info=psb_success_
   call psb_init(ictxt)
@@ -57,6 +59,12 @@ program utiltest
     write(psb_out_unit,*) "Welcome to the utilstest program of PSFUN"
   end if
 
+  ! Test of Horner rule for polynomial evaluation
+  write(psb_out_unit,*)
+  write(psb_out_unit,'("Polynomial Evaluation")')
+  result = horner(coeffs,1.0_psb_dpk_)
+  write(psb_out_unit,'("p(1) = ",f17.0," (should be 196)")')result
+
   ! Test of Elliptic Jacobi Integrals and Functions
   write(psb_out_unit,*)
   write(psb_out_unit,'("Elliptic Integrals and Jacobi Functions")')
@@ -70,7 +78,12 @@ program utiltest
   call ellipj(u,L,sn,cn,dn)
   write(psb_out_unit,'("sn = ",f17.15," cn = ",f17.15," dn = ",f17.15)')sn,cn,dn
   write(psb_out_unit,'("sn = 0.838274911024583 cn = 0.545247809300255 dn = 0.984699634947678 (Control Values)")')
-
+  write(psb_out_unit,'("  Jacobi Elliptic Functions (Complex)")')
+  cu = cmplx(0.0,0.5_psb_dpk_)
+  L = 1.0_psb_dpk_
+  call ellipj(cu,L,csn,ccn,cdn)
+  write(psb_out_unit,'("sn = (",f3.1,",",f17.15,") cn = (",f17.15,",",f3.1,") dn = (",f17.15,",",f3.1,")")')csn,ccn,cdn
+  write(psb_out_unit,'("sn = (0.0,0.521141424070547) cn = (1.127647278133671,0.0) dn = (1.000253555731494,0.0) (Control Values)")')
   call psb_exit(ictxt)
   stop
 

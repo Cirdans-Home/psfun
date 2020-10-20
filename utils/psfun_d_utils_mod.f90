@@ -115,4 +115,25 @@ contains
 
   end subroutine
 
+  module function horner(coeffs, x) result (res)
+    ! Apply Horner rule to evaluate a polynomial
+
+    use psb_base_mod
+    implicit none
+    real(psb_dpk_), dimension (:), intent (in) :: coeffs
+    real(psb_dpk_), intent (in) :: x
+    real(psb_dpk_) :: res
+
+    ! Local Variable
+    integer :: i
+
+    res = 0.0_psb_dpk_
+    do i = size(coeffs), 1, -1
+      res = res * x + coeffs (i)
+    end do
+
+    return
+
+  end function horner
+
 end submodule

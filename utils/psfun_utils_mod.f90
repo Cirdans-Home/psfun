@@ -47,7 +47,21 @@ module psfun_utils_mod
       real(psb_dpk_), intent(in)    :: L
       real(psb_dpk_), intent(out)   :: sn,cn,dn
     end subroutine
+    recursive module subroutine z_ellipj(u,L,sn,cn,dn,flag)
+      complex(psb_dpk_), intent(in)    :: u
+      real(psb_dpk_), intent(in)       :: L
+      complex(psb_dpk_), intent(out)   :: sn,cn,dn
+      logical, optional, intent(in)    :: flag
+    end subroutine
   end interface ellipj
+
+  interface horner
+    module function horner(coeffs, x) result (res)
+      real(psb_dpk_), dimension (:), intent (in) :: coeffs
+      real(psb_dpk_), intent (in) :: x
+      real(psb_dpk_) :: res
+    end function
+  end interface horner
 
 contains
 
