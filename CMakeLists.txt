@@ -68,8 +68,10 @@ set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 # ---------------------------------------------------------------------------- #
 # Now we can start the compilation of all the bit and pieces (hope for the best)
 # ---------------------------------------------------------------------------- #
+add_subdirectory(utils)
 add_subdirectory(serial)
 add_subdirectory(krylov)
+add_subdirectory(quadratures)
 add_subdirectory(examples)
 
 # --------------------------------------------------------------------------- #
