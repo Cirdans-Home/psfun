@@ -74,7 +74,8 @@ module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,i
   ! Error log
   real(psb_dpk_) :: deps, errden, errnum, derr
   integer(psb_ipk_) :: err_act
-  integer(psb_ipk_) :: ictxt, iam, np
+  type(psb_ctxt_type) :: ctxt
+  integer(psb_ipk_) :: iam, np
 
   character(len=20)           :: name
   character(len=60)           :: methdname
@@ -87,8 +88,8 @@ module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,i
   name = 'ARNOLDI'
   methdname = trim(name) // trim("+") // trim(fun%fname) // trim("+") // trim(fun%variant)
   call psb_erractionsave(err_act)
-  ictxt = desc_a%get_context()
-  call psb_info(ictxt, iam, np)
+  ctxt = desc_a%get_context()
+  call psb_info(ctxt, iam, np)
 
   mglob = desc_a%get_global_rows()
   n_row = desc_a%get_local_rows()

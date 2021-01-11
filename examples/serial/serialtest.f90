@@ -43,7 +43,8 @@ program serialtest
   real(psb_dpk_)              :: scaling
   logical                     :: dump
   ! blacs parameters
-  integer(psb_ipk_)           :: ictxt, iam, np
+  type(psb_ctxt_type)         :: ctxt
+  integer(psb_ipk_)           :: iam, np
   ! Matrices and vectors
   type(psb_dspmat_type)       :: a ! Needed for reading from sparse matrix
   real(psb_dpk_), allocatable :: x(:),y(:)
@@ -56,11 +57,11 @@ program serialtest
   real(psb_dpk_)               :: t1,t2
 
   info=psb_success_
-  call psb_init(ictxt)
-  call psb_info(ictxt,iam,np)
+  call psb_init(ctxt)
+  call psb_info(ctxt,iam,np)
 
   if (iam < 0) then
-    call psb_exit(ictxt) ! This should not happen, but just in case
+    call psb_exit(ctxt) ! This should not happen, but just in case
     stop
   endif
   if(psb_get_errstatus() /= 0) goto 9999
@@ -73,7 +74,7 @@ program serialtest
   end if
 
   ! Read input information from file
-  call get_parms(ictxt,mname,fname,variant,scaling,dump)
+  call get_parms(ctxt,mname,fname,variant,scaling,dump)
   write(psb_out_unit,*)''
   write(psb_out_unit,'("Solving matrix       : ",a)')mname
   write(psb_out_unit,'("Function to compute  : ",a)')fname
@@ -117,19 +118,19 @@ program serialtest
   if (info /= 0) write(psb_err_unit,*) "y(n): Deallocation request denied"
 
 
-  call psb_exit(ictxt)
+  call psb_exit(ctxt)
   stop
 
-9999 call psb_error(ictxt)
+9999 call psb_error(ctxt)
 
   stop
 
   contains
 
-    subroutine  get_parms(ictxt,mname,fname,variant,scaling,dump)
+    subroutine  get_parms(ctxt,mname,fname,variant,scaling,dump)
       ! This subroutine reads the parameters needed to run the serialtest
       ! program from standard input
-      integer(psb_ipk_), intent(in)  :: ictxt
+      type(psb_ctxt_type), intent(in):: ctxt
       character(len=*),  intent(out) :: mname,fname,variant
       real(psb_dpk_), intent(out)    :: scaling
       logical, intent(out)           :: dump
@@ -144,7 +145,7 @@ program serialtest
         open(inp_unit,file=filename,action='read',iostat=info)
         if (info /= 0) then
           write(psb_err_unit,*) 'Could not open file ',filename,' for input'
-          call psb_abort(ictxt)
+          call psb_abort(ctxt)
           stop
         else
           write(psb_err_unit,*) 'Opened file ',trim(filename),' for input'
@@ -168,7 +169,7 @@ program serialtest
       else
         ! wrong number of parameters on input: all hopes are lost
         call pr_usage(izero)
-        call psb_abort(ictxt)
+        call psb_abort(ctxt)
         stop 1
       end if
 

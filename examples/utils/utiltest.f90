@@ -34,7 +34,8 @@ program utiltest
   implicit none
 
   ! blacs parameters
-  integer(psb_ipk_)           :: ictxt, iam, np
+  type(psb_ctxt_type)         :: ctxt
+  integer(psb_ipk_)           :: iam, np
   ! flags
   integer(psb_ipk_)           :: info
   ! Variables
@@ -43,11 +44,11 @@ program utiltest
   complex(psb_dpk_)           :: cu,csn,ccn,cdn
 
   info=psb_success_
-  call psb_init(ictxt)
-  call psb_info(ictxt,iam,np)
+  call psb_init(ctxt)
+  call psb_info(ctxt,iam,np)
 
   if (iam < 0) then
-    call psb_exit(ictxt) ! This should not happen, but just in case
+    call psb_exit(ctxt) ! This should not happen, but just in case
     stop
   endif
   if(psb_get_errstatus() /= 0) goto 9999
@@ -84,10 +85,10 @@ program utiltest
   call ellipj(cu,L,csn,ccn,cdn)
   write(psb_out_unit,'("sn = (",f3.1,",",f17.15,") cn = (",f17.15,",",f3.1,") dn = (",f17.15,",",f3.1,")")')csn,ccn,cdn
   write(psb_out_unit,'("sn = (0.0,0.521141424070547) cn = (1.127647278133671,0.0) dn = (1.000253555731494,0.0) (Control Values)")')
-  call psb_exit(ictxt)
+  call psb_exit(ctxt)
   stop
 
-9999 call psb_error(ictxt)
+9999 call psb_error(ctxt)
 
   stop
 

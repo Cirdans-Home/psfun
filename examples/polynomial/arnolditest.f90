@@ -55,7 +55,8 @@ program arnolditest
   real(psb_dpk_)              :: eps, err
   integer(psb_ipk_)           :: itmax,itrace,istop,iter
   ! blacs parameters
-  integer(psb_ipk_)            :: ictxt, iam, np
+  type(psb_ctxt_type)          :: ctxt
+  integer(psb_ipk_)            :: iam, np
   integer(psb_lpk_)            :: lnp
   ! working variables
   integer(psb_ipk_)            :: m_problem, i
@@ -71,10 +72,10 @@ program arnolditest
 
   info=psb_success_
   name='arnolditest'
-  call psb_init(ictxt)
-  call psb_info(ictxt,iam,np)
+  call psb_init(ctxt)
+  call psb_info(ctxt,iam,np)
   if (iam < 0) then
-    call psb_exit(ictxt) ! This should not happen, but just in case
+    call psb_exit(ctxt) ! This should not happen, but just in case
     stop
   endif
   if(psb_get_errstatus() /= 0) goto 9999
@@ -87,7 +88,7 @@ program arnolditest
   !
   ! Read input information from file
   !
-  call get_parms(ictxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
+  call get_parms(ctxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
   if(iam == psb_root_) then
     write(psb_out_unit,*)''
     write(psb_out_unit,'("Solving matrix        : ",a)')mname
@@ -123,11 +124,11 @@ program arnolditest
     end select
     if (info /= psb_success_) then
       write(psb_err_unit,*) 'Error while reading input matrix '
-      call psb_abort(ictxt)
+      call psb_abort(ctxt)
     end if
 
     m_problem = aux_a%get_nrows()
-    call psb_bcast(ictxt,m_problem)
+    call psb_bcast(ctxt,m_problem)
 
     ! At this point aux_x may still be unallocated
     if (size(aux_x,dim=1) == m_problem) then
@@ -152,7 +153,7 @@ program arnolditest
     endif
 
   else
-    call psb_bcast(ictxt,m_problem)
+    call psb_bcast(ctxt,m_problem)
 
   end if
 
@@ -160,7 +161,7 @@ program arnolditest
   select case(psb_toupper(part))
   case('BLOCK')
     if (iam == psb_root_) write(psb_out_unit,'("Partition type: block")')
-    call psb_matdist(aux_a, a,  ictxt,desc_a,info,fmt=afmt,parts=part_block)
+    call psb_matdist(aux_a, a,  ctxt,desc_a,info,fmt=afmt,parts=part_block)
 
   case('GRAPH')
     if (iam == psb_root_) then
@@ -172,14 +173,14 @@ program arnolditest
       call build_mtpart(aux_a,lnp)
 
     endif
-    call psb_barrier(ictxt)
-    call distr_mtpart(psb_root_,ictxt)
+    call psb_barrier(ctxt)
+    call distr_mtpart(psb_root_,ctxt)
     call getv_mtpart(ivg)
-    call psb_matdist(aux_a, a, ictxt,desc_a,info,fmt=afmt,vg=ivg)
+    call psb_matdist(aux_a, a, ctxt,desc_a,info,fmt=afmt,vg=ivg)
 
   case default
     if (iam == psb_root_) write(psb_out_unit,'("Partition type: block")')
-    call psb_matdist(aux_a, a,  ictxt,desc_a,info,fmt=afmt,parts=part_block)
+    call psb_matdist(aux_a, a,  ctxt,desc_a,info,fmt=afmt,parts=part_block)
   end select
 
   call psb_scatter(x_col_glob,x_col,desc_a,info,root=psb_root_)
@@ -189,7 +190,7 @@ program arnolditest
   t2 = psb_wtime() - t1
 
 
-  call psb_amx(ictxt, t2)
+  call psb_amx(ctxt, t2)
 
   if (iam == psb_root_) then
      write(psb_out_unit,'(" ")')
@@ -217,8 +218,8 @@ program arnolditest
   amatsize = a%sizeof()
   descsize = desc_a%sizeof()
   system_size = desc_a%get_global_rows()
-  call psb_sum(ictxt,amatsize)
-  call psb_sum(ictxt,descsize)
+  call psb_sum(ctxt,amatsize)
+  call psb_sum(ctxt,descsize)
 
   if (iam == psb_root_) then
     write(psb_out_unit,'(" ")')
@@ -241,19 +242,19 @@ program arnolditest
   call psb_spfree(a, desc_a,info)
   call psb_cdfree(desc_a,info)
 
-  call psb_exit(ictxt)
+  call psb_exit(ctxt)
   stop
 
-9999 call psb_error(ictxt)
+9999 call psb_error(ctxt)
 
   stop
 
   contains
 
-    subroutine  get_parms(ictxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
+    subroutine  get_parms(ctxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
       ! This subroutine reads the parameters needed to run the serialtest
       ! program from standard input
-      integer(psb_ipk_), intent(in)  :: ictxt
+      type(psb_ctxt_type), intent(in)  :: ctxt
       character(len=*),  intent(out) :: mname,rhs_file,fname,variant,filefmt,part,afmt
       real(psb_dpk_), intent(out)    :: scaling,eps
       integer(psb_ipk_), intent(out) :: itmax, itrace, istop
@@ -262,7 +263,7 @@ program arnolditest
       integer(psb_ipk_) :: np, iam
       character(len=1024) :: filename
 
-      call psb_info(ictxt, iam, np)
+      call psb_info(ctxt, iam, np)
 
       if (iam == psb_root_) then
         if (command_argument_count()>0) then
@@ -271,7 +272,7 @@ program arnolditest
           open(inp_unit,file=filename,action='read',iostat=info)
           if (info /= 0) then
             write(psb_err_unit,*) 'Could not open file ',filename,' for input'
-            call psb_abort(ictxt)
+            call psb_abort(ctxt)
             stop
           else
             write(psb_err_unit,*) 'Opened file ',trim(filename),' for input'
@@ -309,7 +310,7 @@ program arnolditest
         else
           ! wrong number of parameters on input: all hopes are lost
           call pr_usage(izero)
-          call psb_abort(ictxt)
+          call psb_abort(ctxt)
           stop 1
         end if
 
@@ -318,18 +319,18 @@ program arnolditest
         end if
       end if
       ! Broadcast values to all processes
-      call psb_bcast(ictxt,mname)
-      call psb_bcast(ictxt,rhs_file)
-      call psb_bcast(ictxt,filefmt)
-      call psb_bcast(ictxt,part)
-      call psb_bcast(ictxt,afmt)
-      call psb_bcast(ictxt,fname)
-      call psb_bcast(ictxt,variant)
-      call psb_bcast(ictxt,scaling)
-      call psb_bcast(ictxt,eps)
-      call psb_bcast(ictxt,itmax)
-      call psb_bcast(ictxt,itrace)
-      call psb_bcast(ictxt,istop)
+      call psb_bcast(ctxt,mname)
+      call psb_bcast(ctxt,rhs_file)
+      call psb_bcast(ctxt,filefmt)
+      call psb_bcast(ctxt,part)
+      call psb_bcast(ctxt,afmt)
+      call psb_bcast(ctxt,fname)
+      call psb_bcast(ctxt,variant)
+      call psb_bcast(ctxt,scaling)
+      call psb_bcast(ctxt,eps)
+      call psb_bcast(ctxt,itmax)
+      call psb_bcast(ctxt,itrace)
+      call psb_bcast(ctxt,istop)
       return
 
     end subroutine get_parms
