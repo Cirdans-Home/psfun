@@ -87,4 +87,5 @@ given in :numref:`implemented_methods`.
 
 Module
 ======
+
 .. f:automodule:: psfun_d_serial_mod

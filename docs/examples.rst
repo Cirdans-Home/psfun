@@ -18,3 +18,4 @@ Parallel examples
 Polynomial Krylov method examples
 
 .. f:autoprogram:: arnolditest
+.. f:autoprogram:: lanczostest
