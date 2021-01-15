@@ -243,7 +243,7 @@ module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,i
         goto 9999
       end if
 
-      errnum = rs(1)*h(i,i-1)*abs( yk(1) );
+      errnum = rs(1)*h(i,i-1)*abs( yk(i-1) );
       errden = norm2(yk)
       rs(i) = errnum/errden
 
