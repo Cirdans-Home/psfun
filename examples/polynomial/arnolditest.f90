@@ -32,9 +32,9 @@ program arnolditest
   ! psfun_d_arnoldi function. It applies the classical Arnoldi orthogonalization
   ! algorithm on a distributed matrix.
   use psb_base_mod
+  use psb_util_mod
   use psfun_d_serial_mod
   use psfun_d_krylov_mod
-  use psb_util_mod
   implicit none
 
   ! File input
@@ -82,13 +82,14 @@ program arnolditest
   !
   ! Hello world
   !
-  if( (iam == psb_root_) ) then
-    write(psb_out_unit,*) "Welcome to the arnolditest program of PSFUN"
+  if( iam == psb_root_ ) then
+    write(psb_out_unit,'("Welcome to the ",a," program of PSFUN")')name
   end if
   !
   ! Read input information from file
   !
-  call get_parms(ctxt,mname,rhs_file,filefmt,part,afmt,fname,variant,scaling,eps,itmax,itrace,istop)
+  call get_parms(ctxt,mname,rhs_file,filefmt,part,afmt,fname,&
+    & variant,scaling,eps,itmax,itrace,istop)
   if(iam == psb_root_) then
     write(psb_out_unit,*)''
     write(psb_out_unit,'("Solving matrix        : ",a)')mname
@@ -100,6 +101,8 @@ program arnolditest
     write(psb_out_unit,'("Algorithmic variant   : ",a)')variant
     write(psb_out_unit,'("Scaling               : ",f8.2)')scaling
   end if
+
+  call psb_barrier(ctxt)
 
   if (iam == psb_root_) then
     select case(psb_toupper(filefmt))
@@ -198,6 +201,8 @@ program arnolditest
      write(psb_out_unit,'(" ")')
   end if
 
+  call psb_barrier(ctxt)
+
   ! Set the options for the matrix function
   call fun%set("FNAME",fname,info)
   call fun%set("VARIANT",variant,info)
@@ -220,6 +225,8 @@ program arnolditest
   system_size = desc_a%get_global_rows()
   call psb_sum(ctxt,amatsize)
   call psb_sum(ctxt,descsize)
+
+  call psb_barrier(ctxt)
 
   if (iam == psb_root_) then
     write(psb_out_unit,'(" ")')
