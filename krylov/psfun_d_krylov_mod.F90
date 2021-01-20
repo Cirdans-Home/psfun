@@ -34,6 +34,14 @@ module psfun_d_krylov_mod
 
   use psb_base_mod
   use psfun_d_serial_mod
+#if defined(WITHGNUPLOTFORTRAN)
+  ! If the library is compiled with the GNUPLOT Fortran library option we
+  ! include here the relative modules that can be used to plot the convergence
+  ! history of the Krylov method
+  use datatypes
+  use gnuplot_module_data
+  use gnuplot_module
+#endif
   implicit none
 
   type, public :: psfun_d_krylov
@@ -43,6 +51,9 @@ module psfun_d_krylov_mod
     procedure, pass(meth) :: setstring  => psfun_d_setstring
     generic, public :: set => setstring
     procedure, pass(meth) :: apply      => psfun_d_parallel_apply
+#if defined(WITHGNUPLOTFORTRAN)
+    procedure, pass(meth) :: plot       => psfun_d_plot_info
+#endif
   end type
 
   private :: psfun_d_setstring
@@ -51,7 +62,7 @@ module psfun_d_krylov_mod
     ! idea is to have different methods, associated to the same
     ! orthogonalization method in the same submodule
   interface
-      module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
+      module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
           type(psfun_d_serial), intent(inout)  :: fun  ! Function object
           type(psb_dspmat_type), intent(in)    :: a    ! Distribute sparse matrix
           type(psb_desc_type), intent(in)      :: desc_a ! Descriptor for the sparse matrix
@@ -64,11 +75,12 @@ module psfun_d_krylov_mod
           integer(psb_ipk_), optional, intent(in)  :: istop ! Stop criterion
           integer(psb_ipk_), optional, intent(out) :: iter ! Number of iteration
           real(psb_dpk_), optional, intent(out) :: err ! Last estimate error
+          real(psb_dpk_), optional, allocatable, intent(out) :: res(:) ! Vector of the residuals
       end subroutine
   end interface
 
   interface
-      module subroutine psfun_d_lanczos(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
+      module subroutine psfun_d_lanczos(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
         type(psfun_d_serial), intent(inout)  :: fun  ! Function object
         type(psb_dspmat_type), intent(in)    :: a    ! Distribute sparse matrix
         type(psb_desc_type), intent(in)      :: desc_a ! Descriptor for the sparse matrix
@@ -81,6 +93,7 @@ module psfun_d_krylov_mod
         integer(psb_ipk_), optional, intent(in)  :: istop ! Stop criterion
         integer(psb_ipk_), optional, intent(out) :: iter ! Number of iteration
         real(psb_dpk_), optional, intent(out) :: err ! Last estimate error
+        real(psb_dpk_), optional, allocatable, intent(out) :: res(:) ! Vector of the residuals
       end subroutine psfun_d_lanczos
   end interface
 
@@ -106,7 +119,7 @@ contains
 
   end subroutine psfun_d_setstring
 
-  subroutine psfun_d_parallel_apply(meth,fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
+  subroutine psfun_d_parallel_apply(meth,fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
       ! This is the generic function for applying every implemented Krylov
       ! method. The general iteration parameters (like the number of iteration,
       ! the stop criterion to be used, and the verbosity of the trace) can be
@@ -131,16 +144,79 @@ contains
       integer(psb_ipk_), optional, intent(in)  :: istop ! Stop criterion
       integer(psb_ipk_), optional, intent(out) :: iter ! Number of iteration
       real(psb_dpk_), optional, intent(out) :: err ! Last estimate error
+      real(psb_dpk_), optional, allocatable, intent(out) :: res(:) ! Vector of the residuals
 
       select case (psb_toupper(meth%kname))
       case ("ARNOLDI")
-          call psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
+          call psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
       case ("LANCZOS")
-          call psfun_d_lanczos(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
+          call psfun_d_lanczos(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
       case default
           info = psb_err_invalid_args_combination_
       end select
 
   end subroutine psfun_d_parallel_apply
+
+#if defined(WITHGNUPLOTFORTRAN)
+  subroutine psfun_d_plot_info(meth,fun,iter,res,info)
+      ! This function plots the convergence history of the Krylov method
+      use psb_base_mod
+      use psfun_utils_mod, only: linspace
+      use datatypes
+      use gnuplot_module_data
+      use gnuplot_module
+
+      implicit none
+
+      class(psfun_d_krylov), intent(inout)      :: meth ! Krylov method
+      type(psfun_d_serial), intent(inout)       :: fun  ! Function object
+      integer(psb_ipk_), intent(in)             :: iter ! Number of iteration
+      real(psb_dpk_), intent(in), dimension(:)  :: res  ! Residual vector
+      integer(psb_ipk_), intent(out)            :: info ! Result of the Gnuplot call
+
+      ! local variable
+      type(gnuplot_ctrl), pointer :: ptr_gctrl
+      character(len=GP_CMD_SIZE)  :: cmd
+      character(len=100) :: pf
+      real(psb_dpk_), allocatable :: xarray(:)
+      integer(psb_ipk_) :: n, indplot
+      real(psb_dpk_) :: plotn
+
+      GNUPLOT_SHOWWARNINGS=.false.
+      n = size(res)
+      if (n <= iter) then
+          plotn = n
+          indplot = n
+      else
+          plotn = iter
+          indplot = iter
+      end if
+
+      allocate(xarray(indplot), stat=info)
+      call linspace(1.0_psb_dpk_,plotn,xarray )
+
+      pf = trim(meth%kname) // trim("-") // trim(fun%fname) &
+            & // trim("-") // trim(fun%variant) // trim("-Residual")
+
+      ! Actual plot
+      ptr_gctrl=>gnuplot_init('-clear')
+      info = gnuplot_hardcopy(ptr_gctrl,'PNG',trim(pf)//trim(".png"))
+      info = gnuplot_setrange(ptr_gctrl,'x',1.0_psb_dpk_,plotn)
+      info = gnuplot_setrange(ptr_gctrl,'y',minval(res(1:indplot)),maxval(res(1:indplot)))
+      info = gnuplot_settitle(ptr_gctrl,pf)
+      info = gnuplot_setaxislabel(ptr_gctrl,'x','Iteration')
+      info = gnuplot_setaxislabel(ptr_gctrl,'y','Residual')
+      info = gnuplot_setscale(ptr_gctrl,'x','NLG')
+      info = gnuplot_setscale(ptr_gctrl,'y','LOG')
+      info = gnuplot_setstyle(ptr_gctrl,'linespoints')
+      info = gnuplot_plot2d(ptr_gctrl,indplot,xarray(1:indplot),res(1:indplot),'residual')
+      cmd  = 'set output'
+      info = gnuplot_cmd(ptr_gctrl,cmd)
+      info = gnuplot_close(ptr_gctrl)
+
+     if (allocated(xarray)) deallocate(xarray, stat=info)
+
+  end subroutine psfun_d_plot_info
+#endif
 
 end module psfun_d_krylov_mod

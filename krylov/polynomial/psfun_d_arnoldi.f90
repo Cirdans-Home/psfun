@@ -32,7 +32,7 @@ submodule (psfun_d_krylov_mod) psfun_d_arnoldi_mod
 
 contains
 
-module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err)
+module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
   ! Simple polynomial method based on the Arnoldi orthogonalization procedure,
   ! the method builds a basis :math:`V_k` for the Krylov subspace
   !
@@ -59,7 +59,7 @@ module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,i
   integer(psb_ipk_), optional, intent(in)  :: istop ! Stop criterion
   integer(psb_ipk_), optional, intent(out) :: iter ! Number of iteration
   real(psb_dpk_), optional, intent(out) :: err ! Last estimate error
-
+  real(psb_dpk_), optional, allocatable, intent(out) :: res(:) ! Vector of the residuals
 
   !Local Variables
   integer(psb_ipk_) :: litmax, itrace_, istop_
@@ -312,6 +312,10 @@ module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,i
   ! Final Log
   call log_end(methdname,iam,itx,itrace_,errnum,errden,deps,err=derr,iter=iter)
   if (present(err)) err = derr
+  if (present(res)) then
+    allocate(res(1:itx),stat=info)
+    res(1:itx) = rs(1:itx)
+  end if
 
   call  psb_geaxpby(yk(1),v(1),dzero,y,desc_a,info)
   do i=2,itx-1,1

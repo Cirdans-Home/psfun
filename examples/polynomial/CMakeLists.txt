@@ -3,7 +3,7 @@
 message("Compile and Link Polynomial Krylov Example")
 
 
-add_executable(arnolditest arnolditest.f90)
+add_executable(arnolditest arnolditest.F90)
 # We need to compile against PSBLAS
 add_compile_definitions(${PSBFDEFINES})
 target_include_directories(arnolditest PUBLIC ${PSBLAS_MODULES})
@@ -12,7 +12,7 @@ target_include_directories(arnolditest PUBLIC ${PSBLAS_INCLUDE})
 target_include_directories(serialtest PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(serialtest PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 target_link_libraries(arnolditest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS})
-target_link_libraries(arnolditest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} psfun_serial psfun_krylov)
+target_link_libraries(arnolditest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} psfun_serial psfun_krylov psfun_utils)
 
 add_custom_command(
         TARGET arnolditest POST_BUILD
@@ -25,7 +25,7 @@ add_custom_command(
                 ${CMAKE_SOURCE_DIR}/examples/polynomial/laplacian.mtx
                 ${CMAKE_CURRENT_BINARY_DIR}/laplacian.mtx)
 
-add_executable(lanczostest lanczostest.f90)
+add_executable(lanczostest lanczostest.F90)
 # We need to compile against PSBLAS
 add_compile_definitions(${PSBFDEFINES})
 target_include_directories(lanczostest PUBLIC ${PSBLAS_MODULES})
@@ -34,7 +34,7 @@ target_include_directories(lanczostest PUBLIC ${PSBLAS_INCLUDE})
 target_include_directories(serialtest PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(serialtest PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
 target_link_libraries(lanczostest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS})
-target_link_libraries(lanczostest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} psfun_serial psfun_krylov)
+target_link_libraries(lanczostest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} psfun_serial psfun_krylov psfun_utils)
 
 add_custom_command(
 TARGET lanczostest POST_BUILD

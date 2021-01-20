@@ -1777,12 +1777,12 @@ function r8_acosh ( x )
 !
 !    For every X greater than or equal to 1, there are two possible
 !    choices Y such that X = COSH(Y), differing only in sign.  It
-!    is usual to resolve this choice by taking the value of 
+!    is usual to resolve this choice by taking the value of
 !    R8_ACOSH ( X ) to be nonnegative.
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -1801,11 +1801,11 @@ function r8_acosh ( x )
 !
 !  Parameters:
 !
-!    Input, real ( kind = 8 ) X, the number whose inverse hyperbolic 
+!    Input, real ( kind = 8 ) X, the number whose inverse hyperbolic
 !    cosine is desired.  X should be greater than or equal to 1.
 !
-!    Output, real ( kind = 8 ) R8_ACOSH, the inverse hyperbolic cosine of 
-!    X.  The principal value (that is, the positive value of the two ) 
+!    Output, real ( kind = 8 ) R8_ACOSH, the inverse hyperbolic cosine of
+!    X.  The principal value (that is, the positive value of the two )
 !    is returned.
 !
   implicit none
@@ -1895,7 +1895,7 @@ function r8_agm ( a, b )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2000,7 +2000,7 @@ function r8_aint ( x )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2041,14 +2041,14 @@ function r8_asin ( s )
 !  Discussion:
 !
 !    If you call your system ASIN routine with an input argument that is
-!    even slightly outside the range [-1.0, 1.0 ], you may get an unpleasant 
+!    even slightly outside the range [-1.0, 1.0 ], you may get an unpleasant
 !    surprise (I did).
 !
 !    This routine simply truncates arguments outside the range.
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2099,7 +2099,7 @@ function r8_asinh ( x )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2111,7 +2111,7 @@ function r8_asinh ( x )
 !
 !  Parameters:
 !
-!    Input, real ( kind = 8 ) X, the number whose inverse hyperbolic 
+!    Input, real ( kind = 8 ) X, the number whose inverse hyperbolic
 !    sine is desired.
 !
 !    Output, real ( kind = 8 ) R8_ASINH, the inverse hyperbolic sine of X.
@@ -2242,7 +2242,7 @@ function r8_atanh ( x )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2254,8 +2254,8 @@ function r8_atanh ( x )
 !
 !  Parameters:
 !
-!    Input, real ( kind = 8 ) X, the number whose inverse hyperbolic 
-!    tangent is desired.  The absolute value of X should be less than 
+!    Input, real ( kind = 8 ) X, the number whose inverse hyperbolic
+!    tangent is desired.  The absolute value of X should be less than
 !    or equal to 1.
 !
 !    Output, real ( kind = 8 ) R8_ATANH, the inverse hyperbolic tangent of X.
@@ -2603,7 +2603,7 @@ function r8_cosd ( degrees )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2646,7 +2646,7 @@ function r8_cot ( angle )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2682,7 +2682,7 @@ function r8_cotd ( degrees )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -2773,7 +2773,7 @@ function r8_cscd ( degrees )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -3135,7 +3135,7 @@ function r8_divide_i4 ( i, j )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -3173,7 +3173,7 @@ function r8_e ( )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -3185,7 +3185,7 @@ function r8_e ( )
 !
 !  Parameters:
 !
-!    Output, real ( kind = 8 ) R8_E, the base of the natural 
+!    Output, real ( kind = 8 ) R8_E, the base of the natural
 !    logarithm system.
 !
   implicit none
@@ -3193,7 +3193,7 @@ function r8_e ( )
   real ( kind = 8 ) r8_e
 
   r8_e = 2.718281828459045235360287D+00
- 
+
   return
 end
 function r8_epsilon ( )
@@ -3308,7 +3308,7 @@ function r8_exp ( x )
 !
 !    For arguments of very large magnitude, the evaluation of the
 !    exponential function can cause computational problems.  Some languages
-!    and compilers may return an infinite value or a "Not-a-Number".  
+!    and compilers may return an infinite value or a "Not-a-Number".
 !    An alternative, when dealing with a wide range of inputs, is simply
 !    to truncate the calculation for arguments whose magnitude is too large.
 !    Whether this is the right or convenient approach depends on the problem
@@ -4217,7 +4217,7 @@ function r8_gamma ( x )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -4768,7 +4768,7 @@ function r8_heaviside ( x )
   end if
 
   r8_heaviside = value
-  
+
   return
 end
 function r8_huge ( )
@@ -4965,7 +4965,7 @@ function r8_is_insignificant ( r, s )
 !
 !    Input, real ( kind = 8 ) S, the number to be compared.
 !
-!    Output, logical ( kind = 4 ) R8_IS_INSIGNIFICANT, is TRUE if S is 
+!    Output, logical ( kind = 4 ) R8_IS_INSIGNIFICANT, is TRUE if S is
 !    insignificant compared to R.
 !
   implicit none
@@ -4977,15 +4977,15 @@ function r8_is_insignificant ( r, s )
   real ( kind = 8 ) tol
   logical ( kind = 4 ) value
 
-  value = .true. 
+  value = .true.
 
   t = r + s
   tol = epsilon ( r ) * abs ( r )
 
-  if ( tol < abs ( r - t ) ) then 
+  if ( tol < abs ( r - t ) ) then
     value = .false.
   end if
-  
+
   r8_is_insignificant = value
 
   return
@@ -5549,7 +5549,7 @@ function r8_nan ( )
 !
 !    Some compilers have a NaN function built in.
 !
-!    So far I haven't found a simple portable way of implementing 
+!    So far I haven't found a simple portable way of implementing
 !    this function!
 !
 !  Licensing:
@@ -5586,7 +5586,7 @@ function r8_nan ( )
 !
 ! value = ieee_value ( value, ieee_quiet_nan )
 ! r8_nan = value
- 
+
   return
 end
 function r8_nint ( x )
@@ -5757,7 +5757,7 @@ function r8_nth_root ( x, n )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -5824,7 +5824,7 @@ function r8_nth_root ( x, n )
     value = 1.0D+00 / x
 
   else
-  
+
     e = 1.0D+00 / abs ( n )
 
     if ( 0.0 < x ) then
@@ -7022,7 +7022,7 @@ function r8_secd ( degrees )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -7308,7 +7308,7 @@ function r8_sign_match ( r1, r2 )
 !
 !    Input, real ( kind = 8 ) R1, R2, the values to check.
 !
-!    Output, logical ( kind = 4 ) R8_SIGN_MATCH, is TRUE if 
+!    Output, logical ( kind = 4 ) R8_SIGN_MATCH, is TRUE if
 !    ( R1 <= 0 and R2 <= 0 ) or ( 0 <= R1 and 0 <= R2 ).
 !
   implicit none
@@ -7344,7 +7344,7 @@ function r8_sign_match_strict ( r1, r2 )
 !
 !    Input, real ( kind = 8 ) R1, R2, the values to check.
 !
-!    Output, logical ( kind = 4 ) R8_SIGN_MATCH_STRICT, is TRUE if the 
+!    Output, logical ( kind = 4 ) R8_SIGN_MATCH_STRICT, is TRUE if the
 !    signs match.
 !
   implicit none
@@ -7388,7 +7388,7 @@ function r8_sign_opposite ( r1, r2 )
 !
 !    Input, real ( kind = 8 ) R1, R2, the values to check.
 !
-!    Output, logical ( kind = 4 ) R8_SIGN_OPPOSITE, is TRUE if 
+!    Output, logical ( kind = 4 ) R8_SIGN_OPPOSITE, is TRUE if
 !    ( R1 <= 0 and 0 <= R2 ) or ( R2 <= 0 and 0 <= R1 ).
 !
   implicit none
@@ -7430,7 +7430,7 @@ function r8_sign_opposite_strict ( r1, r2 )
 !
 !    Input, real ( kind = 8 ) R1, R2, the values to check.
 !
-!    Output, logical ( kind = 4 ) R8_SIGN_OPPOSITE_STRICT, is TRUE if 
+!    Output, logical ( kind = 4 ) R8_SIGN_OPPOSITE_STRICT, is TRUE if
 !    ( R1 < 0 and 0 < R2 ) or ( R2 < 0 and 0 < R1 ).
 !
   implicit none
@@ -7457,7 +7457,7 @@ subroutine r8_sincos_sum ( a, b, d, e, f )
 !    can be rewritten as
 !      d * sin ( c * x + e )
 !    or
-!      d * cos ( c * x + f ) 
+!      d * cos ( c * x + f )
 !
 !  Licensing:
 !
@@ -7504,7 +7504,7 @@ function r8_sind ( degrees )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -7588,7 +7588,7 @@ function r8_sqrt_i4 ( i )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -7702,7 +7702,7 @@ function r8_tand ( degrees )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -10647,7 +10647,7 @@ subroutine r8cmat_print ( lda, m, n, a, title )
 !
 !    An R8CMAT is an MxN array of R8's, stored with a leading dimension
 !    of LD, and hence accessed either as a double indexed array:
-!      (I,J) -> (I,J) 
+!      (I,J) -> (I,J)
 !    or as a vector:
 !      (I,J) -> (I+J*LD).
 !
@@ -10698,7 +10698,7 @@ subroutine r8cmat_print_some ( lda, m, n, a, ilo, jlo, ihi, jhi, title )
 !
 !    An R8CMAT is an MxN array of R8's, stored with a leading dimension
 !    of LD, and hence accessed either as a double indexed array:
-!      (I,J) -> (I,J) 
+!      (I,J) -> (I,J)
 !    or as a vector:
 !      (I,J) -> (I+J*LD).
 !
@@ -10818,15 +10818,15 @@ subroutine r8cmat_to_r8mat ( lda, m, n, a1, a2 )
 !    or as a doubly-dimensioned array, if declared A(LD,N):
 !      (I,J) -> A(I,J)
 !
-!    An R8MAT is an MxN array of R8's, 
+!    An R8MAT is an MxN array of R8's,
 !    accessible as a vector:
 !      (I,J) -> (I+J*M).
 !    or as a doubly-dimensioned array, if declared A(M,N):
 !      (I,J) -> A(I,J)
-!      
+!
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -10860,7 +10860,7 @@ subroutine r8cmat_to_r8mat ( lda, m, n, a1, a2 )
   real ( kind = 8 ) a2(m,n)
 
   a2(1:m,1:n) = a1(1:m,1:n)
- 
+
   return
 end
 subroutine r8int_to_r8int ( rmin, rmax, r, r2min, r2max, r2 )
@@ -11061,7 +11061,7 @@ function r8mat_amax ( m, n, a )
 !
 !    Input, real ( kind = 8 ) A(M,N), the M by N matrix.
 !
-!    Output, real ( kind = 8 ) R8MAT_AMAX, the maximum absolute value 
+!    Output, real ( kind = 8 ) R8MAT_AMAX, the maximum absolute value
 !    entry of A.
 !
   implicit none
@@ -12307,7 +12307,7 @@ function r8mat_diff_frobenius ( m, n, a1, a2 )
 !    The matrix Frobenius norm is not derived from a vector norm, but
 !    is compatible with the vector L2 norm, so that:
 !
-!      r8vec_norm_l2 ( A * x ) <= 
+!      r8vec_norm_l2 ( A * x ) <=
 !        r8mat_diff_frobenius ( A ) * r8vec_norm_l2 ( x ).
 !
 !  Licensing:
@@ -12328,10 +12328,10 @@ function r8mat_diff_frobenius ( m, n, a1, a2 )
 !
 !    Input, integer ( kind = 4 ) N, the number of columns.
 !
-!    Input, real ( kind = 8 ) A1(M,N), A2(M,N), the matrices for whose 
+!    Input, real ( kind = 8 ) A1(M,N), A2(M,N), the matrices for whose
 !    difference the Frobenius norm is desired.
 !
-!    Output, real ( kind = 8 ) R8MAT_DIFF_FROBENIUSE, the Frobenius 
+!    Output, real ( kind = 8 ) R8MAT_DIFF_FROBENIUSE, the Frobenius
 !    norm of A1 - A2.
 !
   implicit none
@@ -12604,7 +12604,7 @@ subroutine r8mat_flip_cols ( m, n, a, b )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -12643,7 +12643,7 @@ subroutine r8mat_flip_rows ( m, n, a, b )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -12692,7 +12692,7 @@ subroutine r8mat_fs ( n, a, b, info )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -12821,7 +12821,7 @@ subroutine r8mat_fss ( n, a, nb, b, info )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -14021,7 +14021,7 @@ subroutine r8mat_is_identity ( n, a, error_frobenius )
       else
         value = value + a(i,j) ** 2
       end if
-    end do 
+    end do
   end do
 
   error_frobenius = sqrt ( error_frobenius )
@@ -14109,7 +14109,7 @@ function r8mat_is_insignificant ( m, n, r, s )
 !
 !    Input, real ( kind = 8 ) S(M,N), the array to be compared.
 !
-!    Output, logical ( kind = 4 ) R8MAT_IS_INSIGNIFICANT, is TRUE if S is 
+!    Output, logical ( kind = 4 ) R8MAT_IS_INSIGNIFICANT, is TRUE if S is
 !    insignificant compared to R.
 !
   implicit none
@@ -14134,14 +14134,14 @@ function r8mat_is_insignificant ( m, n, r, s )
       t = r(i,j) + s(i,j)
       tol = epsilon ( r(i,j) ) * abs ( r(i,j) )
 
-      if ( tol < abs ( r(i,j) - t ) ) then 
+      if ( tol < abs ( r(i,j) - t ) ) then
         value = .false.
         exit
       end if
 
     end do
   end do
-  
+
   r8mat_is_insignificant = value
 
   return
@@ -14210,7 +14210,7 @@ subroutine r8mat_is_nonnegative ( m, n, a, ival )
 !
 !  Input:
 !
-!    integer ( kind = 4 ) M, N, the row and column dimensions of 
+!    integer ( kind = 4 ) M, N, the row and column dimensions of
 !    the matrix.  M and N must be positive.
 !
 !    real ( kind = 8 ) A(M,N), the matrix.
@@ -14263,7 +14263,7 @@ function r8mat_is_significant ( m, n, r, s )
 !
 !    Input, real ( kind = 8 ) S(M,N), the array to be compared.
 !
-!    Output, logical ( kind = 4 ) R8MAT_IS_SIGNIFICANT, is TRUE if S is 
+!    Output, logical ( kind = 4 ) R8MAT_IS_SIGNIFICANT, is TRUE if S is
 !    significant relative to R.
 !
   implicit none
@@ -14288,14 +14288,14 @@ function r8mat_is_significant ( m, n, r, s )
       t = r(i,j) + s(i,j)
       tol = epsilon ( r(i,j) ) * abs ( r(i,j) )
 
-      if ( tol < abs ( r(i,j) - t ) ) then 
+      if ( tol < abs ( r(i,j) - t ) ) then
         value = .true.
         exit
       end if
 
     end do
   end do
-  
+
   r8mat_is_significant = value
 
   return
@@ -14328,7 +14328,7 @@ subroutine r8mat_is_symmetric ( m, n, a, error_frobenius )
 !
 !    Input, real ( kind = 8 ) A(M,N), the matrix.
 !
-!    Output, real ( kind = 8 ) ERROR_FROBENIUS, measures the 
+!    Output, real ( kind = 8 ) ERROR_FROBENIUS, measures the
 !    Frobenius norm of ( A - A' ), which would be zero if the matrix
 !    were exactly symmetric.
 !
@@ -15866,7 +15866,7 @@ subroutine r8mat_minvm ( n1, n2, a, b, c )
   c(1:n1,1:n2) = b(1:n1,1:n2)
 
   call r8mat_fss ( n1, alu, n2, c, info )
- 
+
   if ( info /= 0 ) then
     write ( *, '(a)' ) ' '
     write ( *, '(a)' ) 'R8MAT_MINVM - Fatal error!'
@@ -16358,10 +16358,10 @@ function r8mat_norm_fro_affine ( m, n, a1, a2 )
 !
 !    Input, integer ( kind = 4 ) N, the number of columns.
 !
-!    Input, real ( kind = 8 ) A1(M,N), A2(M,N), the matrices for whose 
+!    Input, real ( kind = 8 ) A1(M,N), A2(M,N), the matrices for whose
 !    difference the Frobenius norm is desired.
 !
-!    Output, real ( kind = 8 ) R8MAT_NORM_FRO_AFFINE, the Frobenius 
+!    Output, real ( kind = 8 ) R8MAT_NORM_FRO_AFFINE, the Frobenius
 !    norm of A1 - A2.
 !
   implicit none
@@ -17665,7 +17665,7 @@ function r8mat_product_elementwise ( m, n, a, b )
 !
 !    Input, real ( kind = 8 ) A(M,N), B(M,N), the two matrices.
 !
-!    Output, real ( kind = 8 ) I4MAT_PRODUCT_ELEMENTWISE, the elementwise 
+!    Output, real ( kind = 8 ) I4MAT_PRODUCT_ELEMENTWISE, the elementwise
 !    product of A and B.
 !
   implicit none
@@ -17686,7 +17686,7 @@ function r8mat_product_elementwise ( m, n, a, b )
       value = value + a(i,j) * b(i,j)
     end do
   end do
-  
+
   r8mat_product_elementwise = value
 
   return
@@ -17833,7 +17833,7 @@ function r8mat_rms ( m, n, a )
 !
 !    The matrix RMS norm is defined as:
 !
-!      R8MAT_RMS = sqrt ( 
+!      R8MAT_RMS = sqrt (
 !        sum ( 1 <= I <= M ) sum ( 1 <= J <= N ) A(I,J)^2 / M / N ).
 !
 !  Licensing:
@@ -17948,7 +17948,7 @@ subroutine r8mat_row_set ( i, r, m, n, a )
 !
 !    Input, real ( kind = 8 ) R(N), the vector.
 !
-!    Input, integer ( kind = 4 ) M, N, the number of rows and 
+!    Input, integer ( kind = 4 ) M, N, the number of rows and
 !    columns of the matrix.
 !
 !    Input/output, real ( kind = 8 ) A(M,N), the matrix to be updated.
@@ -18693,7 +18693,7 @@ subroutine r8mat_standardize ( m, n, x, xs )
 
   call r8mat_mean_columns ( m, n, x, mu )
   call r8mat_std_columns ( m, n, x, sigma )
-  
+
   do j = 1, n
     if ( sigma(j) /= 0.0D+00 ) then
       xs(1:m,j) = ( x(1:m,j) - mu(j) ) / sigma(j)
@@ -19023,11 +19023,11 @@ subroutine r8mat_to_r8cmat ( lda, m, n, a1, a2 )
 !
 !  Discussion:
 !
-!    An R8MAT is an MxN array of R8's, 
+!    An R8MAT is an MxN array of R8's,
 !    accessible as a vector:
 !      (I,J) -> (I+J*M).
 !    or as a doubly-dimensioned array, if declared A(M,N):
-!      (I,J) -> A(I,J)      
+!      (I,J) -> A(I,J)
 !
 !    An R8CMAT is an MxN array of R8's, stored with a leading dimension LD,
 !    accessible as a vector:
@@ -19037,7 +19037,7 @@ subroutine r8mat_to_r8cmat ( lda, m, n, a1, a2 )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -19071,7 +19071,7 @@ subroutine r8mat_to_r8cmat ( lda, m, n, a1, a2 )
   real ( kind = 8 ) a2(lda,n)
 
   a2(1:m,1:n) = a1(1:m,1:n)
- 
+
   return
 end
 subroutine r8mat_to_r8plu ( n, a, pivot, lu, info )
@@ -19303,7 +19303,7 @@ subroutine r8mat_transpose ( m, n, a )
       a(j+(i-1)*n) = b(j+(i-1)*n)
     end do
   end do
-  
+
   deallocate ( b )
 
   return
@@ -19789,7 +19789,7 @@ subroutine r8mat_uniform_01 ( m, n, seed, r )
 !    the array.
 !
 !    integer ( kind = 4 ) SEED, the "seed" value, which
-!    should NOT be 0. 
+!    should NOT be 0.
 !
 !  Input:
 !
@@ -19842,7 +19842,7 @@ subroutine r8mat_uniform_ab ( m, n, a, b, seed, r )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -19888,7 +19888,7 @@ subroutine r8mat_uniform_ab ( m, n, a, b, seed, r )
 !
 !    Input, real ( kind = 8 ) A, B, the lower and upper limits.
 !
-!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which 
+!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which
 !    should NOT be 0.  On output, SEED has been updated.
 !
 !    Output, real ( kind = 8 ) R(M,N), the array of pseudorandom values.
@@ -19947,7 +19947,7 @@ subroutine r8mat_uniform_abvec ( m, n, a, b, seed, r )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -19993,7 +19993,7 @@ subroutine r8mat_uniform_abvec ( m, n, a, b, seed, r )
 !
 !    Input, real ( kind = 8 ) A(M), B(M), the lower and upper limits.
 !
-!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which 
+!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which
 !    should NOT be 0.  On output, SEED has been updated.
 !
 !    Output, real ( kind = 8 ) R(M,N), the array of pseudorandom values.
@@ -22793,7 +22793,7 @@ function r8vec_bracket5 ( nd, xd, xi )
 !
 !    We assume XD is sorted.
 !
-!    If XI is contained in the interval [XD(1),XD(N)], then the returned 
+!    If XI is contained in the interval [XD(1),XD(N)], then the returned
 !    value B indicates that XI is contained in [ XD(B), XD(B+1) ].
 !
 !    If XI is not contained in the interval [XD(1),XD(N)], then B = -1.
@@ -23390,7 +23390,7 @@ subroutine r8vec_concatenate ( n1, a, n2, b, c )
   real ( kind = 8 ) a(n1)
   real ( kind = 8 ) b(n2)
   real ( kind = 8 ) c(n1+n2)
-  
+
   c(   1:n1)    = a(1:n1)
   c(n1+1:n1+n2) = b(1:n2)
 
@@ -23406,7 +23406,7 @@ subroutine r8vec_convolution ( m, x, n, y, z )
 !
 !    An R8VEC is a vector of R8's.
 !
-!    The I-th entry of the convolution can be formed by summing the products 
+!    The I-th entry of the convolution can be formed by summing the products
 !    that lie along the I-th diagonal of the following table:
 !
 !    Y3 | 3   4   5   6   7
@@ -23424,7 +23424,7 @@ subroutine r8vec_convolution ( m, x, n, y, z )
 !                              X3 * Y3 + X4 * Y2 + X5 * Y1,
 !                                        X4 * Y3 + X5 * Y2,
 !                                                  X5 * Y3 )
-!            
+!
 !  Example:
 !
 !    Input:
@@ -23663,7 +23663,7 @@ subroutine r8vec_correlation ( n, x, y, r )
     call r8vec_mean ( n, y, y_mean )
     call r8vec_std_sample ( n, y, y_std )
     y_centered = y - y_mean
- 
+
     r = dot_product ( x_centered, y_centered ) / x_std / y_std / real ( n - 1, kind = 8 )
 
   end if
@@ -23710,7 +23710,7 @@ function r8vec_covariance ( n, x, y )
 
   x_average = sum ( x(1:n) ) / real ( n, kind = 8 )
   y_average = sum ( y(1:n) ) / real ( n, kind = 8 )
- 
+
   value = 0.0D+00
   do i = 1, n
     value = value + ( x(i) - x_average ) * ( y(i) - y_average )
@@ -24185,7 +24185,7 @@ function r8vec_diff_dot_product ( n, u1, v1, u2, v2 )
 !
 !    Input, real ( kind = 8 ) U2(N), V2(N), defines the vector U2-V2.
 !
-!    Output, real ( kind = 8 ) R8VEC_DIFF_DOT_PRODUCT, the dot product 
+!    Output, real ( kind = 8 ) R8VEC_DIFF_DOT_PRODUCT, the dot product
 !    of (U1-V1)*(U2-V2).
 !
   implicit none
@@ -24423,7 +24423,7 @@ function r8vec_diff_norm_squared ( n, a, b )
 !
 !    Input, real ( kind = 8 ) A(N), B(N), the vectors
 !
-!    Output, real ( kind = 8 ) R8VEC_DIFF_NORM_SQUARED, the square of 
+!    Output, real ( kind = 8 ) R8VEC_DIFF_NORM_SQUARED, the square of
 !    the L2 norm of A - B.
 !
   implicit none
@@ -24551,13 +24551,13 @@ subroutine r8vec_direct_product ( factor_index, factor_order, factor_value, &
 !
 !  Local Parameters:
 !
-!    Local, integer ( kind = 4 ) START, the first location of a block of 
+!    Local, integer ( kind = 4 ) START, the first location of a block of
 !    values to set.
 !
-!    Local, integer ( kind = 4 ) CONTIG, the number of consecutive values 
+!    Local, integer ( kind = 4 ) CONTIG, the number of consecutive values
 !    to set.
 !
-!    Local, integer ( kind = 4 ) SKIP, the distance from the current value 
+!    Local, integer ( kind = 4 ) SKIP, the distance from the current value
 !    of START to the next location of a block of values to set.
 !
 !    Local, integer ( kind = 4 ) REP, the number of blocks of values to set.
@@ -24722,7 +24722,7 @@ subroutine r8vec_direct_product2 ( factor_index, factor_order, factor_value, &
 !    Local, integer ( kind = 4 ) CONTIG, the number of consecutive values
 !    to set.
 !
-!    Local, integer ( kind = 4 ) SKIP, the distance from the current value 
+!    Local, integer ( kind = 4 ) SKIP, the distance from the current value
 !    of START to the next location of a block of values to set.
 !
 !    Local, integer ( kind = 4 ) REP, the number of blocks of values to set.
@@ -25004,7 +25004,7 @@ function r8vec_eq ( n, a1, a2 )
 !
 !    Input, real ( kind = 8 ) A1(N), A2(N), two vectors to compare.
 !
-!    Output, logical ( kind = 4 ) R8VEC_EQ, is TRUE if every pair of elements 
+!    Output, logical ( kind = 4 ) R8VEC_EQ, is TRUE if every pair of elements
 !    A1(I) and A2(I) are equal, and FALSE otherwise.
 !
   implicit none
@@ -25263,8 +25263,8 @@ subroutine r8vec_even2_select ( n, xlo, xhi, ival, xval )
 !    This function returns the I-th of N evenly spaced midpoints of N
 !    equal subintervals of [XLO,XHI].
 !
-!    XVAL = ( ( 2 * N - 2 * IVAL + 1 ) * XLO 
-!           + (         2 * IVAL - 1 ) * XHI ) 
+!    XVAL = ( ( 2 * N - 2 * IVAL + 1 ) * XLO
+!           + (         2 * IVAL - 1 ) * XHI )
 !           / ( 2 * N                )
 !
 !  Licensing:
@@ -28221,7 +28221,7 @@ function r8vec_is_distinct ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N), the vector to be checked.
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_DISTINCT is TRUE if the entries 
+!    Output, logical ( kind = 4 ) R8VEC_IS_DISTINCT is TRUE if the entries
 !    are distinct.
 !
   implicit none
@@ -28374,7 +28374,7 @@ function r8vec_is_insignificant ( n, r, s )
 !
 !    Input, real ( kind = 8 ) S(N), the vector to be compared.
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_INSIGNIFICANT, is TRUE if S is 
+!    Output, logical ( kind = 4 ) R8VEC_IS_INSIGNIFICANT, is TRUE if S is
 !    insignificant compared to R.
 !
   implicit none
@@ -28396,13 +28396,13 @@ function r8vec_is_insignificant ( n, r, s )
     t = r(i) + s(i)
     tol = epsilon ( r(i) ) * abs ( r(i) )
 
-    if ( tol < abs ( r(i) - t ) ) then 
+    if ( tol < abs ( r(i) - t ) ) then
       value = .false.
       exit
     end if
 
   end do
-  
+
   r8vec_is_insignificant = value
 
   return
@@ -28435,7 +28435,7 @@ function r8vec_is_integer ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N), the vector.
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_INTEGER, is TRUE if every entry 
+!    Output, logical ( kind = 4 ) R8VEC_IS_INTEGER, is TRUE if every entry
 !    is an integer.
 !
   implicit none
@@ -28477,7 +28477,7 @@ function r8vec_is_negative ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N).
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_NEGATIVE, is TRUE every entry 
+!    Output, logical ( kind = 4 ) R8VEC_IS_NEGATIVE, is TRUE every entry
 !    is strictly negative.
 !
   implicit none
@@ -28519,7 +28519,7 @@ function r8vec_is_negative_any ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N), the vector.
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_NEGATIVE_ANY is TRUE if any entry 
+!    Output, logical ( kind = 4 ) R8VEC_IS_NEGATIVE_ANY is TRUE if any entry
 !    is negative.
 !
   implicit none
@@ -28561,7 +28561,7 @@ function r8vec_is_nonnegative ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N), the vector.
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_NONNEGATIVE, the value of 
+!    Output, logical ( kind = 4 ) R8VEC_IS_NONNEGATIVE, the value of
 !    the condition.
 !
   implicit none
@@ -28645,7 +28645,7 @@ function r8vec_is_nonzero_any ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N), the vector.
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_NONZERO_ANY is TRUE if any entry 
+!    Output, logical ( kind = 4 ) R8VEC_IS_NONZERO_ANY is TRUE if any entry
 !    is nonzero.
 !
   implicit none
@@ -28728,7 +28728,7 @@ function r8vec_is_positive ( n, a )
 !
 !    Input, real ( kind = 8 ) A(N).
 !
-!    Output, logical ( kind = 4 ) R8VEC_IS_POSITIVE, is TRUE every entry 
+!    Output, logical ( kind = 4 ) R8VEC_IS_POSITIVE, is TRUE every entry
 !    is strictly positive.
 !
   implicit none
@@ -29325,7 +29325,7 @@ subroutine r8vec_mean_running ( n, v, a )
 !
 !    Input, real ( kind = 8 ) V(N), the data.
 !
-!    Output, real ( kind = 8 ) A(N+1), the running average.  A(I) is the 
+!    Output, real ( kind = 8 ) A(N+1), the running average.  A(I) is the
 !    average value of the first I-1 values in V.
 !
   implicit none
@@ -29468,8 +29468,8 @@ subroutine r8vec_mesh_2d ( nx, ny, xvec, yvec, xmat, ymat )
 !
 !    YMAT = (
 !      4, 4, 4
-!      5, 5, 5 ) 
-!    
+!      5, 5, 5 )
+!
 !  Licensing:
 !
 !    This code is distributed under the GNU LGPL license.
@@ -29796,9 +29796,9 @@ subroutine r8vec_mirror_next ( n, a, done )
 !    Input/output, real ( kind = 8 ) A(N), a vector of real numbers.
 !    On output, the signs of some entries have been changed.
 !
-!    Output, logical ( kind = 4 ) DONE, is TRUE if the input vector A was the 
-!    last element in the series (every entry was nonpositive); the output 
-!    vector is reset so that all entries are nonnegative, but presumably the 
+!    Output, logical ( kind = 4 ) DONE, is TRUE if the input vector A was the
+!    last element in the series (every entry was nonpositive); the output
+!    vector is reset so that all entries are nonnegative, but presumably the
 !    ride is over!
 !
   implicit none
@@ -29848,15 +29848,15 @@ subroutine r8vec_mirror_ab_next ( m, a, b, x, done )
 !      A(I) <= X(I) <= B(I).
 !
 !    "Mirrored" versions of the vector X have one or more components
-!    reflected about the A or B limit.  
+!    reflected about the A or B limit.
 !
 !    As long as each component of X is strictly between the limits A and B,
 !    this means there will be 3^M possible versions of the vector.
 !
-!    If one component of X is equal to one limit or the other, this 
+!    If one component of X is equal to one limit or the other, this
 !    suppresses mirroring across that limit.  If one component of
 !    X, A and B are equal, then no mirroring is done at all in that component.
-! 
+!
 !  Example:
 !
 !      A = 0, 0, 0
@@ -30652,7 +30652,7 @@ subroutine r8vec_normal_01 ( n, seed, x )
 !
 !  Parameters:
 !
-!    Input, integer ( kind = 4 ) N, the number of values desired.  
+!    Input, integer ( kind = 4 ) N, the number of values desired.
 !
 !    Input/output, integer ( kind = 4 ) SEED, a seed for the random
 !    number generator.
@@ -30788,7 +30788,7 @@ subroutine r8vec_normal_ab ( n, a, b, seed, x )
 !    to be the smallest even number greater than or equal to N.
 !
 !    Local, integer ( kind = 4 ) X_LO_INDEX, X_HI_INDEX, records the range
-!    of entries of X that we need to compute. 
+!    of entries of X that we need to compute.
 !
   implicit none
 
@@ -32337,7 +32337,7 @@ function r8vec_rsquared_adjusted ( n, y_data, y_model, degree )
 !    formula or model has generated a corresponding set of Y_MODEL values.
 !
 !    R^2 measures the extent to which the variation in Y_DATA is captured
-!    by the model data Y_MODEL.  
+!    by the model data Y_MODEL.
 !
 !    The adjusted value of R^2 accounts for the use of a polynomial model
 !    of degree higher than 1.
@@ -35379,7 +35379,7 @@ subroutine r8vec_step ( x0, n, x, fx )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -35670,7 +35670,7 @@ subroutine r8vec_transpose_print ( n, a, title )
     write ( *, '(a)' )
 
   end do
- 
+
   return
 end
 subroutine r8vec_undex ( x_num, x_val, x_unique_num, tol, undx, xdnu )
@@ -35903,7 +35903,7 @@ subroutine r8vec_uniform_ab ( n, a, b, seed, r )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -35948,7 +35948,7 @@ subroutine r8vec_uniform_ab ( n, a, b, seed, r )
 !
 !    Input, real ( kind = 8 ) A, B, the lower and upper limits.
 !
-!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which 
+!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which
 !    should NOT be 0.  On output, SEED has been updated.
 !
 !    Output, real ( kind = 8 ) R(N), the vector of pseudorandom values.
@@ -36002,7 +36002,7 @@ subroutine r8vec_uniform_abvec ( n, a, b, seed, r )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -36048,7 +36048,7 @@ subroutine r8vec_uniform_abvec ( n, a, b, seed, r )
 !    Input, real ( kind = 8 ) A(N), B(N), the lower and upper limits
 !    for each dimension.
 !
-!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which 
+!    Input/output, integer ( kind = 4 ) SEED, the "seed" value, which
 !    should NOT be 0.  On output, SEED has been updated.
 !
 !    Output, real ( kind = 8 ) R(N), the vector of pseudorandom values.
@@ -36100,7 +36100,7 @@ subroutine r8vec_uniform_unit ( m, seed, w )
 !
 !  Licensing:
 !
-!    This code is distributed under the GNU LGPL license. 
+!    This code is distributed under the GNU LGPL license.
 !
 !  Modified:
 !
@@ -36114,7 +36114,7 @@ subroutine r8vec_uniform_unit ( m, seed, w )
 !
 !    Input, integer ( kind = 4 ) M, the spatial dimension.
 !
-!    Input/output, integer ( kind = 4 ) SEED, a seed for the random number 
+!    Input/output, integer ( kind = 4 ) SEED, a seed for the random number
 !    generator.
 !
 !    Output, real ( kind = 8 ) W(M), a random direction vector,
@@ -37639,77 +37639,77 @@ subroutine sort_heap_external ( n, indx, i, j, isgn )
 
   return
 end
-subroutine timestamp ( )
-
-!*****************************************************************************80
+! subroutine timestamp ( )
 !
-!! timestamp prints the current YMDHMS date as a time stamp.
+! !*****************************************************************************80
+! !
+! !! timestamp prints the current YMDHMS date as a time stamp.
+! !
+! !  Example:
+! !
+! !    31 May 2001   9:45:54.872 AM
+! !
+! !  Licensing:
+! !
+! !    This code is distributed under the GNU LGPL license.
+! !
+! !  Modified:
+! !
+! !    18 May 2013
+! !
+! !  Author:
+! !
+! !    John Burkardt
+! !
+!   implicit none
 !
-!  Example:
+!   character ( len = 8 ) ampm
+!   integer ( kind = 4 ) d
+!   integer ( kind = 4 ) h
+!   integer ( kind = 4 ) m
+!   integer ( kind = 4 ) mm
+!   character ( len = 9 ), parameter, dimension(12) :: month = (/ &
+!     'January  ', 'February ', 'March    ', 'April    ', &
+!     'May      ', 'June     ', 'July     ', 'August   ', &
+!     'September', 'October  ', 'November ', 'December ' /)
+!   integer ( kind = 4 ) n
+!   integer ( kind = 4 ) s
+!   integer ( kind = 4 ) values(8)
+!   integer ( kind = 4 ) y
 !
-!    31 May 2001   9:45:54.872 AM
+!   call date_and_time ( values = values )
 !
-!  Licensing:
+!   y = values(1)
+!   m = values(2)
+!   d = values(3)
+!   h = values(5)
+!   n = values(6)
+!   s = values(7)
+!   mm = values(8)
 !
-!    This code is distributed under the GNU LGPL license.
+!   if ( h < 12 ) then
+!     ampm = 'AM'
+!   else if ( h == 12 ) then
+!     if ( n == 0 .and. s == 0 ) then
+!       ampm = 'Noon'
+!     else
+!       ampm = 'PM'
+!     end if
+!   else
+!     h = h - 12
+!     if ( h < 12 ) then
+!       ampm = 'PM'
+!     else if ( h == 12 ) then
+!       if ( n == 0 .and. s == 0 ) then
+!         ampm = 'Midnight'
+!       else
+!         ampm = 'AM'
+!       end if
+!     end if
+!   end if
 !
-!  Modified:
+!   write ( *, '(i2,1x,a,1x,i4,2x,i2,a1,i2.2,a1,i2.2,a1,i3.3,1x,a)' ) &
+!     d, trim ( month(m) ), y, h, ':', n, ':', s, '.', mm, trim ( ampm )
 !
-!    18 May 2013
-!
-!  Author:
-!
-!    John Burkardt
-!
-  implicit none
-
-  character ( len = 8 ) ampm
-  integer ( kind = 4 ) d
-  integer ( kind = 4 ) h
-  integer ( kind = 4 ) m
-  integer ( kind = 4 ) mm
-  character ( len = 9 ), parameter, dimension(12) :: month = (/ &
-    'January  ', 'February ', 'March    ', 'April    ', &
-    'May      ', 'June     ', 'July     ', 'August   ', &
-    'September', 'October  ', 'November ', 'December ' /)
-  integer ( kind = 4 ) n
-  integer ( kind = 4 ) s
-  integer ( kind = 4 ) values(8)
-  integer ( kind = 4 ) y
-
-  call date_and_time ( values = values )
-
-  y = values(1)
-  m = values(2)
-  d = values(3)
-  h = values(5)
-  n = values(6)
-  s = values(7)
-  mm = values(8)
-
-  if ( h < 12 ) then
-    ampm = 'AM'
-  else if ( h == 12 ) then
-    if ( n == 0 .and. s == 0 ) then
-      ampm = 'Noon'
-    else
-      ampm = 'PM'
-    end if
-  else
-    h = h - 12
-    if ( h < 12 ) then
-      ampm = 'PM'
-    else if ( h == 12 ) then
-      if ( n == 0 .and. s == 0 ) then
-        ampm = 'Midnight'
-      else
-        ampm = 'AM'
-      end if
-    end if
-  end if
-
-  write ( *, '(i2,1x,a,1x,i4,2x,i2,a1,i2.2,a1,i2.2,a1,i3.3,1x,a)' ) &
-    d, trim ( month(m) ), y, h, ':', n, ':', s, '.', mm, trim ( ampm )
-
-  return
-end
+!   return
+! end

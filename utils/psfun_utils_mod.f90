@@ -63,6 +63,14 @@ module psfun_utils_mod
     end function
   end interface horner
 
+  interface linspace
+    module subroutine linspace(from, to, array, range)
+      real(psb_dpk_), intent(in) :: from, to
+      real(psb_dpk_), intent(out) :: array(:)
+      real(psb_dpk_), optional, intent(in) :: range
+    end subroutine
+  end interface
+
 contains
 
 end module psfun_utils_mod

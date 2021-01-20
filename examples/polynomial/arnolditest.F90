@@ -68,6 +68,7 @@ program arnolditest
   character(len=20)  :: name
   real(psb_dpk_)     :: t1,t2
   integer(psb_epk_)  :: amatsize, descsize, system_size
+  real(psb_dpk_), allocatable :: res(:)
   ! real(psb_dpk_), allocatable  :: vy(:)
 
   info=psb_success_
@@ -217,7 +218,7 @@ program arnolditest
   itrace = 1
   istop = 1
   t1 = psb_wtime()
-  call kmethd%apply(fun,a,desc_a,y_col,x_col,eps,info,itmax,itrace,istop,iter,err)
+  call kmethd%apply(fun,a,desc_a,y_col,x_col,eps,info,itmax,itrace,istop,iter,err,res)
   t2 = psb_wtime() - t1
 
   amatsize = a%sizeof()
@@ -242,6 +243,11 @@ program arnolditest
     write(psb_out_unit,'("Storage format for               A: ",a)') a%get_fmt()
     write(psb_out_unit,'("Storage format for          DESC_A: ",a)') desc_a%get_fmt()
   end if
+
+#if defined (WITHGNUPLOTFORTRAN)
+  if( iam == psb_root_) &
+    & call kmethd%plot(fun,iter,res,info)
+#endif
 
   ! Free the memory
   call psb_gefree(x_col, desc_a, info)
