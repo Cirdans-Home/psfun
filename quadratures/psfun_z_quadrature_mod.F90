@@ -36,6 +36,7 @@ module psfun_z_quadrature_mod
   use psfun_base_quadrature_mod
   use psb_base_mod
   use psfun_utils_mod
+  use ogpf
   implicit none
 
   type, extends(psfun_quadrature) :: psfun_z_quadrature
@@ -50,6 +51,7 @@ module psfun_z_quadrature_mod
     procedure, pass(quad) :: setmatrix          => psfun_z_setmatrix
     procedure, pass(quad) :: setpreconditioner  => psfun_z_setpreconditioner
     generic, public :: set => setmatrix, setpreconditioner
+    procedure, pass(quad) :: plot => psfun_z_quadratureplot
   end type psfun_z_quadrature
 
   ! ************************************************************************** !
@@ -91,7 +93,7 @@ module psfun_z_quadrature_mod
   ! Module procedures implementing different quadrature rules, all the rules
   ! are contained in the relative submodule
   interface hhtmethod1
-    module subroutine hhtmethod1(zfun,xi,c,eta,sign,N,info,rparams)
+    module subroutine hhtmethod1(zfun,xi,c,eta,sign,N,info,cparams,rparams)
       procedure (zquadfun), pointer, intent(in)                 :: zfun   ! Function to integrate
       complex(psb_dpk_), allocatable, dimension(:), intent(out) :: xi     ! Poles of the formula
       complex(psb_dpk_), allocatable, dimension(:), intent(out) :: c      ! Scaling of the formula
@@ -99,7 +101,8 @@ module psfun_z_quadrature_mod
       real(psb_dpk_), intent(out)     :: sign   ! Sign for A
       integer(psb_ipk_), intent(in)   :: N ! Number of Poles
       integer(psb_ipk_), intent(out)  :: info ! Flag on the results
-      real(psb_dpk_), dimension(2), intent(in) :: rparams ! Optional real parameters
+      complex(psb_dpk_), dimension(:), optional, intent(in) :: cparams ! Optional complex parameters
+      real(psb_dpk_), dimension(:), optional, intent(in) :: rparams ! Optional real parameters
     end subroutine
   end interface
 
@@ -154,5 +157,49 @@ contains
     quad%prec => prec
 
   end subroutine psfun_z_setpreconditioner
+
+  subroutine psfun_z_quadratureplot(quad,zfun,info,filename)
+    ! Plots on the complex plane the quadrature poles, and plots the weights of
+    ! the formula
+    use psb_base_mod
+    use ogpf
+
+    implicit none
+
+    class(psfun_z_quadrature), intent(in)     :: quad    ! Quadrature rule
+    procedure (zquadfun), pointer, intent(in) :: zfun    ! Function to integrate
+    integer(psb_ipk_), intent(out)            :: info
+    character(len=*), optional, intent(in)    :: filename
+
+    ! local variables
+    type(gpf)                      :: gp
+    character(len=100)             :: pf
+    integer(psb_ipk_)              :: i,n
+
+    if( present(filename) ) then
+      pf = trim(filename)
+    else
+      pf = "quadrule"
+    end if
+
+#if defined(WITHGNUPLOTFORTRAN)
+    n = size(quad%xi)
+
+    call gp%setterminal("set terminal pdf; set output '"//trim(pf)//".pdf'")
+    call gp%multiplot(1,2)
+    call gp%title("Nodes")
+    call gp%xlabel('Real')
+    call gp%ylabel('Imag')
+    call gp%plot(real(quad%xi),aimag(quad%xi),'with points lt 6')
+    call gp%title("Weights")
+    call gp%xlabel('Real')
+    call gp%ylabel('Imag')
+    call gp%plot(real(quad%c),aimag(quad%c),'with points lt 6')
+    call gp%options("unset multiplot")
+    info = psb_success_
+#else
+    info = psb_err_from_subroutine_
+#endif
+  end subroutine psfun_z_quadratureplot
 
 end module psfun_z_quadrature_mod

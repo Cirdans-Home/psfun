@@ -313,8 +313,9 @@ module subroutine psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,i
   call log_end(methdname,iam,itx,itrace_,errnum,errden,deps,err=derr,iter=iter)
   if (present(err)) err = derr
   if (present(res)) then
-    allocate(res(1:itx),stat=info)
+    allocate(res(itx+1),stat=info)
     res(1:itx) = rs(1:itx)
+    res(itx+1) = derr
   end if
 
   call  psb_geaxpby(yk(1),v(1),dzero,y,desc_a,info)

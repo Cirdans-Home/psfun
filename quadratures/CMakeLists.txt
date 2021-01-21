@@ -4,8 +4,8 @@ message("Compile and Link Quadrature Library")
 
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 
-set( QUADRATURE_SUBMODULES  "psfun_d_quadrature_mod.f90"
-                            "psfun_z_quadrature_mod.f90"
+set( QUADRATURE_SUBMODULES  "psfun_d_quadrature_mod.F90"
+                            "psfun_z_quadrature_mod.F90"
                             "psfun_z_quadrules_mod.f90"
                             "psfun_base_quadrature_mod.f90")
 
@@ -15,7 +15,7 @@ target_include_directories(psfun_quadrature PUBLIC ${PSBLAS_MODULES} ${AUXILINCL
 target_include_directories(psfun_quadrature PUBLIC ${PSBLAS_INCLUDE})
 target_include_directories(psfun_krylov PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(psfun_krylov PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-target_link_libraries(psfun_quadrature PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} ${AUXILLINK} -lpsfun_utils)
+target_link_libraries(psfun_quadrature PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} ${AUXILLINK} psfun_utils)
 
 if(MPI_COMPILE_FLAGS)
   set_target_properties(psfun_quadrature PROPERTIES

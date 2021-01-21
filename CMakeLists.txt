@@ -45,7 +45,7 @@ find_package(PSBLAS REQUIRED)
 option(BUILD_EXAMPLES "Build example programs" OFF)
 option(EXTERNAL_PHI "Use Koikari codes for Phi Functiions" OFF)
 option(BUILD_DOCUMENTATION "Build Sphinx Documentation" ON)
-option(GNUPLOTFORTRAN "Enable GNUPLOTFORTRAN plots" OFF)
+option(GNUPLOT "Enable GNUPLOT plots" OFF)
 
 #------------------------------------------------------------------------------#
 # Look for auxiliary libraries
@@ -58,13 +58,13 @@ add_compile_definitions(${PHIDEFINES})
 set(AUXILINCLUDE ${INCLUDEPHI})
 set(AUXILLINK ${LINKPHI})
 
-IF(GNUPLOTFORTRAN)
-	set(GNUPLOTFORTRAN_DIR /usr/lib CACHE PATH "/usr/lib")
-	find_package(GNUPLOTFORTRAN)
+IF(GNUPLOT)
+	find_package(Gnuplot)
 ENDIF()
-add_compile_definitions(${GNUPLOTFORTRANDEFINES})
-set(AUXILINCLUDE "${AUXILINCLUDE} ${INCLUDEGNUPLOTFORTRAN}")
-set(AUXILLINK "${AUXILLINK} ${LINKGNUPLOTFORTRAN}")
+IF(GNUPLOT_FOUND)
+	message("Gnuplot found")
+	add_compile_definitions(WITHGNUPLOTFORTRAN)
+ENDIF()
 
 separate_arguments(AUXILINCLUDE SEPARATE_ARGS PROGRAM UNIX_COMMAND "${AUXILINCLUDE}")
 

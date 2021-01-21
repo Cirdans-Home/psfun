@@ -34,14 +34,7 @@ module psfun_d_krylov_mod
 
   use psb_base_mod
   use psfun_d_serial_mod
-#if defined(WITHGNUPLOTFORTRAN)
-  ! If the library is compiled with the GNUPLOT Fortran library option we
-  ! include here the relative modules that can be used to plot the convergence
-  ! history of the Krylov method
-  use datatypes
-  use gnuplot_module_data
-  use gnuplot_module
-#endif
+  use ogpf
   implicit none
 
   type, public :: psfun_d_krylov
@@ -51,9 +44,7 @@ module psfun_d_krylov_mod
     procedure, pass(meth) :: setstring  => psfun_d_setstring
     generic, public :: set => setstring
     procedure, pass(meth) :: apply      => psfun_d_parallel_apply
-#if defined(WITHGNUPLOTFORTRAN)
     procedure, pass(meth) :: plot       => psfun_d_plot_info
-#endif
   end type
 
   private :: psfun_d_setstring
@@ -157,14 +148,10 @@ contains
 
   end subroutine psfun_d_parallel_apply
 
-#if defined(WITHGNUPLOTFORTRAN)
   subroutine psfun_d_plot_info(meth,fun,iter,res,info)
       ! This function plots the convergence history of the Krylov method
       use psb_base_mod
-      use psfun_utils_mod, only: linspace
-      use datatypes
-      use gnuplot_module_data
-      use gnuplot_module
+      use ogpf
 
       implicit none
 
@@ -174,49 +161,46 @@ contains
       real(psb_dpk_), intent(in), dimension(:)  :: res  ! Residual vector
       integer(psb_ipk_), intent(out)            :: info ! Result of the Gnuplot call
 
-      ! local variable
-      type(gnuplot_ctrl), pointer :: ptr_gctrl
-      character(len=GP_CMD_SIZE)  :: cmd
+      type(gpf) :: gp
       character(len=100) :: pf
       real(psb_dpk_), allocatable :: xarray(:)
       integer(psb_ipk_) :: n, indplot
-      real(psb_dpk_) :: plotn
+      real(psb_dpk_) :: plot
 
-      GNUPLOT_SHOWWARNINGS=.false.
       n = size(res)
-      if (n <= iter) then
-          plotn = n
+      if (n <= iter+1) then
           indplot = n
+          plot = n
       else
-          plotn = iter
-          indplot = iter
+          indplot = iter+1
+          plot = iter+1
       end if
 
+#if defined(WITHGNUPLOTFORTRAN)
       allocate(xarray(indplot), stat=info)
-      call linspace(1.0_psb_dpk_,plotn,xarray )
+      xarray = linspace(1.0_psb_dpk_,plot,indplot)
 
       pf = trim(meth%kname) // trim("-") // trim(fun%fname) &
             & // trim("-") // trim(fun%variant) // trim("-Residual")
+      call gp%options("set terminal pdf;&
+                    &set output '"//trim(pf)//".pdf'")
+      call gp%title("Residual history "// trim(meth%kname) // trim("-") &
+        & // trim(fun%fname) // trim("-") // trim(fun%variant))
+      call gp%xlabel('Iteration')
+      call gp%ylabel('Relative Residual')
+      call gp%options('set style data linespoints;&
+                    &set logscale y;&
+                    &set format y "10^{%L}";')
+      !Call Plot to draw a vector against a vector of data
+      call gp%plot(xarray(1:indplot), res(1:indplot),'with lp lt 7')
+      info = psb_success_
 
-      ! Actual plot
-      ptr_gctrl=>gnuplot_init('-clear')
-      info = gnuplot_hardcopy(ptr_gctrl,'PNG',trim(pf)//trim(".png"))
-      info = gnuplot_setrange(ptr_gctrl,'x',1.0_psb_dpk_,plotn)
-      info = gnuplot_setrange(ptr_gctrl,'y',minval(res(1:indplot)),maxval(res(1:indplot)))
-      info = gnuplot_settitle(ptr_gctrl,pf)
-      info = gnuplot_setaxislabel(ptr_gctrl,'x','Iteration')
-      info = gnuplot_setaxislabel(ptr_gctrl,'y','Residual')
-      info = gnuplot_setscale(ptr_gctrl,'x','NLG')
-      info = gnuplot_setscale(ptr_gctrl,'y','LOG')
-      info = gnuplot_setstyle(ptr_gctrl,'linespoints')
-      info = gnuplot_plot2d(ptr_gctrl,indplot,xarray(1:indplot),res(1:indplot),'residual')
-      cmd  = 'set output'
-      info = gnuplot_cmd(ptr_gctrl,cmd)
-      info = gnuplot_close(ptr_gctrl)
+      if (allocated(xarray)) deallocate(xarray, stat=info)
+#else
+      info = psb_err_from_subroutine_
+#endif
 
-     if (allocated(xarray)) deallocate(xarray, stat=info)
 
   end subroutine psfun_d_plot_info
-#endif
 
 end module psfun_d_krylov_mod

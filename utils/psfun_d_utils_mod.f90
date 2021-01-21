@@ -136,35 +136,4 @@ contains
 
   end function horner
 
-  module subroutine linspace(from, to, array, range)
-    use psb_base_mod
-    implicit none
-
-    real(psb_dpk_), intent(in) :: from, to
-    real(psb_dpk_), intent(out) :: array(:)
-    real(psb_dpk_), optional, intent(in) :: range
-
-    integer(psb_ipk_) :: n, i
-    real(psb_dpk_)    :: range_
-
-    n = size(array)
-    if (present(range)) then
-      range_ = range
-    else
-      range_ = to - from
-    end if
-
-    if (n == 0) return
-
-    if (n == 1) then
-        array(1) = from
-        return
-    end if
-
-
-    do i=1, n
-        array(i) = from + range_ * (i - 1) / (n - 1)
-    end do
-end subroutine
-
 end submodule
