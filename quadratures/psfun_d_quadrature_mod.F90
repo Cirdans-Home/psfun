@@ -95,7 +95,7 @@ contains
     ! local variables
     type(gpf)                   :: gp
     character(len=100)          :: pf
-    real(psb_dpk_), allocatable :: zeros(:), weights(:)
+    real(psb_dpk_), allocatable :: zeros(:)
     integer(psb_ipk_)           :: i,n
 
     if( present(filename) ) then
@@ -106,12 +106,11 @@ contains
 
 #if defined(WITHGNUPLOTFORTRAN)
     n = size(quad%xi)
-    allocate(zeros(n),weights(n), stat=info)
+    allocate(zeros(n), stat=info)
     zeros(:) = 0.0_psb_dpk_
-    do i=1,n,1
-      weights(i) = dfun(quad%xi(i))
-    end do
 
+    call gp%setterminal("set terminal pdf; set output '"//trim(pf)//".pdf'")
+    call gp%multiplot(1,2)
     call gp%options("set terminal pdf;&
                   &set output '"//trim(pf)//".pdf'")
     call gp%title("Nodes")
@@ -121,7 +120,8 @@ contains
     call gp%title("Weights")
     call gp%xlabel('Nodes')
     call gp%ylabel('Weight')
-    call gp%plot(quad%xi, weights,'with lp 5')
+    call gp%plot(quad%xi, quad%c,'with lp 5')
+    call gp%options("unset multiplot")
     info = psb_success_
 
     if (allocated(zeros)) deallocate(zeros, stat=info)
