@@ -13,3 +13,10 @@ Module
 ======
 
 .. f:automodule:: psfun_utils_mod
+
+
+External libraries
+==================
+
+To make some plots with the `Gnuplot <http://www.gnuplot.info/>`_ software directly from the Fortran code, we
+distribute a modified version of the `ogpf <https://github.com/kookma/ogpf>`_ library.
