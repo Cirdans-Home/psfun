@@ -88,6 +88,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="krylov.html">Krylov Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadrature.html">Quadrature Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utils Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
@@ -161,10 +162,10 @@
 for <img class="math" src="_images/math/211284f68205c3e66773eaf026f32a0acdd3dfb3.png" alt="A"/> a matrix of small size. It interfaces external codes and algorithms
 that usually work with matrix memorized in dense storage. The intended use of
 the functions contained here is to use them at the lower level of a Krylov
-subspace method. The library directly contains the EXPOKIT code <a class="bibtex reference internal" href="zreferences.html#expokit" id="id1">[10]</a>
+subspace method. The library directly contains the EXPOKIT code <a class="bibtex reference internal" href="zreferences.html#expokit" id="id1">[11]</a>
 for the computation of the matrix exponential, together with the scaling and
-squaring and Taylor algorithms <a class="bibtex reference internal" href="zreferences.html#mr508383" id="id2">[6]</a><a class="bibtex reference internal" href="zreferences.html#mr1981253" id="id3">[7]</a> by <a class="reference external" href="https://people.sc.fsu.edu/~jburkardt/f_src/matrix_exponential/matrix_exponential.html">J. Burkardt</a>.
-For using the <img class="math" src="_images/math/ed710ddac707fcbc540bfe7b354ca2d900f0faa0.png" alt="\varphi"/>-functions, the code from <a class="bibtex reference internal" href="zreferences.html#id1" id="id4">[5]</a> is needed.
+squaring and Taylor algorithms <a class="bibtex reference internal" href="zreferences.html#mr508383" id="id2">[7]</a><a class="bibtex reference internal" href="zreferences.html#mr1981253" id="id3">[8]</a> by <a class="reference external" href="https://people.sc.fsu.edu/~jburkardt/f_src/matrix_exponential/matrix_exponential.html">J. Burkardt</a>.
+For using the <img class="math" src="_images/math/ed710ddac707fcbc540bfe7b354ca2d900f0faa0.png" alt="\varphi"/>-functions, the code from <a class="bibtex reference internal" href="zreferences.html#id1" id="id4">[6]</a> is needed.
 It can be <a class="reference external" href="https://dl.acm.org/doi/10.1145/1499096.1499101">downloaded</a>,
 compiled and linked to the main library in the install phase.</p>
 <p>The module is centered on the <code class="code docutils literal notranslate"><span class="pre">psfun_d_serial</span></code> type, this module contains
@@ -205,49 +206,49 @@ given in <a class="reference internal" href="#implemented-methods"><span class="
 <td><p>General</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;EXP&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;TAYLOR&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#mr508383" id="id5">[6]</a><a class="bibtex reference internal" href="zreferences.html#mr1981253" id="id6">[7]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#mr508383" id="id5">[7]</a><a class="bibtex reference internal" href="zreferences.html#mr1981253" id="id6">[8]</a></p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>Scaling and Squaring</p></td>
 <td><p>General</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;EXP&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;SASQ&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#mr508383" id="id7">[6]</a><a class="bibtex reference internal" href="zreferences.html#mr1981253" id="id8">[7]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#mr508383" id="id7">[7]</a><a class="bibtex reference internal" href="zreferences.html#mr1981253" id="id8">[8]</a></p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>Generalized Padè</p></td>
 <td><p>General</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;EXP&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;GENPADE&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id9">[10]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id9">[11]</a></p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>Chebyshev</p></td>
 <td><p>Hessenberg</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;EXP&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;CHBHES&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id10">[10]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id10">[11]</a></p></td>
 </tr>
 <tr class="row-odd"><td></td>
 <td><p>Chebyshev</p></td>
 <td><p>General</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;EXP&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;CHBGEN&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id11">[10]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id11">[11]</a></p></td>
 </tr>
 <tr class="row-even"><td></td>
 <td><p>Chebyshev</p></td>
 <td><p>Symmetric</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;EXP&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;CHBSYM&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id12">[10]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#expokit" id="id12">[11]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p><img class="math" src="_images/math/39b51d91475d7cb993333af7eff25c850302e45b.png" alt="\varphi_k(\alpha A)"/></p></td>
 <td><p>Scaling and Squaring</p></td>
 <td><p>Symmetric</p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;PHI&quot;</span></code></p></td>
 <td><p><code class="code docutils literal notranslate"><span class="pre">&quot;NONE&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#id1" id="id13">[5]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#id1" id="id13">[6]</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -259,11 +260,8 @@ different matrix functions included in the library. The idea is that this
 modules computes, in a serial way, <img class="math" src="_images/math/1e883674d401c5aa0e8d2155075245bc42331fde.png" alt="y = f(\alpha A)x"/>.</p>
 <p class="rubric">Quick access</p>
 <dl class="field-list simple">
-<dt class="field-odd">Types</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_d_serial_mod/unknown_type" title="f/psfun_d_serial_mod/unknown_type"><code class="xref f f-type docutils literal notranslate"><span class="pre">unknown_type</span></code></a></p>
-</dd>
-<dt class="field-even">Routines</dt>
-<dd class="field-even"><p><a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_serial_apply_array" title="f/psfun_d_serial_mod/psfun_d_serial_apply_array"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_serial_apply_array()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_serial_apply_sparse" title="f/psfun_d_serial_mod/psfun_d_serial_apply_sparse"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_serial_apply_sparse()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setinteger" title="f/psfun_d_serial_mod/psfun_d_setinteger"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setinteger()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setpointer" title="f/psfun_d_serial_mod/psfun_d_setpointer"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setpointer()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setreal" title="f/psfun_d_serial_mod/psfun_d_setreal"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setreal()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setstring" title="f/psfun_d_serial_mod/psfun_d_setstring"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setstring()</span></code></a></p>
+<dt class="field-odd">Routines</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_serial_apply_array" title="f/psfun_d_serial_mod/psfun_d_serial_apply_array"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_serial_apply_array()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_serial_apply_sparse" title="f/psfun_d_serial_mod/psfun_d_serial_apply_sparse"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_serial_apply_sparse()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setinteger" title="f/psfun_d_serial_mod/psfun_d_setinteger"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setinteger()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setpointer" title="f/psfun_d_serial_mod/psfun_d_setpointer"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setpointer()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setreal" title="f/psfun_d_serial_mod/psfun_d_setreal"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setreal()</span></code></a>, <a class="reference internal" href="#f/psfun_d_serial_mod/psfun_d_setstring" title="f/psfun_d_serial_mod/psfun_d_setstring"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_setstring()</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Needed modules</p>

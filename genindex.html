@@ -83,6 +83,7 @@
 <li class="toctree-l1"><a class="reference internal" href="psfunlibrary.html">Matrix Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="serial.html">Serial Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="krylov.html">Krylov Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quadrature.html">Quadrature Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utils Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
@@ -154,6 +155,7 @@
 <div class="genindex-jumpbox">
  <a href="#A"><strong>A</strong></a>
  | <a href="#D"><strong>D</strong></a>
+ | <a href="#H"><strong>H</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#P"><strong>P</strong></a>
  | <a href="#S"><strong>S</strong></a>
@@ -176,6 +178,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="quadrature.html#f/_/hhtmethod1"><strong>hhtmethod1() (fortran subroutine)</strong></a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -187,9 +197,17 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="quadrature.html#f/psfun_base_quadrature_mod"><strong>psfun_base_quadrature_mod (module)</strong></a>
+</li>
       <li><a href="krylov.html#f/psfun_d_krylov_mod"><strong>psfun_d_krylov_mod (module)</strong></a>
 </li>
       <li><a href="krylov.html#f/psfun_d_krylov_mod/psfun_d_parallel_apply"><strong>psfun_d_parallel_apply() (fortran subroutine in module psfun_d_krylov_mod)</strong></a>
+</li>
+      <li><a href="krylov.html#f/psfun_d_krylov_mod/psfun_d_plot_info"><strong>psfun_d_plot_info() (fortran subroutine in module psfun_d_krylov_mod)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_d_quadrature_mod"><strong>psfun_d_quadrature_mod (module)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_d_quadrature_mod/psfun_d_quadratureplot"><strong>psfun_d_quadratureplot() (fortran subroutine in module psfun_d_quadrature_mod)</strong></a>
 </li>
       <li><a href="serial.html#f/psfun_d_serial_mod/psfun_d_serial_apply_array"><strong>psfun_d_serial_apply_array() (fortran subroutine in module psfun_d_serial_mod)</strong></a>
 </li>
@@ -197,10 +215,10 @@
 </li>
       <li><a href="serial.html#f/psfun_d_serial_mod"><strong>psfun_d_serial_mod (module)</strong></a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="serial.html#f/psfun_d_serial_mod/psfun_d_setinteger"><strong>psfun_d_setinteger() (fortran subroutine in module psfun_d_serial_mod)</strong></a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="serial.html#f/psfun_d_serial_mod/psfun_d_setpointer"><strong>psfun_d_setpointer() (fortran subroutine in module psfun_d_serial_mod)</strong></a>
 </li>
       <li><a href="serial.html#f/psfun_d_serial_mod/psfun_d_setreal"><strong>psfun_d_setreal() (fortran subroutine in module psfun_d_serial_mod)</strong></a>
@@ -212,6 +230,16 @@
 </li>
       </ul></li>
       <li><a href="utils.html#f/psfun_utils_mod"><strong>psfun_utils_mod (module)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_z_quadrature_mod/psfun_z_computepoles"><strong>psfun_z_computepoles() (fortran subroutine in module psfun_z_quadrature_mod)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_z_quadrature_mod"><strong>psfun_z_quadrature_mod (module)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_z_quadrature_mod/psfun_z_quadratureplot"><strong>psfun_z_quadratureplot() (fortran subroutine in module psfun_z_quadrature_mod)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_z_quadrature_mod/psfun_z_setmatrix"><strong>psfun_z_setmatrix() (fortran subroutine in module psfun_z_quadrature_mod)</strong></a>
+</li>
+      <li><a href="quadrature.html#f/psfun_z_quadrature_mod/psfun_z_setpreconditioner"><strong>psfun_z_setpreconditioner() (fortran subroutine in module psfun_z_quadrature_mod)</strong></a>
 </li>
   </ul></td>
 </tr></table>
@@ -227,10 +255,16 @@
 <h2 id="U">U</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="krylov.html#f/psfun_d_krylov_mod/unknown_type"><strong>unknown_type (fortran type in module psfun_d_krylov_mod)</strong></a>
+      <li><a href="quadrature.html#f/psfun_base_quadrature_mod/unknown_type"><strong>unknown_type (fortran type in module psfun_base_quadrature_mod)</strong></a>
 
       <ul>
+        <li><a href="krylov.html#f/psfun_d_krylov_mod/unknown_type"><strong>(fortran type in module psfun_d_krylov_mod)</strong></a>
+</li>
+        <li><a href="quadrature.html#f/psfun_d_quadrature_mod/unknown_type"><strong>(fortran type in module psfun_d_quadrature_mod)</strong></a>
+</li>
         <li><a href="serial.html#f/psfun_d_serial_mod/unknown_type"><strong>(fortran type in module psfun_d_serial_mod)</strong></a>
+</li>
+        <li><a href="quadrature.html#f/psfun_z_quadrature_mod/unknown_type"><strong>(fortran type in module psfun_z_quadrature_mod)</strong></a>
 </li>
       </ul></li>
   </ul></td>

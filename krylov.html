@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Utils Module" href="utils.html" />
+    <link rel="next" title="Quadrature Module" href="quadrature.html" />
     <link rel="prev" title="Serial Module" href="serial.html" /> 
 </head>
 
@@ -89,6 +89,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#f/psfun_d_krylov_mod">Module</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="quadrature.html">Quadrature Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="utils.html">Utils Module</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
@@ -193,14 +194,14 @@ and <img class="math" src="_images/math/ba42fac84c10df814911cffa85c371dec15ec054
 <div><ul>
 <li><p>the <strong>polynomial Krylov</strong> method in which <img class="math" src="_images/math/e3b9a0800c0987b340888af792ac34d4a2c34a1c.png" alt="\mathcal{W}_{k}(A,\mathbf{x})=\mathcal{K}_{k}(A,\mathbf{x})"/>
 can be recovered by defining <img class="math" src="_images/math/5912f08646b0e2ec8acd90d310910773ce1f9b6d.png" alt="\mu _{j}=1"/> and <img class="math" src="_images/math/1beab5c20a369b1d89cb36676fc152b294f2e35b.png" alt="\sigma_{j}=\infty"/> for each <cite>j</cite>.</p></li>
-<li><p>The <strong>extended Krylov</strong> method <a class="bibtex reference internal" href="zreferences.html#eksm1" id="id2">[1]</a><a class="bibtex reference internal" href="zreferences.html#eksm2" id="id3">[4]</a>, in which</p>
+<li><p>The <strong>extended Krylov</strong> method <a class="bibtex reference internal" href="zreferences.html#eksm1" id="id2">[1]</a><a class="bibtex reference internal" href="zreferences.html#eksm2" id="id3">[5]</a>, in which</p>
 <div class="math">
 <p><img src="_images/math/03b32626a83de67404b328e10b451a45531555ce.png" alt="\mathcal{W}_{2k-1}(A,\mathbf{x})=\operatorname{Span}\{\mathbf{x}, A^{-1}\mathbf{x}, A\mathbf{x}, \ldots, A^{-(k-1)}\mathbf{x}, A^{k-1}\mathbf{x}\},"/></p>
 </div><p>is obtained by setting</p>
 <div class="math">
 <p><img src="_images/math/5a4b19eeb36699f6dc6830f3d9e7f7f2c863ef39.png" alt="(\mu _j,\sigma_j)= \left\lbrace \begin{array}{ll} (1,\infty), &amp; \mbox{for  $j$ even},\\ (0,0),  &amp; \mbox{for  $j$  odd.} \end{array}\right."/></p>
 </div></li>
-<li><p>The <strong>shift-and-invert</strong> rational Krylov <a class="bibtex reference internal" href="zreferences.html#moret2004rd" id="id4">[8]</a><a class="bibtex reference internal" href="zreferences.html#van2006preconditioning" id="id5">[11]</a>, where</p>
+<li><p>The <strong>shift-and-invert</strong> rational Krylov <a class="bibtex reference internal" href="zreferences.html#moret2004rd" id="id4">[9]</a><a class="bibtex reference internal" href="zreferences.html#van2006preconditioning" id="id5">[12]</a>, where</p>
 <div class="math">
 <p><img src="_images/math/a703d6dc7ee83f5f3d47330c1b77c4ce60ec361b.png" alt="\mathcal{W}_{k}(A,\mathbf{x})=\operatorname{Span}\{\mathbf{x},(\sigma I-A)^{-1}\mathbf{x},\ldots ,(\sigma I-A)^{-(k-1)}\mathbf{x}\},"/></p>
 </div><p>is defined by taking <img class="math" src="_images/math/59d971b5a8c15f24a07dd7b26e55d518f4480844.png" alt="\mu _{j}=0"/> and <img class="math" src="_images/math/72e762d21bb9105f828724e5ddb0998750cd8e56.png" alt="\sigma _{j}=\sigma"/> for each <img class="math" src="_images/math/e3fc28292267f066fee7718c64f4bbfece521f24.png" alt="j"/>.</p>
@@ -235,13 +236,13 @@ up and applying the different implemented method for a given matrix function
 <td><p>Polynomial</p></td>
 <td><p>General</p></td>
 <td><p><code class="code fortran docutils literal notranslate"><span class="pre">&quot;ARNOLDI&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#mr1149094" id="id6">[9]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#mr1149094" id="id6">[10]</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Lanczos</p></td>
 <td><p>Polynomial</p></td>
 <td><p>Symmetric</p></td>
 <td><p><code class="code fortran docutils literal notranslate"><span class="pre">&quot;LANCZOS&quot;</span></code></p></td>
-<td><p><a class="bibtex reference internal" href="zreferences.html#mr1149094" id="id7">[9]</a></p></td>
+<td><p><a class="bibtex reference internal" href="zreferences.html#mr1149094" id="id7">[10]</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -257,13 +258,14 @@ sparse.</p>
 <p class="rubric">Quick access</p>
 <dl class="field-list simple">
 <dt class="field-odd">Routines</dt>
-<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_d_krylov_mod/psfun_d_parallel_apply" title="f/psfun_d_krylov_mod/psfun_d_parallel_apply"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_parallel_apply()</span></code></a></p>
+<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_d_krylov_mod/psfun_d_parallel_apply" title="f/psfun_d_krylov_mod/psfun_d_parallel_apply"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_parallel_apply()</span></code></a>, <a class="reference internal" href="#f/psfun_d_krylov_mod/psfun_d_plot_info" title="f/psfun_d_krylov_mod/psfun_d_plot_info"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_plot_info()</span></code></a></p>
 </dd>
 </dl>
 <p class="rubric">Needed modules</p>
 <ul class="simple">
 <li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p></li>
 <li><p><a class="reference internal" href="serial.html#f/psfun_d_serial_mod" title="f/psfun_d_serial_mod: This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, :math:`y = f(\alpha A)x`...."><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_d_serial_mod</span></code></a>: This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, <img class="math" src="_images/math/1e883674d401c5aa0e8d2155075245bc42331fde.png" alt="y = f(\alpha A)x"/>….</p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">ogpf</span></code></p></li>
 </ul>
 <p class="rubric">Types</p>
 <ul>
@@ -304,7 +306,7 @@ sparse.</p>
 
 <dl class="subroutine">
 <dt id="f/psfun_d_krylov_mod/psfun_d_parallel_apply">
-<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_d_krylov_mod/</code><code class="sig-name descname">psfun_d_parallel_apply</code><span class="sig-paren">(</span><em class="sig-param">meth</em>, <em class="sig-param">fun</em>, <em class="sig-param">a</em>, <em class="sig-param">desc_a</em>, <em class="sig-param">y</em>, <em class="sig-param">x</em>, <em class="sig-param">eps</em>, <em class="sig-param">info</em><span class="optional">[</span>, <em class="sig-param">itmax</em><span class="optional">[</span>, <em class="sig-param">itrace</em><span class="optional">[</span>, <em class="sig-param">istop</em><span class="optional">[</span>, <em class="sig-param">iter</em><span class="optional">[</span>, <em class="sig-param">err</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_d_krylov_mod/psfun_d_parallel_apply" title="Permalink to this definition">¶</a></dt>
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_d_krylov_mod/</code><code class="sig-name descname">psfun_d_parallel_apply</code><span class="sig-paren">(</span><em class="sig-param">meth</em>, <em class="sig-param">fun</em>, <em class="sig-param">a</em>, <em class="sig-param">desc_a</em>, <em class="sig-param">y</em>, <em class="sig-param">x</em>, <em class="sig-param">eps</em>, <em class="sig-param">info</em><span class="optional">[</span>, <em class="sig-param">itmax</em><span class="optional">[</span>, <em class="sig-param">itrace</em><span class="optional">[</span>, <em class="sig-param">istop</em><span class="optional">[</span>, <em class="sig-param">iter</em><span class="optional">[</span>, <em class="sig-param">err</em><span class="optional">[</span>, <em class="sig-param">res</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_d_krylov_mod/psfun_d_parallel_apply" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the generic function for applying every implemented Krylov
 method. The general iteration parameters (like the number of iteration,
 the stop criterion to be used, and the verbosity of the trace) can be
@@ -327,10 +329,34 @@ instead contained in the meth and fun objects. The Descriptor object
 <li><p><strong>istop</strong><em> [</em><em>integer</em><em>,</em><em>in,</em><em>]</em> :: Stop criterion</p></li>
 <li><p><strong>iter</strong><em> [</em><em>integer</em><em>,</em><em>out,</em><em>]</em> :: Number of iteration</p></li>
 <li><p><strong>err</strong><em> [</em><em>real</em><em>,</em><em>out,</em><em>]</em> :: Last estimate error</p></li>
+<li><p><strong>res</strong> (*)<em> [</em><em>real</em><em>,</em><em>out,allocatable</em><em>]</em> :: Vector of the residuals</p></li>
 </ul>
 </dd>
 <dt class="field-even">Use </dt>
 <dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <a class="reference internal" href="serial.html#f/psfun_d_serial_mod" title="f/psfun_d_serial_mod: This module contains the generic interfaces for the computation of the different matrix functions included in the library. The idea is that this modules computes, in a serial way, :math:`y = f(\alpha A)x`...."><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_d_serial_mod</span></code></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/psfun_d_krylov_mod/psfun_d_plot_info">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_d_krylov_mod/</code><code class="sig-name descname">psfun_d_plot_info</code><span class="sig-paren">(</span><em class="sig-param">meth</em>, <em class="sig-param">fun</em>, <em class="sig-param">iter</em>, <em class="sig-param">res</em>, <em class="sig-param">info</em><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_d_krylov_mod/psfun_d_plot_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function plots the convergence history of the Krylov method</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>meth</strong> :: Krylov method</p></li>
+<li><p><strong>fun</strong><em> [</em><em>psfun_d_serial</em><em>,</em><em>inout</em><em>]</em> :: Function object</p></li>
+<li><p><strong>iter</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of iteration</p></li>
+<li><p><strong>res</strong> (*)<em> [</em><em>real</em><em>,</em><em>in</em><em>]</em> :: Residual vector</p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em> :: Result of the Gnuplot call</p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <code class="xref f f-mod docutils literal notranslate"><span class="pre">ogpf</span></code></p>
+</dd>
+<dt class="field-odd">Call to</dt>
+<dd class="field-odd"><p><code class="xref f f-func docutils literal notranslate"><span class="pre">linspace()</span></code></p>
 </dd>
 </dl>
 </dd></dl>
@@ -346,7 +372,7 @@ instead contained in the meth and fun objects. The Descriptor object
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="utils.html" class="btn btn-neutral float-right" title="Utils Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="quadrature.html" class="btn btn-neutral float-right" title="Quadrature Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="serial.html" class="btn btn-neutral float-left" title="Serial Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Quadrature Module &mdash; PSFUN 0.1 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Utils Module" href="utils.html" />
+    <link rel="prev" title="Krylov Module" href="krylov.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> PSFUN
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="psfunlibrary.html">Matrix Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serial.html">Serial Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="krylov.html">Krylov Module</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quadrature Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#module">Module</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="utils.html">Utils Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Library Usage Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zreferences.html">References</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PSFUN</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Quadrature Module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/quadrature.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quadrature-module">
+<h1>Quadrature Module<a class="headerlink" href="#quadrature-module" title="Permalink to this headline">¶</a></h1>
+<p>This module makes use of the matrix function definition based on the <em>Cauchy integral</em>:
+given a closed contour <img class="math" src="_images/math/e7003fd3463f843ee1e53385878369f078d362ad.png" alt="\Gamma"/> lying in the region of
+analyticity of the function <img class="math" src="_images/math/95aabe3d9002fe03d54b9b9d9fbfc27c0eaeb56f.png" alt="f(x)"/> and containing the spectrum of <img class="math" src="_images/math/211284f68205c3e66773eaf026f32a0acdd3dfb3.png" alt="A"/>,
+<img class="math" src="_images/math/52c1294f17be88a9a28b02f70fb6ec0f68735834.png" alt="f(A)"/> can be defined as</p>
+<div class="math" id="equation-eq-contourint-quadrature">
+<p><span class="eqno">(4)<a class="headerlink" href="#equation-eq-contourint-quadrature" title="Permalink to this equation">¶</a></span><img src="_images/math/7887009fdf80d7cae4e6d04bcde8d78a3d9ab469.png" alt="f(A) =\frac{1}{2\pi i} \int_{\Gamma}  f(z) (zI - A)^{-1} dz."/></p>
+</div><p>By applying a quadrature formula on <img class="math" src="_images/math/3bfb3a64189a14b2704f4610827762d5e3145114.png" alt="N"/> points to <a class="reference internal" href="#equation-eq-contourint-quadrature">(4)</a>,
+with weights <img class="math" src="_images/math/af00d6d4eebb8757253643ec27899ccdc2fc5694.png" alt="\{c_j\}_{j=1}^{N}"/> and nodes <img class="math" src="_images/math/6a73b32124fe7adda9a0a2c0e602b2a6c2b2afb2.png" alt="\{\xi_j\}_{j=1}^{N}"/>,
+it is possible to approximate <a class="reference internal" href="psfunlibrary.html#equation-eq-problem-to-solve">(1)</a> as</p>
+<div class="math" id="equation-eq-quadratureformula">
+<p><span class="eqno">(5)<a class="headerlink" href="#equation-eq-quadratureformula" title="Permalink to this equation">¶</a></span><img src="_images/math/9c6f15784c80a95a212b84b32422542a25c7e1d8.png" alt="\mathbf{y} = f(A)\mathbf{x} \approx \sum_{j=1}^{N} c_j (A+\xi_j I)^{-1}\mathbf{x},"/></p>
+</div><p>that is then computationally equivalent to the solution of <img class="math" src="_images/math/3bfb3a64189a14b2704f4610827762d5e3145114.png" alt="N"/> linear
+systems with the same right-hand side.</p>
+<div class="section" id="module">
+<h2>Module<a class="headerlink" href="#module" title="Permalink to this headline">¶</a></h2>
+<p>The construction of the quadrature module is made of several interconnected modules.
+The base module is the <code class="code fortran docutils literal notranslate"><span class="pre">psfun_base_quadrature_mod</span></code>, it contains the
+base module of which the different quadratures are extensions.</p>
+<span class="target" id="f/psfun_base_quadrature_mod"></span><p class="rubric">Needed modules</p>
+<ul class="simple">
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_prec_mod</span></code></p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_krylov_mod</span></code></p></li>
+<li><p><a class="reference internal" href="utils.html#f/psfun_utils_mod" title="f/psfun_utils_mod"><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_utils_mod</span></code></a></p></li>
+</ul>
+<p class="rubric">Types</p>
+<ul>
+<li><dl class="type">
+<dt id="f/psfun_base_quadrature_mod/unknown_type">
+<em class="property">type  </em><code class="sig-prename descclassname">psfun_base_quadrature_mod/</code><code class="sig-name descname">unknown_type</code><a class="headerlink" href="#f/psfun_base_quadrature_mod/unknown_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type fields</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">desc_a</code><em> [</em><em>psb_desc_type</em><em>]</em></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</li>
+</ul>
+<p>Then the functions for working with the quadrature formula having either
+real (<code class="code fortran docutils literal notranslate"><span class="pre">psb_dpk_</span></code>) or complex quadrature nodes and weights for
+<a class="reference internal" href="#equation-eq-quadratureformula">(5)</a> are contained in the relative modules.</p>
+<span class="target" id="f/psfun_d_quadrature_mod"></span><p class="rubric">Description</p>
+<p>This module computes the matrix-function vector product by means of the
+approximation of <img class="math" src="_images/math/b404b9727217fa5204a059c35d214c3102f03038.png" alt="f(A)\mathbf{x}"/> based on quadrature formula, i.e.,
+having computed the poles and the scalings of the formula solves N linear
+systems to approximate the product.</p>
+<p class="rubric">Quick access</p>
+<dl class="field-list simple">
+<dt class="field-odd">Routines</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_d_quadrature_mod/psfun_d_quadratureplot" title="f/psfun_d_quadrature_mod/psfun_d_quadratureplot"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_d_quadratureplot()</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Needed modules</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#f/psfun_base_quadrature_mod" title="f/psfun_base_quadrature_mod"><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_base_quadrature_mod</span></code></a></p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p></li>
+<li><p><a class="reference internal" href="utils.html#f/psfun_utils_mod" title="f/psfun_utils_mod"><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_utils_mod</span></code></a></p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">ogpf</span></code></p></li>
+</ul>
+<p class="rubric">Types</p>
+<ul>
+<li><dl class="type">
+<dt id="f/psfun_d_quadrature_mod/unknown_type">
+<em class="property">type  </em><code class="sig-prename descclassname">psfun_d_quadrature_mod/</code><code class="sig-name descname">unknown_type</code><a class="headerlink" href="#f/psfun_d_quadrature_mod/unknown_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type fields</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">a</code><em> [</em><em>psb_dspmat_type</em><em>,</em><em>pointer</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">c</code> (*)<em> [</em><em>real</em><em>,</em><em>allocatable</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">eta</code><em> [</em><em>real</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">prec</code><em> [</em><em>psb_dprec_type</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">sign</code><em> [</em><em>real</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">xi</code> (*)<em> [</em><em>real</em><em>,</em><em>allocatable</em><em>]</em></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</li>
+</ul>
+<p class="rubric">Subroutines and functions</p>
+<dl class="subroutine">
+<dt id="f/psfun_d_quadrature_mod/psfun_d_quadratureplot">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_d_quadrature_mod/</code><code class="sig-name descname">psfun_d_quadratureplot</code><span class="sig-paren">(</span><em class="sig-param">quad</em>, <em class="sig-param">dfun</em><span class="optional">[</span>, <em class="sig-param">filename</em>, <em class="sig-param">info</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_d_quadrature_mod/psfun_d_quadratureplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots on the complex plane the quadrature poles, and plots the weights of
+the formula</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quad</strong> :: Quadrature rule</p></li>
+<li><p><strong>dfun</strong> :: Function to integrate</p></li>
+<li><p><strong>filename</strong><em> [</em><em>character</em><em>,</em><em>in,</em><em>]</em></p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <code class="xref f f-mod docutils literal notranslate"><span class="pre">ogpf</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="f/psfun_z_quadrature_mod"></span><p class="rubric">Description</p>
+<p>This module computes the matrix-function vector product by means of the
+approximation of <img class="math" src="_images/math/b404b9727217fa5204a059c35d214c3102f03038.png" alt="f(A)\mathbf{x}"/> based on quadrature formula, i.e.,
+having computed the poles and the scalings of the formula solves N linear
+systems to approximate the product.</p>
+<p class="rubric">Quick access</p>
+<dl class="field-list simple">
+<dt class="field-odd">Routines</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#f/psfun_z_quadrature_mod/psfun_z_computepoles" title="f/psfun_z_quadrature_mod/psfun_z_computepoles"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_z_computepoles()</span></code></a>, <a class="reference internal" href="#f/psfun_z_quadrature_mod/psfun_z_quadratureplot" title="f/psfun_z_quadrature_mod/psfun_z_quadratureplot"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_z_quadratureplot()</span></code></a>, <a class="reference internal" href="#f/psfun_z_quadrature_mod/psfun_z_setmatrix" title="f/psfun_z_quadrature_mod/psfun_z_setmatrix"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_z_setmatrix()</span></code></a>, <a class="reference internal" href="#f/psfun_z_quadrature_mod/psfun_z_setpreconditioner" title="f/psfun_z_quadrature_mod/psfun_z_setpreconditioner"><code class="xref f f-func docutils literal notranslate"><span class="pre">psfun_z_setpreconditioner()</span></code></a></p>
+</dd>
+</dl>
+<p class="rubric">Needed modules</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#f/psfun_base_quadrature_mod" title="f/psfun_base_quadrature_mod"><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_base_quadrature_mod</span></code></a></p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p></li>
+<li><p><a class="reference internal" href="utils.html#f/psfun_utils_mod" title="f/psfun_utils_mod"><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_utils_mod</span></code></a></p></li>
+<li><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">ogpf</span></code></p></li>
+</ul>
+<p class="rubric">Types</p>
+<ul>
+<li><dl class="type">
+<dt id="f/psfun_z_quadrature_mod/unknown_type">
+<em class="property">type  </em><code class="sig-prename descclassname">psfun_z_quadrature_mod/</code><code class="sig-name descname">unknown_type</code><a class="headerlink" href="#f/psfun_z_quadrature_mod/unknown_type" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type fields</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">a</code><em> [</em><em>psb_dspmat_type</em><em>,</em><em>pointer</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">c</code> (*)<em> [</em><em>complex</em><em>,</em><em>allocatable</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">eta</code><em> [</em><em>real</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">prec</code><em> [</em><em>psb_dprec_type</em><em>,</em><em>pointer</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">sign</code><em> [</em><em>real</em><em>]</em></p></li>
+<li><p><code class="sig-name descname">% </code><code class="sig-name descname">xi</code> (*)<em> [</em><em>complex</em><em>,</em><em>allocatable</em><em>]</em></p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</li>
+</ul>
+<p class="rubric">Subroutines and functions</p>
+<dl class="subroutine">
+<dt id="f/psfun_z_quadrature_mod/psfun_z_computepoles">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_z_quadrature_mod/</code><code class="sig-name descname">psfun_z_computepoles</code><span class="sig-paren">(</span><em class="sig-param">quad</em>, <em class="sig-param">quadformula</em>, <em class="sig-param">zfun</em>, <em class="sig-param">n</em>, <em class="sig-param">info</em><span class="optional">[</span>, <em class="sig-param">cparams</em><span class="optional">[</span>, <em class="sig-param">rparams</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_z_quadrature_mod/psfun_z_computepoles" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quad</strong> :: Quadrature type</p></li>
+<li><p><strong>quadformula</strong><em> [</em><em>external</em><em>]</em> :: Quadrature formula</p></li>
+<li><p><strong>zfun</strong> :: Function to integrate</p></li>
+<li><p><strong>n</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of poles</p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em> :: Flag on the results</p></li>
+<li><p><strong>cparams</strong> (*)<em> [</em><em>complex</em><em>,</em><em>in,</em><em>]</em> :: Optional complex parameters</p></li>
+<li><p><strong>rparams</strong> (*)<em> [</em><em>real</em><em>,</em><em>in,</em><em>]</em> :: Optional real parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_z_computepoles__user__routines</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/psfun_z_quadrature_mod/psfun_z_setmatrix">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_z_quadrature_mod/</code><code class="sig-name descname">psfun_z_setmatrix</code><span class="sig-paren">(</span><em class="sig-param">quad</em>, <em class="sig-param">a</em><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_z_quadrature_mod/psfun_z_setmatrix" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quad</strong> :: Quadrature type</p></li>
+<li><p><strong>a</strong><em> [</em><em>psb_dspmat_type</em><em>,</em><em>target</em><em>]</em> :: Matrix on which we work</p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/psfun_z_quadrature_mod/psfun_z_setpreconditioner">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_z_quadrature_mod/</code><code class="sig-name descname">psfun_z_setpreconditioner</code><span class="sig-paren">(</span><em class="sig-param">quad</em>, <em class="sig-param">prec</em><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_z_quadrature_mod/psfun_z_setpreconditioner" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quad</strong> :: Quadrature type</p></li>
+<li><p><strong>prec</strong><em> [</em><em>psb_dprec_type</em><em>,</em><em>target</em><em>]</em> :: Preconditioner for the solution of the associate linear systems</p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="subroutine">
+<dt id="f/psfun_z_quadrature_mod/psfun_z_quadratureplot">
+<em class="property">subroutine  </em><code class="sig-prename descclassname">psfun_z_quadrature_mod/</code><code class="sig-name descname">psfun_z_quadratureplot</code><span class="sig-paren">(</span><em class="sig-param">quad</em>, <em class="sig-param">zfun</em>, <em class="sig-param">info</em><span class="optional">[</span>, <em class="sig-param">filename</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/psfun_z_quadrature_mod/psfun_z_quadratureplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Plots on the complex plane the quadrature poles, and plots the weights of
+the formula</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>quad</strong> :: Quadrature rule</p></li>
+<li><p><strong>zfun</strong> :: Function to integrate</p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em></p></li>
+<li><p><strong>filename</strong><em> [</em><em>character</em><em>,</em><em>in,</em><em>]</em></p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <code class="xref f f-mod docutils literal notranslate"><span class="pre">ogpf</span></code></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>These two modules make use of <code class="code fortran docutils literal notranslate"><span class="pre">abstract</span> <span class="pre">interface</span></code> for both the
+<code class="code fortran docutils literal notranslate"><span class="pre">subroutine</span> <span class="pre">dquadrule</span></code>/<code class="code fortran docutils literal notranslate"><span class="pre">subroutine</span> <span class="pre">zquadrule</span></code> and the generic
+function for which we compute the <img class="math" src="_images/math/52c1294f17be88a9a28b02f70fb6ec0f68735834.png" alt="f(A)"/>. This is implemented this way
+to permit the user to implement its own quadrature rule and functions. An example
+of how this can be achieved is contained in the functions included in the
+submodule <code class="code fortran docutils literal notranslate"><span class="pre">psfun_z_quadrules_mod</span></code> that implements the three routines
+from <a class="bibtex reference internal" href="zreferences.html#mr2421045" id="id1">[3]</a>.</p>
+<dl class="subroutine">
+<dt id="f/_/hhtmethod1">
+<em class="property">subroutine  </em><code class="sig-name descname">hhtmethod1</code><span class="sig-paren">(</span><em class="sig-param">zfun</em>, <em class="sig-param">xi</em>, <em class="sig-param">c</em>, <em class="sig-param">eta</em>, <em class="sig-param">sign</em>, <em class="sig-param">n</em>, <em class="sig-param">info</em><span class="optional">[</span>, <em class="sig-param">cparams</em><span class="optional">[</span>, <em class="sig-param">rparams</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#f/_/hhtmethod1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Method 1 of Hale, Nicholas; Higham, Nicholas J.; Trefethen, Lloyd N.
+Computing ${bf A}^alpha,log({bf A})$, and related matrix functions
+by contour integrals. SIAM J. Numer. Anal. 46 (2008), no. 5, 2505–2523.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>zfun</strong> :: Function to integrate</p></li>
+<li><p><strong>xi</strong> (*)<em> [</em><em>complex</em><em>,</em><em>out,allocatable</em><em>]</em> :: Poles of the formula</p></li>
+<li><p><strong>c</strong> (*)<em> [</em><em>complex</em><em>,</em><em>out,allocatable</em><em>]</em> :: Scaling of the formula</p></li>
+<li><p><strong>eta</strong><em> [</em><em>real</em><em>,</em><em>out</em><em>]</em> :: Global Scaling</p></li>
+<li><p><strong>sign</strong><em> [</em><em>real</em><em>,</em><em>out</em><em>]</em> :: Sign for A</p></li>
+<li><p><strong>n</strong><em> [</em><em>integer</em><em>,</em><em>in</em><em>]</em> :: Number of Poles</p></li>
+<li><p><strong>info</strong><em> [</em><em>integer</em><em>,</em><em>out</em><em>]</em> :: Flag on the results</p></li>
+<li><p><strong>cparams</strong> (*)<em> [</em><em>complex</em><em>,</em><em>in,</em><em>]</em> :: Optional complex parameters</p></li>
+<li><p><strong>rparams</strong> (*)<em> [</em><em>real</em><em>,</em><em>in,</em><em>]</em> :: Optional real parameters</p></li>
+</ul>
+</dd>
+<dt class="field-even">Use </dt>
+<dd class="field-even"><p><code class="xref f f-mod docutils literal notranslate"><span class="pre">psb_base_mod</span></code>, <a class="reference internal" href="utils.html#f/psfun_utils_mod" title="f/psfun_utils_mod"><code class="xref f f-mod docutils literal notranslate"><span class="pre">psfun_utils_mod</span></code></a> (<code class="xref f f-func docutils literal notranslate"><span class="pre">ellipkkp()</span></code>, <code class="xref f f-func docutils literal notranslate"><span class="pre">ellipj()</span></code>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="utils.html" class="btn btn-neutral float-right" title="Utils Module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="krylov.html" class="btn btn-neutral float-left" title="Krylov Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Fabio Durastante
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
