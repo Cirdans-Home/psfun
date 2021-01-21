@@ -37,7 +37,7 @@ submodule (psfun_z_quadrature_mod) psfun_z_quadrules_mod
 
 contains
 
-  module subroutine hhtmethod1(zfun,xi,c,eta,sign,N,info,rparams)
+  module subroutine hhtmethod1(zfun,xi,c,eta,sign,N,info,cparams,rparams)
     ! Method 1 of Hale, Nicholas; Higham, Nicholas J.; Trefethen, Lloyd N.
     ! Computing ${\bf A}^\alpha,\ \log({\bf A})$, and related matrix functions
     ! by contour integrals. SIAM J. Numer. Anal. 46 (2008), no. 5, 2505--2523.
@@ -51,7 +51,8 @@ contains
     real(psb_dpk_), intent(out)    :: sign   ! Sign for A
     integer(psb_ipk_), intent(in)  :: N ! Number of Poles
     integer(psb_ipk_), intent(out) :: info ! Flag on the results
-    real(psb_dpk_), dimension(2), intent(in) :: rparams ! Optional real parameters
+    complex(psb_dpk_), dimension(:), optional, intent(in) :: cparams ! Optional complex parameters
+    real(psb_dpk_), dimension(:), optional, intent(in) :: rparams ! Optional real parameters
 
     ! local variables
     real(psb_dpk_)    :: mineig,maxeig,cond,L,K,Kp,Kvec(2)
@@ -68,7 +69,7 @@ contains
     allocate(c(N), stat=info)
 
     cond = (sqrt(maxeig/mineig)-1)/(sqrt(maxeig/mineig)+1)
-    L = -log(k)/DPI
+    L = -log(cond)/DPI
     Kvec = ellipkkp(L)
     K = Kvec(1)
     Kp = Kvec(2)
