@@ -33,18 +33,24 @@ module psfun_d_krylov_mod
     ! sparse.
 
   use psb_base_mod
+  use psb_krylov_mod
+  use amg_prec_mod
   use psfun_d_serial_mod
   use ogpf
   implicit none
 
   type, public :: psfun_d_krylov
-    character(len=20)   :: kname   = 'ARNOLDI' ! Name of the Krylov method
+    character(len=20)     :: kname   = 'ARNOLDI' ! Name of the Krylov method
+    character(len=20)     :: kmethd ! Method for the solution of the linear system
+    type(amg_dprec_type)  :: prec   ! Preconditioner for the inner solution method
   contains
     ! Set the options
     procedure, pass(meth) :: setstring  => psfun_d_setstring
     generic, public :: set => setstring
     procedure, pass(meth) :: apply      => psfun_d_parallel_apply
     procedure, pass(meth) :: plot       => psfun_d_plot_info
+    procedure, pass(meth) :: precinit   => psfun_d_prec_init
+    procedure, pass(meth) :: precbuild  => psfun_d_prec_build
   end type
 
   private :: psfun_d_setstring
@@ -202,5 +208,84 @@ contains
 
 
   end subroutine psfun_d_plot_info
+
+  subroutine psfun_d_prec_init(meth,ctxt,ptype,info)
+      ! This function performs the init of the preconditioner for the inner
+      ! solve in the rational Krylov method
+      use psb_base_mod
+      use amg_prec_mod
+
+      implicit none
+
+      class(psfun_d_krylov), intent(inout)      :: meth  ! Krylov method
+      type(psb_ctxt_type), intent(in)           :: ctxt  ! Parallel context
+      character(len=20), intent(in)             :: ptype ! PSBLAS/AMG4PSBLAS preconditioner
+      integer(psb_ipk_)                         :: info  ! Result of the init call
+
+      ! Local Variables
+      integer(psb_ipk_) :: err_act
+      character(len=20) :: name
+
+      name = 'd_prec_init'
+      call psb_erractionsave(err_act)
+
+      info = psb_success_
+
+      call meth%prec%init(ctxt,ptype,info)
+
+      if(info /= psb_success_) then
+          call psb_errpush(info,name)
+          goto 9999
+      end if
+
+      call psb_erractionrestore(err_act)
+      return
+
+9999 call psb_error_handler(err_act)
+    return
+
+  end subroutine psfun_d_prec_init
+
+  subroutine psfun_d_prec_build(meth,a,desc_a,info)
+      ! This function builds the AMG4PSBLAS preconditioner for the inner solve
+      ! in a Rational Krylov method
+      use psb_base_mod
+      use amg_prec_mod
+
+      implicit none
+
+      class(psfun_d_krylov), intent(inout)      :: meth   ! Krylov method
+      type(psb_dspmat_type), intent(inout)      :: a      ! Sparse matrix
+      type(psb_desc_type), intent(inout)        :: desc_a ! Descriptor for the sparse matrix
+      integer(psb_ipk_)                         :: info   ! Result of the init call
+
+      ! Local Variables
+      integer(psb_ipk_) :: err_act
+      character(len=20) :: name
+
+      name = 'd_prec_build'
+      call psb_erractionsave(err_act)
+
+      ! Build The Hierarchy
+      call meth%prec%hierarchy_build(a,desc_a,info)
+      if(info /= psb_success_) then
+          call psb_errpush(info,name)
+          goto 9999
+      end if
+
+      ! Build The Smoothers
+      call meth%prec%smoothers_build(a,desc_a,info)
+      if(info /= psb_success_) then
+          call psb_errpush(info,name)
+          goto 9999
+      end if
+
+      call psb_erractionrestore(err_act)
+      return
+
+9999 call psb_error_handler(err_act)
+    return
+
+  end subroutine psfun_d_prec_build
 
 end module psfun_d_krylov_mod

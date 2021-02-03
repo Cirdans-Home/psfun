@@ -15,7 +15,9 @@ target_include_directories(psfun_krylov PUBLIC ${PSBLAS_MODULES} ${AUXILINCLUDE}
 target_include_directories(psfun_krylov PUBLIC ${PSBLAS_INCLUDE})
 target_include_directories(psfun_krylov PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(psfun_krylov PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-target_link_libraries(psfun_krylov PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} ${AUXILLINK} psfun_serial psfun_utils)
+target_link_libraries(psfun_krylov PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS}
+  ${AUXILLINK} ${LINK_AMG4PSBLAS} ${LINKED_LIBRARIES_AMG4PSBLAS}
+  psfun_serial psfun_utils)
 
 if(MPI_COMPILE_FLAGS)
   set_target_properties(psfun_krylov PROPERTIES
