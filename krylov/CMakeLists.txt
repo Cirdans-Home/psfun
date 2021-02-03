@@ -6,10 +6,13 @@ message("Compile and Link Krylov Library")
 # submodules in the various folders, therefore we use some variable with local
 # scope containing the files in the subdirectories
 set(POLYNOMIAL_METHODS polynomial/psfun_d_arnoldi.f90 polynomial/psfun_d_lanczos.f90 )
+set(RATIONAL_METHODS rational/psfun_d_sai.f90)
+set(SHIFTED_METHODS shifted/psfun_dcg.F90)
 
 # Now we can compile the library with all its dependencies
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
-add_library(psfun_krylov psfun_d_krylov_mod.F90 ${POLYNOMIAL_METHODS})
+add_library(psfun_krylov psfun_d_krylov_mod.F90 psfun_krylov_mod.f90
+  ${POLYNOMIAL_METHODS} ${RATIONAL_METHODS} ${SHIFTED_METHODS})
 add_compile_definitions(${PSBFDEFINES})
 target_include_directories(psfun_krylov PUBLIC ${PSBLAS_MODULES} ${AUXILINCLUDE})
 target_include_directories(psfun_krylov PUBLIC ${PSBLAS_INCLUDE})
