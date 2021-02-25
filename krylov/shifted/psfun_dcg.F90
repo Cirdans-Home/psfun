@@ -255,13 +255,16 @@ subroutine psfun_dcg_vect(a,prec,b,eta,zeta,x,eps,desc_a,info,&
     if (itx>= itmax_) exit restart
 
     it = 0
-    call psb_geaxpby(done,b,dzero,r,desc_a,info)
-    if (info == psb_success_) call psb_spmm(-done,a,x,done,r,desc_a,info,work=aux)
+    call psb_geaxpby(done,b,dzero,r,desc_a,info)    ! r <- b [ x0 = 0]
+    ! r <- r - (η A + ζ I) x : We do it in two step : r <- r - ηA, r <- r - ζ x
+    if (info == psb_success_) call psb_spmm(-eta,a,x,done,r,desc_a,info,work=aux)
+    if (info == psb_success_) call psb_geaxpby(-zeta,x,done,r,desc_a,info)
     if (info /= psb_success_) then
       info=psb_err_from_subroutine_non_
       call psb_errpush(info,name)
       goto 9999
     end if
+
 
     rho = dzero
 
@@ -293,7 +296,10 @@ subroutine psfun_dcg_vect(a,prec,b,eta,zeta,x,eps,desc_a,info,&
         call psb_geaxpby(done,z,beta,p,desc_a,info)
       end if
 
-      call psb_spmm(done,a,p,dzero,q,desc_a,info,work=aux)
+      ! We have here another product with a, thus we need to change it into a
+      ! product with (η A + ζ I): q <- Ap => q <- η A p, q <- q + ζ p
+      call psb_spmm(eta,a,p,dzero,q,desc_a,info,work=aux)
+      call psb_geaxpby(zeta,p,done,q,desc_a,info)
       sigma = psb_gedot(p,q,desc_a,info)
       if (sigma == dzero) then
           if (debug_level >= psb_debug_ext_)&

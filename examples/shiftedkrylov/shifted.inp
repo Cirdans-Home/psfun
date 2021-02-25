@@ -1,0 +1,15 @@
+14                  ! Number of inputs
+laplacian.mtx       ! A : (η A + ζ I) x = b
+NONE                ! b : (η A + ζ I) x = b put NONE for b = (1,1,...,1)^T
+-1.0                ! η : (η A + ζ I) x = b
+1.0                 ! ζ : (η A + ζ I) x = b
+MM                  ! File format: MM: Matrix Market  HB: Harwell-Boeing.
+CG                  ! Iterative method: CG
+DIAG                ! Preconditioner NONE  DIAG  BJAC
+CSR                 ! Storage format CSR COO JAD
+GRAPH               ! PART: Partition method  BLOCK   GRAPH
+2                   ! ISTOPC
+00500               ! ITMAX
+1                   ! ITRACE
+002                 ! IRST: restart parameter for methods that use it
+1.d-7               ! EPS
