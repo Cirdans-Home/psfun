@@ -7,6 +7,8 @@ This library is focused on the computation of matrix-function vector products
 
 for large and sparse matrix in a distributed setting.
 
-Library documentation can be found on: [cirdans-home.github.io/psfun/](https://cirdans-home.github.io/psfun/)
+Library documentation can be found on: [cirdans-home.github.io/psfun/](https://cirdans-home.github.io/psfun/).
+
+A project board detailing what is happening can be found [here](https://github.com/users/Cirdans-Home/projects/1).
 
 **The Library is still under active development and no release are available: bugs everywhere!**
