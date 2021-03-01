@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A library for distributed computation of matrix functions powered by PSCTOOLKIT PSFUN Parallel Sparse Function">
+    
+    <meta name="author" content="Fabio Durastante" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>psfun_utils_mod &ndash; PSFUN</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">PSFUN <small>0.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Matrix Functions</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>psfun_utils_mod 
+    <small>Module</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 1.9% of total for modules and submodules.">32 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/psfun_utils_mod.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/psfun_utils_mod.f90.html'>psfun_utils_mod.f90</a></li>
+    
+  
+     <li class="active">psfun_utils_mod</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-0">Interfaces</a></h3></div>
+  <div id="inters-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/psfun_utils_mod.html#interface-ellipj">ellipj</a>
+      
+      <a class="list-group-item" href="../module/psfun_utils_mod.html#interface-ellipkkp">ellipkkp</a>
+      
+      <a class="list-group-item" href="../module/psfun_utils_mod.html#interface-horner">horner</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    <p>This modules contains some utility function that are used in the library.</p>
+      <br>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>psb_base_mod</li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~psfun_utils_mod~~UsesGraph Pages: 1 -->
+<svg id="modulepsfun_utils_modUsesGraph" width="221pt" height="32pt"
+ viewBox="0.00 0.00 221.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~psfun_utils_mod~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>module~~psfun_utils_mod~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 217,-28 217,4 -4,4"/>
+<!-- module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsesGraph_node1" class="node">
+<title>module~psfun_utils_mod</title>
+<polygon fill="none" stroke="#000000" points="213,-24 122,-24 122,0 213,0 213,-24"/>
+<text text-anchor="middle" x="167.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">psfun_utils_mod</text>
+</g>
+<!-- psb_base_mod -->
+<g id="module~~psfun_utils_mod~~UsesGraph_node2" class="node">
+<title>psb_base_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="86,-24 0,-24 0,0 86,0 86,-24"/>
+<text text-anchor="middle" x="43" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_base_mod</text>
+</g>
+<!-- module~psfun_utils_mod&#45;&gt;psb_base_mod -->
+<g id="module~~psfun_utils_mod~~UsesGraph_edge1" class="edge">
+<title>module~psfun_utils_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M121.8477,-12C113.5589,-12 104.8465,-12 96.3593,-12"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="96.162,-8.5001 86.1619,-12 96.1619,-15.5001 96.162,-8.5001"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Used by</h3>
+      </div>
+      <ul class="list-group">
+  
+  <li class="list-group-item">  
+    <ul class="list-inline">
+      <li><h5>Descendants:</h5></li>
+      
+      <li><a href='../module/psfun_d_utils_mod.html'>psfun_d_utils_mod</a></li>
+      
+      <li><a href='../module/psfun_z_utils_mod.html'>psfun_z_utils_mod</a></li>
+      
+    </ul>
+  </li>
+  
+  
+  <li class="list-group-item">
+    <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~psfun_utils_mod~~UsedByGraph Pages: 1 -->
+<svg id="modulepsfun_utils_modUsedByGraph" width="641pt" height="247pt"
+ viewBox="0.00 0.00 641.00 247.37" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~psfun_utils_mod~~UsedByGraph" class="graph" transform="scale(.8604 .8604) rotate(0) translate(4 283.5075)">
+<title>module~~psfun_utils_mod~~UsedByGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-283.5075 741,-283.5075 741,4 -4,4"/>
+<!-- module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node1" class="node">
+<title>module~psfun_utils_mod</title>
+<polygon fill="none" stroke="#000000" points="91,-128 0,-128 0,-104 91,-104 91,-128"/>
+<text text-anchor="middle" x="45.5" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">psfun_utils_mod</text>
+</g>
+<!-- module~psfun_d_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node2" class="node">
+<title>module~psfun_d_quadrature_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node2"><a xlink:href=".././module/psfun_d_quadrature_mod.html" xlink:title="psfun_d_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="453,-228 317,-228 317,-204 453,-204 453,-228"/>
+<text text-anchor="middle" x="385" y="-213.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_quadrature_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge1" class="edge">
+<title>module~psfun_d_quadrature_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M350.1681,-228.033C305.5691,-242.6883 230.8448,-264.5023 204,-256"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M204,-256C138.455,-235.2406 83.9896,-169.9382 59.4674,-136.3682"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="62.2831,-134.2885 53.6242,-128.1832 56.5859,-138.3557 62.2831,-134.2885"/>
+</g>
+<!-- module~psfun_base_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node8" class="node">
+<title>module~psfun_base_quadrature_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node8"><a xlink:href=".././module/psfun_base_quadrature_mod.html" xlink:title="psfun_base_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="281,-188 127,-188 127,-164 281,-164 281,-188"/>
+<text text-anchor="middle" x="204" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_base_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge12" class="edge">
+<title>module~psfun_d_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M330.694,-203.9987C311.0964,-199.6677 288.7877,-194.7376 268.4089,-190.234"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="269.0999,-186.8023 258.5802,-188.0619 267.5893,-193.6374 269.0999,-186.8023"/>
+</g>
+<!-- module~psfun_z_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node3" class="node">
+<title>module~psfun_z_quadrature_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node3"><a xlink:href=".././module/psfun_z_quadrature_mod.html" xlink:title="psfun_z_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="453,-148 317,-148 317,-124 453,-124 453,-148"/>
+<text text-anchor="middle" x="385" y="-133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_z_quadrature_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge2" class="edge">
+<title>module~psfun_z_quadrature_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M316.7055,-131.9768C253.4122,-128.2481 160.3951,-122.7685 101.4046,-119.2933"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.3493,-115.7841 91.1608,-118.6899 100.9376,-122.772 101.3493,-115.7841"/>
+</g>
+<!-- module~psfun_z_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge13" class="edge">
+<title>module~psfun_z_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M330.694,-148.0013C311.0964,-152.3323 288.7877,-157.2624 268.4089,-161.766"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="267.5893,-158.3626 258.5802,-163.9381 269.0999,-165.1977 267.5893,-158.3626"/>
+</g>
+<!-- module~psfun_z_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node4" class="node">
+<title>module~psfun_z_utils_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node4"><a xlink:href=".././module/psfun_z_utils_mod.html" xlink:title="psfun_z_utils_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="255,-108 153,-108 153,-84 255,-84 255,-108"/>
+<text text-anchor="middle" x="204" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_utils_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_z_utils_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge6" class="edge">
+<title>module~psfun_z_utils_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" d="M152.9771,-102.4382C136.4897,-104.5187 118.1272,-106.8357 101.3118,-108.9575"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="100.5555,-105.5251 91.0724,-110.2495 101.4319,-112.47 100.5555,-105.5251"/>
+</g>
+<!-- program~utiltest -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node5" class="node">
+<title>program~utiltest</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node5"><a xlink:href=".././program/utiltest.html" xlink:title="utiltest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="231,-66 177,-66 177,-42 231,-42 231,-66"/>
+<text text-anchor="middle" x="204" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utiltest</text>
+</a>
+</g>
+</g>
+<!-- program~utiltest&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge3" class="edge">
+<title>program~utiltest&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M176.851,-59.9974C161.9094,-63.6464 143.1721,-68.7985 127,-75 109.4868,-81.7158 90.7365,-90.9917 75.6412,-99.0221"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="73.8887,-95.9908 66.7583,-103.8272 77.2192,-102.1478 73.8887,-95.9908"/>
+</g>
+<!-- module~psfun_d_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node6" class="node">
+<title>module~psfun_d_utils_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node6"><a xlink:href=".././module/psfun_d_utils_mod.html" xlink:title="psfun_d_utils_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="255.5,-24 152.5,-24 152.5,0 255.5,0 255.5,-24"/>
+<text text-anchor="middle" x="204" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_utils_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_utils_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge7" class="edge">
+<title>module~psfun_d_utils_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" d="M152.3457,-22.0174C143.5572,-24.8476 134.7692,-28.4439 127,-33 99.5054,-49.1237 74.9351,-76.914 60.1337,-95.8571"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="57.3118,-93.7858 54.0451,-103.8645 62.8839,-98.0228 57.3118,-93.7858"/>
+</g>
+<!-- program~quadraturetest -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node7" class="node">
+<title>program~quadraturetest</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node7"><a xlink:href=".././program/quadraturetest.html" xlink:title="quadraturetest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="737,-238 655,-238 655,-214 737,-214 737,-238"/>
+<text text-anchor="middle" x="696" y="-223.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">quadraturetest</text>
+</a>
+</g>
+</g>
+<!-- program~quadraturetest&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge4" class="edge">
+<title>program~quadraturetest&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M655.5824,-238.0675C569.951,-261.5823 364.9191,-306.9663 204,-256"/>
+</g>
+<!-- module~psfun_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node9" class="node">
+<title>module~psfun_quadrature_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node9"><a xlink:href=".././module/psfun_quadrature_mod.html" xlink:title="psfun_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="616,-209 492,-209 492,-185 616,-185 616,-209"/>
+<text text-anchor="middle" x="554" y="-194.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- program~quadraturetest&#45;&gt;module~psfun_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge14" class="edge">
+<title>program~quadraturetest&#45;&gt;module~psfun_quadrature_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M654.9277,-217.612C644.8937,-215.5628 633.8836,-213.3143 622.9389,-211.0791"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="623.4339,-207.608 612.9358,-209.0362 622.0332,-214.4664 623.4339,-207.608"/>
+</g>
+<!-- module~psfun_base_quadrature_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge5" class="edge">
+<title>module~psfun_base_quadrature_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M166.6082,-163.9557C153.9634,-159.7287 139.8069,-154.8269 127,-150 112.3132,-144.4646 96.3393,-137.9191 82.4566,-132.0566"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="83.7931,-128.8216 73.221,-128.1279 81.0529,-135.2631 83.7931,-128.8216"/>
+</g>
+<!-- module~psfun_quadrature_mod&#45;&gt;module~psfun_d_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge8" class="edge">
+<title>module~psfun_quadrature_mod&#45;&gt;module~psfun_d_quadrature_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M491.5508,-204.0209C482.367,-205.0534 472.8096,-206.1279 463.3553,-207.1908"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="462.7057,-203.7417 453.1594,-208.3371 463.4879,-210.6979 462.7057,-203.7417"/>
+</g>
+<!-- module~psfun_quadrature_mod&#45;&gt;module~psfun_z_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge9" class="edge">
+<title>module~psfun_quadrature_mod&#45;&gt;module~psfun_z_quadrature_mod</title>
+<path fill="none" stroke="#ffda00" stroke-dasharray="5,2" d="M520.611,-184.9484C493.9921,-175.3403 456.534,-161.8199 427.7285,-151.4227"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="428.9139,-148.1296 418.3196,-148.0266 426.5373,-154.7139 428.9139,-148.1296"/>
+</g>
+<!-- module~psfun_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge11" class="edge">
+<title>module~psfun_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod</title>
+<path fill="none" stroke="#ff00da" stroke-dasharray="5,2" d="M491.8303,-193.2698C436.0998,-189.926 353.7554,-184.9853 291.403,-181.2442"/>
+<polygon fill="#ff00da" stroke="#ff00da" points="291.3751,-177.7363 281.1834,-180.631 290.9558,-184.7237 291.3751,-177.7363"/>
+</g>
+<!-- module~psfun_z_quadrules_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_node10" class="node">
+<title>module~psfun_z_quadrules_mod</title>
+<g id="a_module~~psfun_utils_mod~~UsedByGraph_node10"><a xlink:href=".././module/psfun_z_quadrules_mod.html" xlink:title="psfun_z_quadrules_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="619,-148 489,-148 489,-124 619,-124 619,-148"/>
+<text text-anchor="middle" x="554" y="-133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_quadrules_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_z_quadrules_mod&#45;&gt;module~psfun_z_quadrature_mod -->
+<g id="module~~psfun_utils_mod~~UsedByGraph_edge10" class="edge">
+<title>module~psfun_z_quadrules_mod&#45;&gt;module~psfun_z_quadrature_mod</title>
+<path fill="none" stroke="#ffda00" d="M488.6602,-136C480.4059,-136 471.894,-136 463.4628,-136"/>
+<polygon fill="#ffda00" stroke="#ffda00" points="463.2412,-132.5001 453.2412,-136 463.2411,-139.5001 463.2412,-132.5001"/>
+</g>
+</g>
+</svg>
+</div><script>var panmodulepsfun_utils_modUsedByGraph = svgPanZoom('#modulepsfun_utils_modUsedByGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+  </li>
+  
+      </ul>
+    </div>
+    
+
+    <br>
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#inters-1">Interfaces</a></h3></div>
+  <div id="inters-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../module/psfun_utils_mod.html#interface-ellipj">ellipj</a>
+      
+      <a class="list-group-item" href="../module/psfun_utils_mod.html#interface-ellipkkp">ellipkkp</a>
+      
+      <a class="list-group-item" href="../module/psfun_utils_mod.html#interface-horner">horner</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    
+
+    
+    
+    
+    
+    
+    <section>
+   <h2>Interfaces</h2>
+   
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-ellipj"></span><h3>public interface <a href='../interface/ellipj.html'>ellipj</a>
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+    <p>Returns the values of the Jacobi elliptic functions evaluated at <code>real</code>
+ or <code>complex</code> argument u and parameter <script type="math/tex">M = \exp(-2 \pi L)</script>,
+ <script type="math/tex">0 < L < \infty</script>. For <script type="math/tex">M = K^2</script>, and <script type="math/tex">K</script> the elliptic modulus.</p>
+  </div>
+  
+  <ul class="list-group">
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public subroutine d_ellipj(u, L, sn, cn, dn)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>L</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sn</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>cn</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dn</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public recursive subroutine z_ellipj(u, L, sn, cn, dn, flag)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=psb_dpk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>u</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>L</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>sn</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>cn</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>complex(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>dn</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>logical,</td>
+  <td>intent(in),</td>
+  <td>optional</td>
+  
+  <td></td><td>::</td>
+  <td><strong>flag</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+    </li>
+  
+  
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-ellipkkp"></span><h3>public interface <a href='../interface/ellipkkp.html'>ellipkkp</a>
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+    <p>Complete elliptic integral of the first kind, with complement.
+ Returns the value of the complete elliptic integral of the first kind,
+ evaluated at <script type="math/tex">M=\exp(-2\pi L)</script>, <script type="math/tex">0 < L < \infty</script>, and the
+ complementarity parameter <script type="math/tex">1-M</script>.</p>
+  </div>
+  
+  <ul class="list-group">
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function ellipkkp(L) result(K)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>L</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=psb_dpk_)
+  (2)</small></h4>
+  
+    
+
+    </li>
+  
+  
+  
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="interface-horner"></span><h3>public interface <a href='../interface/horner.html'>horner</a>
+    
+  </h3></div>
+  
+  <div class="panel-body">
+    
+    <p>Apply Horner rule to evaluate a polynomial</p>
+  </div>
+  
+  <ul class="list-group">
+  
+  
+    <li class="list-group-item">
+    
+    
+    <h3>
+public function horner(coeffs, x) result(res)
+    
+    
+   
+</h3>
+    
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(in),</td>
+  <td></td>
+  
+  <td>dimension (:)</td><td>::</td>
+  <td><strong>coeffs</strong></td><td><p>Coefficient of the polynomial</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>x</strong></td><td><p>Where to evaluate</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  
+  
+  
+  
+     <h4>Return Value <small>real(kind=psb_dpk_)
+  </small></h4>
+  <p>Result</p>
+    
+
+    </li>
+  
+  
+  
+  </ul>
+</div>
+
+    
+    </section>
+  <br>
+    
+
+    
+    
+    
+    
+    
+
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> PSFUN was developed by Fabio Durastante</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

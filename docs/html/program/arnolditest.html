@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A library for distributed computation of matrix functions powered by PSCTOOLKIT PSFUN Parallel Sparse Function">
+    
+    <meta name="author" content="Fabio Durastante" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>arnolditest &ndash; PSFUN</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">PSFUN <small>0.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Matrix Functions</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>arnolditest
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="27.1% of total for programs.">256 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/arnolditest.F90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/arnolditest.f90.html'>arnolditest.F90</a></li>
+    
+  
+     <li class="active">arnolditest</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-a~13">a</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-afmt~5">afmt</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-amatsize~2">amatsize</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-aux_a~2">aux_a</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-aux_x">aux_x</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ctxt~9">ctxt</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-desc_a~9">desc_a</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-descsize~2">descsize</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-eps~10">eps</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-err~7">err</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-filefmt~5">filefmt</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-fname~6">fname</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-fun~7">fun</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-i~3">i</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-iam~3">iam</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-info~19">info</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ipv~2">ipv</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ircode~2">ircode</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-istop~8">istop</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-iter~8">iter</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-itmax~10">itmax</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-itrace~10">itrace</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-iunit~2">iunit</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ivg~2">ivg</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-kmethd~4">kmethd</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-lnp~2">lnp</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-m_problem~2">m_problem</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-mname~4">mname</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-name~3">name</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-np~3">np</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-part~5">part</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-perm">perm</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-res~8">res</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-rhs_file~5">rhs_file</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-scaling~5">scaling</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-system_size">system_size</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-t1~2">t1</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-t2~2">t2</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-variant~5">variant</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-x_col~2">x_col</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-x_col_glob~2">x_col_glob</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-y_col">y_col</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/arnolditest.html#proc-get_parms">get_parms</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#proc-pr_usage">pr_usage</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>psb_base_mod</li>
+    
+    <li>psb_util_mod</li>
+    
+    <li><a href='../module/psfun_d_serial_mod.html'>psfun_d_serial_mod</a></li>
+    
+    <li><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~arnolditest~~UsesGraph Pages: 1 -->
+<svg id="programarnolditestUsesGraph" width="485pt" height="233pt"
+ viewBox="0.00 0.00 485.00 233.22" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~arnolditest~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 229.2247)">
+<title>program~~arnolditest~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-229.2247 481,-229.2247 481,4 -4,4"/>
+<!-- program~arnolditest -->
+<g id="program~~arnolditest~~UsesGraph_node1" class="node">
+<title>program~arnolditest</title>
+<polygon fill="none" stroke="#000000" points="477,-128 415,-128 415,-104 477,-104 477,-128"/>
+<text text-anchor="middle" x="446" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">arnolditest</text>
+</g>
+<!-- psb_base_mod -->
+<g id="program~~arnolditest~~UsesGraph_node2" class="node">
+<title>psb_base_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="86,-188 0,-188 0,-164 86,-164 86,-188"/>
+<text text-anchor="middle" x="43" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_base_mod</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_base_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge1" class="edge">
+<title>program~arnolditest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M323,-216C239.0995,-239.534 136.9748,-211.2211 82.2059,-191.6319"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="83.1392,-188.2463 72.5456,-188.0902 80.7297,-194.8186 83.1392,-188.2463"/>
+</g>
+<!-- module~psfun_d_serial_mod -->
+<g id="program~~arnolditest~~UsesGraph_node3" class="node">
+<title>module~psfun_d_serial_mod</title>
+<g id="a_program~~arnolditest~~UsesGraph_node3"><a xlink:href=".././module/psfun_d_serial_mod.html" xlink:title="psfun_d_serial_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="231,-188 122,-188 122,-164 231,-164 231,-188"/>
+<text text-anchor="middle" x="176.5" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_serial_mod</text>
+</a>
+</g>
+</g>
+<!-- program~arnolditest&#45;&gt;module~psfun_d_serial_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge2" class="edge">
+<title>program~arnolditest&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M436.8967,-128.218C418.5366,-151.5876 374.4068,-201.5804 323,-216"/>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M323,-216C303.0448,-221.5974 252.3457,-205.2332 216.1908,-191.771"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="217.0081,-188.3381 206.4167,-188.0716 214.5302,-194.8849 217.0081,-188.3381"/>
+</g>
+<!-- module~psfun_d_krylov_mod -->
+<g id="program~~arnolditest~~UsesGraph_node4" class="node">
+<title>module~psfun_d_krylov_mod</title>
+<g id="a_program~~arnolditest~~UsesGraph_node4"><a xlink:href=".././module/psfun_d_krylov_mod.html" xlink:title="psfun_d_krylov_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="379,-128 267,-128 267,-104 379,-104 379,-128"/>
+<text text-anchor="middle" x="323" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_krylov_mod</text>
+</a>
+</g>
+</g>
+<!-- program~arnolditest&#45;&gt;module~psfun_d_krylov_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge3" class="edge">
+<title>program~arnolditest&#45;&gt;module~psfun_d_krylov_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M414.9619,-116C407.1024,-116 398.3548,-116 389.468,-116"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="389.4152,-112.5001 379.4152,-116 389.4152,-119.5001 389.4152,-112.5001"/>
+</g>
+<!-- psb_util_mod -->
+<g id="program~~arnolditest~~UsesGraph_node5" class="node">
+<title>psb_util_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="361,-86 285,-86 285,-62 361,-62 361,-86"/>
+<text text-anchor="middle" x="323" y="-71.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_util_mod</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_util_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge4" class="edge">
+<title>program~arnolditest&#45;&gt;psb_util_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M414.9619,-105.4016C400.6995,-100.5315 383.5129,-94.6629 367.8764,-89.3236"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="368.9753,-86.0005 358.3808,-86.0812 366.7132,-92.625 368.9753,-86.0005"/>
+</g>
+<!-- module~psfun_d_serial_mod&#45;&gt;psb_base_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge5" class="edge">
+<title>module~psfun_d_serial_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M121.8152,-176C113.4196,-176 104.7606,-176 96.3935,-176"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="96.3696,-172.5001 86.3696,-176 96.3695,-179.5001 96.3696,-172.5001"/>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;psb_base_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge9" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M266.8998,-125.8265C226.4662,-133.1661 170.676,-143.8218 122,-155 113.6492,-156.9177 104.8433,-159.0989 96.2614,-161.3127"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="95.1182,-157.9939 86.3306,-163.9125 96.8911,-164.7657 95.1182,-157.9939"/>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;module~psfun_d_serial_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge7" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M293.3535,-128.1419C270.915,-137.3317 239.8937,-150.0367 215.4524,-160.0468"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="214.0298,-156.8472 206.1024,-163.8762 216.6829,-163.325 214.0298,-156.8472"/>
+</g>
+<!-- ogpf -->
+<g id="program~~arnolditest~~UsesGraph_node6" class="node">
+<title>ogpf</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="203.5,-108 149.5,-108 149.5,-84 203.5,-84 203.5,-108"/>
+<text text-anchor="middle" x="176.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ogpf</text>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;ogpf -->
+<g id="program~~arnolditest~~UsesGraph_edge8" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;ogpf</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M266.7783,-108.3247C249.0388,-105.9029 229.8889,-103.2886 213.8103,-101.0936"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="214.1152,-97.6028 203.7336,-99.7179 213.1682,-104.5385 214.1152,-97.6028"/>
+</g>
+<!-- amg_prec_mod -->
+<g id="program~~arnolditest~~UsesGraph_node7" class="node">
+<title>amg_prec_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="220.5,-66 132.5,-66 132.5,-42 220.5,-42 220.5,-66"/>
+<text text-anchor="middle" x="176.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">amg_prec_mod</text>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;amg_prec_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge6" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;amg_prec_mod</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M288.3147,-103.9099C281.1849,-101.1698 273.7863,-98.1365 267,-95 250.3854,-87.3211 247.5799,-82.7538 231,-75 227.2284,-73.2362 223.2645,-71.4979 219.2671,-69.8223"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="220.5358,-66.56 209.9536,-66.044 217.9043,-73.0466 220.5358,-66.56"/>
+</g>
+<!-- psb_krylov_mod -->
+<g id="program~~arnolditest~~UsesGraph_node8" class="node">
+<title>psb_krylov_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="222,-24 131,-24 131,0 222,0 222,-24"/>
+<text text-anchor="middle" x="176.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_krylov_mod</text>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;psb_krylov_mod -->
+<g id="program~~arnolditest~~UsesGraph_edge10" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;psb_krylov_mod</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M280.8485,-103.8875C275.8824,-101.4216 271.1235,-98.4856 267,-95 242.6651,-74.4301 255.2419,-53.6794 231,-33 229.4668,-31.6921 227.8431,-30.4607 226.1523,-29.3018"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="227.6456,-26.1205 217.2465,-24.093 224.1115,-32.1629 227.6456,-26.1205"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    <p>Test for the parallel computation of matrix function by means of the
+ <a href="../interface/psfun_d_arnoldi.html">psfun_d_arnoldi</a> function.</p>
+<p>It applies the classical Arnoldi orthogonalization
+ algorithm on a distributed matrix.</p>
+    
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~arnolditest~~CallsGraph Pages: 1 -->
+<svg id="programarnolditestCallsGraph" width="302pt" height="1118pt"
+ viewBox="0.00 0.00 302.00 1118.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~arnolditest~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1114)">
+<title>program~~arnolditest~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1114 298,-1114 298,4 -4,4"/>
+<!-- program~arnolditest -->
+<g id="program~~arnolditest~~CallsGraph_node1" class="node">
+<title>program~arnolditest</title>
+<polygon fill="none" stroke="#000000" points="62,-570 0,-570 0,-546 62,-546 62,-570"/>
+<text text-anchor="middle" x="31" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">arnolditest</text>
+</g>
+<!-- psb_info -->
+<g id="program~~arnolditest~~CallsGraph_node2" class="node">
+<title>psb_info</title>
+<polygon fill="#777777" stroke="#777777" points="290.5,-1110 236.5,-1110 236.5,-1086 290.5,-1086 290.5,-1110"/>
+<text text-anchor="middle" x="263.5" y="-1095.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_info</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_info -->
+<g id="program~~arnolditest~~CallsGraph_edge1" class="edge">
+<title>program~arnolditest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff0000" d="M31.7583,-570.0117C36.4871,-643.2209 62.8732,-1027.4964 98,-1065 130.4952,-1099.6939 188.2774,-1103.6667 226.2419,-1101.9234"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="226.6199,-1105.4069 236.3868,-1101.3009 226.1912,-1098.42 226.6199,-1105.4069"/>
+</g>
+<!-- mm_mat_read -->
+<g id="program~~arnolditest~~CallsGraph_node3" class="node">
+<title>mm_mat_read</title>
+<polygon fill="#777777" stroke="#777777" points="188.5,-948 106.5,-948 106.5,-924 188.5,-924 188.5,-948"/>
+<text text-anchor="middle" x="147.5" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_mat_read</text>
+</g>
+<!-- program~arnolditest&#45;&gt;mm_mat_read -->
+<g id="program~~arnolditest~~CallsGraph_edge2" class="edge">
+<title>program~arnolditest&#45;&gt;mm_mat_read</title>
+<path fill="none" stroke="#ff0000" d="M31.753,-570.0054C35.4732,-625.8394 53.5267,-859.7265 98,-915 98.7022,-915.8728 99.4474,-916.7099 100.2299,-917.5127"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="98.141,-920.324 108.1312,-923.852 102.5216,-914.8641 98.141,-920.324"/>
+</g>
+<!-- psb_toupper -->
+<g id="program~~arnolditest~~CallsGraph_node4" class="node">
+<title>psb_toupper</title>
+<polygon fill="#777777" stroke="#777777" points="184,-906 111,-906 111,-882 184,-882 184,-906"/>
+<text text-anchor="middle" x="147.5" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_toupper</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_toupper -->
+<g id="program~~arnolditest~~CallsGraph_edge3" class="edge">
+<title>program~arnolditest&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#ff0000" d="M32.1087,-570.3053C37.031,-622.4876 58.4274,-825.0109 98,-873 99.2917,-874.5665 100.7213,-876.0184 102.2559,-877.3638"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="100.4537,-880.3745 110.6531,-883.242 104.468,-874.64 100.4537,-880.3745"/>
+</g>
+<!-- hb_read -->
+<g id="program~~arnolditest~~CallsGraph_node5" class="node">
+<title>hb_read</title>
+<polygon fill="#777777" stroke="#777777" points="174.5,-864 120.5,-864 120.5,-840 174.5,-840 174.5,-864"/>
+<text text-anchor="middle" x="147.5" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">hb_read</text>
+</g>
+<!-- program~arnolditest&#45;&gt;hb_read -->
+<g id="program~~arnolditest~~CallsGraph_edge4" class="edge">
+<title>program~arnolditest&#45;&gt;hb_read</title>
+<path fill="none" stroke="#ff0000" d="M32.5381,-570.2523C38.7333,-617.8847 63.2071,-790.1188 98,-831 101.6302,-835.2654 106.2778,-838.685 111.2666,-841.4209"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.9201,-844.6538 120.4687,-845.6422 112.8388,-838.2914 109.9201,-844.6538"/>
+</g>
+<!-- mm_array_read -->
+<g id="program~~arnolditest~~CallsGraph_node6" class="node">
+<title>mm_array_read</title>
+<polygon fill="#777777" stroke="#777777" points="192,-822 103,-822 103,-798 192,-798 192,-822"/>
+<text text-anchor="middle" x="147.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_array_read</text>
+</g>
+<!-- program~arnolditest&#45;&gt;mm_array_read -->
+<g id="program~~arnolditest~~CallsGraph_edge5" class="edge">
+<title>program~arnolditest&#45;&gt;mm_array_read</title>
+<path fill="none" stroke="#ff0000" d="M33.0971,-570.0909C40.6954,-612.6977 67.9242,-755.1163 98,-789 98.8714,-789.9818 99.7965,-790.9191 100.7667,-791.8138"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="98.827,-794.7326 108.9462,-797.8714 102.9931,-789.1072 98.827,-794.7326"/>
+</g>
+<!-- psb_matdist -->
+<g id="program~~arnolditest~~CallsGraph_node7" class="node">
+<title>psb_matdist</title>
+<polygon fill="#777777" stroke="#777777" points="182.5,-780 112.5,-780 112.5,-756 182.5,-756 182.5,-780"/>
+<text text-anchor="middle" x="147.5" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_matdist</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_matdist -->
+<g id="program~~arnolditest~~CallsGraph_edge6" class="edge">
+<title>program~arnolditest&#45;&gt;psb_matdist</title>
+<path fill="none" stroke="#ff0000" d="M31.9958,-570.3546C35.2865,-603.3389 48.6094,-694.5243 98,-747 99.7635,-748.8736 101.721,-750.5872 103.8104,-752.1536"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="102.0512,-755.1811 112.391,-757.4918 105.7489,-749.2375 102.0512,-755.1811"/>
+</g>
+<!-- psb_spfree -->
+<g id="program~~arnolditest~~CallsGraph_node8" class="node">
+<title>psb_spfree</title>
+<polygon fill="#777777" stroke="#777777" points="180.5,-738 114.5,-738 114.5,-714 180.5,-714 180.5,-738"/>
+<text text-anchor="middle" x="147.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_spfree</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_spfree -->
+<g id="program~~arnolditest~~CallsGraph_edge7" class="edge">
+<title>program~arnolditest&#45;&gt;psb_spfree</title>
+<path fill="none" stroke="#ff0000" d="M33.4468,-570.4069C39.5257,-598.1561 57.8155,-665.8635 98,-705 100.3406,-707.2796 102.9665,-709.3284 105.7559,-711.1669"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.0595,-714.2284 114.4927,-716.072 107.4864,-708.1246 104.0595,-714.2284"/>
+</g>
+<!-- psb_geasb -->
+<g id="program~~arnolditest~~CallsGraph_node9" class="node">
+<title>psb_geasb</title>
+<polygon fill="#777777" stroke="#777777" points="180,-696 115,-696 115,-672 180,-672 180,-696"/>
+<text text-anchor="middle" x="147.5" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geasb</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_geasb -->
+<g id="program~~arnolditest~~CallsGraph_edge8" class="edge">
+<title>program~arnolditest&#45;&gt;psb_geasb</title>
+<path fill="none" stroke="#ff0000" d="M35.8084,-570.0481C44.9182,-591.481 66.6296,-636.4679 98,-663 100.4947,-665.1099 103.2325,-667.0354 106.1003,-668.7876"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.5115,-671.9069 114.9806,-673.5346 107.8116,-665.7336 104.5115,-671.9069"/>
+</g>
+<!-- proc~get_parms -->
+<g id="program~~arnolditest~~CallsGraph_node10" class="node">
+<title>proc~get_parms</title>
+<g id="a_program~~arnolditest~~CallsGraph_node10"><a xlink:href=".././proc/get_parms.html" xlink:title="get_parms">
+<polygon fill="#d9534f" stroke="#d9534f" points="179.5,-1028 115.5,-1028 115.5,-1004 179.5,-1004 179.5,-1028"/>
+<text text-anchor="middle" x="147.5" y="-1013.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_parms</text>
+</a>
+</g>
+</g>
+<!-- program~arnolditest&#45;&gt;proc~get_parms -->
+<g id="program~~arnolditest~~CallsGraph_edge9" class="edge">
+<title>program~arnolditest&#45;&gt;proc~get_parms</title>
+<path fill="none" stroke="#ff0000" d="M31.4398,-570.2588C33.9107,-633.1943 47.8021,-919.7614 98,-990 100.4764,-993.465 103.5579,-996.5061 106.9644,-999.1666"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="105.0946,-1002.1261 115.3709,-1004.7047 108.9456,-996.2805 105.0946,-1002.1261"/>
+</g>
+<!-- distr_mtpart -->
+<g id="program~~arnolditest~~CallsGraph_node11" class="node">
+<title>distr_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="182.5,-654 112.5,-654 112.5,-630 182.5,-630 182.5,-654"/>
+<text text-anchor="middle" x="147.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">distr_mtpart</text>
+</g>
+<!-- program~arnolditest&#45;&gt;distr_mtpart -->
+<g id="program~~arnolditest~~CallsGraph_edge10" class="edge">
+<title>program~arnolditest&#45;&gt;distr_mtpart</title>
+<path fill="none" stroke="#ff0000" d="M41.3435,-570.0204C53.6991,-583.7937 75.5325,-606.3463 98,-621 100.3824,-622.5538 102.8988,-624.0353 105.4837,-625.4395"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="103.9299,-628.5757 114.4404,-629.9097 107.0558,-622.3124 103.9299,-628.5757"/>
+</g>
+<!-- psb_amx -->
+<g id="program~~arnolditest~~CallsGraph_node12" class="node">
+<title>psb_amx</title>
+<polygon fill="#777777" stroke="#777777" points="175.5,-612 119.5,-612 119.5,-588 175.5,-588 175.5,-612"/>
+<text text-anchor="middle" x="147.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_amx</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_amx -->
+<g id="program~~arnolditest~~CallsGraph_edge11" class="edge">
+<title>program~arnolditest&#45;&gt;psb_amx</title>
+<path fill="none" stroke="#ff0000" d="M62.2199,-569.2552C76.8161,-574.5174 94.3219,-580.8285 109.6645,-586.3598"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108.7878,-589.7641 119.3822,-589.8631 111.1619,-583.179 108.7878,-589.7641"/>
+</g>
+<!-- psb_geall -->
+<g id="program~~arnolditest~~CallsGraph_node13" class="node">
+<title>psb_geall</title>
+<polygon fill="#777777" stroke="#777777" points="176.5,-570 118.5,-570 118.5,-546 176.5,-546 176.5,-570"/>
+<text text-anchor="middle" x="147.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geall</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_geall -->
+<g id="program~~arnolditest~~CallsGraph_edge12" class="edge">
+<title>program~arnolditest&#45;&gt;psb_geall</title>
+<path fill="none" stroke="#ff0000" d="M62.2199,-558C76.3485,-558 93.2033,-558 108.1836,-558"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108.1985,-561.5001 118.1985,-558 108.1985,-554.5001 108.1985,-561.5001"/>
+</g>
+<!-- psb_exit -->
+<g id="program~~arnolditest~~CallsGraph_node14" class="node">
+<title>psb_exit</title>
+<polygon fill="#777777" stroke="#777777" points="174.5,-528 120.5,-528 120.5,-504 174.5,-504 174.5,-528"/>
+<text text-anchor="middle" x="147.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_exit</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_exit -->
+<g id="program~~arnolditest~~CallsGraph_edge13" class="edge">
+<title>program~arnolditest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff0000" d="M62.2199,-546.7448C77.0373,-541.4029 94.8531,-534.98 110.3604,-529.3894"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.9426,-532.5395 120.1629,-525.8554 109.5686,-525.9544 111.9426,-532.5395"/>
+</g>
+<!-- psb_sum -->
+<g id="program~~arnolditest~~CallsGraph_node15" class="node">
+<title>psb_sum</title>
+<polygon fill="#777777" stroke="#777777" points="175.5,-486 119.5,-486 119.5,-462 175.5,-462 175.5,-486"/>
+<text text-anchor="middle" x="147.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_sum</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_sum -->
+<g id="program~~arnolditest~~CallsGraph_edge14" class="edge">
+<title>program~arnolditest&#45;&gt;psb_sum</title>
+<path fill="none" stroke="#ff0000" d="M41.3435,-545.9796C53.6991,-532.2063 75.5325,-509.6537 98,-495 101.7971,-492.5234 105.9349,-490.2308 110.1474,-488.1414"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.7584,-491.2531 119.3856,-483.8995 108.8373,-484.8917 111.7584,-491.2531"/>
+</g>
+<!-- psb_wtime -->
+<g id="program~~arnolditest~~CallsGraph_node16" class="node">
+<title>psb_wtime</title>
+<polygon fill="#777777" stroke="#777777" points="179.5,-444 115.5,-444 115.5,-420 179.5,-420 179.5,-444"/>
+<text text-anchor="middle" x="147.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_wtime</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_wtime -->
+<g id="program~~arnolditest~~CallsGraph_edge15" class="edge">
+<title>program~arnolditest&#45;&gt;psb_wtime</title>
+<path fill="none" stroke="#ff0000" d="M35.8084,-545.9519C44.9182,-524.519 66.6296,-479.5321 98,-453 100.6461,-450.762 103.5658,-448.7314 106.624,-446.8952"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108.279,-449.9794 115.4976,-442.2242 105.0183,-443.7852 108.279,-449.9794"/>
+</g>
+<!-- psb_realloc -->
+<g id="program~~arnolditest~~CallsGraph_node17" class="node">
+<title>psb_realloc</title>
+<polygon fill="#777777" stroke="#777777" points="181,-402 114,-402 114,-378 181,-378 181,-402"/>
+<text text-anchor="middle" x="147.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_realloc</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_realloc -->
+<g id="program~~arnolditest~~CallsGraph_edge16" class="edge">
+<title>program~arnolditest&#45;&gt;psb_realloc</title>
+<path fill="none" stroke="#ff0000" d="M33.4468,-545.5931C39.5257,-517.8439 57.8155,-450.1365 98,-411 100.2027,-408.8547 102.658,-406.9139 105.2645,-405.1603"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.0364,-408.1789 113.9798,-400.1764 103.5615,-402.1023 107.0364,-408.1789"/>
+</g>
+<!-- psb_gefree -->
+<g id="program~~arnolditest~~CallsGraph_node18" class="node">
+<title>psb_gefree</title>
+<polygon fill="#777777" stroke="#777777" points="181,-360 114,-360 114,-336 181,-336 181,-360"/>
+<text text-anchor="middle" x="147.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_gefree</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_gefree -->
+<g id="program~~arnolditest~~CallsGraph_edge17" class="edge">
+<title>program~arnolditest&#45;&gt;psb_gefree</title>
+<path fill="none" stroke="#ff0000" d="M31.9958,-545.6454C35.2865,-512.6611 48.6094,-421.4757 98,-369 100.0694,-366.8014 102.406,-364.8231 104.9093,-363.0445"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.0776,-365.8294 113.9164,-357.7374 103.524,-359.7985 107.0776,-365.8294"/>
+</g>
+<!-- psb_errpush -->
+<g id="program~~arnolditest~~CallsGraph_node19" class="node">
+<title>psb_errpush</title>
+<polygon fill="#777777" stroke="#777777" points="184,-318 111,-318 111,-294 184,-294 184,-318"/>
+<text text-anchor="middle" x="147.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_errpush</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_errpush -->
+<g id="program~~arnolditest~~CallsGraph_edge18" class="edge">
+<title>program~arnolditest&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#ff0000" d="M33.0971,-545.9091C40.6954,-503.3023 67.9242,-360.8837 98,-327 99.3478,-325.4815 100.824,-324.0695 102.3968,-322.7567"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="104.6014,-325.491 110.9215,-316.9877 100.6781,-319.6937 104.6014,-325.491"/>
+</g>
+<!-- psb_abort -->
+<g id="program~~arnolditest~~CallsGraph_node20" class="node">
+<title>psb_abort</title>
+<polygon fill="#777777" stroke="#777777" points="294,-1068 233,-1068 233,-1044 294,-1044 294,-1068"/>
+<text text-anchor="middle" x="263.5" y="-1053.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_abort</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_abort -->
+<g id="program~~arnolditest~~CallsGraph_edge19" class="edge">
+<title>program~arnolditest&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#ff0000" d="M31.831,-570.3053C36.7831,-641.9415 63.3656,-1003.2096 98,-1037 130.4515,-1068.6607 185.2177,-1068.671 222.8013,-1063.9213"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="223.5083,-1067.3559 232.9133,-1062.4777 222.519,-1060.4261 223.5083,-1067.3559"/>
+</g>
+<!-- psb_init -->
+<g id="program~~arnolditest~~CallsGraph_node21" class="node">
+<title>psb_init</title>
+<polygon fill="#777777" stroke="#777777" points="174.5,-276 120.5,-276 120.5,-252 174.5,-252 174.5,-276"/>
+<text text-anchor="middle" x="147.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_init</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_init -->
+<g id="program~~arnolditest~~CallsGraph_edge20" class="edge">
+<title>program~arnolditest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff0000" d="M32.5381,-545.7477C38.7333,-498.1153 63.2071,-325.8812 98,-285 101.6302,-280.7346 106.2778,-277.315 111.2666,-274.5791"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="112.8388,-277.7086 120.4687,-270.3578 109.9201,-271.3462 112.8388,-277.7086"/>
+</g>
+<!-- psb_barrier -->
+<g id="program~~arnolditest~~CallsGraph_node22" class="node">
+<title>psb_barrier</title>
+<polygon fill="#777777" stroke="#777777" points="181,-234 114,-234 114,-210 181,-210 181,-234"/>
+<text text-anchor="middle" x="147.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_barrier</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_barrier -->
+<g id="program~~arnolditest~~CallsGraph_edge21" class="edge">
+<title>program~arnolditest&#45;&gt;psb_barrier</title>
+<path fill="none" stroke="#ff0000" d="M32.1087,-545.6947C37.031,-493.5124 58.4274,-290.9891 98,-243 100.1084,-240.4432 102.5839,-238.1917 105.2842,-236.21"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.137,-239.1801 113.9169,-231.0386 103.5397,-233.1751 107.137,-239.1801"/>
+</g>
+<!-- psb_scatter -->
+<g id="program~~arnolditest~~CallsGraph_node23" class="node">
+<title>psb_scatter</title>
+<polygon fill="#777777" stroke="#777777" points="181.5,-192 113.5,-192 113.5,-168 181.5,-168 181.5,-192"/>
+<text text-anchor="middle" x="147.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_scatter</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_scatter -->
+<g id="program~~arnolditest~~CallsGraph_edge22" class="edge">
+<title>program~arnolditest&#45;&gt;psb_scatter</title>
+<path fill="none" stroke="#ff0000" d="M31.753,-545.9946C35.4732,-490.1606 53.5267,-256.2735 98,-201 99.8928,-198.6476 102.0974,-196.5544 104.5049,-194.6924"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="106.6713,-197.4667 113.3133,-189.2123 102.9735,-191.5231 106.6713,-197.4667"/>
+</g>
+<!-- psb_bcast -->
+<g id="program~~arnolditest~~CallsGraph_node24" class="node">
+<title>psb_bcast</title>
+<polygon fill="#777777" stroke="#777777" points="294,-984 233,-984 233,-960 294,-960 294,-984"/>
+<text text-anchor="middle" x="263.5" y="-969.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_bcast</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_bcast -->
+<g id="program~~arnolditest~~CallsGraph_edge23" class="edge">
+<title>program~arnolditest&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#ff0000" d="M31.1335,-570.1144C32.0721,-631.0006 39.5268,-902.809 98,-957 131.0747,-987.6526 185.4576,-986.4662 222.7987,-980.8934"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="223.5539,-984.3161 232.847,-979.2281 222.4093,-977.4103 223.5539,-984.3161"/>
+</g>
+<!-- psb_cdfree -->
+<g id="program~~arnolditest~~CallsGraph_node25" class="node">
+<title>psb_cdfree</title>
+<polygon fill="#777777" stroke="#777777" points="180.5,-150 114.5,-150 114.5,-126 180.5,-126 180.5,-150"/>
+<text text-anchor="middle" x="147.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_cdfree</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_cdfree -->
+<g id="program~~arnolditest~~CallsGraph_edge24" class="edge">
+<title>program~arnolditest&#45;&gt;psb_cdfree</title>
+<path fill="none" stroke="#ff0000" d="M31.5012,-545.814C34.1963,-485.7344 48.7289,-221.4514 98,-159 100.1764,-156.2414 102.783,-153.84 105.6461,-151.7504"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.4332,-154.7598 114.2503,-146.6494 103.8635,-148.7384 107.4332,-154.7598"/>
+</g>
+<!-- psb_get_errstatus -->
+<g id="program~~arnolditest~~CallsGraph_node26" class="node">
+<title>psb_get_errstatus</title>
+<polygon fill="#777777" stroke="#777777" points="197,-108 98,-108 98,-84 197,-84 197,-108"/>
+<text text-anchor="middle" x="147.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_get_errstatus</text>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_get_errstatus -->
+<g id="program~~arnolditest~~CallsGraph_edge25" class="edge">
+<title>program~arnolditest&#45;&gt;psb_get_errstatus</title>
+<path fill="none" stroke="#ff0000" d="M31.2862,-545.8298C33.0117,-482.0611 43.8604,-186.7335 98,-117 98.687,-116.1152 99.4183,-115.2671 100.1883,-114.4544"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="102.4886,-117.0946 108.0102,-108.0524 98.0549,-111.6777 102.4886,-117.0946"/>
+</g>
+<!-- build_mtpart -->
+<g id="program~~arnolditest~~CallsGraph_node27" class="node">
+<title>build_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="183.5,-66 111.5,-66 111.5,-42 183.5,-42 183.5,-66"/>
+<text text-anchor="middle" x="147.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">build_mtpart</text>
+</g>
+<!-- program~arnolditest&#45;&gt;build_mtpart -->
+<g id="program~~arnolditest~~CallsGraph_edge26" class="edge">
+<title>program~arnolditest&#45;&gt;build_mtpart</title>
+<path fill="none" stroke="#ff0000" d="M31.1115,-545.583C31.9533,-477.7213 39.0526,-151.9486 98,-75 99.4299,-73.1335 101.0576,-71.4309 102.8303,-69.8782"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="105.1259,-72.5466 111.3678,-63.9857 101.1496,-66.7855 105.1259,-72.5466"/>
+</g>
+<!-- getv_mtpart -->
+<g id="program~~arnolditest~~CallsGraph_node28" class="node">
+<title>getv_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="182.5,-24 112.5,-24 112.5,0 182.5,0 182.5,-24"/>
+<text text-anchor="middle" x="147.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">getv_mtpart</text>
+</g>
+<!-- program~arnolditest&#45;&gt;getv_mtpart -->
+<g id="program~~arnolditest~~CallsGraph_edge27" class="edge">
+<title>program~arnolditest&#45;&gt;getv_mtpart</title>
+<path fill="none" stroke="#ff0000" d="M31.8413,-545.6596C37.0647,-470.4341 65.8912,-75.3908 98,-33 99.6275,-30.8513 101.5177,-28.9201 103.5905,-27.1848"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="105.9075,-29.8489 112.3214,-21.4162 102.0486,-24.0085 105.9075,-29.8489"/>
+</g>
+<!-- proc~get_parms&#45;&gt;psb_info -->
+<g id="program~~arnolditest~~CallsGraph_edge29" class="edge">
+<title>proc~get_parms&#45;&gt;psb_info</title>
+<path fill="none" stroke="#38ff00" d="M164.1523,-1028.0051C181.3405,-1040.3672 208.9599,-1060.15 233,-1077 234.4115,-1077.9894 235.862,-1079.0019 237.3277,-1080.0218"/>
+<polygon fill="#38ff00" stroke="#38ff00" points="235.5104,-1083.0206 245.7246,-1085.835 239.4949,-1077.2652 235.5104,-1083.0206"/>
+</g>
+<!-- proc~get_parms&#45;&gt;psb_abort -->
+<g id="program~~arnolditest~~CallsGraph_edge30" class="edge">
+<title>proc~get_parms&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#38ff00" d="M179.5046,-1027.0361C193.0174,-1031.6957 208.9038,-1037.1737 223.2026,-1042.1043"/>
+<polygon fill="#38ff00" stroke="#38ff00" points="222.2047,-1045.4624 232.7994,-1045.4136 224.4867,-1038.8448 222.2047,-1045.4624"/>
+</g>
+<!-- proc~get_parms&#45;&gt;psb_bcast -->
+<g id="program~~arnolditest~~CallsGraph_edge28" class="edge">
+<title>proc~get_parms&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#38ff00" d="M179.1975,-1003.9768C192.7143,-998.8497 208.6491,-992.8055 223.0052,-987.3601"/>
+<polygon fill="#38ff00" stroke="#38ff00" points="224.534,-990.5236 232.6426,-983.7045 222.0513,-983.9786 224.534,-990.5236"/>
+</g>
+<!-- proc~pr_usage -->
+<g id="program~~arnolditest~~CallsGraph_node29" class="node">
+<title>proc~pr_usage</title>
+<g id="a_program~~arnolditest~~CallsGraph_node29"><a xlink:href=".././proc/pr_usage.html" xlink:title="pr_usage">
+<polygon fill="#d9534f" stroke="#d9534f" points="292.5,-1026 234.5,-1026 234.5,-1002 292.5,-1002 292.5,-1026"/>
+<text text-anchor="middle" x="263.5" y="-1011.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr_usage</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms&#45;&gt;proc~pr_usage -->
+<g id="program~~arnolditest~~CallsGraph_edge31" class="edge">
+<title>proc~get_parms&#45;&gt;proc~pr_usage</title>
+<path fill="none" stroke="#38ff00" d="M179.5046,-1015.4482C193.3192,-1015.21 209.6146,-1014.9291 224.1582,-1014.6783"/>
+<polygon fill="#38ff00" stroke="#38ff00" points="224.4399,-1018.1741 234.378,-1014.5021 224.3191,-1011.1751 224.4399,-1018.1741"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-a~13">a</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-afmt~5">afmt</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-amatsize~2">amatsize</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-aux_a~2">aux_a</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-aux_x">aux_x</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ctxt~9">ctxt</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-desc_a~9">desc_a</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-descsize~2">descsize</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-eps~10">eps</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-err~7">err</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-filefmt~5">filefmt</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-fname~6">fname</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-fun~7">fun</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-i~3">i</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-iam~3">iam</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-info~19">info</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ipv~2">ipv</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ircode~2">ircode</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-istop~8">istop</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-iter~8">iter</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-itmax~10">itmax</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-itrace~10">itrace</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-iunit~2">iunit</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-ivg~2">ivg</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-kmethd~4">kmethd</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-lnp~2">lnp</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-m_problem~2">m_problem</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-mname~4">mname</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-name~3">name</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-np~3">np</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-part~5">part</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-perm">perm</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-res~8">res</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-rhs_file~5">rhs_file</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-scaling~5">scaling</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-system_size">system_size</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-t1~2">t1</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-t2~2">t2</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-variant~5">variant</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-x_col~2">x_col</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-x_col_glob~2">x_col_glob</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#variable-y_col">y_col</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../program/arnolditest.html#proc-get_parms">get_parms</a>
+      
+      <a class="list-group-item" href="../program/arnolditest.html#proc-pr_usage">pr_usage</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-a~13"></span>type(psb_dspmat_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-afmt~5"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>afmt</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-amatsize~2"></span>integer(kind=psb_epk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>amatsize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-aux_a~2"></span>type(psb_ldspmat_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>aux_a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-aux_x"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>allocatable, target</td><td>::</td>
+  <td><strong>aux_x</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ctxt~9"></span>type(psb_ctxt_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ctxt</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-desc_a~9"></span>type(psb_desc_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>desc_a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-descsize~2"></span>integer(kind=psb_epk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>descsize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eps~10"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>eps</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-err~7"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>err</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-filefmt~5"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>filefmt</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fname~6"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>fname</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fun~7"></span>type(<a href='../type/psfun_d_serial.html'>psfun_d_serial</a>)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>fun</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i~3"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iam~3"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>iam</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-info~19"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>info</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ipv~2"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>ipv</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ircode~2"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ircode</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-istop~8"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>istop</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iter~8"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>iter</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itmax~10"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>itmax</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itrace~10"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>itrace</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iunit~2"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>iunit</strong></td><td> =</td><td>12</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ivg~2"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>ivg</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kmethd~4"></span>type(<a href='../type/psfun_d_krylov.html'>psfun_d_krylov</a>)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>kmethd</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lnp~2"></span>integer(kind=psb_lpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>lnp</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m_problem~2"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>m_problem</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mname~4"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>mname</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name~3"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>name</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-np~3"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>np</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-part~5"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>part</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-perm"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>perm</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-res~8"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>res</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rhs_file~5"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>rhs_file</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scaling~5"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>scaling</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-system_size"></span>integer(kind=psb_epk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>system_size</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-t1~2"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>t1</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-t2~2"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>t2</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-variant~5"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>variant</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_col~2"></span>type(psb_d_vect_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>x_col</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_col_glob~2"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>pointer</td><td>::</td>
+  <td><strong>x_col_glob</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-y_col"></span>type(psb_d_vect_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>y_col</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    <section>
+    <h2>Subroutines</h2>
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-get_parms"></span><h3>
+subroutine <a href='../proc/get_parms.html'>get_parms</a>(ctxt, mname, rhs_file, filefmt, part, afmt, fname, variant, scaling, eps, itmax, itrace, istop)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>This subroutine reads the parameters needed to run the arnolditest
+ program from standard input</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>type(psb_ctxt_type),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>ctxt</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>mname</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>rhs_file</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>filefmt</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>part</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>afmt</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>fname</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>variant</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>scaling</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>real(kind=psb_dpk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>eps</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>itmax</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>itrace</strong></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>istop</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    
+  <div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="proc-pr_usage"></span><h3>
+subroutine <a href='../proc/pr_usage.html'>pr_usage</a>(iout)
+    
+    
+   
+</h3></div>
+  <div class="panel-body">
+       
+    
+
+
+
+
+
+
+
+<p>Prints out information on incorrected program usage</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_)</td>
+  <td></td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>iout</strong></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+  </div>
+  </div>
+
+    
+    </section>    
+    
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> PSFUN was developed by Fabio Durastante</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

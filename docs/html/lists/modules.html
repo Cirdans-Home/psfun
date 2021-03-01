@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A library for distributed computation of matrix functions powered by PSCTOOLKIT PSFUN Parallel Sparse Function">
+    
+    <meta name="author" content="Fabio Durastante" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>
+All Modules &ndash; PSFUN
+</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">PSFUN <small>0.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Matrix Functions</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Modules</h1>
+			 <table class="table">
+			 <thead><tr><th>Module</th><th>Source File</th><th>Description</th></tr></thead>
+			 <tbody>
+             
+			 
+			   <tr class="active"><td><a href='../module/getp.html'>getp</a></td><td><a href='../sourcefile/getp.f90.html'>getp.f90</a></td><td><p>This moodule contaings the subroutine to read parameters needed to run the
+ shiftedkrylov program from standard input</p></td></tr>
+               
+               <!--active-->
+			 
+			   <tr class=""><td><a href='../module/psfun_base_quadrature_mod.html'>psfun_base_quadrature_mod</a></td><td><a href='../sourcefile/psfun_base_quadrature_mod.f90.html'>psfun_base_quadrature_mod.f90</a></td><td><p>Module containing the implementation of the base method for the computation
+ of <script type="math/tex">f(A)v</script> by means of distributed quadrature formulas.</p></td></tr>
+               
+               <!---->
+			 
+			   <tr class="active"><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td><a href='../sourcefile/psfun_d_krylov_mod.f90.html'>psfun_d_krylov_mod.F90</a></td><td><p>The <a href="../module/psfun_d_krylov_mod.html">psfun_d_krylov_mod</a> contains the generic call to a Krylov subspace
+ method for the computation of <script type="math/tex">y = f(A) x</script>, for <script type="math/tex">A</script> large and
+ sparse.</p><a href="../module/psfun_d_krylov_mod.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+               
+                  
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/psfun_d_arnoldi_mod.html'>psfun_d_arnoldi_mod</a></td><td><a href='../sourcefile/psfun_d_arnoldi.f90.html'>psfun_d_arnoldi.f90</a></td><td><p>This modules implements the variant of the Arnoldi method for the
+ computation of <script type="math/tex">f(A)b</script>.</p></td></tr>
+               
+               
+			 
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/psfun_d_lanczos_mod.html'>psfun_d_lanczos_mod</a></td><td><a href='../sourcefile/psfun_d_lanczos.f90.html'>psfun_d_lanczos.f90</a></td><td><p>This modules implements the variant of the Lanczos method for the
+ computation of <script type="math/tex">f(A)b</script>.</p></td></tr>
+               
+               
+			 
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/psfun_d_sai_mod.html'>psfun_d_sai_mod</a></td><td><a href='../sourcefile/psfun_d_sai.f90.html'>psfun_d_sai.f90</a></td><td><p>This modules implements the variant of the Shitf-And-Invert method for the
+ computation of <script type="math/tex">f(A)b</script>.</p></td></tr>
+               
+               
+			 
+               
+               <!--active-->
+			 
+			   <tr class=""><td><a href='../module/psfun_d_quadrature_mod.html'>psfun_d_quadrature_mod</a></td><td><a href='../sourcefile/psfun_d_quadrature_mod.f90.html'>psfun_d_quadrature_mod.F90</a></td><td><p>This module computes the matrix-function vector product by means of the
+ approximation of <script type="math/tex">f(A)\mathbf{x}</script> based on quadrature formula, i.e.,
+ having computed the poles and the scalings of the formula solves <script type="math/tex">N</script> linear
+ systems to approximate the product.</p></td></tr>
+               
+               <!---->
+			 
+			   <tr class="active"><td><a href='../module/psfun_d_serial_mod.html'>psfun_d_serial_mod</a></td><td><a href='../sourcefile/psfun_d_serial_mod.f90.html'>psfun_d_serial_mod.F90</a></td><td><p>This module contains the generic interfaces for the computation of the
+ different matrix functions included in the library. The idea is that this
+ modules computes, in a serial way, <script type="math/tex">y = f(\alpha A)x</script>.</p><a href="../module/psfun_d_serial_mod.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+               
+               <!--active-->
+			 
+			   <tr class=""><td><a href='../module/psfun_krylov_mod.html'>psfun_krylov_mod</a></td><td><a href='../sourcefile/psfun_krylov_mod.f90.html'>psfun_krylov_mod.f90</a></td><td><p>This module implements the Krylov methods for the solution of shifted linear
+ systems: <script type="math/tex">(η A + ζ I)x = b</script>. It is built as an extension of the Krylov module
+ for PSBLAS (<code>psb_krylov_mod</code>)</p></td></tr>
+               
+               <!---->
+			 
+			   <tr class="active"><td><a href='../module/psfun_quadrature_mod.html'>psfun_quadrature_mod</a></td><td><a href='../sourcefile/psfun_quadrature_mod.f90.html'>psfun_quadrature_mod.f90</a></td><td><p>This module computes the matrix-function vector product by means of the
+ approximation of <script type="math/tex">f(A)\mathbf{x}</script> based on quadrature formula, i.e.,
+ having computed the poles and the scalings of the formula solves <script type="math/tex">N</script> linear
+ systems to approximate the product.</p></td></tr>
+               
+               <!--active-->
+			 
+			   <tr class=""><td><a href='../module/psfun_utils_mod.html'>psfun_utils_mod</a></td><td><a href='../sourcefile/psfun_utils_mod.f90.html'>psfun_utils_mod.f90</a></td><td><p>This modules contains some utility function that are used in the library.</p></td></tr>
+               
+                  
+			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/psfun_d_utils_mod.html'>psfun_d_utils_mod</a></td><td><a href='../sourcefile/psfun_d_utils_mod.f90.html'>psfun_d_utils_mod.f90</a></td><td><p>Real variants of the utils functions</p></td></tr>
+               
+               
+			 
+			   <tr class=" submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/psfun_z_utils_mod.html'>psfun_z_utils_mod</a></td><td><a href='../sourcefile/psfun_z_utils_mod.f90.html'>psfun_z_utils_mod.f90</a></td><td><p>Complex variants of the utils functions</p></td></tr>
+               
+               
+			 
+               
+               <!---->
+			 
+			   <tr class="active"><td><a href='../module/psfun_z_quadrature_mod.html'>psfun_z_quadrature_mod</a></td><td><a href='../sourcefile/psfun_z_quadrature_mod.f90.html'>psfun_z_quadrature_mod.F90</a></td><td><p>This module computes the matrix-function vector product by means of the
+ approximation of <script type="math/tex">f(A)\mathbf{x}</script> based on quadrature formula, i.e.,
+ having computed the poles and the scalings of the formula solves <script type="math/tex">N</script> linear
+ systems to approximate the product.</p></td></tr>
+               
+                  
+			   <tr class="active submod"><td>&nbsp;&nbsp;&nbsp;<a href='../module/psfun_z_quadrules_mod.html'>psfun_z_quadrules_mod</a></td><td><a href='../sourcefile/psfun_z_quadrules_mod.f90.html'>psfun_z_quadrules_mod.f90</a></td><td><p>This submodule contains the impliementation of the legacy quadrature rules
+ distributed with the library.</p></td></tr>
+               
+               
+			 
+               
+               <!--active-->
+			 
+			 </tbody></table>
+             <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: module~~graph~~ModuleGraph Pages: 1 -->
+<svg id="modulegraphModuleGraph" width="855pt" height="1202pt"
+ viewBox="0.00 0.00 855.00 1201.60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="module~~graph~~ModuleGraph" class="graph" transform="scale(.9194 .9194) rotate(0) translate(4 1303)">
+<title>module~~graph~~ModuleGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1303 926,-1303 926,4 -4,4"/>
+<!-- module~psfun_d_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_node1" class="node">
+<title>module~psfun_d_quadrature_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node1"><a xlink:href=".././module/psfun_d_quadrature_mod.html" xlink:title="psfun_d_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="638,-168 502,-168 502,-144 638,-144 638,-168"/>
+<text text-anchor="middle" x="570" y="-153.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_node4" class="node">
+<title>module~psfun_utils_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node4"><a xlink:href=".././module/psfun_utils_mod.html" xlink:title="psfun_utils_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="245.5,-187 154.5,-187 154.5,-163 245.5,-163 245.5,-187"/>
+<text text-anchor="middle" x="200" y="-172.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_utils_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_quadrature_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge3" class="edge">
+<title>module~psfun_d_quadrature_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M501.6681,-155.019C467.7802,-154.6862 426.2343,-154.5084 389,-155"/>
+</g>
+<!-- module~psfun_base_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_node14" class="node">
+<title>module~psfun_base_quadrature_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node14"><a xlink:href=".././module/psfun_base_quadrature_mod.html" xlink:title="psfun_base_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="466,-249 312,-249 312,-225 466,-225 466,-249"/>
+<text text-anchor="middle" x="389" y="-234.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_base_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge4" class="edge">
+<title>module~psfun_d_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M530.6229,-168.0639C520.9058,-171.8366 510.7754,-176.4858 502,-182 483.3656,-193.7092 485.1906,-205.2266 466,-216 462.564,-217.9289 458.9413,-219.6884 455.2156,-221.2923"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="453.8362,-218.0735 445.7905,-224.9667 456.3788,-224.5954 453.8362,-218.0735"/>
+</g>
+<!-- psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_node41" class="node">
+<title>psb_base_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="87,-627 1,-627 1,-603 87,-603 87,-627"/>
+<text text-anchor="middle" x="44" y="-612.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_base_mod</text>
+</g>
+<!-- module~psfun_d_quadrature_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge1" class="edge">
+<title>module~psfun_d_quadrature_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M523.65,-143.8674C515.7914,-140.3204 508.1857,-135.7834 502,-130 474.1103,-103.9243 495.4431,-76.3081 466,-52 438.8181,-29.5587 424.0634,-36.6095 389,-33"/>
+</g>
+<!-- ogpf -->
+<g id="module~~graph~~ModuleGraph_node44" class="node">
+<title>ogpf</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="227,-369 173,-369 173,-345 227,-345 227,-369"/>
+<text text-anchor="middle" x="200" y="-354.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ogpf</text>
+</g>
+<!-- module~psfun_d_quadrature_mod&#45;&gt;ogpf -->
+<g id="module~~graph~~ModuleGraph_edge2" class="edge">
+<title>module~psfun_d_quadrature_mod&#45;&gt;ogpf</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M550.8392,-168.0046C535.4784,-178.5833 514.4922,-195.3456 502,-215 470.5295,-264.5134 511.7861,-305.3175 466,-342 400.2438,-394.6819 293.3834,-379.985 237.2105,-367.1243"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="237.8729,-363.6841 227.3329,-364.7609 236.244,-370.4919 237.8729,-363.6841"/>
+</g>
+<!-- module~psfun_d_utils_mod -->
+<g id="module~~graph~~ModuleGraph_node2" class="node">
+<title>module~psfun_d_utils_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node2"><a xlink:href=".././module/psfun_d_utils_mod.html" xlink:title="psfun_d_utils_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="440.5,-207 337.5,-207 337.5,-183 440.5,-183 440.5,-207"/>
+<text text-anchor="middle" x="389" y="-192.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_utils_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_utils_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge6" class="edge">
+<title>module~psfun_d_utils_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ff2900" d="M337.3549,-189.5349C312.0752,-186.8598 281.6044,-183.6354 255.7918,-180.9039"/>
+<polygon fill="#ff2900" stroke="#ff2900" points="256.0946,-177.4165 245.7818,-179.8446 255.3579,-184.3776 256.0946,-177.4165"/>
+</g>
+<!-- module~psfun_d_utils_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge5" class="edge">
+<title>module~psfun_d_utils_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff2900" stroke-dasharray="5,2" d="M337.2843,-197.7981C297.3876,-201.93 242.0888,-212.0919 200,-237"/>
+<path fill="none" stroke="#ff2900" stroke-dasharray="5,2" d="M200,-237C170.0365,-254.7323 148.3009,-231.0659 124,-256 76.4071,-304.833 52.5442,-522.0547 45.9419,-592.7119"/>
+<polygon fill="#ff2900" stroke="#ff2900" points="42.4496,-592.4694 45.0295,-602.7453 49.4209,-593.1034 42.4496,-592.4694"/>
+</g>
+<!-- module~psfun_d_lanczos_mod -->
+<g id="module~~graph~~ModuleGraph_node3" class="node">
+<title>module~psfun_d_lanczos_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node3"><a xlink:href=".././module/psfun_d_lanczos_mod.html" xlink:title="psfun_d_lanczos_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="630,-567 510,-567 510,-543 630,-543 630,-567"/>
+<text text-anchor="middle" x="570" y="-552.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_lanczos_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_node13" class="node">
+<title>module~psfun_d_krylov_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node13"><a xlink:href=".././module/psfun_d_krylov_mod.html" xlink:title="psfun_d_krylov_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="445,-567 333,-567 333,-543 445,-543 445,-567"/>
+<text text-anchor="middle" x="389" y="-552.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_krylov_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_lanczos_mod&#45;&gt;module~psfun_d_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge7" class="edge">
+<title>module~psfun_d_lanczos_mod&#45;&gt;module~psfun_d_krylov_mod</title>
+<path fill="none" stroke="#ff5200" d="M509.981,-555C492.4369,-555 473.1624,-555 455.2551,-555"/>
+<polygon fill="#ff5200" stroke="#ff5200" points="455.1812,-551.5001 445.1812,-555 455.1811,-558.5001 455.1812,-551.5001"/>
+</g>
+<!-- module~psfun_utils_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge8" class="edge">
+<title>module~psfun_utils_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff7c00" stroke-dasharray="5,2" d="M169.7538,-187.0455C153.7594,-194.9395 135.1739,-206.8203 124,-223 81.5757,-284.4298 53.9908,-519.0955 46.2374,-592.7479"/>
+<polygon fill="#ff7c00" stroke="#ff7c00" points="42.7481,-592.4656 45.2009,-602.7726 49.7109,-593.1856 42.7481,-592.4656"/>
+</g>
+<!-- module~psfun_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_node5" class="node">
+<title>module~psfun_quadrature_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node5"><a xlink:href=".././module/psfun_quadrature_mod.html" xlink:title="psfun_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="801,-187 677,-187 677,-163 801,-163 801,-187"/>
+<text text-anchor="middle" x="739" y="-172.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_quadrature_mod&#45;&gt;module~psfun_d_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge9" class="edge">
+<title>module~psfun_quadrature_mod&#45;&gt;module~psfun_d_quadrature_mod</title>
+<path fill="none" stroke="#ffa500" stroke-dasharray="5,2" d="M676.5508,-167.9791C667.367,-166.9466 657.8096,-165.8721 648.3553,-164.8092"/>
+<polygon fill="#ffa500" stroke="#ffa500" points="648.4879,-161.3021 638.1594,-163.6629 647.7057,-168.2583 648.4879,-161.3021"/>
+</g>
+<!-- module~psfun_z_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_node12" class="node">
+<title>module~psfun_z_quadrature_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node12"><a xlink:href=".././module/psfun_z_quadrature_mod.html" xlink:title="psfun_z_quadrature_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="638,-248 502,-248 502,-224 638,-224 638,-248"/>
+<text text-anchor="middle" x="570" y="-233.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_quadrature_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_quadrature_mod&#45;&gt;module~psfun_z_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge10" class="edge">
+<title>module~psfun_quadrature_mod&#45;&gt;module~psfun_z_quadrature_mod</title>
+<path fill="none" stroke="#ffa500" stroke-dasharray="5,2" d="M705.611,-187.0516C678.9921,-196.6597 641.534,-210.1801 612.7285,-220.5773"/>
+<polygon fill="#ffa500" stroke="#ffa500" points="611.5373,-217.2861 603.3196,-223.9734 613.9139,-223.8704 611.5373,-217.2861"/>
+</g>
+<!-- module~psfun_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge11" class="edge">
+<title>module~psfun_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod</title>
+<path fill="none" stroke="#ffa500" stroke-dasharray="5,2" d="M676.5508,-185.1011C628.7182,-192.9442 561.1199,-204.2577 502,-215 488.2334,-217.5014 473.5455,-220.28 459.4699,-222.9971"/>
+<polygon fill="#ffa500" stroke="#ffa500" points="458.5013,-219.6197 449.3507,-224.9598 459.8342,-226.4916 458.5013,-219.6197"/>
+</g>
+<!-- module~psfun_z_utils_mod -->
+<g id="module~~graph~~ModuleGraph_node6" class="node">
+<title>module~psfun_z_utils_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node6"><a xlink:href=".././module/psfun_z_utils_mod.html" xlink:title="psfun_z_utils_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="440,-85 338,-85 338,-61 440,-61 440,-85"/>
+<text text-anchor="middle" x="389" y="-70.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_utils_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_z_utils_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge13" class="edge">
+<title>module~psfun_z_utils_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#ffce00" d="M337.9396,-84.1354C329.0878,-86.8465 320.1248,-90.1133 312,-94 277.6011,-110.4554 242.753,-137.6917 221.2673,-155.9846"/>
+<polygon fill="#ffce00" stroke="#ffce00" points="218.7207,-153.5598 213.4498,-162.7504 223.3016,-158.8527 218.7207,-153.5598"/>
+</g>
+<!-- module~psfun_z_utils_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge12" class="edge">
+<title>module~psfun_z_utils_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ffce00" stroke-dasharray="5,2" d="M337.7677,-72.5218C289.061,-73.1342 220.3105,-77.1165 200,-94"/>
+</g>
+<!-- module~psfun_d_arnoldi_mod -->
+<g id="module~~graph~~ModuleGraph_node7" class="node">
+<title>module~psfun_d_arnoldi_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node7"><a xlink:href=".././module/psfun_d_arnoldi_mod.html" xlink:title="psfun_d_arnoldi_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="628,-525 512,-525 512,-501 628,-501 628,-525"/>
+<text text-anchor="middle" x="570" y="-510.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_arnoldi_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_arnoldi_mod&#45;&gt;module~psfun_d_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge14" class="edge">
+<title>module~psfun_d_arnoldi_mod&#45;&gt;module~psfun_d_krylov_mod</title>
+<path fill="none" stroke="#fff800" d="M518.1327,-525.0355C497.116,-529.9123 472.6773,-535.5832 450.751,-540.671"/>
+<polygon fill="#fff800" stroke="#fff800" points="449.8249,-537.2929 440.8749,-542.9627 451.4073,-544.1117 449.8249,-537.2929"/>
+</g>
+<!-- module~getp -->
+<g id="module~~graph~~ModuleGraph_node8" class="node">
+<title>module~getp</title>
+<g id="a_module~~graph~~ModuleGraph_node8"><a xlink:href=".././module/getp.html" xlink:title="getp">
+<polygon fill="#337ab7" stroke="#337ab7" points="227,-1299 173,-1299 173,-1275 227,-1275 227,-1299"/>
+<text text-anchor="middle" x="200" y="-1284.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">getp</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_sai_mod -->
+<g id="module~~graph~~ModuleGraph_node9" class="node">
+<title>module~psfun_d_sai_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node9"><a xlink:href=".././module/psfun_d_sai_mod.html" xlink:title="psfun_d_sai_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="618.5,-609 521.5,-609 521.5,-585 618.5,-585 618.5,-609"/>
+<text text-anchor="middle" x="570" y="-594.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_sai_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_sai_mod&#45;&gt;module~psfun_d_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge15" class="edge">
+<title>module~psfun_d_sai_mod&#45;&gt;module~psfun_d_krylov_mod</title>
+<path fill="none" stroke="#b3ff00" d="M521.4953,-585.7448C499.7857,-580.7072 473.9332,-574.7083 450.8526,-569.3525"/>
+<polygon fill="#b3ff00" stroke="#b3ff00" points="451.3429,-565.8734 440.8105,-567.0223 449.7606,-572.6922 451.3429,-565.8734"/>
+</g>
+<!-- module~psfun_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_node10" class="node">
+<title>module~psfun_krylov_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node10"><a xlink:href=".././module/psfun_krylov_mod.html" xlink:title="psfun_krylov_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="250,-1219 150,-1219 150,-1195 250,-1195 250,-1219"/>
+<text text-anchor="middle" x="200" y="-1204.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_krylov_mod</text>
+</a>
+</g>
+</g>
+<!-- psb_prec_mod -->
+<g id="module~~graph~~ModuleGraph_node40" class="node">
+<title>psb_prec_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="86,-1141 2,-1141 2,-1117 86,-1117 86,-1141"/>
+<text text-anchor="middle" x="44" y="-1126.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_prec_mod</text>
+</g>
+<!-- module~psfun_krylov_mod&#45;&gt;psb_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge17" class="edge">
+<title>module~psfun_krylov_mod&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#89ff00" stroke-dasharray="5,2" d="M158.6288,-1194.9098C147.1803,-1191.0136 134.9086,-1186.3099 124,-1181 104.4524,-1171.485 83.9215,-1158.0591 68.5531,-1147.233"/>
+<polygon fill="#89ff00" stroke="#89ff00" points="70.3144,-1144.1893 60.1475,-1141.2085 66.2365,-1149.8788 70.3144,-1144.1893"/>
+</g>
+<!-- module~psfun_krylov_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge16" class="edge">
+<title>module~psfun_krylov_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#89ff00" stroke-dasharray="5,2" d="M149.7409,-1198.4763C139.9463,-1194.6305 130.6639,-1189.0611 124,-1181 88.5728,-1138.1447 53.8627,-736.5437 45.7654,-637.1622"/>
+<polygon fill="#89ff00" stroke="#89ff00" points="49.243,-636.7421 44.9493,-627.0563 42.2657,-637.3057 49.243,-636.7421"/>
+</g>
+<!-- module~psfun_d_serial_mod -->
+<g id="module~~graph~~ModuleGraph_node11" class="node">
+<title>module~psfun_d_serial_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node11"><a xlink:href=".././module/psfun_d_serial_mod.html" xlink:title="psfun_d_serial_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="254.5,-731 145.5,-731 145.5,-707 254.5,-707 254.5,-731"/>
+<text text-anchor="middle" x="200" y="-716.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_serial_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_d_serial_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge18" class="edge">
+<title>module~psfun_d_serial_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#60ff00" stroke-dasharray="5,2" d="M145.3821,-707.7518C137.9305,-705.1291 130.588,-701.9195 124,-698 96.9763,-681.9224 72.9896,-654.3156 58.4911,-635.3875"/>
+<polygon fill="#60ff00" stroke="#60ff00" points="61.1212,-633.0592 52.3423,-627.1278 55.5063,-637.2392 61.1212,-633.0592"/>
+</g>
+<!-- module~psfun_z_quadrature_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge21" class="edge">
+<title>module~psfun_z_quadrature_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#37ff00" stroke-dasharray="5,2" d="M555.0441,-223.893C525.2922,-201.0896 455.782,-154.1183 389,-155"/>
+</g>
+<!-- module~psfun_z_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge22" class="edge">
+<title>module~psfun_z_quadrature_mod&#45;&gt;module~psfun_base_quadrature_mod</title>
+<path fill="none" stroke="#37ff00" stroke-dasharray="5,2" d="M501.8296,-236.3766C493.4745,-236.4228 484.8486,-236.4704 476.2616,-236.5179"/>
+<polygon fill="#37ff00" stroke="#37ff00" points="476.1981,-233.0181 466.2176,-236.5734 476.2368,-240.018 476.1981,-233.0181"/>
+</g>
+<!-- module~psfun_z_quadrature_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge19" class="edge">
+<title>module~psfun_z_quadrature_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#37ff00" stroke-dasharray="5,2" d="M389,-399C274.3954,-435.5367 219.237,-380.5217 124,-454 78.3141,-489.2481 56.8918,-557.5519 48.5148,-592.785"/>
+<polygon fill="#37ff00" stroke="#37ff00" points="45.0902,-592.0615 46.3214,-602.5845 51.9212,-593.5905 45.0902,-592.0615"/>
+</g>
+<!-- module~psfun_z_quadrature_mod&#45;&gt;ogpf -->
+<g id="module~~graph~~ModuleGraph_edge20" class="edge">
+<title>module~psfun_z_quadrature_mod&#45;&gt;ogpf</title>
+<path fill="none" stroke="#37ff00" stroke-dasharray="5,2" d="M564.3138,-248.0495C551.0116,-274.9395 515.223,-340.2076 466,-375 436.728,-395.6903 423.1524,-388.112 389,-399"/>
+<path fill="none" stroke="#37ff00" stroke-dasharray="5,2" d="M389,-399C361.1037,-407.8935 283.6452,-385.231 237.0015,-369.8436"/>
+<polygon fill="#37ff00" stroke="#37ff00" points="237.8573,-366.4393 227.2635,-366.5892 235.6386,-373.0784 237.8573,-366.4393"/>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;module~psfun_d_serial_mod -->
+<g id="module~~graph~~ModuleGraph_edge24" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#0dff00" stroke-dasharray="5,2" d="M367.6194,-567.1364C350.6453,-577.6788 327.3004,-594.3239 312,-614 287.0666,-646.0641 306.5967,-671.2863 276,-698 272.3265,-701.2073 268.2036,-703.9287 263.8275,-706.2372"/>
+<polygon fill="#0dff00" stroke="#0dff00" points="262.2299,-703.1181 254.5524,-710.4193 265.1072,-709.4994 262.2299,-703.1181"/>
+</g>
+<!-- amg_prec_mod -->
+<g id="module~~graph~~ModuleGraph_node38" class="node">
+<title>amg_prec_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="88,-66 0,-66 0,-42 88,-42 88,-66"/>
+<text text-anchor="middle" x="44" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">amg_prec_mod</text>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;amg_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge23" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;amg_prec_mod</title>
+<path fill="none" stroke="#0dff00" stroke-dasharray="5,2" d="M370.6523,-542.9522C354.4438,-531.9076 330.5661,-514.6347 312,-497 293.9282,-479.8348 295.5564,-469.4526 276,-454 216.738,-407.1736 171.1751,-436.9847 124,-378 85.8565,-330.3078 56.2856,-141.4627 47.0333,-76.2701"/>
+<polygon fill="#0dff00" stroke="#0dff00" points="50.4833,-75.6683 45.6338,-66.2485 43.5506,-76.6365 50.4833,-75.6683"/>
+</g>
+<!-- psb_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_node39" class="node">
+<title>psb_krylov_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="245.5,-857 154.5,-857 154.5,-833 245.5,-833 245.5,-857"/>
+<text text-anchor="middle" x="200" y="-842.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_krylov_mod</text>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;psb_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge27" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;psb_krylov_mod</title>
+<path fill="none" stroke="#0dff00" stroke-dasharray="5,2" d="M364.8811,-567.0778C347.3347,-577.1686 324.5387,-593.2418 312,-614 263.0395,-695.0554 339.5357,-753.7838 276,-824 270.3845,-830.206 263.1162,-834.6454 255.305,-837.8082"/>
+<polygon fill="#0dff00" stroke="#0dff00" points="253.9523,-834.5701 245.5823,-841.0658 256.1762,-841.2074 253.9523,-834.5701"/>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge26" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#0dff00" stroke-dasharray="5,2" d="M358.9031,-542.9738C321.8962,-529.5073 256.979,-510.1558 200,-515"/>
+<path fill="none" stroke="#0dff00" stroke-dasharray="5,2" d="M200,-515C165.3078,-517.9494 154.2446,-516.7515 124,-534 97.1725,-549.2997 73.2904,-576.0989 58.7527,-594.6599"/>
+<polygon fill="#0dff00" stroke="#0dff00" points="55.8441,-592.7026 52.5742,-602.7802 61.4149,-596.9413 55.8441,-592.7026"/>
+</g>
+<!-- module~psfun_d_krylov_mod&#45;&gt;ogpf -->
+<g id="module~~graph~~ModuleGraph_edge25" class="edge">
+<title>module~psfun_d_krylov_mod&#45;&gt;ogpf</title>
+<path fill="none" stroke="#0dff00" stroke-dasharray="5,2" d="M367.805,-542.9936C350.9385,-532.5859 327.6479,-516.2008 312,-497 288.3883,-468.0272 298.8163,-450.6033 276,-421 262.2285,-403.1319 242.6931,-386.8173 226.877,-375.1322"/>
+<polygon fill="#0dff00" stroke="#0dff00" points="228.6964,-372.1296 218.5332,-369.1363 224.6115,-377.8142 228.6964,-372.1296"/>
+</g>
+<!-- module~psfun_base_quadrature_mod&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge30" class="edge">
+<title>module~psfun_base_quadrature_mod&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#00ff1b" stroke-dasharray="5,2" d="M342.3953,-224.9716C332.3246,-222.1826 321.7693,-219.1142 312,-216 287.8776,-208.3105 261.2477,-198.6131 240.0087,-190.5801"/>
+<polygon fill="#00ff1b" stroke="#00ff1b" points="241.2489,-187.3073 230.658,-187.0196 238.7579,-193.8491 241.2489,-187.3073"/>
+</g>
+<!-- module~psfun_base_quadrature_mod&#45;&gt;psb_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge31" class="edge">
+<title>module~psfun_base_quadrature_mod&#45;&gt;psb_krylov_mod</title>
+<path fill="none" stroke="#00ff1b" stroke-dasharray="5,2" d="M321.7443,-249.2044C318.1065,-251.658 314.802,-254.5635 312,-258 232.3576,-355.6787 355.4793,-726.1885 276,-824 270.6019,-830.6432 263.3065,-835.2939 255.3626,-838.5292"/>
+<polygon fill="#00ff1b" stroke="#00ff1b" points="254.1945,-835.2292 245.8142,-841.7116 256.4079,-841.8701 254.1945,-835.2292"/>
+</g>
+<!-- module~psfun_base_quadrature_mod&#45;&gt;psb_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge29" class="edge">
+<title>module~psfun_base_quadrature_mod&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#00ff1b" stroke-dasharray="5,2" d="M330.7219,-249.0015C324.1696,-251.4717 317.7808,-254.4389 312,-258 291.6362,-270.5445 296.4961,-285.6728 276,-298 216.3268,-333.89 169.5579,-283.3363 124,-336 110.9832,-351.047 56.7547,-979.4667 45.8972,-1106.6818"/>
+<polygon fill="#00ff1b" stroke="#00ff1b" points="42.3968,-1106.5389 45.035,-1116.8 49.3715,-1107.1333 42.3968,-1106.5389"/>
+</g>
+<!-- module~psfun_base_quadrature_mod&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge28" class="edge">
+<title>module~psfun_base_quadrature_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00ff1b" stroke-dasharray="5,2" d="M344.7876,-224.9853C304.2102,-216.5969 243.9103,-211.0139 200,-237"/>
+</g>
+<!-- module~psfun_z_quadrules_mod -->
+<g id="module~~graph~~ModuleGraph_node15" class="node">
+<title>module~psfun_z_quadrules_mod</title>
+<g id="a_module~~graph~~ModuleGraph_node15"><a xlink:href=".././module/psfun_z_quadrules_mod.html" xlink:title="psfun_z_quadrules_mod">
+<polygon fill="#5bc0de" stroke="#5bc0de" points="804,-248 674,-248 674,-224 804,-224 804,-248"/>
+<text text-anchor="middle" x="739" y="-233.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_quadrules_mod</text>
+</a>
+</g>
+</g>
+<!-- module~psfun_z_quadrules_mod&#45;&gt;module~psfun_z_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge32" class="edge">
+<title>module~psfun_z_quadrules_mod&#45;&gt;module~psfun_z_quadrature_mod</title>
+<path fill="none" stroke="#00ff44" d="M673.6602,-236C665.4059,-236 656.894,-236 648.4628,-236"/>
+<polygon fill="#00ff44" stroke="#00ff44" points="648.2412,-232.5001 638.2412,-236 648.2411,-239.5001 648.2412,-232.5001"/>
+</g>
+<!-- program~serialtest -->
+<g id="module~~graph~~ModuleGraph_node16" class="node">
+<title>program~serialtest</title>
+<g id="a_module~~graph~~ModuleGraph_node16"><a xlink:href=".././program/serialtest.html" xlink:title="serialtest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="416.5,-897 361.5,-897 361.5,-873 416.5,-873 416.5,-897"/>
+<text text-anchor="middle" x="389" y="-882.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">serialtest</text>
+</a>
+</g>
+</g>
+<!-- program~serialtest&#45;&gt;module~psfun_d_serial_mod -->
+<g id="module~~graph~~ModuleGraph_edge34" class="edge">
+<title>program~serialtest&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#00ff6e" stroke-dasharray="5,2" d="M382.9789,-872.7334C368.5778,-844.7054 329.3332,-775.6473 276,-740 272.2497,-737.4933 268.2056,-735.284 264.0054,-733.3371"/>
+<polygon fill="#00ff6e" stroke="#00ff6e" points="265.1948,-730.0419 254.6149,-729.4803 262.5354,-736.5171 265.1948,-730.0419"/>
+</g>
+<!-- program~serialtest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge33" class="edge">
+<title>program~serialtest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00ff6e" stroke-dasharray="5,2" d="M361.2562,-886.7909C300.8929,-890.1012 160.1515,-894.4599 124,-866 87.1089,-836.9578 57.9347,-693.0544 47.8281,-637.2078"/>
+<polygon fill="#00ff6e" stroke="#00ff6e" points="51.2585,-636.5069 46.0644,-627.2727 44.3662,-637.7305 51.2585,-636.5069"/>
+</g>
+<!-- psb_util_mod -->
+<g id="module~~graph~~ModuleGraph_node43" class="node">
+<title>psb_util_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="238,-937 162,-937 162,-913 238,-913 238,-937"/>
+<text text-anchor="middle" x="200" y="-922.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_util_mod</text>
+</g>
+<!-- program~serialtest&#45;&gt;psb_util_mod -->
+<g id="module~~graph~~ModuleGraph_edge35" class="edge">
+<title>program~serialtest&#45;&gt;psb_util_mod</title>
+<path fill="none" stroke="#00ff6e" stroke-dasharray="5,2" d="M361.1124,-890.9021C331.4864,-897.1722 284.0888,-907.2034 248.3563,-914.7659"/>
+<polygon fill="#00ff6e" stroke="#00ff6e" points="247.2025,-911.4324 238.1439,-916.9272 248.6519,-918.2808 247.2025,-911.4324"/>
+</g>
+<!-- program~utiltest -->
+<g id="module~~graph~~ModuleGraph_node17" class="node">
+<title>program~utiltest</title>
+<g id="a_module~~graph~~ModuleGraph_node17"><a xlink:href=".././program/utiltest.html" xlink:title="utiltest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="416,-127 362,-127 362,-103 416,-103 416,-127"/>
+<text text-anchor="middle" x="389" y="-112.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utiltest</text>
+</a>
+</g>
+</g>
+<!-- program~utiltest&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge37" class="edge">
+<title>program~utiltest&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#00ff97" stroke-dasharray="5,2" d="M361.9209,-123.5965C332.2518,-133.0153 284.0823,-148.3072 247.9809,-159.768"/>
+<polygon fill="#00ff97" stroke="#00ff97" points="246.6161,-156.529 238.1439,-162.8908 248.7342,-163.2009 246.6161,-156.529"/>
+</g>
+<!-- program~utiltest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge36" class="edge">
+<title>program~utiltest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00ff97" stroke-dasharray="5,2" d="M361.8688,-107.3394C315.5744,-95.007 223.9918,-74.0563 200,-94"/>
+</g>
+<!-- program~psblastest -->
+<g id="module~~graph~~ModuleGraph_node18" class="node">
+<title>program~psblastest</title>
+<g id="a_module~~graph~~ModuleGraph_node18"><a xlink:href=".././program/psblastest.html" xlink:title="psblastest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="230.5,-1017 169.5,-1017 169.5,-993 230.5,-993 230.5,-1017"/>
+<text text-anchor="middle" x="200" y="-1002.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psblastest</text>
+</a>
+</g>
+</g>
+<!-- program~psblastest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge38" class="edge">
+<title>program~psblastest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00ffc0" stroke-dasharray="5,2" d="M169.4042,-1001.6799C153.7064,-998.4031 135.5155,-991.8999 124,-979 77.9873,-927.4555 53.0679,-708.5666 46.0721,-637.4312"/>
+<polygon fill="#00ffc0" stroke="#00ffc0" points="49.5422,-636.9511 45.1027,-627.3313 42.5742,-637.6199 49.5422,-636.9511"/>
+</g>
+<!-- program~shiftedtest -->
+<g id="module~~graph~~ModuleGraph_node19" class="node">
+<title>program~shiftedtest</title>
+<g id="a_module~~graph~~ModuleGraph_node19"><a xlink:href=".././program/shiftedtest.html" xlink:title="shiftedtest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="419.5,-1199 358.5,-1199 358.5,-1175 419.5,-1175 419.5,-1199"/>
+<text text-anchor="middle" x="389" y="-1184.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shiftedtest</text>
+</a>
+</g>
+</g>
+<!-- program~shiftedtest&#45;&gt;module~getp -->
+<g id="module~~graph~~ModuleGraph_edge40" class="edge">
+<title>program~shiftedtest&#45;&gt;module~getp</title>
+<path fill="none" stroke="#00ffea" stroke-dasharray="5,2" d="M373.2935,-1199.1237C352.1356,-1215.014 312.8682,-1242.9761 276,-1261 263.6431,-1267.041 249.5262,-1272.2865 236.84,-1276.4528"/>
+<polygon fill="#00ffea" stroke="#00ffea" points="235.5108,-1273.2023 227.0335,-1279.5573 237.6235,-1279.8759 235.5108,-1273.2023"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;module~psfun_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge44" class="edge">
+<title>program~shiftedtest&#45;&gt;module~psfun_krylov_mod</title>
+<path fill="none" stroke="#00ffea" stroke-dasharray="5,2" d="M358.2132,-1190.2579C331.8797,-1193.0445 293.1908,-1197.1385 260.6638,-1200.5805"/>
+<polygon fill="#00ffea" stroke="#00ffea" points="259.9192,-1197.1397 250.3431,-1201.6727 260.6559,-1204.1008 259.9192,-1197.1397"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge43" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_krylov_mod</title>
+<path fill="none" stroke="#00ffea" stroke-dasharray="5,2" d="M382.3191,-1174.7716C368.0239,-1148.2628 333.9852,-1083.2728 312,-1026 291.74,-973.2214 307.8653,-950.6974 276,-904 264.5092,-887.1606 246.701,-872.9676 231.2107,-862.7249"/>
+<polygon fill="#00ffea" stroke="#00ffea" points="232.7445,-859.5535 222.4234,-857.1606 228.9995,-865.4675 232.7445,-859.5535"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge39" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#00ffea" stroke-dasharray="5,2" d="M366.0862,-1199.0042C318.5034,-1222.1704 206.5475,-1267.4253 124,-1228 90.3509,-1211.9289 66.302,-1174.028 53.8179,-1150.06"/>
+<polygon fill="#00ffea" stroke="#00ffea" points="56.9153,-1148.4284 49.3215,-1141.0403 50.6506,-1151.5514 56.9153,-1148.4284"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge41" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00ffea" stroke-dasharray="5,2" d="M358.1478,-1187.8859C302.2984,-1187.6713 184.6219,-1178.5465 124,-1110 60.602,-1038.3144 47.093,-724.6474 44.5424,-637.5207"/>
+<polygon fill="#00ffea" stroke="#00ffea" points="48.0381,-637.3098 44.2669,-627.4089 41.0406,-637.5006 48.0381,-637.3098"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_util_mod -->
+<g id="module~~graph~~ModuleGraph_edge42" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_util_mod</title>
+<path fill="none" stroke="#00ffea" stroke-dasharray="5,2" d="M383.2574,-1174.9869C360.2939,-1126.9513 276.293,-951.2606 276,-951 268.0246,-943.9066 258.0245,-938.7306 247.9235,-934.9596"/>
+<polygon fill="#00ffea" stroke="#00ffea" points="248.8642,-931.5842 238.2707,-931.7579 246.6603,-938.2283 248.8642,-931.5842"/>
+</g>
+<!-- program~arnolditest -->
+<g id="module~~graph~~ModuleGraph_node20" class="node">
+<title>program~arnolditest</title>
+<g id="a_module~~graph~~ModuleGraph_node20"><a xlink:href=".././program/arnolditest.html" xlink:title="arnolditest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="601,-721 539,-721 539,-697 601,-697 601,-721"/>
+<text text-anchor="middle" x="570" y="-706.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">arnolditest</text>
+</a>
+</g>
+</g>
+<!-- program~arnolditest&#45;&gt;module~psfun_d_serial_mod -->
+<g id="module~~graph~~ModuleGraph_edge46" class="edge">
+<title>program~arnolditest&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#00eaff" stroke-dasharray="5,2" d="M538.8454,-707.1834C502.7097,-705.4968 441.3901,-703.9333 389,-709"/>
+</g>
+<!-- program~arnolditest&#45;&gt;module~psfun_d_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge47" class="edge">
+<title>program~arnolditest&#45;&gt;module~psfun_d_krylov_mod</title>
+<path fill="none" stroke="#00eaff" stroke-dasharray="5,2" d="M538.7569,-700.0683C526.2531,-695.3331 512.384,-688.4862 502,-679 477.6185,-656.7264 487.5608,-639.014 466,-614 452.2128,-598.0046 433.4586,-583.5238 417.9108,-572.9113"/>
+<polygon fill="#00eaff" stroke="#00eaff" points="419.4573,-569.7372 409.1889,-567.1276 415.5887,-575.5711 419.4573,-569.7372"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge45" class="edge">
+<title>program~arnolditest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00eaff" stroke-dasharray="5,2" d="M389,-965C350.7358,-982.3163 233.975,-989.6921 200,-965"/>
+<path fill="none" stroke="#00eaff" stroke-dasharray="5,2" d="M200,-965C171.8353,-944.5306 148.5229,-970.7158 124,-946 79.9137,-901.5669 54.0253,-704.1776 46.3927,-637.267"/>
+<polygon fill="#00eaff" stroke="#00eaff" points="49.8369,-636.5705 45.2514,-627.0194 42.8799,-637.3454 49.8369,-636.5705"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_util_mod -->
+<g id="module~~graph~~ModuleGraph_edge48" class="edge">
+<title>program~arnolditest&#45;&gt;psb_util_mod</title>
+<path fill="none" stroke="#00eaff" stroke-dasharray="5,2" d="M567.9911,-721.2513C561.1173,-759.2799 535.0266,-876.491 466,-939 439.2262,-963.2458 421.9076,-950.1078 389,-965"/>
+<path fill="none" stroke="#00eaff" stroke-dasharray="5,2" d="M389,-965C363.4684,-976.5542 290.7316,-955.9784 243.2992,-940.297"/>
+<polygon fill="#00eaff" stroke="#00eaff" points="244.1818,-936.9014 233.5878,-937.0384 241.9549,-943.5378 244.1818,-936.9014"/>
+</g>
+<!-- program~lanczostest -->
+<g id="module~~graph~~ModuleGraph_node21" class="node">
+<title>program~lanczostest</title>
+<g id="a_module~~graph~~ModuleGraph_node21"><a xlink:href=".././program/lanczostest.html" xlink:title="lanczostest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="603,-670 537,-670 537,-646 603,-646 603,-670"/>
+<text text-anchor="middle" x="570" y="-655.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lanczostest</text>
+</a>
+</g>
+</g>
+<!-- program~lanczostest&#45;&gt;module~psfun_d_serial_mod -->
+<g id="module~~graph~~ModuleGraph_edge50" class="edge">
+<title>program~lanczostest&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#00c0ff" stroke-dasharray="5,2" d="M539.8936,-670.0643C504.4826,-683.4063 443.5926,-703.7203 389,-709"/>
+<path fill="none" stroke="#00c0ff" stroke-dasharray="5,2" d="M389,-709C347.7447,-712.9899 301.2582,-715.4757 264.712,-716.971"/>
+<polygon fill="#00c0ff" stroke="#00c0ff" points="264.5345,-713.4752 254.6803,-717.3669 264.8106,-720.4698 264.5345,-713.4752"/>
+</g>
+<!-- program~lanczostest&#45;&gt;module~psfun_d_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge51" class="edge">
+<title>program~lanczostest&#45;&gt;module~psfun_d_krylov_mod</title>
+<path fill="none" stroke="#00c0ff" stroke-dasharray="5,2" d="M546.0254,-645.9463C532.5261,-638.6674 515.6838,-628.7391 502,-618 483.9509,-603.8349 485.4104,-593.2335 466,-581 459.7631,-577.0692 452.8645,-573.6598 445.8341,-570.7228"/>
+<polygon fill="#00c0ff" stroke="#00c0ff" points="446.8047,-567.3457 436.2154,-567.006 444.2816,-573.8752 446.8047,-567.3457"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge49" class="edge">
+<title>program~lanczostest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#00c0ff" stroke-dasharray="5,2" d="M547.607,-645.9698C527.0286,-635.5427 495.3564,-621.0526 466,-614 350.7557,-586.3134 315.7629,-569.5685 200,-595"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_util_mod -->
+<g id="module~~graph~~ModuleGraph_edge52" class="edge">
+<title>program~lanczostest&#45;&gt;psb_util_mod</title>
+<path fill="none" stroke="#00c0ff" stroke-dasharray="5,2" d="M536.6575,-665.4439C523.9752,-669.9263 510.5385,-676.9865 502,-688 441.8314,-765.6093 538.5699,-839.8407 466,-906 407.1358,-959.6644 307.2498,-949.7792 248.0668,-937.5242"/>
+<polygon fill="#00c0ff" stroke="#00c0ff" points="248.7349,-934.0878 238.2199,-935.3854 247.2491,-940.9283 248.7349,-934.0878"/>
+</g>
+<!-- program~quadraturetest -->
+<g id="module~~graph~~ModuleGraph_node22" class="node">
+<title>program~quadraturetest</title>
+<g id="a_module~~graph~~ModuleGraph_node22"><a xlink:href=".././program/quadraturetest.html" xlink:title="quadraturetest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="922,-167 840,-167 840,-143 922,-143 922,-167"/>
+<text text-anchor="middle" x="881" y="-152.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">quadraturetest</text>
+</a>
+</g>
+</g>
+<!-- program~quadraturetest&#45;&gt;module~psfun_utils_mod -->
+<g id="module~~graph~~ModuleGraph_edge55" class="edge">
+<title>program~quadraturetest&#45;&gt;module~psfun_utils_mod</title>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M570,-116C487.8598,-111.0264 471.2835,-153.9137 389,-155"/>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M389,-155C344.0653,-155.5932 293.4482,-161.216 255.913,-166.3489"/>
+<polygon fill="#0097ff" stroke="#0097ff" points="255.1074,-162.9274 245.6887,-167.779 256.0772,-169.8599 255.1074,-162.9274"/>
+</g>
+<!-- program~quadraturetest&#45;&gt;module~psfun_quadrature_mod -->
+<g id="module~~graph~~ModuleGraph_edge53" class="edge">
+<title>program~quadraturetest&#45;&gt;module~psfun_quadrature_mod</title>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M839.9277,-160.7848C830.9304,-162.0521 821.1482,-163.4298 811.3321,-164.8124"/>
+<polygon fill="#0097ff" stroke="#0097ff" points="810.536,-161.3899 801.1219,-166.2504 811.5123,-168.3215 810.536,-161.3899"/>
+</g>
+<!-- program~quadraturetest&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge54" class="edge">
+<title>program~quadraturetest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M839.9057,-148.1354C780.5378,-138.6088 667.2265,-121.8871 570,-116"/>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M570,-116C516.0762,-109.8515 516.0566,-72.9743 466,-52 433.4899,-38.3779 424.0634,-36.6095 389,-33"/>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M389,-33C353.9366,-29.3905 344.3941,-38.1042 312,-52 294.551,-59.485 293.4376,-67.4883 276,-75 244.0234,-88.7747 226.7746,-71.7431 200,-94"/>
+<path fill="none" stroke="#0097ff" stroke-dasharray="5,2" d="M200,-94C166.9057,-121.5103 146.0214,-117.0256 124,-154 78.644,-230.1538 52.4803,-511.4885 45.7481,-592.8352"/>
+<polygon fill="#0097ff" stroke="#0097ff" points="42.2482,-592.6936 44.9271,-602.9442 49.2252,-593.2603 42.2482,-592.6936"/>
+</g>
+<!-- proc~psfun_z_setmatrix -->
+<g id="module~~graph~~ModuleGraph_node23" class="node">
+<title>proc~psfun_z_setmatrix</title>
+<g id="a_module~~graph~~ModuleGraph_node23"><a xlink:href=".././proc/psfun_z_setmatrix.html" xlink:title="psfun_z_setmatrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="250,-815 150,-815 150,-791 250,-791 250,-815"/>
+<text text-anchor="middle" x="200" y="-800.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_setmatrix</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_setmatrix&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge56" class="edge">
+<title>proc~psfun_z_setmatrix&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#006eff" stroke-dasharray="5,2" d="M149.9723,-795.7223C140.6184,-792.6305 131.4534,-788.2376 124,-782 78.1977,-743.6694 56.7414,-673.0215 48.4168,-637.1491"/>
+<polygon fill="#006eff" stroke="#006eff" points="51.7983,-636.2283 46.2425,-627.207 44.9599,-637.7239 51.7983,-636.2283"/>
+</g>
+<!-- proc~psfun_z_setpreconditioner -->
+<g id="module~~graph~~ModuleGraph_node24" class="node">
+<title>proc~psfun_z_setpreconditioner</title>
+<g id="a_module~~graph~~ModuleGraph_node24"><a xlink:href=".././proc/psfun_z_setpreconditioner.html" xlink:title="psfun_z_setpreconditioner">
+<polygon fill="#d9534f" stroke="#d9534f" points="269.5,-773 130.5,-773 130.5,-749 269.5,-749 269.5,-773"/>
+<text text-anchor="middle" x="200" y="-758.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_setpreconditioner</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_setpreconditioner&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge57" class="edge">
+<title>proc~psfun_z_setpreconditioner&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#0044ff" stroke-dasharray="5,2" d="M139.5502,-748.8351C134.0268,-746.4069 128.737,-743.4941 124,-740 87.6203,-713.1653 63.5294,-664.3982 51.9711,-636.367"/>
+<polygon fill="#0044ff" stroke="#0044ff" points="55.2193,-635.0632 48.2802,-627.0569 48.7119,-637.6429 55.2193,-635.0632"/>
+</g>
+<!-- proc~psfun_z_computepoles -->
+<g id="module~~graph~~ModuleGraph_node25" class="node">
+<title>proc~psfun_z_computepoles</title>
+<g id="a_module~~graph~~ModuleGraph_node25"><a xlink:href=".././proc/psfun_z_computepoles.html" xlink:title="psfun_z_computepoles">
+<polygon fill="#d9534f" stroke="#d9534f" points="261.5,-689 138.5,-689 138.5,-665 261.5,-665 261.5,-689"/>
+<text text-anchor="middle" x="200" y="-674.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_computepoles</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_computepoles&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge58" class="edge">
+<title>proc~psfun_z_computepoles&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#001bff" stroke-dasharray="5,2" d="M150.4609,-664.8888C141.5471,-662.2653 132.418,-659.2805 124,-656 106.9421,-649.3526 88.7195,-640.1885 73.9811,-632.2099"/>
+<polygon fill="#001bff" stroke="#001bff" points="75.2938,-628.9371 64.8463,-627.1763 71.9155,-635.0679 75.2938,-628.9371"/>
+</g>
+<!-- proc~psfun_d_serial_apply_array -->
+<g id="module~~graph~~ModuleGraph_node26" class="node">
+<title>proc~psfun_d_serial_apply_array</title>
+<g id="a_module~~graph~~ModuleGraph_node26"><a xlink:href=".././proc/psfun_d_serial_apply_array.html" xlink:title="psfun_d_serial_apply_array">
+<polygon fill="#d9534f" stroke="#d9534f" points="272.5,-647 127.5,-647 127.5,-623 272.5,-623 272.5,-647"/>
+<text text-anchor="middle" x="200" y="-632.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_serial_apply_array</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge59" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#0d00ff" stroke-dasharray="5,2" d="M127.4804,-625.7026C117.205,-624.3853 106.8022,-623.0516 96.9899,-621.7936"/>
+<polygon fill="#0d00ff" stroke="#0d00ff" points="97.3723,-618.314 87.0083,-620.5139 96.4821,-625.2572 97.3723,-618.314"/>
+</g>
+<!-- proc~psfun_d_serial_apply_sparse -->
+<g id="module~~graph~~ModuleGraph_node27" class="node">
+<title>proc~psfun_d_serial_apply_sparse</title>
+<g id="a_module~~graph~~ModuleGraph_node27"><a xlink:href=".././proc/psfun_d_serial_apply_sparse.html" xlink:title="psfun_d_serial_apply_sparse">
+<polygon fill="#d9534f" stroke="#d9534f" points="276,-567 124,-567 124,-543 276,-543 276,-567"/>
+<text text-anchor="middle" x="200" y="-552.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_serial_apply_sparse</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_serial_apply_sparse&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge60" class="edge">
+<title>proc~psfun_d_serial_apply_sparse&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#3700ff" stroke-dasharray="5,2" d="M163.084,-567.0316C150.6028,-571.2577 136.6321,-576.1622 124,-581 109.711,-586.4724 94.1916,-592.9433 80.6579,-598.7634"/>
+<polygon fill="#3700ff" stroke="#3700ff" points="78.9834,-595.6745 71.2001,-602.8627 81.7672,-602.0971 78.9834,-595.6745"/>
+</g>
+<!-- proc~fun -->
+<g id="module~~graph~~ModuleGraph_node28" class="node">
+<title>proc~fun</title>
+<g id="a_module~~graph~~ModuleGraph_node28"><a xlink:href=".././proc/fun.html" xlink:title="fun">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="227,-487 173,-487 173,-463 227,-463 227,-487"/>
+<text text-anchor="middle" x="200" y="-472.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">fun</text>
+</a>
+</g>
+</g>
+<!-- proc~fun&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge61" class="edge">
+<title>proc~fun&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#6000ff" stroke-dasharray="5,2" d="M172.7038,-479.9594C157.2718,-483.7793 138.2718,-490.2793 124,-501 91.0616,-525.7428 66.5307,-568.0484 53.8065,-593.5783"/>
+<polygon fill="#6000ff" stroke="#6000ff" points="50.5613,-592.2502 49.3714,-602.778 56.8668,-595.2901 50.5613,-592.2502"/>
+</g>
+<!-- proc~psfun_d_prec_build -->
+<g id="module~~graph~~ModuleGraph_node29" class="node">
+<title>proc~psfun_d_prec_build</title>
+<g id="a_module~~graph~~ModuleGraph_node29"><a xlink:href=".././proc/psfun_d_prec_build.html" xlink:title="psfun_d_prec_build">
+<polygon fill="#d9534f" stroke="#d9534f" points="253,-66 147,-66 147,-42 253,-42 253,-66"/>
+<text text-anchor="middle" x="200" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_prec_build</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_prec_build&#45;&gt;amg_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge63" class="edge">
+<title>proc~psfun_d_prec_build&#45;&gt;amg_prec_mod</title>
+<path fill="none" stroke="#8900ff" stroke-dasharray="5,2" d="M146.75,-54C131.1104,-54 113.9898,-54 98.2864,-54"/>
+<polygon fill="#8900ff" stroke="#8900ff" points="98.2015,-50.5001 88.2014,-54 98.2014,-57.5001 98.2015,-50.5001"/>
+</g>
+<!-- proc~psfun_d_prec_build&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge62" class="edge">
+<title>proc~psfun_d_prec_build&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#8900ff" stroke-dasharray="5,2" d="M146.6738,-63.8533C138.0384,-67.6213 129.9819,-72.8227 124,-80 57.4779,-159.8162 46.1845,-501.3453 44.3447,-592.5402"/>
+<polygon fill="#8900ff" stroke="#8900ff" points="40.8441,-592.5452 44.1605,-602.6076 47.8429,-592.6733 40.8441,-592.5452"/>
+</g>
+<!-- proc~psfun_z_quadratureplot -->
+<g id="module~~graph~~ModuleGraph_node30" class="node">
+<title>proc~psfun_z_quadratureplot</title>
+<g id="a_module~~graph~~ModuleGraph_node30"><a xlink:href=".././proc/psfun_z_quadratureplot.html" xlink:title="psfun_z_quadratureplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="452,-333 326,-333 326,-309 452,-309 452,-333"/>
+<text text-anchor="middle" x="389" y="-318.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_quadratureplot</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_quadratureplot&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge64" class="edge">
+<title>proc~psfun_z_quadratureplot&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#b300ff" stroke-dasharray="5,2" d="M329.7566,-308.9527C323.5153,-306.4967 317.4629,-303.5453 312,-300 290.8052,-286.245 297.3399,-269.5288 276,-256 246.5941,-237.3576 229.9635,-219.2677 200,-237"/>
+</g>
+<!-- proc~psfun_z_quadratureplot&#45;&gt;ogpf -->
+<g id="module~~graph~~ModuleGraph_edge65" class="edge">
+<title>proc~psfun_z_quadratureplot&#45;&gt;ogpf</title>
+<path fill="none" stroke="#b300ff" stroke-dasharray="5,2" d="M325.803,-333.0375C296.3761,-338.6427 262.3837,-345.1174 237.1574,-349.9224"/>
+<polygon fill="#b300ff" stroke="#b300ff" points="236.4331,-346.4973 227.2646,-351.8067 237.7429,-353.3737 236.4331,-346.4973"/>
+</g>
+<!-- proc~psfun_d_quadratureplot -->
+<g id="module~~graph~~ModuleGraph_node31" class="node">
+<title>proc~psfun_d_quadratureplot</title>
+<g id="a_module~~graph~~ModuleGraph_node31"><a xlink:href=".././proc/psfun_d_quadratureplot.html" xlink:title="psfun_d_quadratureplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="452.5,-291 325.5,-291 325.5,-267 452.5,-267 452.5,-291"/>
+<text text-anchor="middle" x="389" y="-276.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_quadratureplot</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_quadratureplot&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge66" class="edge">
+<title>proc~psfun_d_quadratureplot&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#dc00ff" stroke-dasharray="5,2" d="M342.3728,-266.9737C288.4344,-253.3097 206.1831,-233.3408 200,-237"/>
+</g>
+<!-- proc~psfun_d_quadratureplot&#45;&gt;ogpf -->
+<g id="module~~graph~~ModuleGraph_edge67" class="edge">
+<title>proc~psfun_d_quadratureplot&#45;&gt;ogpf</title>
+<path fill="none" stroke="#dc00ff" stroke-dasharray="5,2" d="M333.1737,-291.031C325.8527,-293.5232 318.607,-296.488 312,-300 293.3558,-309.9106 294.3209,-320.5037 276,-331 263.9699,-337.8922 249.821,-343.3526 237.0135,-347.4537"/>
+<polygon fill="#dc00ff" stroke="#dc00ff" points="235.6547,-344.208 227.0959,-350.4527 237.6809,-350.9084 235.6547,-344.208"/>
+</g>
+<!-- proc~psfun_dcg_vect -->
+<g id="module~~graph~~ModuleGraph_node32" class="node">
+<title>proc~psfun_dcg_vect</title>
+<g id="a_module~~graph~~ModuleGraph_node32"><a xlink:href=".././proc/psfun_dcg_vect.html" xlink:title="psfun_dcg_vect">
+<polygon fill="#d9534f" stroke="#d9534f" points="433,-1017 345,-1017 345,-993 433,-993 433,-1017"/>
+<text text-anchor="middle" x="389" y="-1002.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_dcg_vect</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_krylov_mod -->
+<g id="module~~graph~~ModuleGraph_edge71" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_krylov_mod</title>
+<path fill="none" stroke="#ff00f8" stroke-dasharray="5,2" d="M344.653,-996.6037C333.03,-992.7439 321.1925,-987.1352 312,-979 284.3114,-954.4959 299.2232,-932.7714 276,-904 262.9325,-887.8105 244.5898,-873.4081 229.1985,-862.8862"/>
+<polygon fill="#ff00f8" stroke="#ff00f8" points="230.8104,-859.7559 220.5396,-857.1553 226.9469,-865.5932 230.8104,-859.7559"/>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge69" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#ff00f8" stroke-dasharray="5,2" d="M380.4304,-1017.1592C363.5037,-1040.0589 323.2937,-1089.1507 276,-1110 218.3464,-1135.4164 144.8665,-1136.9217 96.2218,-1134.2136"/>
+<polygon fill="#ff00f8" stroke="#ff00f8" points="96.435,-1130.7201 86.2331,-1133.5788 95.991,-1137.706 96.435,-1130.7201"/>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge68" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff00f8" stroke-dasharray="5,2" d="M344.5987,-996.5473C290.6046,-986.1292 205.884,-969.2763 200,-965"/>
+</g>
+<!-- psb_d_krylov_conv_mod -->
+<g id="module~~graph~~ModuleGraph_node42" class="node">
+<title>psb_d_krylov_conv_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="265.5,-1101 134.5,-1101 134.5,-1077 265.5,-1077 265.5,-1101"/>
+<text text-anchor="middle" x="200" y="-1086.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_d_krylov_conv_mod</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_d_krylov_conv_mod -->
+<g id="module~~graph~~ModuleGraph_edge70" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_d_krylov_conv_mod</title>
+<path fill="none" stroke="#ff00f8" stroke-dasharray="5,2" d="M370.499,-1017.1406C348.6684,-1031.0269 310.914,-1053.6854 276,-1068 270.9337,-1070.0772 265.5952,-1072.0179 260.1932,-1073.8141"/>
+<polygon fill="#ff00f8" stroke="#ff00f8" points="258.9295,-1070.5427 250.4461,-1076.8896 261.0358,-1077.2183 258.9295,-1070.5427"/>
+</g>
+<!-- proc~psfun_d_prec_init -->
+<g id="module~~graph~~ModuleGraph_node33" class="node">
+<title>proc~psfun_d_prec_init</title>
+<g id="a_module~~graph~~ModuleGraph_node33"><a xlink:href=".././proc/psfun_d_prec_init.html" xlink:title="psfun_d_prec_init">
+<polygon fill="#d9534f" stroke="#d9534f" points="248.5,-24 151.5,-24 151.5,0 248.5,0 248.5,-24"/>
+<text text-anchor="middle" x="200" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_prec_init</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_prec_init&#45;&gt;amg_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge73" class="edge">
+<title>proc~psfun_d_prec_init&#45;&gt;amg_prec_mod</title>
+<path fill="none" stroke="#ff00ce" stroke-dasharray="5,2" d="M155.2967,-24.0355C137.4382,-28.8436 116.7129,-34.4235 98.0223,-39.4555"/>
+<polygon fill="#ff00ce" stroke="#ff00ce" points="96.9167,-36.1285 88.1705,-42.1079 98.7366,-42.8878 96.9167,-36.1285"/>
+</g>
+<!-- proc~psfun_d_prec_init&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge72" class="edge">
+<title>proc~psfun_d_prec_init&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff00ce" stroke-dasharray="5,2" d="M151.4592,-16.5638C141.0856,-19.7468 131.1218,-24.862 124,-33 86.2885,-76.0924 53.1751,-491.486 45.6152,-592.7996"/>
+<polygon fill="#ff00ce" stroke="#ff00ce" points="42.1203,-592.6025 44.8738,-602.8332 49.1012,-593.1184 42.1203,-592.6025"/>
+</g>
+<!-- proc~psfun_dkrylov_vect -->
+<g id="module~~graph~~ModuleGraph_node34" class="node">
+<title>proc~psfun_dkrylov_vect</title>
+<g id="a_module~~graph~~ModuleGraph_node34"><a xlink:href=".././proc/psfun_dkrylov_vect.html" xlink:title="psfun_dkrylov_vect">
+<polygon fill="#d9534f" stroke="#d9534f" points="252,-1059 148,-1059 148,-1035 252,-1035 252,-1059"/>
+<text text-anchor="middle" x="200" y="-1044.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_dkrylov_vect</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_prec_mod -->
+<g id="module~~graph~~ModuleGraph_edge75" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#ff00a5" stroke-dasharray="5,2" d="M147.9095,-1058.5317C139.7109,-1061.1542 131.4803,-1064.289 124,-1068 101.8214,-1079.0027 79.6762,-1096.5232 64.3273,-1109.97"/>
+<polygon fill="#ff00a5" stroke="#ff00a5" points="61.6486,-1107.6711 56.5423,-1116.9542 66.3231,-1112.8816 61.6486,-1107.6711"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge74" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff00a5" stroke-dasharray="5,2" d="M147.8571,-1040.8509C138.894,-1037.6529 130.4156,-1032.9321 124,-1026 70.585,-968.2852 50.315,-714.555 45.3183,-637.3606"/>
+<polygon fill="#ff00a5" stroke="#ff00a5" points="48.8063,-637.0589 44.6897,-627.2965 41.82,-637.4953 48.8063,-637.0589"/>
+</g>
+<!-- proc~psfun_d_plot_info -->
+<g id="module~~graph~~ModuleGraph_node35" class="node">
+<title>proc~psfun_d_plot_info</title>
+<g id="a_module~~graph~~ModuleGraph_node35"><a xlink:href=".././proc/psfun_d_plot_info.html" xlink:title="psfun_d_plot_info">
+<polygon fill="#d9534f" stroke="#d9534f" points="437.5,-488 340.5,-488 340.5,-464 437.5,-464 437.5,-488"/>
+<text text-anchor="middle" x="389" y="-473.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_plot_info</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_plot_info&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge76" class="edge">
+<title>proc~psfun_d_plot_info&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff007c" stroke-dasharray="5,2" d="M370.7019,-488.1003C354.5259,-499.1793 330.6681,-516.4733 312,-534 294.0761,-550.8279 296.9136,-563.0747 276,-576 246.3826,-594.3046 234.0064,-587.5293 200,-595"/>
+<path fill="none" stroke="#ff007c" stroke-dasharray="5,2" d="M200,-595C166.0959,-602.4483 127.3942,-607.4311 97.0209,-610.5604"/>
+<polygon fill="#ff007c" stroke="#ff007c" points="96.663,-607.0786 87.0586,-611.5515 97.356,-614.0443 96.663,-607.0786"/>
+</g>
+<!-- proc~psfun_d_plot_info&#45;&gt;ogpf -->
+<g id="module~~graph~~ModuleGraph_edge77" class="edge">
+<title>proc~psfun_d_plot_info&#45;&gt;ogpf</title>
+<path fill="none" stroke="#ff007c" stroke-dasharray="5,2" d="M369.8376,-463.9348C336.3015,-442.8194 266.8443,-399.0872 227.9452,-374.5951"/>
+<polygon fill="#ff007c" stroke="#ff007c" points="229.5403,-371.4635 219.2131,-369.0972 225.8106,-377.3872 229.5403,-371.4635"/>
+</g>
+<!-- proc~get_dparms -->
+<g id="module~~graph~~ModuleGraph_node36" class="node">
+<title>proc~get_dparms</title>
+<g id="a_module~~graph~~ModuleGraph_node36"><a xlink:href=".././proc/get_dparms.html" xlink:title="get_dparms">
+<polygon fill="#d9534f" stroke="#d9534f" points="235,-289 165,-289 165,-265 235,-265 235,-289"/>
+<text text-anchor="middle" x="200" y="-274.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_dparms</text>
+</a>
+</g>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge78" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff0052" stroke-dasharray="5,2" d="M164.9752,-281.5377C150.4735,-285.1202 134.6015,-291.5305 124,-303 84.1655,-346.0962 55.8721,-528.266 46.9734,-592.4815"/>
+<polygon fill="#ff0052" stroke="#ff0052" points="43.461,-592.3366 45.582,-602.717 50.3972,-593.2796 43.461,-592.3366"/>
+</g>
+<!-- proc~psfun_d_parallel_apply -->
+<g id="module~~graph~~ModuleGraph_node37" class="node">
+<title>proc~psfun_d_parallel_apply</title>
+<g id="a_module~~graph~~ModuleGraph_node37"><a xlink:href=".././proc/psfun_d_parallel_apply.html" xlink:title="psfun_d_parallel_apply">
+<polygon fill="#d9534f" stroke="#d9534f" points="450.5,-647 327.5,-647 327.5,-623 450.5,-623 450.5,-647"/>
+<text text-anchor="middle" x="389" y="-632.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_parallel_apply</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_parallel_apply&#45;&gt;module~psfun_d_serial_mod -->
+<g id="module~~graph~~ModuleGraph_edge80" class="edge">
+<title>proc~psfun_d_parallel_apply&#45;&gt;module~psfun_d_serial_mod</title>
+<path fill="none" stroke="#ff0029" stroke-dasharray="5,2" d="M370.499,-647.1406C348.6684,-661.0269 310.914,-683.6854 276,-698 270.9337,-700.0772 265.5952,-702.0179 260.1932,-703.8141"/>
+<polygon fill="#ff0029" stroke="#ff0029" points="258.9295,-700.5427 250.4461,-706.8896 261.0358,-707.2183 258.9295,-700.5427"/>
+</g>
+<!-- proc~psfun_d_parallel_apply&#45;&gt;psb_base_mod -->
+<g id="module~~graph~~ModuleGraph_edge79" class="edge">
+<title>proc~psfun_d_parallel_apply&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff0029" stroke-dasharray="5,2" d="M371.0393,-622.8562C354.8735,-611.5588 330.8348,-593.8296 312,-576 294.1456,-559.0984 296.9136,-546.9253 276,-534 246.3826,-515.6954 234.6922,-512.0506 200,-515"/>
+</g>
+</g>
+</svg>
+</div><script>var panmodulegraphModuleGraph = svgPanZoom('#modulegraphModuleGraph', {zoomEnabled: true,controlIconsEnabled: true, fit: true, center: true,}); </script><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+        </div>
+      </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> PSFUN was developed by Fabio Durastante</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

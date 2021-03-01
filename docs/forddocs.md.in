@@ -1,0 +1,39 @@
+---
+project: PSFUN
+summary: A library for distributed computation of matrix functions powered by PSCTOOLKIT
+src_dir: @CMAKE_SOURCE_DIR@
+sort: permission-alpha
+graph: true
+coloured_edges: true
+output_dir: @CMAKE_BINARY_DIR@/docs/html
+page_dir: @CMAKE_SOURCE_DIR@/docs/pages
+project_github: https://github.com/Cirdans-Home/psfun
+project_website: https://cirdans-home.github.io/psfun/
+summary: PSFUN Parallel Sparse Function
+author: Fabio Durastante
+author_pic: https://avatars.githubusercontent.com/u/1467455?s=460&u=f02fc747b49926607cc7638b8d48c613f310750e&v=4
+author_description: Junior Researcher
+github: https://github.com/Cirdans-Home
+email: fabio.durastante@unipi.it
+media_dir: ./docs/media
+exclude_dir: @CMAKE_SOURCE_DIR@/cmake
+             @CMAKE_SOURCE_DIR@/docs
+             @CMAKE_SOURCE_DIR@/serial/exponential
+             @CMAKE_SOURCE_DIR@/utils/libraries
+license: BSD
+version: @PROJECT_VERSION@
+---
+
+>   Lo scopo della Matematica è di determinare il valore numerico delle incognite
+   che si presentano nei problemi pratici. Newton, Euler, Lagrange, Cauchy, Gauss,
+   e tutti i grandi matematici sviluppano le loro mirabili teorie fino al calcolo
+   delle cifre decimali necessarie.
+
+>   -- Giuseppe Peano
+
+>   Non esistono problemi dai quali si può prescindere. Non c'è niente di più
+   penoso di coloro i quali suddividono il pensiero dell'uomo in un pensiero da
+   cui non si può prescindere e in uno da cui si può prescindere. Fra costoro
+   si celano i nostri futuri carnefici.
+
+>   -- Una partita a scacchi con Albert Einstein, Friedrich Dürrenmatt

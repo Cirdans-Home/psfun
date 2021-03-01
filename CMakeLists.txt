@@ -46,7 +46,7 @@ find_package(AMG4PSBLAS REQUIRED)
 #------------------------------------------------------------------------------#
 option(BUILD_EXAMPLES "Build example programs" OFF)
 option(EXTERNAL_PHI "Use Koikari codes for Phi Functiions" OFF)
-option(BUILD_DOCUMENTATION "Build Sphinx Documentation" ON)
+option(BUILD_DOCUMENTATION "Build FORD Documentation" ON)
 option(GNUPLOT "Enable GNUPLOT plots" OFF)
 
 #------------------------------------------------------------------------------#
@@ -88,7 +88,7 @@ add_subdirectory(quadratures)
 add_subdirectory(examples)
 
 # --------------------------------------------------------------------------- #
-# Sphinx autodoc
+# FORD autodoc
 # --------------------------------------------------------------------------- #
 IF(BUILD_DOCUMENTATION)
 	add_subdirectory(docs)
