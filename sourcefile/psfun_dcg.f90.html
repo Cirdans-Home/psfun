@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A library for distributed computation of matrix functions powered by PSCTOOLKIT PSFUN Parallel Sparse Function">
+    
+    <meta name="author" content="Fabio Durastante" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>psfun_dcg.F90 &ndash; PSFUN</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">PSFUN <small>0.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Matrix Functions</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>psfun_dcg.F90
+    <small>Source File</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title=" 6.5% of total for source files.">181 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/psfun_dcg.F90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+  
+     <li class="active">psfun_dcg.F90</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-0">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-0" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../proc/psfun_dcg_vect.html">psfun_dcg_vect</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/psfun_dcg.f90.html#src">psfun_dcg.F90</a>
+  </div>
+</div>
+
+
+
+</div>
+
+    </div>
+    <div class="col-md-9" id='text'>
+      
+      <br>
+    
+      
+      
+
+    <section class="visible-xs visible-sm hidden-md">
+      
+<h3>Contents</h3>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#subs-1">Subroutines</a></h3></div>
+  <div class="list-group">
+    <div id="subs-1" class="panel-collapse collapse">
+      
+      <a class="list-group-item" href="../proc/psfun_dcg_vect.html">psfun_dcg_vect</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title">Source Code</h3></div>
+  <div class="list-group">
+    <a class="list-group-item" href="../sourcefile/psfun_dcg.f90.html#src">psfun_dcg.F90</a>
+  </div>
+</div>
+
+
+
+    </section>
+    <br class="visible-xs visible-sm hidden-md">
+
+    <section>
+      <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl"><pre><span></span><a name="ln-1"></a><span class="c">! BSD 3-Clause License</span>
+<a name="ln-2"></a><span class="c">!</span>
+<a name="ln-3"></a><span class="c">! Copyright (c) 2020, Fabio Durastante</span>
+<a name="ln-4"></a><span class="c">! All rights reserved.</span>
+<a name="ln-5"></a><span class="c">!</span>
+<a name="ln-6"></a><span class="c">! Redistribution and use in source and binary forms, with or without</span>
+<a name="ln-7"></a><span class="c">! modification, are permitted provided that the following conditions are met:</span>
+<a name="ln-8"></a><span class="c">!</span>
+<a name="ln-9"></a><span class="c">! 1. Redistributions of source code must retain the above copyright notice, this</span>
+<a name="ln-10"></a><span class="c">!    list of conditions and the following disclaimer.</span>
+<a name="ln-11"></a><span class="c">!</span>
+<a name="ln-12"></a><span class="c">! 2. Redistributions in binary form must reproduce the above copyright notice,</span>
+<a name="ln-13"></a><span class="c">!    this list of conditions and the following disclaimer in the documentation</span>
+<a name="ln-14"></a><span class="c">!    and/or other materials provided with the distribution.</span>
+<a name="ln-15"></a><span class="c">!</span>
+<a name="ln-16"></a><span class="c">! 3. Neither the name of the copyright holder nor the names of its</span>
+<a name="ln-17"></a><span class="c">!    contributors may be used to endorse or promote products derived from</span>
+<a name="ln-18"></a><span class="c">!    this software without specific prior written permission.</span>
+<a name="ln-19"></a><span class="c">!</span>
+<a name="ln-20"></a><span class="c">! THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span>
+<a name="ln-21"></a><span class="c">! AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span>
+<a name="ln-22"></a><span class="c">! IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE</span>
+<a name="ln-23"></a><span class="c">! DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE</span>
+<a name="ln-24"></a><span class="c">! FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL</span>
+<a name="ln-25"></a><span class="c">! DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR</span>
+<a name="ln-26"></a><span class="c">! SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER</span>
+<a name="ln-27"></a><span class="c">! CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,</span>
+<a name="ln-28"></a><span class="c">! OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE</span>
+<a name="ln-29"></a><span class="c">! OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="ln-30"></a><span class="c">!</span>
+<a name="ln-31"></a><span class="c">! This code is based on the psb_dcg.F90 code from PSBLAS</span>
+<a name="ln-32"></a><span class="c">!</span>
+<a name="ln-33"></a><span class="c">!                Parallel Sparse BLAS  version 3.5</span>
+<a name="ln-34"></a><span class="c">!      (C) Copyright 2006-2018</span>
+<a name="ln-35"></a><span class="c">!        Salvatore Filippone</span>
+<a name="ln-36"></a><span class="c">!        Alfredo Buttari</span>
+<a name="ln-37"></a><span class="c">!</span>
+<a name="ln-38"></a><span class="c">!    Redistribution and use in source and binary forms, with or without</span>
+<a name="ln-39"></a><span class="c">!    modification, are permitted provided that the following conditions</span>
+<a name="ln-40"></a><span class="c">!    are met:</span>
+<a name="ln-41"></a><span class="c">!      1. Redistributions of source code must retain the above copyright</span>
+<a name="ln-42"></a><span class="c">!         notice, this list of conditions and the following disclaimer.</span>
+<a name="ln-43"></a><span class="c">!      2. Redistributions in binary form must reproduce the above copyright</span>
+<a name="ln-44"></a><span class="c">!         notice, this list of conditions, and the following disclaimer in the</span>
+<a name="ln-45"></a><span class="c">!         documentation and/or other materials provided with the distribution.</span>
+<a name="ln-46"></a><span class="c">!      3. The name of the PSBLAS group or the names of its contributors may</span>
+<a name="ln-47"></a><span class="c">!         not be used to endorse or promote products derived from this</span>
+<a name="ln-48"></a><span class="c">!         software without specific written permission.</span>
+<a name="ln-49"></a><span class="c">!</span>
+<a name="ln-50"></a><span class="c">!    THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS</span>
+<a name="ln-51"></a><span class="c">!    ``AS IS&#39;&#39; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED</span>
+<a name="ln-52"></a><span class="c">!    TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR</span>
+<a name="ln-53"></a><span class="c">!    PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE PSBLAS GROUP OR ITS CONTRIBUTORS</span>
+<a name="ln-54"></a><span class="c">!    BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span>
+<a name="ln-55"></a><span class="c">!    CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span>
+<a name="ln-56"></a><span class="c">!    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span>
+<a name="ln-57"></a><span class="c">!    INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span>
+<a name="ln-58"></a><span class="c">!    CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span>
+<a name="ln-59"></a><span class="c">!    ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span>
+<a name="ln-60"></a><span class="c">!    POSSIBILITY OF SUCH DAMAGE.</span>
+<a name="ln-61"></a><span class="c">!</span>
+<a name="ln-62"></a><span class="c">!</span>
+<a name="ln-63"></a><span class="c">! File:  psb_dcg.f90</span>
+<a name="ln-64"></a><span class="c">!   CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
+<a name="ln-65"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-66"></a><span class="c">!   C  References:                                                         C</span>
+<a name="ln-67"></a><span class="c">!   C          [1] Duff, I., Marrone, M., Radicati, G., and Vittoli, C.    C</span>
+<a name="ln-68"></a><span class="c">!   C              Level 3 basic linear algebra subprograms for sparse     C</span>
+<a name="ln-69"></a><span class="c">!   C              matrices: a user level interface                        C</span>
+<a name="ln-70"></a><span class="c">!   C              ACM Trans. Math. Softw., 23(3), 379-401, 1997.          C</span>
+<a name="ln-71"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-72"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-73"></a><span class="c">!   C         [2]  S. Filippone, M. Colajanni                              C</span>
+<a name="ln-74"></a><span class="c">!   C              PSBLAS: A library for parallel linear algebra           C</span>
+<a name="ln-75"></a><span class="c">!   C              computation on sparse matrices                          C</span>
+<a name="ln-76"></a><span class="c">!   C              ACM Trans. on Math. Softw., 26(4), 527-550, Dec. 2000.  C</span>
+<a name="ln-77"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-78"></a><span class="c">!   C         [3] M. Arioli, I. Duff, M. Ruiz                              C</span>
+<a name="ln-79"></a><span class="c">!   C             Stopping criteria for iterative solvers                  C</span>
+<a name="ln-80"></a><span class="c">!   C             SIAM J. Matrix Anal. Appl., Vol. 13, pp. 138-144, 1992   C</span>
+<a name="ln-81"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-82"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-83"></a><span class="c">!   C         [4] R. Barrett et al                                         C</span>
+<a name="ln-84"></a><span class="c">!   C             Templates for the solution of linear systems             C</span>
+<a name="ln-85"></a><span class="c">!   C             SIAM, 1993</span>
+<a name="ln-86"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-87"></a><span class="c">!   C                                                                      C</span>
+<a name="ln-88"></a><span class="c">!   CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC</span>
+<a name="ln-89"></a><span class="c">! File:  psb_dcg.f90</span>
+<a name="ln-90"></a><span class="c">!</span>
+<a name="ln-91"></a><span class="c">! Subroutine: psb_dcg</span>
+<a name="ln-92"></a><span class="c">!    This subroutine implements the Conjugate Gradient method.</span>
+<a name="ln-93"></a><span class="c">!</span>
+<a name="ln-94"></a><span class="c">!</span>
+<a name="ln-95"></a><span class="c">! Arguments:</span>
+<a name="ln-96"></a><span class="c">!</span>
+<a name="ln-97"></a><span class="c">!    a      -  type(psb_dspmat_type)      Input: sparse matrix containing A.</span>
+<a name="ln-98"></a><span class="c">!    prec   -  class(psb_dprec_type)       Input: preconditioner</span>
+<a name="ln-99"></a><span class="c">!    b(:)   -  real                    Input: vector containing the</span>
+<a name="ln-100"></a><span class="c">!                                         right hand side B</span>
+<a name="ln-101"></a><span class="c">!    x(:)   -  real                    Input/Output: vector containing the</span>
+<a name="ln-102"></a><span class="c">!                                         initial guess and final solution X.</span>
+<a name="ln-103"></a><span class="c">!    eps    -  real                       Input: Stopping tolerance; the iteration is</span>
+<a name="ln-104"></a><span class="c">!                                         stopped when the error estimate |err| &lt;= eps</span>
+<a name="ln-105"></a><span class="c">!    desc_a -  type(psb_desc_type).       Input: The communication descriptor.</span>
+<a name="ln-106"></a><span class="c">!    info   -  integer.                   Output: Return code</span>
+<a name="ln-107"></a><span class="c">!</span>
+<a name="ln-108"></a><span class="c">!    itmax  -  integer(optional)          Input: maximum number of iterations to be</span>
+<a name="ln-109"></a><span class="c">!                                         performed.</span>
+<a name="ln-110"></a><span class="c">!    iter   -  integer(optional)          Output: how many iterations have been</span>
+<a name="ln-111"></a><span class="c">!                                         performed.</span>
+<a name="ln-112"></a><span class="c">!                                         performed.</span>
+<a name="ln-113"></a><span class="c">!    err    -  real   (optional)          Output: error estimate on exit. If the</span>
+<a name="ln-114"></a><span class="c">!                                         denominator of the estimate is exactly</span>
+<a name="ln-115"></a><span class="c">!                                         0, it is changed into 1.</span>
+<a name="ln-116"></a><span class="c">!    itrace -  integer(optional)          Input: print an informational message</span>
+<a name="ln-117"></a><span class="c">!                                         with the error estimate every itrace</span>
+<a name="ln-118"></a><span class="c">!                                         iterations</span>
+<a name="ln-119"></a><span class="c">!    istop  -  integer(optional)          Input: stopping criterion, or how</span>
+<a name="ln-120"></a><span class="c">!                                         to estimate the error.</span>
+<a name="ln-121"></a><span class="c">!                                         1: err =  |r|/(|a||x|+|b|);  here the iteration is</span>
+<a name="ln-122"></a><span class="c">!                                            stopped when  |r| &lt;= eps * (|a||x|+|b|)</span>
+<a name="ln-123"></a><span class="c">!                                         2: err =  |r|/|b|; here the iteration is</span>
+<a name="ln-124"></a><span class="c">!                                            stopped when  |r| &lt;= eps * |b|</span>
+<a name="ln-125"></a><span class="c">!                                         where r is the (preconditioned, recursive</span>
+<a name="ln-126"></a><span class="c">!                                         estimate of) residual.</span>
+<a name="ln-127"></a><span class="c">!</span>
+<a name="ln-128"></a><span class="c">!</span>
+<a name="ln-129"></a><span class="k">subroutine </span><span class="n">psfun_dcg_vect</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">prec</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">eta</span><span class="p">,</span><span class="n">zeta</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">,&amp;</span>
+<a name="ln-130"></a>     <span class="p">&amp;</span> <span class="n">itmax</span><span class="p">,</span><span class="n">iter</span><span class="p">,</span><span class="n">err</span><span class="p">,</span><span class="n">itrace</span><span class="p">,</span><span class="n">istop</span><span class="p">,</span><span class="n">cond</span><span class="p">)</span>
+<a name="ln-131"></a>  <span class="c">!! Preconditioned Conjugate Gradient for shifted system \((\eta A + \zeta I)x = b \)</span>
+<a name="ln-132"></a>  <span class="k">use </span><span class="n">psb_base_mod</span>
+<a name="ln-133"></a>  <span class="k">use </span><span class="n">psb_prec_mod</span>
+<a name="ln-134"></a>  <span class="k">use </span><span class="n">psb_d_krylov_conv_mod</span>
+<a name="ln-135"></a>  <span class="k">use </span><span class="n">psb_krylov_mod</span>
+<a name="ln-136"></a>  <span class="k">implicit none</span>
+<a name="ln-137"></a><span class="k">  type</span><span class="p">(</span><span class="n">psb_dspmat_type</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>    <span class="kd">::</span> <span class="n">a</span> <span class="c">!! Distributed sparse matrix</span>
+<a name="ln-138"></a>  <span class="k">Type</span><span class="p">(</span><span class="n">psb_desc_type</span><span class="p">),</span> <span class="k">Intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>      <span class="kd">::</span> <span class="n">desc_a</span> <span class="c">!! Descriptor</span>
+<a name="ln-139"></a>  <span class="k">class</span><span class="p">(</span><span class="n">psb_dprec_type</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">prec</span> <span class="c">!! Preconditioner</span>
+<a name="ln-140"></a>  <span class="k">type</span><span class="p">(</span><span class="n">psb_d_vect_type</span><span class="p">),</span> <span class="k">Intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">b</span> <span class="c">!! Right-hand side</span>
+<a name="ln-141"></a>  <span class="kt">real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">eta</span> <span class="c">!! \(\eta\) of \((\eta A + \zeta I)x = b \)</span>
+<a name="ln-142"></a>  <span class="kt">real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">zeta</span> <span class="c">!! \(\zeta\) of \((\eta A + \zeta I)x = b \)</span>
+<a name="ln-143"></a>  <span class="k">type</span><span class="p">(</span><span class="n">psb_d_vect_type</span><span class="p">),</span> <span class="k">Intent</span><span class="p">(</span><span class="n">inout</span><span class="p">)</span> <span class="kd">::</span> <span class="n">x</span> <span class="c">!! Solution on exit, initial guess on entry</span>
+<a name="ln-144"></a>  <span class="kt">Real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">),</span> <span class="k">Intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">eps</span> <span class="c">!! Tolerance for the solution</span>
+<a name="ln-145"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_ipk_</span><span class="p">),</span> <span class="k">intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>                 <span class="kd">::</span> <span class="n">info</span> <span class="c">!! Flag</span>
+<a name="ln-146"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_ipk_</span><span class="p">),</span> <span class="k">Optional</span><span class="p">,</span> <span class="k">Intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span>        <span class="kd">::</span> <span class="n">itmax</span><span class="p">,</span> <span class="n">itrace</span><span class="p">,</span> <span class="n">istop</span> <span class="c">!! Auxiliary parameters</span>
+<a name="ln-147"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_ipk_</span><span class="p">),</span> <span class="k">Optional</span><span class="p">,</span> <span class="k">Intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>       <span class="kd">::</span> <span class="n">iter</span> <span class="c">!! Final number of iteration</span>
+<a name="ln-148"></a>  <span class="kt">Real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">),</span> <span class="k">Optional</span><span class="p">,</span> <span class="k">Intent</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="kd">::</span> <span class="n">err</span><span class="p">,</span><span class="n">cond</span> <span class="c">!! Auxiliary parameters</span>
+<a name="ln-149"></a><span class="c">! =   Local data</span>
+<a name="ln-150"></a>  <span class="kt">real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">target</span>   <span class="kd">::</span> <span class="n">aux</span><span class="p">(:),</span><span class="n">td</span><span class="p">(:),</span><span class="n">tu</span><span class="p">(:),</span><span class="n">eig</span><span class="p">(:),</span><span class="n">ewrk</span><span class="p">(:)</span>
+<a name="ln-151"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_mpk_</span><span class="p">),</span> <span class="k">allocatable</span> <span class="kd">::</span> <span class="n">ibl</span><span class="p">(:),</span> <span class="n">ispl</span><span class="p">(:),</span> <span class="n">iwrk</span><span class="p">(:)</span>
+<a name="ln-152"></a>  <span class="k">type</span><span class="p">(</span><span class="n">psb_d_vect_type</span><span class="p">),</span> <span class="k">allocatable</span><span class="p">,</span> <span class="k">target</span> <span class="kd">::</span> <span class="n">wwrk</span><span class="p">(:)</span>
+<a name="ln-153"></a>  <span class="k">type</span><span class="p">(</span><span class="n">psb_d_vect_type</span><span class="p">),</span> <span class="k">pointer</span>  <span class="kd">::</span> <span class="n">q</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span> <span class="n">w</span>
+<a name="ln-154"></a>  <span class="kt">real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">)</span>   <span class="kd">::</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">rho</span><span class="p">,</span> <span class="n">rho_old</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span><span class="n">alpha_old</span><span class="p">,</span><span class="n">beta_old</span>
+<a name="ln-155"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_ipk_</span><span class="p">)</span> <span class="kd">::</span> <span class="n">itmax_</span><span class="p">,</span> <span class="n">istop_</span><span class="p">,</span> <span class="n">naux</span><span class="p">,</span> <span class="n">it</span><span class="p">,</span> <span class="n">itx</span><span class="p">,</span> <span class="n">itrace_</span><span class="p">,&amp;</span>
+<a name="ln-156"></a>       <span class="p">&amp;</span>  <span class="n">n_col</span><span class="p">,</span> <span class="n">n_row</span><span class="p">,</span><span class="n">err_act</span><span class="p">,</span> <span class="n">ieg</span><span class="p">,</span><span class="n">nspl</span><span class="p">,</span> <span class="n">istebz</span>
+<a name="ln-157"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_lpk_</span><span class="p">)</span> <span class="kd">::</span> <span class="n">mglob</span>
+<a name="ln-158"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_ipk_</span><span class="p">)</span> <span class="kd">::</span> <span class="n">debug_level</span><span class="p">,</span> <span class="n">debug_unit</span>
+<a name="ln-159"></a>  <span class="k">type</span><span class="p">(</span><span class="n">psb_ctxt_type</span><span class="p">)</span> <span class="kd">::</span> <span class="n">ctxt</span>
+<a name="ln-160"></a>  <span class="kt">integer</span><span class="p">(</span><span class="n">psb_ipk_</span><span class="p">)</span> <span class="kd">::</span> <span class="n">np</span><span class="p">,</span> <span class="n">me</span>
+<a name="ln-161"></a>  <span class="kt">real</span><span class="p">(</span><span class="n">psb_dpk_</span><span class="p">)</span>     <span class="kd">::</span> <span class="n">derr</span>
+<a name="ln-162"></a>  <span class="k">type</span><span class="p">(</span><span class="n">psb_itconv_type</span><span class="p">)</span>       <span class="kd">::</span> <span class="n">stopdat</span>
+<a name="ln-163"></a>  <span class="kt">logical</span>                     <span class="kd">::</span> <span class="n">do_cond</span>
+<a name="ln-164"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>           <span class="kd">::</span> <span class="n">name</span>
+<a name="ln-165"></a>  <span class="kt">character</span><span class="p">(</span><span class="nb">len</span><span class="o">=*</span><span class="p">),</span> <span class="k">parameter</span> <span class="kd">::</span> <span class="n">methdname</span><span class="o">=</span><span class="s1">&#39;CG&#39;</span>
+<a name="ln-166"></a>
+<a name="ln-167"></a>  <span class="n">info</span> <span class="o">=</span> <span class="n">psb_success_</span>
+<a name="ln-168"></a>  <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;psb_dcg&#39;</span>
+<a name="ln-169"></a>  <span class="k">call </span><span class="n">psb_erractionsave</span><span class="p">(</span><span class="n">err_act</span><span class="p">)</span>
+<a name="ln-170"></a>  <span class="n">debug_unit</span>  <span class="o">=</span> <span class="n">psb_get_debug_unit</span><span class="p">()</span>
+<a name="ln-171"></a>  <span class="n">debug_level</span> <span class="o">=</span> <span class="n">psb_get_debug_level</span><span class="p">()</span>
+<a name="ln-172"></a>
+<a name="ln-173"></a>  <span class="n">ctxt</span> <span class="o">=</span> <span class="n">desc_a</span><span class="p">%</span><span class="n">get_context</span><span class="p">()</span>
+<a name="ln-174"></a>
+<a name="ln-175"></a>  <span class="k">call </span><span class="n">psb_info</span><span class="p">(</span><span class="n">ctxt</span><span class="p">,</span> <span class="n">me</span><span class="p">,</span> <span class="n">np</span><span class="p">)</span>
+<a name="ln-176"></a>  <span class="k">if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">b</span><span class="p">%</span><span class="n">v</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-177"></a><span class="k">    </span><span class="n">info</span> <span class="o">=</span> <span class="n">psb_err_invalid_vect_state_</span>
+<a name="ln-178"></a>    <span class="k">call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-179"></a>    <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-180"></a>  <span class="n">endif</span>
+<a name="ln-181"></a>  <span class="k">if</span> <span class="p">(.</span><span class="nb">not</span><span class="p">.</span><span class="nb">allocated</span><span class="p">(</span><span class="n">x</span><span class="p">%</span><span class="n">v</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-182"></a><span class="k">    </span><span class="n">info</span> <span class="o">=</span> <span class="n">psb_err_invalid_vect_state_</span>
+<a name="ln-183"></a>    <span class="k">call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-184"></a>    <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-185"></a>  <span class="n">endif</span>
+<a name="ln-186"></a>
+<a name="ln-187"></a>
+<a name="ln-188"></a>  <span class="n">mglob</span> <span class="o">=</span> <span class="n">desc_a</span><span class="p">%</span><span class="n">get_global_rows</span><span class="p">()</span>
+<a name="ln-189"></a>  <span class="n">n_row</span> <span class="o">=</span> <span class="n">desc_a</span><span class="p">%</span><span class="n">get_local_rows</span><span class="p">()</span>
+<a name="ln-190"></a>  <span class="n">n_col</span> <span class="o">=</span> <span class="n">desc_a</span><span class="p">%</span><span class="n">get_local_cols</span><span class="p">()</span>
+<a name="ln-191"></a>
+<a name="ln-192"></a>
+<a name="ln-193"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">istop</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-194"></a><span class="k">    </span><span class="n">istop_</span> <span class="o">=</span> <span class="n">istop</span>
+<a name="ln-195"></a>  <span class="k">else</span>
+<a name="ln-196"></a><span class="k">    </span><span class="n">istop_</span> <span class="o">=</span> <span class="mi">2</span>
+<a name="ln-197"></a>  <span class="n">endif</span>
+<a name="ln-198"></a>
+<a name="ln-199"></a>  <span class="k">call </span><span class="n">psb_chkvect</span><span class="p">(</span><span class="n">mglob</span><span class="p">,</span><span class="n">lone</span><span class="p">,</span><span class="n">x</span><span class="p">%</span><span class="n">get_nrows</span><span class="p">(),</span><span class="n">lone</span><span class="p">,</span><span class="n">lone</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-200"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)&amp;</span>
+<a name="ln-201"></a>       <span class="p">&amp;</span> <span class="k">call </span><span class="n">psb_chkvect</span><span class="p">(</span><span class="n">mglob</span><span class="p">,</span><span class="n">lone</span><span class="p">,</span><span class="n">b</span><span class="p">%</span><span class="n">get_nrows</span><span class="p">(),</span><span class="n">lone</span><span class="p">,</span><span class="n">lone</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-202"></a>  <span class="k">if</span><span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-203"></a><span class="k">    </span><span class="n">info</span><span class="o">=</span><span class="n">psb_err_from_subroutine_</span>
+<a name="ln-204"></a>    <span class="k">call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">,</span><span class="n">a_err</span><span class="o">=</span><span class="s1">&#39;psb_chkvect on X/B&#39;</span><span class="p">)</span>
+<a name="ln-205"></a>    <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-206"></a>  <span class="k">end if</span>
+<a name="ln-207"></a>
+<a name="ln-208"></a><span class="k">  </span><span class="n">naux</span><span class="o">=</span><span class="mi">4</span><span class="o">*</span><span class="n">n_col</span>
+<a name="ln-209"></a>  <span class="k">allocate</span><span class="p">(</span><span class="n">aux</span><span class="p">(</span><span class="n">naux</span><span class="p">),</span> <span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-210"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">call </span><span class="n">psb_geall</span><span class="p">(</span><span class="n">wwrk</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">5_psb_ipk_</span><span class="p">)</span>
+<a name="ln-211"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">call </span><span class="n">psb_geasb</span><span class="p">(</span><span class="n">wwrk</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">mold</span><span class="o">=</span><span class="n">x</span><span class="p">%</span><span class="n">v</span><span class="p">,</span><span class="n">scratch</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.)</span>
+<a name="ln-212"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-213"></a><span class="k">    </span><span class="n">info</span><span class="o">=</span><span class="n">psb_err_from_subroutine_non_</span>
+<a name="ln-214"></a>    <span class="k">call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-215"></a>    <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-216"></a>  <span class="k">end if</span>
+<a name="ln-217"></a>
+<a name="ln-218"></a><span class="k">  </span><span class="n">p</span>  <span class="o">=&gt;</span> <span class="n">wwrk</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-219"></a>  <span class="n">q</span>  <span class="o">=&gt;</span> <span class="n">wwrk</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<a name="ln-220"></a>  <span class="n">r</span>  <span class="o">=&gt;</span> <span class="n">wwrk</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<a name="ln-221"></a>  <span class="n">z</span>  <span class="o">=&gt;</span> <span class="n">wwrk</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<a name="ln-222"></a>  <span class="n">w</span>  <span class="o">=&gt;</span> <span class="n">wwrk</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<a name="ln-223"></a>
+<a name="ln-224"></a>
+<a name="ln-225"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">itmax</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-226"></a><span class="k">    </span><span class="n">itmax_</span> <span class="o">=</span> <span class="n">itmax</span>
+<a name="ln-227"></a>  <span class="k">else</span>
+<a name="ln-228"></a><span class="k">    </span><span class="n">itmax_</span> <span class="o">=</span> <span class="mi">1000</span>
+<a name="ln-229"></a>  <span class="n">endif</span>
+<a name="ln-230"></a>
+<a name="ln-231"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">itrace</span><span class="p">))</span> <span class="k">then</span>
+<a name="ln-232"></a><span class="k">    </span><span class="n">itrace_</span> <span class="o">=</span> <span class="n">itrace</span>
+<a name="ln-233"></a>  <span class="k">else</span>
+<a name="ln-234"></a><span class="k">    </span><span class="n">itrace_</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-235"></a>  <span class="k">end if</span>
+<a name="ln-236"></a>
+<a name="ln-237"></a><span class="k">  </span><span class="n">do_cond</span><span class="o">=</span><span class="nb">present</span><span class="p">(</span><span class="n">cond</span><span class="p">)</span>
+<a name="ln-238"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">do_cond</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-239"></a><span class="k">    </span><span class="n">istebz</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-240"></a>    <span class="k">allocate</span><span class="p">(</span><span class="n">td</span><span class="p">(</span><span class="n">itmax_</span><span class="p">),</span><span class="n">tu</span><span class="p">(</span><span class="n">itmax_</span><span class="p">),</span> <span class="n">eig</span><span class="p">(</span><span class="n">itmax_</span><span class="p">),&amp;</span>
+<a name="ln-241"></a>         <span class="p">&amp;</span> <span class="n">ibl</span><span class="p">(</span><span class="n">itmax_</span><span class="p">),</span><span class="n">ispl</span><span class="p">(</span><span class="n">itmax_</span><span class="p">),</span><span class="n">iwrk</span><span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="n">itmax_</span><span class="p">),</span><span class="n">ewrk</span><span class="p">(</span><span class="mi">4</span><span class="o">*</span><span class="n">itmax_</span><span class="p">),&amp;</span>
+<a name="ln-242"></a>         <span class="p">&amp;</span> <span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-243"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-244"></a><span class="k">      </span><span class="n">info</span><span class="o">=</span><span class="n">psb_err_from_subroutine_non_</span>
+<a name="ln-245"></a>      <span class="k">call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-246"></a>      <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-247"></a>    <span class="k">end if</span>
+<a name="ln-248"></a><span class="k">  end if</span>
+<a name="ln-249"></a><span class="k">  </span><span class="n">itx</span><span class="o">=</span><span class="mi">0</span>
+<a name="ln-250"></a>  <span class="n">alpha</span> <span class="o">=</span> <span class="n">dzero</span>
+<a name="ln-251"></a>
+<a name="ln-252"></a>  <span class="n">restart</span><span class="p">:</span> <span class="k">do</span>
+<a name="ln-253"></a><span class="c">! =</span>
+<a name="ln-254"></a><span class="c">! =    r0 = b-Ax0</span>
+<a name="ln-255"></a><span class="c">! =</span>
+<a name="ln-256"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">itx</span><span class="o">&gt;=</span> <span class="n">itmax_</span><span class="p">)</span> <span class="k">exit </span><span class="n">restart</span>
+<a name="ln-257"></a>
+<a name="ln-258"></a>    <span class="n">it</span> <span class="o">=</span> <span class="mi">0</span>
+<a name="ln-259"></a>    <span class="k">call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="n">done</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">dzero</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>    <span class="c">! r &lt;- b [ x0 = 0]</span>
+<a name="ln-260"></a>    <span class="c">! r &lt;- r - (η A + ζ I) x : We do it in two step : r &lt;- r - ηA, r &lt;- r - ζ x</span>
+<a name="ln-261"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">call </span><span class="n">psb_spmm</span><span class="p">(</span><span class="o">-</span><span class="n">eta</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">done</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">work</span><span class="o">=</span><span class="n">aux</span><span class="p">)</span>
+<a name="ln-262"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="o">-</span><span class="n">zeta</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">done</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-263"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-264"></a><span class="k">      </span><span class="n">info</span><span class="o">=</span><span class="n">psb_err_from_subroutine_non_</span>
+<a name="ln-265"></a>      <span class="k">call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-266"></a>      <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-267"></a>    <span class="k">end if</span>
+<a name="ln-268"></a>
+<a name="ln-269"></a>
+<a name="ln-270"></a><span class="k">    </span><span class="n">rho</span> <span class="o">=</span> <span class="n">dzero</span>
+<a name="ln-271"></a>
+<a name="ln-272"></a>    <span class="k">call </span><span class="n">psb_init_conv</span><span class="p">(</span><span class="n">methdname</span><span class="p">,</span><span class="n">istop_</span><span class="p">,</span><span class="n">itrace_</span><span class="p">,</span><span class="n">itmax_</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">eps</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">stopdat</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-273"></a>    <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">Then</span>
+<a name="ln-274"></a><span class="k">      call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">psb_err_from_subroutine_non_</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-275"></a>      <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-276"></a>    <span class="k">End If</span>
+<a name="ln-277"></a>
+<a name="ln-278"></a><span class="k">    </span><span class="n">iteration</span><span class="p">:</span>  <span class="k">do</span>
+<a name="ln-279"></a>
+<a name="ln-280"></a><span class="k">      </span><span class="n">it</span>   <span class="o">=</span> <span class="n">it</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-281"></a>      <span class="n">itx</span> <span class="o">=</span> <span class="n">itx</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-282"></a>
+<a name="ln-283"></a>      <span class="k">call </span><span class="n">prec</span><span class="p">%</span><span class="n">apply</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">work</span><span class="o">=</span><span class="n">aux</span><span class="p">)</span>
+<a name="ln-284"></a>      <span class="n">rho_old</span> <span class="o">=</span> <span class="n">rho</span>
+<a name="ln-285"></a>      <span class="n">rho</span>     <span class="o">=</span> <span class="n">psb_gedot</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-286"></a>
+<a name="ln-287"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">it</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-288"></a><span class="k">        call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="n">done</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">dzero</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-289"></a>      <span class="k">else</span>
+<a name="ln-290"></a><span class="k">        if</span> <span class="p">(</span><span class="n">rho_old</span> <span class="o">==</span> <span class="n">dzero</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-291"></a><span class="k">          if</span> <span class="p">(</span><span class="n">debug_level</span> <span class="o">&gt;=</span> <span class="n">psb_debug_ext_</span><span class="p">)&amp;</span>
+<a name="ln-292"></a>               <span class="p">&amp;</span> <span class="k">write</span><span class="p">(</span><span class="n">debug_unit</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">me</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">),&amp;</span>
+<a name="ln-293"></a>               <span class="p">&amp;</span> <span class="s1">&#39;: CG Iteration breakdown rho&#39;</span>
+<a name="ln-294"></a>          <span class="k">exit </span><span class="n">iteration</span>
+<a name="ln-295"></a>        <span class="n">endif</span>
+<a name="ln-296"></a>        <span class="n">beta</span> <span class="o">=</span> <span class="n">rho</span><span class="o">/</span><span class="n">rho_old</span>
+<a name="ln-297"></a>        <span class="k">call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="n">done</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="n">beta</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-298"></a>      <span class="k">end if</span>
+<a name="ln-299"></a>
+<a name="ln-300"></a>      <span class="c">! We have here another product with a, thus we need to change it into a</span>
+<a name="ln-301"></a>      <span class="c">! product with (η A + ζ I): q &lt;- Ap =&gt; q &lt;- η A p, q &lt;- q + ζ p</span>
+<a name="ln-302"></a>      <span class="k">call </span><span class="n">psb_spmm</span><span class="p">(</span><span class="n">eta</span><span class="p">,</span><span class="n">a</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">dzero</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">work</span><span class="o">=</span><span class="n">aux</span><span class="p">)</span>
+<a name="ln-303"></a>      <span class="k">call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="n">zeta</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">done</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-304"></a>      <span class="n">sigma</span> <span class="o">=</span> <span class="n">psb_gedot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-305"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">sigma</span> <span class="o">==</span> <span class="n">dzero</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-306"></a><span class="k">          if</span> <span class="p">(</span><span class="n">debug_level</span> <span class="o">&gt;=</span> <span class="n">psb_debug_ext_</span><span class="p">)&amp;</span>
+<a name="ln-307"></a>               <span class="p">&amp;</span> <span class="k">write</span><span class="p">(</span><span class="n">debug_unit</span><span class="p">,</span><span class="o">*</span><span class="p">)</span> <span class="n">me</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span><span class="nb">trim</span><span class="p">(</span><span class="n">name</span><span class="p">),&amp;</span>
+<a name="ln-308"></a>               <span class="p">&amp;</span> <span class="s1">&#39;: CG Iteration breakdown sigma&#39;</span>
+<a name="ln-309"></a>        <span class="k">exit </span><span class="n">iteration</span>
+<a name="ln-310"></a>      <span class="n">endif</span>
+<a name="ln-311"></a>      <span class="n">alpha_old</span> <span class="o">=</span> <span class="n">alpha</span>
+<a name="ln-312"></a>      <span class="n">alpha</span> <span class="o">=</span> <span class="n">rho</span><span class="o">/</span><span class="n">sigma</span>
+<a name="ln-313"></a>
+<a name="ln-314"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">do_cond</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-315"></a><span class="k">        </span><span class="n">istebz</span> <span class="o">=</span> <span class="n">istebz</span> <span class="o">+</span> <span class="mi">1</span>
+<a name="ln-316"></a>        <span class="k">if</span> <span class="p">(</span><span class="n">istebz</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-317"></a><span class="k">          </span><span class="n">td</span><span class="p">(</span><span class="n">istebz</span><span class="p">)</span> <span class="o">=</span> <span class="n">done</span><span class="o">/</span><span class="n">alpha</span>
+<a name="ln-318"></a>        <span class="k">else</span>
+<a name="ln-319"></a><span class="k">          </span><span class="n">td</span><span class="p">(</span><span class="n">istebz</span><span class="p">)</span> <span class="o">=</span> <span class="n">done</span><span class="o">/</span><span class="n">alpha</span> <span class="o">+</span> <span class="n">beta</span><span class="o">/</span><span class="n">alpha_old</span>
+<a name="ln-320"></a>          <span class="n">tu</span><span class="p">(</span><span class="n">istebz</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">=</span> <span class="nb">sqrt</span><span class="p">(</span><span class="n">beta</span><span class="p">)</span><span class="o">/</span><span class="n">alpha_old</span>
+<a name="ln-321"></a>        <span class="k">end if</span>
+<a name="ln-322"></a><span class="k">      end if</span>
+<a name="ln-323"></a>
+<a name="ln-324"></a>
+<a name="ln-325"></a><span class="k">      call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="n">alpha</span><span class="p">,</span><span class="n">p</span><span class="p">,</span><span class="n">done</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-326"></a>      <span class="k">call </span><span class="n">psb_geaxpby</span><span class="p">(</span><span class="o">-</span><span class="n">alpha</span><span class="p">,</span><span class="n">q</span><span class="p">,</span><span class="n">done</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-327"></a>
+<a name="ln-328"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">psb_check_conv</span><span class="p">(</span><span class="n">methdname</span><span class="p">,</span><span class="n">itx</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">stopdat</span><span class="p">,</span><span class="n">info</span><span class="p">))</span> <span class="k">exit </span><span class="n">restart</span>
+<a name="ln-329"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">Then</span>
+<a name="ln-330"></a><span class="k">        call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">psb_err_from_subroutine_non_</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-331"></a>        <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-332"></a>      <span class="k">End If</span>
+<a name="ln-333"></a>
+<a name="ln-334"></a><span class="k">    end do </span><span class="n">iteration</span>
+<a name="ln-335"></a>  <span class="k">end do </span><span class="n">restart</span>
+<a name="ln-336"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">do_cond</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-337"></a><span class="k">    if</span> <span class="p">(</span><span class="n">me</span> <span class="o">==</span> <span class="n">psb_root_</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-338"></a><span class="cp">#if defined(HAVE_LAPACK)</span>
+<a name="ln-339"></a>      <span class="k">call </span><span class="n">dstebz</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span><span class="s1">&#39;E&#39;</span><span class="p">,</span><span class="n">istebz</span><span class="p">,</span><span class="n">dzero</span><span class="p">,</span><span class="n">dzero</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="n">done</span><span class="p">,</span><span class="n">td</span><span class="p">,</span><span class="n">tu</span><span class="p">,&amp;</span>
+<a name="ln-340"></a>           <span class="p">&amp;</span> <span class="n">ieg</span><span class="p">,</span><span class="n">nspl</span><span class="p">,</span><span class="n">eig</span><span class="p">,</span><span class="n">ibl</span><span class="p">,</span><span class="n">ispl</span><span class="p">,</span><span class="n">ewrk</span><span class="p">,</span><span class="n">iwrk</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-341"></a>      <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-342"></a><span class="k">        call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">psb_err_from_subroutine_ai_</span><span class="p">,</span><span class="n">name</span><span class="p">,&amp;</span>
+<a name="ln-343"></a>             <span class="p">&amp;</span> <span class="n">a_err</span><span class="o">=</span><span class="s1">&#39;dstebz&#39;</span><span class="p">,</span><span class="n">i_err</span><span class="o">=</span><span class="p">(</span><span class="o">/</span><span class="n">info</span><span class="o">/</span><span class="p">))</span>
+<a name="ln-344"></a>        <span class="n">info</span><span class="o">=</span><span class="n">psb_err_from_subroutine_ai_</span>
+<a name="ln-345"></a>        <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-346"></a>      <span class="k">end if</span>
+<a name="ln-347"></a><span class="k">      </span><span class="n">cond</span> <span class="o">=</span> <span class="n">eig</span><span class="p">(</span><span class="n">ieg</span><span class="p">)</span><span class="o">/</span><span class="n">eig</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<a name="ln-348"></a><span class="cp">#else</span>
+<a name="ln-349"></a>      <span class="n">cond</span> <span class="o">=</span> <span class="n">dzero</span>
+<a name="ln-350"></a><span class="cp">#endif</span>
+<a name="ln-351"></a>      <span class="n">info</span><span class="o">=</span><span class="n">psb_success_</span>
+<a name="ln-352"></a>    <span class="k">end if</span>
+<a name="ln-353"></a><span class="k">    call </span><span class="n">psb_bcast</span><span class="p">(</span><span class="n">ctxt</span><span class="p">,</span><span class="n">cond</span><span class="p">)</span>
+<a name="ln-354"></a>  <span class="k">end if</span>
+<a name="ln-355"></a>
+<a name="ln-356"></a>
+<a name="ln-357"></a><span class="k">  call </span><span class="n">psb_end_conv</span><span class="p">(</span><span class="n">methdname</span><span class="p">,</span><span class="n">itx</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">stopdat</span><span class="p">,</span><span class="n">info</span><span class="p">,</span><span class="n">derr</span><span class="p">,</span><span class="n">iter</span><span class="p">)</span>
+<a name="ln-358"></a>  <span class="k">if</span> <span class="p">(</span><span class="nb">present</span><span class="p">(</span><span class="n">err</span><span class="p">))</span> <span class="n">err</span> <span class="o">=</span> <span class="n">derr</span>
+<a name="ln-359"></a>
+<a name="ln-360"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">call </span><span class="n">psb_gefree</span><span class="p">(</span><span class="n">wwrk</span><span class="p">,</span><span class="n">desc_a</span><span class="p">,</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-361"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">==</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">deallocate</span><span class="p">(</span><span class="n">aux</span><span class="p">,</span><span class="nb">stat</span><span class="o">=</span><span class="n">info</span><span class="p">)</span>
+<a name="ln-362"></a>  <span class="k">if</span> <span class="p">(</span><span class="n">info</span> <span class="o">/=</span> <span class="n">psb_success_</span><span class="p">)</span> <span class="k">then</span>
+<a name="ln-363"></a><span class="k">    call </span><span class="n">psb_errpush</span><span class="p">(</span><span class="n">info</span><span class="p">,</span><span class="n">name</span><span class="p">)</span>
+<a name="ln-364"></a>    <span class="k">goto </span><span class="mi">9999</span>
+<a name="ln-365"></a>  <span class="k">end if</span>
+<a name="ln-366"></a>
+<a name="ln-367"></a><span class="k">  call </span><span class="n">psb_erractionrestore</span><span class="p">(</span><span class="n">err_act</span><span class="p">)</span>
+<a name="ln-368"></a>  <span class="k">return</span>
+<a name="ln-369"></a>
+<a name="ln-370"></a><span class="mi">9999</span> <span class="k">call </span><span class="n">psb_error_handler</span><span class="p">(</span><span class="n">err_act</span><span class="p">)</span>
+<a name="ln-371"></a>  <span class="k">return</span>
+<a name="ln-372"></a>
+<a name="ln-373"></a><span class="k">end subroutine </span><span class="n">psfun_dcg_vect</span>
+</pre></div>
+
+    </section>
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> PSFUN was developed by Fabio Durastante</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

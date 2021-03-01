@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A library for distributed computation of matrix functions powered by PSCTOOLKIT PSFUN Parallel Sparse Function">
+    
+    <meta name="author" content="Fabio Durastante" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>
+All Procedures &ndash; PSFUN
+</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">PSFUN <small>0.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Matrix Functions</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+      <div class="row">
+        <div class="col-lg-12" id='text'>
+			 <h1>Procedures</h1>
+			 <table class="table table-striped">
+			 <thead><tr><th>Procedure</th><th>Location</th><th>Procedure Type</th><th>Description</th></tr></thead>
+			 <tbody>
+			 
+			   <tr><td><a href='../interface/ellipj.html'>ellipj</a></td><td><a href='../module/psfun_utils_mod.html'>psfun_utils_mod</a></td><td>Interface</td><td><p>Returns the values of the Jacobi elliptic functions evaluated at <code>real</code>
+ or <code>complex</code> argument u and parameter <script type="math/tex">M = \exp(-2 \pi L)</script>,
+ <script type="math/tex">0 < L < \infty</script>. For <script type="math/tex">M = K^2</script>, and <script type="math/tex">K</script> the elliptic modulus.</p></td></tr>
+			 
+			   <tr><td><a href='../interface/ellipkkp.html'>ellipkkp</a></td><td><a href='../module/psfun_utils_mod.html'>psfun_utils_mod</a></td><td>Interface</td><td><p>Complete elliptic integral of the first kind, with complement.
+ Returns the value of the complete elliptic integral of the first kind,
+ evaluated at <script type="math/tex">M=\exp(-2\pi L)</script>, <script type="math/tex">0 < L < \infty</script>, and the
+ complementarity parameter <script type="math/tex">1-M</script>.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/fun.html'>fun</a></td><td><a href='../program/quadraturetest.html'>quadraturetest</a></td><td>Function</td><td><p>Function to integrate </p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_dparms.html'>get_dparms</a></td><td><a href='../module/getp.html'>getp</a></td><td>Subroutine</td><td><p>Get iteration parameters from the command line</p></td></tr>
+			 
+			   <tr><td><a href='../interface/get_parms.html'>get_parms</a></td><td><a href='../module/getp.html'>getp</a></td><td>Interface</td><td><p>Get iteration parameters from the command line</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_parms.html'>get_parms</a></td><td><a href='../program/arnolditest.html'>arnolditest</a></td><td>Subroutine</td><td><p>This subroutine reads the parameters needed to run the arnolditest
+ program from standard input</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_parms~2.html'>get_parms</a></td><td><a href='../program/lanczostest.html'>lanczostest</a></td><td>Subroutine</td><td><p>This subroutine reads the parameters needed to run the lanczostest
+ program from standard input</p></td></tr>
+			 
+			   <tr><td><a href='../proc/get_parms~3.html'>get_parms</a></td><td><a href='../program/serialtest.html'>serialtest</a></td><td>Subroutine</td><td><p>This subroutine reads the parameters needed to run the serialtest
+ program from standard input</p></td></tr>
+			 
+			   <tr><td><a href='../interface/hhtmethod1.html'>hhtmethod1</a></td><td><a href='../module/psfun_z_quadrature_mod.html'>psfun_z_quadrature_mod</a></td><td>Interface</td><td><p>Method 1 of Hale, Nicholas; Higham, Nicholas J.; Trefethen, Lloyd N.
+ Computing <script type="math/tex">\mathbf{A}^\alpha,\ \log(\mathbf{A})</script>, and related matrix functions
+ by contour integrals. SIAM J. Numer. Anal. 46 (2008), no. 5, 2505--2523.</p></td></tr>
+			 
+			   <tr><td><a href='../interface/horner.html'>horner</a></td><td><a href='../module/psfun_utils_mod.html'>psfun_utils_mod</a></td><td>Interface</td><td><p>Apply Horner rule to evaluate a polynomial</p></td></tr>
+			 
+			   <tr><td><a href='../proc/pr_usage.html'>pr_usage</a></td><td><a href='../program/arnolditest.html'>arnolditest</a></td><td>Subroutine</td><td><p>Prints out information on incorrected program usage</p></td></tr>
+			 
+			   <tr><td><a href='../proc/pr_usage~2.html'>pr_usage</a></td><td><a href='../program/lanczostest.html'>lanczostest</a></td><td>Subroutine</td><td><p>Prints out information on incorrected program usage</p></td></tr>
+			 
+			   <tr><td><a href='../proc/pr_usage~3.html'>pr_usage</a></td><td><a href='../program/serialtest.html'>serialtest</a></td><td>Subroutine</td><td><p>Prints out information on incorrected program usage</p></td></tr>
+			 
+			   <tr><td><a href='../interface/psb_krylov.html'>psb_krylov</a></td><td><a href='../module/psfun_krylov_mod.html'>psfun_krylov_mod</a></td><td>Interface</td><td><p>We add the methods for the shifted system to the same interfaces in PSBLAS
+ it is a lazy way to avoid modifying all the Krylov methods in PSBLAS to
+ allow for the solution of shifted linear systems</p></td></tr>
+			 
+			   <tr><td><a href='../interface/psfun_d_arnoldi.html'>psfun_d_arnoldi</a></td><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td>Interface</td><td><p>Simple polynomial method based on the Arnoldi orthogonalization procedure,
+ the method builds a basis <script type="math/tex">V_k</script> for the Krylov subspace</p></td></tr>
+			 
+			   <tr><td><a href='../interface/psfun_d_lanczos.html'>psfun_d_lanczos</a></td><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td>Interface</td><td><p>Simple polynomial method based on the Lanczos orthogonalization procedure,
+ the method builds a basis <script type="math/tex">V_k</script> for the Krylov subspace</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_parallel_apply.html'>psfun_d_parallel_apply</a></td><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td>Subroutine</td><td><p>This is the generic function for applying every implemented Krylov
+ method. The general iteration parameters (like the number of iteration,
+ the stop criterion to be used, and the verbosity of the trace) can be
+ passed directly to this routine. All the constitutive parameters of
+ the actual method, and the information relative to the function are
+ instead contained in the meth and fun objects. The Descriptor object
+ `desc_a' contains the properties of the parallel environment.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_plot_info.html'>psfun_d_plot_info</a></td><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td>Subroutine</td><td><p>This function plots the convergence history of the Krylov method</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_prec_build.html'>psfun_d_prec_build</a></td><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td>Subroutine</td><td><p>This function builds the AMG4PSBLAS preconditioner for the inner solve
+ in a Rational Krylov method</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_prec_init.html'>psfun_d_prec_init</a></td><td><a href='../module/psfun_d_krylov_mod.html'>psfun_d_krylov_mod</a></td><td>Subroutine</td><td><p>This function performs the init of the preconditioner for the inner
+ solve in the rational Krylov method</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_quadratureplot.html'>psfun_d_quadratureplot</a></td><td><a href='../module/psfun_d_quadrature_mod.html'>psfun_d_quadrature_mod</a></td><td>Subroutine</td><td><p>Plots on the complex plane the quadrature poles, and plots the weights of
+ the formula</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_serial_apply_array.html'>psfun_d_serial_apply_array</a></td><td><a href='../module/psfun_d_serial_mod.html'>psfun_d_serial_mod</a></td><td>Subroutine</td><td><p>This is the core of the function apply on a serial matrix to compute
+ <script type="math/tex">y = f(\alpha A) x</script>. It calls on the specific routines
+ implementing the different functions. It is the function to modify if
+ ones want to interface a new function that was not previously
+ available or a new algorithm (variant) for an already existing
+ function.</p><a href="../proc/psfun_d_serial_apply_array.html" class="pull-right"><emph>Read more&hellip;</emph></a></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_d_serial_apply_sparse.html'>psfun_d_serial_apply_sparse</a></td><td><a href='../module/psfun_d_serial_mod.html'>psfun_d_serial_mod</a></td><td>Subroutine</td><td><p>This is the core of the function apply on a serial matrix to compute
+ <script type="math/tex">y = f(\alpha*A) x</script> when A is memorized in a sparse storage.
+ In this case the routine converts it to a dense storage and then calls
+ the array version of itself. That is the one implementing the
+ different functions. It is the function to modify if ones want to
+ interface a new function that was not previously available or a new
+ algorithm (variant) for an already existing function.</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_dcg_vect.html'>psfun_dcg_vect</a></td><td><a href='../sourcefile/psfun_dcg.f90.html'>psfun_dcg.F90</a></td><td>Subroutine</td><td><p>Preconditioned Conjugate Gradient for shifted system <script type="math/tex">(\eta A + \zeta I)x = b </script>
+</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_dkrylov_vect.html'>psfun_dkrylov_vect</a></td><td><a href='../module/psfun_krylov_mod.html'>psfun_krylov_mod</a></td><td>Subroutine</td><td><p>Apply Krylov method to <script type="math/tex"> (\eta A + \zeta I)x = b</script> on distributed vectors</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_z_computepoles.html'>psfun_z_computepoles</a></td><td><a href='../module/psfun_z_quadrature_mod.html'>psfun_z_quadrature_mod</a></td><td>Subroutine</td><td><p>Compute the poles for a given combination of quadrature rule and
+ quadrature formula</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_z_quadratureplot.html'>psfun_z_quadratureplot</a></td><td><a href='../module/psfun_z_quadrature_mod.html'>psfun_z_quadrature_mod</a></td><td>Subroutine</td><td><p>Plots on the complex plane the quadrature poles, and plots the weights of
+ the formula</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_z_setmatrix.html'>psfun_z_setmatrix</a></td><td><a href='../module/psfun_z_quadrature_mod.html'>psfun_z_quadrature_mod</a></td><td>Subroutine</td><td><p>Set the matrix <script type="math/tex">A</script> for <script type="math/tex">f(A)x</script>
+</p></td></tr>
+			 
+			   <tr><td><a href='../proc/psfun_z_setpreconditioner.html'>psfun_z_setpreconditioner</a></td><td><a href='../module/psfun_z_quadrature_mod.html'>psfun_z_quadrature_mod</a></td><td>Subroutine</td><td><p>Set the preconditioner to use for the given quadrature formula</p></td></tr>
+			 
+			 </tbody></table>
+             <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: call~~graph~~CallGraph Pages: 1 -->
+<svg id="callgraphCallGraph" width="640pt" height="2856pt"
+ viewBox="0.00 0.00 640.00 2856.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="call~~graph~~CallGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 2852)">
+<title>call~~graph~~CallGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-2852 636,-2852 636,4 -4,4"/>
+<!-- interface~psfun_d_lanczos -->
+<g id="call~~graph~~CallGraph_node1" class="node">
+<title>interface~psfun_d_lanczos</title>
+<g id="a_call~~graph~~CallGraph_node1"><a xlink:href=".././interface/psfun_d_lanczos.html" xlink:title="psfun_d_lanczos">
+<polygon fill="#a7506f" stroke="#a7506f" points="621,-2446 528,-2446 528,-2422 621,-2422 621,-2446"/>
+<text text-anchor="middle" x="574.5" y="-2431.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_lanczos</text>
+</a>
+</g>
+</g>
+<!-- interface~hhtmethod1 -->
+<g id="call~~graph~~CallGraph_node2" class="node">
+<title>interface~hhtmethod1</title>
+<g id="a_call~~graph~~CallGraph_node2"><a xlink:href=".././interface/hhtmethod1.html" xlink:title="hhtmethod1">
+<polygon fill="#a7506f" stroke="#a7506f" points="111,-2428 41,-2428 41,-2404 111,-2404 111,-2428"/>
+<text text-anchor="middle" x="76" y="-2413.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">hhtmethod1</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_setmatrix -->
+<g id="call~~graph~~CallGraph_node3" class="node">
+<title>proc~psfun_z_setmatrix</title>
+<g id="a_call~~graph~~CallGraph_node3"><a xlink:href=".././proc/psfun_z_setmatrix.html" xlink:title="psfun_z_setmatrix">
+<polygon fill="#d9534f" stroke="#d9534f" points="126,-2470 26,-2470 26,-2446 126,-2446 126,-2470"/>
+<text text-anchor="middle" x="76" y="-2455.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_setmatrix</text>
+</a>
+</g>
+</g>
+<!-- interface~psfun_d_arnoldi -->
+<g id="call~~graph~~CallGraph_node4" class="node">
+<title>interface~psfun_d_arnoldi</title>
+<g id="a_call~~graph~~CallGraph_node4"><a xlink:href=".././interface/psfun_d_arnoldi.html" xlink:title="psfun_d_arnoldi">
+<polygon fill="#a7506f" stroke="#a7506f" points="619,-2404 530,-2404 530,-2380 619,-2380 619,-2404"/>
+<text text-anchor="middle" x="574.5" y="-2389.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_arnoldi</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_setpreconditioner -->
+<g id="call~~graph~~CallGraph_node5" class="node">
+<title>proc~psfun_z_setpreconditioner</title>
+<g id="a_call~~graph~~CallGraph_node5"><a xlink:href=".././proc/psfun_z_setpreconditioner.html" xlink:title="psfun_z_setpreconditioner">
+<polygon fill="#d9534f" stroke="#d9534f" points="145.5,-2512 6.5,-2512 6.5,-2488 145.5,-2488 145.5,-2512"/>
+<text text-anchor="middle" x="76" y="-2497.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_setpreconditioner</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_z_computepoles -->
+<g id="call~~graph~~CallGraph_node6" class="node">
+<title>proc~psfun_z_computepoles</title>
+<g id="a_call~~graph~~CallGraph_node6"><a xlink:href=".././proc/psfun_z_computepoles.html" xlink:title="psfun_z_computepoles">
+<polygon fill="#d9534f" stroke="#d9534f" points="137.5,-2554 14.5,-2554 14.5,-2530 137.5,-2530 137.5,-2554"/>
+<text text-anchor="middle" x="76" y="-2539.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_computepoles</text>
+</a>
+</g>
+</g>
+<!-- interface~ellipkkp -->
+<g id="call~~graph~~CallGraph_node7" class="node">
+<title>interface~ellipkkp</title>
+<g id="a_call~~graph~~CallGraph_node7"><a xlink:href=".././interface/ellipkkp.html" xlink:title="ellipkkp">
+<polygon fill="#a7506f" stroke="#a7506f" points="103,-2596 49,-2596 49,-2572 103,-2572 103,-2596"/>
+<text text-anchor="middle" x="76" y="-2581.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ellipkkp</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms~2 -->
+<g id="call~~graph~~CallGraph_node8" class="node">
+<title>proc~get_parms~2</title>
+<g id="a_call~~graph~~CallGraph_node8"><a xlink:href=".././proc/get_parms~2.html" xlink:title="get_parms">
+<polygon fill="#d9534f" stroke="#d9534f" points="440.5,-940 376.5,-940 376.5,-916 440.5,-916 440.5,-940"/>
+<text text-anchor="middle" x="408.5" y="-925.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_parms</text>
+</a>
+</g>
+</g>
+<!-- proc~pr_usage~2 -->
+<g id="call~~graph~~CallGraph_node28" class="node">
+<title>proc~pr_usage~2</title>
+<g id="a_call~~graph~~CallGraph_node28"><a xlink:href=".././proc/pr_usage~2.html" xlink:title="pr_usage">
+<polygon fill="#d9534f" stroke="#d9534f" points="603.5,-939 545.5,-939 545.5,-915 603.5,-915 603.5,-939"/>
+<text text-anchor="middle" x="574.5" y="-924.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr_usage</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms~2&#45;&gt;proc~pr_usage~2 -->
+<g id="call~~graph~~CallGraph_edge1" class="edge">
+<title>proc~get_parms~2&#45;&gt;proc~pr_usage~2</title>
+<path fill="none" stroke="#d4ff00" d="M440.5065,-927.8072C467.5253,-927.6444 506.3149,-927.4108 535.2125,-927.2367"/>
+<polygon fill="#d4ff00" stroke="#d4ff00" points="535.3926,-930.7357 545.3713,-927.1755 535.3503,-923.7359 535.3926,-930.7357"/>
+</g>
+<!-- psb_info -->
+<g id="call~~graph~~CallGraph_node37" class="node">
+<title>psb_info</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-1239 547.5,-1239 547.5,-1215 601.5,-1215 601.5,-1239"/>
+<text text-anchor="middle" x="574.5" y="-1224.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_info</text>
+</g>
+<!-- proc~get_parms~2&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge2" class="edge">
+<title>proc~get_parms~2&#45;&gt;psb_info</title>
+<path fill="none" stroke="#d4ff00" d="M413.7813,-940.0891C428.5495,-973.5265 472.1371,-1069.7477 517,-1145 529.9964,-1166.8 546.8662,-1190.3993 558.9669,-1206.6585"/>
+<polygon fill="#d4ff00" stroke="#d4ff00" points="556.3383,-1208.9866 565.144,-1214.8781 561.9343,-1204.7812 556.3383,-1208.9866"/>
+</g>
+<!-- psb_abort -->
+<g id="call~~graph~~CallGraph_node72" class="node">
+<title>psb_abort</title>
+<polygon fill="#777777" stroke="#777777" points="605,-981 544,-981 544,-957 605,-957 605,-981"/>
+<text text-anchor="middle" x="574.5" y="-966.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_abort</text>
+</g>
+<!-- proc~get_parms~2&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge3" class="edge">
+<title>proc~get_parms~2&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#d4ff00" d="M440.5065,-935.9052C467.2225,-942.5037 505.4467,-951.9447 534.237,-959.0555"/>
+<polygon fill="#d4ff00" stroke="#d4ff00" points="533.4451,-962.465 543.9926,-961.465 535.1236,-955.6693 533.4451,-962.465"/>
+</g>
+<!-- psb_bcast -->
+<g id="call~~graph~~CallGraph_node77" class="node">
+<title>psb_bcast</title>
+<polygon fill="#777777" stroke="#777777" points="605,-864 544,-864 544,-840 605,-840 605,-864"/>
+<text text-anchor="middle" x="574.5" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_bcast</text>
+</g>
+<!-- proc~get_parms~2&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge4" class="edge">
+<title>proc~get_parms~2&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#d4ff00" d="M434.8032,-915.9576C462.8894,-903.0988 507.5671,-882.644 538.813,-868.3386"/>
+<polygon fill="#d4ff00" stroke="#d4ff00" points="540.4102,-871.4568 548.0456,-864.1117 537.4962,-865.0922 540.4102,-871.4568"/>
+</g>
+<!-- interface~ellipj -->
+<g id="call~~graph~~CallGraph_node9" class="node">
+<title>interface~ellipj</title>
+<g id="a_call~~graph~~CallGraph_node9"><a xlink:href=".././interface/ellipj.html" xlink:title="ellipj">
+<polygon fill="#a7506f" stroke="#a7506f" points="271,-2346 217,-2346 217,-2322 271,-2322 271,-2346"/>
+<text text-anchor="middle" x="244" y="-2331.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">ellipj</text>
+</a>
+</g>
+</g>
+<!-- interface~psb_krylov -->
+<g id="call~~graph~~CallGraph_node10" class="node">
+<title>interface~psb_krylov</title>
+<g id="a_call~~graph~~CallGraph_node10"><a xlink:href=".././interface/psb_krylov.html" xlink:title="psb_krylov">
+<polygon fill="#a7506f" stroke="#a7506f" points="276,-616 212,-616 212,-592 276,-592 276,-616"/>
+<text text-anchor="middle" x="244" y="-601.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_krylov</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_dkrylov_vect -->
+<g id="call~~graph~~CallGraph_node25" class="node">
+<title>proc~psfun_dkrylov_vect</title>
+<g id="a_call~~graph~~CallGraph_node25"><a xlink:href=".././proc/psfun_dkrylov_vect.html" xlink:title="psfun_dkrylov_vect">
+<polygon fill="#d9534f" stroke="#d9534f" points="460.5,-658 356.5,-658 356.5,-634 460.5,-634 460.5,-658"/>
+<text text-anchor="middle" x="408.5" y="-643.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_dkrylov_vect</text>
+</a>
+</g>
+</g>
+<!-- interface~psb_krylov&#45;&gt;proc~psfun_dkrylov_vect -->
+<g id="call~~graph~~CallGraph_edge5" class="edge">
+<title>interface~psb_krylov&#45;&gt;proc~psfun_dkrylov_vect</title>
+<path fill="none" stroke="#7fff00" stroke-dasharray="5,2" d="M276.1078,-612.1977C297.4866,-617.6562 326.1741,-624.9806 351.3789,-631.4159"/>
+<polygon fill="#7fff00" stroke="#7fff00" points="350.6518,-634.8424 361.2068,-633.9251 352.3835,-628.06 350.6518,-634.8424"/>
+</g>
+<!-- proc~get_parms~3 -->
+<g id="call~~graph~~CallGraph_node11" class="node">
+<title>proc~get_parms~3</title>
+<g id="a_call~~graph~~CallGraph_node11"><a xlink:href=".././proc/get_parms~3.html" xlink:title="get_parms">
+<polygon fill="#d9534f" stroke="#d9534f" points="440.5,-2325 376.5,-2325 376.5,-2301 440.5,-2301 440.5,-2325"/>
+<text text-anchor="middle" x="408.5" y="-2310.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_parms</text>
+</a>
+</g>
+</g>
+<!-- proc~pr_usage~3 -->
+<g id="call~~graph~~CallGraph_node16" class="node">
+<title>proc~pr_usage~3</title>
+<g id="a_call~~graph~~CallGraph_node16"><a xlink:href=".././proc/pr_usage~3.html" xlink:title="pr_usage">
+<polygon fill="#d9534f" stroke="#d9534f" points="603.5,-2325 545.5,-2325 545.5,-2301 603.5,-2301 603.5,-2325"/>
+<text text-anchor="middle" x="574.5" y="-2310.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr_usage</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms~3&#45;&gt;proc~pr_usage~3 -->
+<g id="call~~graph~~CallGraph_edge8" class="edge">
+<title>proc~get_parms~3&#45;&gt;proc~pr_usage~3</title>
+<path fill="none" stroke="#54ff00" d="M440.5065,-2313C467.5253,-2313 506.3149,-2313 535.2125,-2313"/>
+<polygon fill="#54ff00" stroke="#54ff00" points="535.3713,-2316.5001 545.3713,-2313 535.3712,-2309.5001 535.3713,-2316.5001"/>
+</g>
+<!-- psb_toupper -->
+<g id="call~~graph~~CallGraph_node39" class="node">
+<title>psb_toupper</title>
+<polygon fill="#777777" stroke="#777777" points="611,-1830 538,-1830 538,-1806 611,-1806 611,-1830"/>
+<text text-anchor="middle" x="574.5" y="-1815.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_toupper</text>
+</g>
+<!-- proc~get_parms~3&#45;&gt;psb_toupper -->
+<g id="call~~graph~~CallGraph_edge6" class="edge">
+<title>proc~get_parms~3&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#54ff00" d="M440.7441,-2308.7166C455.0347,-2305.1863 470.8702,-2298.7467 481,-2287 540.3549,-2218.1709 566.5729,-1924.0421 572.9203,-1840.3174"/>
+<polygon fill="#54ff00" stroke="#54ff00" points="576.4253,-1840.3786 573.671,-1830.1481 569.4443,-1839.8632 576.4253,-1840.3786"/>
+</g>
+<!-- proc~get_parms~3&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge7" class="edge">
+<title>proc~get_parms~3&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#54ff00" d="M409.0554,-2300.934C414.2349,-2190.0877 455.2828,-1347.367 517,-1103 527.5537,-1061.2129 549.5011,-1015.7408 563.02,-989.9665"/>
+<polygon fill="#54ff00" stroke="#54ff00" points="566.1303,-991.5722 567.7472,-981.1015 559.9536,-988.2785 566.1303,-991.5722"/>
+</g>
+<!-- interface~get_parms -->
+<g id="call~~graph~~CallGraph_node12" class="node">
+<title>interface~get_parms</title>
+<g id="a_call~~graph~~CallGraph_node12"><a xlink:href=".././interface/get_parms.html" xlink:title="get_parms">
+<polygon fill="#a7506f" stroke="#a7506f" points="276,-696 212,-696 212,-672 276,-672 276,-696"/>
+<text text-anchor="middle" x="244" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_parms</text>
+</a>
+</g>
+</g>
+<!-- proc~get_dparms -->
+<g id="call~~graph~~CallGraph_node27" class="node">
+<title>proc~get_dparms</title>
+<g id="a_call~~graph~~CallGraph_node27"><a xlink:href=".././proc/get_dparms.html" xlink:title="get_dparms">
+<polygon fill="#d9534f" stroke="#d9534f" points="443.5,-860 373.5,-860 373.5,-836 443.5,-836 443.5,-860"/>
+<text text-anchor="middle" x="408.5" y="-845.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_dparms</text>
+</a>
+</g>
+</g>
+<!-- interface~get_parms&#45;&gt;proc~get_dparms -->
+<g id="call~~graph~~CallGraph_edge9" class="edge">
+<title>interface~get_parms&#45;&gt;proc~get_dparms</title>
+<path fill="none" stroke="#2aff00" stroke-dasharray="5,2" d="M276.0162,-695.7349C284.2826,-699.579 292.8562,-704.345 300,-710 342.6937,-743.7957 378.6424,-797.635 396.466,-827.0799"/>
+<polygon fill="#2aff00" stroke="#2aff00" points="393.4856,-828.9159 401.6015,-835.7264 399.5041,-825.3412 393.4856,-828.9159"/>
+</g>
+<!-- proc~psfun_d_serial_apply_array -->
+<g id="call~~graph~~CallGraph_node13" class="node">
+<title>proc~psfun_d_serial_apply_array</title>
+<g id="a_call~~graph~~CallGraph_node13"><a xlink:href=".././proc/psfun_d_serial_apply_array.html" xlink:title="psfun_d_serial_apply_array">
+<polygon fill="#d9534f" stroke="#d9534f" points="481,-213 336,-213 336,-189 481,-189 481,-213"/>
+<text text-anchor="middle" x="408.5" y="-198.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_serial_apply_array</text>
+</a>
+</g>
+</g>
+<!-- dgchbv -->
+<g id="call~~graph~~CallGraph_node41" class="node">
+<title>dgchbv</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-276 547.5,-276 547.5,-252 601.5,-252 601.5,-276"/>
+<text text-anchor="middle" x="574.5" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dgchbv</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;dgchbv -->
+<g id="call~~graph~~CallGraph_edge14" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;dgchbv</title>
+<path fill="none" stroke="#00ff00" d="M439.3067,-213.106C460.9918,-221.5831 490.7209,-233.116 517,-243 523.6165,-245.4886 530.6765,-248.1017 537.5029,-250.6065"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="536.6645,-254.0265 547.2583,-254.172 539.0674,-247.4519 536.6645,-254.0265"/>
+</g>
+<!-- dnchbv -->
+<g id="call~~graph~~CallGraph_node49" class="node">
+<title>dnchbv</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-234 547.5,-234 547.5,-210 601.5,-210 601.5,-234"/>
+<text text-anchor="middle" x="574.5" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dnchbv</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;dnchbv -->
+<g id="call~~graph~~CallGraph_edge19" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;dnchbv</title>
+<path fill="none" stroke="#00ff00" d="M481.31,-210.2109C500.6043,-212.6517 520.6444,-215.1869 537.1746,-217.2781"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="537.127,-220.7999 547.4873,-218.5827 538.0056,-213.8553 537.127,-220.7999"/>
+</g>
+<!-- dsyev -->
+<g id="call~~graph~~CallGraph_node52" class="node">
+<title>dsyev</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-192 547.5,-192 547.5,-168 601.5,-168 601.5,-192"/>
+<text text-anchor="middle" x="574.5" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dsyev</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;dsyev -->
+<g id="call~~graph~~CallGraph_edge11" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;dsyev</title>
+<path fill="none" stroke="#00ff00" d="M481.31,-191.7891C500.6043,-189.3483 520.6444,-186.8131 537.1746,-184.7219"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="538.0056,-188.1447 547.4873,-183.4173 537.127,-181.2001 538.0056,-188.1447"/>
+</g>
+<!-- dgemv -->
+<g id="call~~graph~~CallGraph_node63" class="node">
+<title>dgemv</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-150 547.5,-150 547.5,-126 601.5,-126 601.5,-150"/>
+<text text-anchor="middle" x="574.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dgemv</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;dgemv -->
+<g id="call~~graph~~CallGraph_edge10" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;dgemv</title>
+<path fill="none" stroke="#00ff00" d="M439.3067,-188.894C460.9918,-180.4169 490.7209,-168.884 517,-159 523.6165,-156.5114 530.6765,-153.8983 537.5029,-151.3935"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="539.0674,-154.5481 547.2583,-147.828 536.6645,-147.9735 539.0674,-154.5481"/>
+</g>
+<!-- r8mat_expm2 -->
+<g id="call~~graph~~CallGraph_node64" class="node">
+<title>r8mat_expm2</title>
+<polygon fill="#777777" stroke="#777777" points="614,-108 535,-108 535,-84 614,-84 614,-108"/>
+<text text-anchor="middle" x="574.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">r8mat_expm2</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;r8mat_expm2 -->
+<g id="call~~graph~~CallGraph_edge12" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;r8mat_expm2</title>
+<path fill="none" stroke="#00ff00" d="M421.2618,-188.9617C440.6444,-171.2029 479.2533,-137.8415 517,-117 520.2127,-115.2262 523.6048,-113.5488 527.0696,-111.9741"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="528.4934,-115.1721 536.3372,-108.05 525.764,-108.7261 528.4934,-115.1721"/>
+</g>
+<!-- dgpadm -->
+<g id="call~~graph~~CallGraph_node71" class="node">
+<title>dgpadm</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-66 547.5,-66 547.5,-42 601.5,-42 601.5,-66"/>
+<text text-anchor="middle" x="574.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dgpadm</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;dgpadm -->
+<g id="call~~graph~~CallGraph_edge16" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;dgpadm</title>
+<path fill="none" stroke="#00ff00" d="M415.9174,-188.7837C431.5852,-163.9443 470.4632,-107.1821 517,-75 523.2498,-70.678 530.4939,-67.1321 537.6894,-64.2659"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="539.156,-67.4576 547.3733,-60.7697 536.7789,-60.8735 539.156,-67.4576"/>
+</g>
+<!-- psb_erractionrestore -->
+<g id="call~~graph~~CallGraph_node78" class="node">
+<title>psb_erractionrestore</title>
+<polygon fill="#777777" stroke="#777777" points="630.5,-360 518.5,-360 518.5,-336 630.5,-336 630.5,-360"/>
+<text text-anchor="middle" x="574.5" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_erractionrestore</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;psb_erractionrestore -->
+<g id="call~~graph~~CallGraph_edge13" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;psb_erractionrestore</title>
+<path fill="none" stroke="#00ff00" d="M415.9174,-213.2163C431.5852,-238.0557 470.4632,-294.8179 517,-327 519.2576,-328.5613 521.645,-330.0212 524.113,-331.3845"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="522.7958,-334.6369 533.3144,-335.9057 525.8829,-328.3544 522.7958,-334.6369"/>
+</g>
+<!-- psb_erractionsave -->
+<g id="call~~graph~~CallGraph_node82" class="node">
+<title>psb_erractionsave</title>
+<polygon fill="#777777" stroke="#777777" points="624.5,-402 524.5,-402 524.5,-378 624.5,-378 624.5,-402"/>
+<text text-anchor="middle" x="574.5" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_erractionsave</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;psb_erractionsave -->
+<g id="call~~graph~~CallGraph_edge15" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;psb_erractionsave</title>
+<path fill="none" stroke="#00ff00" d="M416.9683,-213.1757C430.7146,-233.0365 458.6026,-273.7325 481,-309 497.6719,-335.2519 493.0209,-349.1982 517,-369 518.7311,-370.4295 520.5681,-371.7662 522.4816,-373.0154"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="520.8381,-376.1066 531.2712,-377.9509 524.2654,-370.003 520.8381,-376.1066"/>
+</g>
+<!-- dschbv -->
+<g id="call~~graph~~CallGraph_node85" class="node">
+<title>dschbv</title>
+<polygon fill="#777777" stroke="#777777" points="601.5,-24 547.5,-24 547.5,0 601.5,0 601.5,-24"/>
+<text text-anchor="middle" x="574.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">dschbv</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;dschbv -->
+<g id="call~~graph~~CallGraph_edge17" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;dschbv</title>
+<path fill="none" stroke="#00ff00" d="M413.08,-188.9414C425.2618,-158.4245 461.3764,-77.4096 517,-33 523.0524,-28.1678 530.3186,-24.3849 537.6169,-21.4456"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="539.2277,-24.5877 547.4783,-17.941 536.8835,-17.9919 539.2277,-24.5877"/>
+</g>
+<!-- r8mat_expm1 -->
+<g id="call~~graph~~CallGraph_node90" class="node">
+<title>r8mat_expm1</title>
+<polygon fill="#777777" stroke="#777777" points="614,-318 535,-318 535,-294 614,-294 614,-318"/>
+<text text-anchor="middle" x="574.5" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">r8mat_expm1</text>
+</g>
+<!-- proc~psfun_d_serial_apply_array&#45;&gt;r8mat_expm1 -->
+<g id="call~~graph~~CallGraph_edge18" class="edge">
+<title>proc~psfun_d_serial_apply_array&#45;&gt;r8mat_expm1</title>
+<path fill="none" stroke="#00ff00" d="M421.2618,-213.0383C440.6444,-230.7971 479.2533,-264.1585 517,-285 520.2127,-286.7738 523.6048,-288.4512 527.0696,-290.0259"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="525.764,-293.2739 536.3372,-293.95 528.4934,-286.8279 525.764,-293.2739"/>
+</g>
+<!-- proc~psfun_d_serial_apply_sparse -->
+<g id="call~~graph~~CallGraph_node14" class="node">
+<title>proc~psfun_d_serial_apply_sparse</title>
+<g id="a_call~~graph~~CallGraph_node14"><a xlink:href=".././proc/psfun_d_serial_apply_sparse.html" xlink:title="psfun_d_serial_apply_sparse">
+<polygon fill="#d9534f" stroke="#d9534f" points="152,-2638 0,-2638 0,-2614 152,-2614 152,-2638"/>
+<text text-anchor="middle" x="76" y="-2623.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_serial_apply_sparse</text>
+</a>
+</g>
+</g>
+<!-- proc~fun -->
+<g id="call~~graph~~CallGraph_node15" class="node">
+<title>proc~fun</title>
+<g id="a_call~~graph~~CallGraph_node15"><a xlink:href=".././proc/fun.html" xlink:title="fun">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="103,-2680 49,-2680 49,-2656 103,-2656 103,-2680"/>
+<text text-anchor="middle" x="76" y="-2665.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">fun</text>
+</a>
+</g>
+</g>
+<!-- proc~pr_usage -->
+<g id="call~~graph~~CallGraph_node17" class="node">
+<title>proc~pr_usage</title>
+<g id="a_call~~graph~~CallGraph_node17"><a xlink:href=".././proc/pr_usage.html" xlink:title="pr_usage">
+<polygon fill="#d9534f" stroke="#d9534f" points="603.5,-1136 545.5,-1136 545.5,-1112 603.5,-1112 603.5,-1136"/>
+<text text-anchor="middle" x="574.5" y="-1121.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr_usage</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_prec_build -->
+<g id="call~~graph~~CallGraph_node18" class="node">
+<title>proc~psfun_d_prec_build</title>
+<g id="a_call~~graph~~CallGraph_node18"><a xlink:href=".././proc/psfun_d_prec_build.html" xlink:title="psfun_d_prec_build">
+<polygon fill="#d9534f" stroke="#d9534f" points="461.5,-384 355.5,-384 355.5,-360 461.5,-360 461.5,-384"/>
+<text text-anchor="middle" x="408.5" y="-369.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_prec_build</text>
+</a>
+</g>
+</g>
+<!-- psb_errpush -->
+<g id="call~~graph~~CallGraph_node70" class="node">
+<title>psb_errpush</title>
+<polygon fill="#777777" stroke="#777777" points="611,-444 538,-444 538,-420 611,-420 611,-444"/>
+<text text-anchor="middle" x="574.5" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_errpush</text>
+</g>
+<!-- proc~psfun_d_prec_build&#45;&gt;psb_errpush -->
+<g id="call~~graph~~CallGraph_edge21" class="edge">
+<title>proc~psfun_d_prec_build&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#00ffd4" d="M442.0797,-384.0074C454.3331,-388.3981 468.2975,-393.4128 481,-398 497.5478,-403.9758 515.7297,-410.579 531.6255,-416.3641"/>
+<polygon fill="#00ffd4" stroke="#00ffd4" points="530.5985,-419.7149 541.1925,-419.8476 532.9935,-413.1373 530.5985,-419.7149"/>
+</g>
+<!-- proc~psfun_d_prec_build&#45;&gt;psb_erractionrestore -->
+<g id="call~~graph~~CallGraph_edge20" class="edge">
+<title>proc~psfun_d_prec_build&#45;&gt;psb_erractionrestore</title>
+<path fill="none" stroke="#00ffd4" d="M461.9372,-364.2741C476.7094,-362.1384 492.9189,-359.7949 508.3215,-357.568"/>
+<polygon fill="#00ffd4" stroke="#00ffd4" points="508.9073,-361.0198 518.3036,-356.1248 507.9056,-354.0918 508.9073,-361.0198"/>
+</g>
+<!-- proc~psfun_d_prec_build&#45;&gt;psb_erractionsave -->
+<g id="call~~graph~~CallGraph_edge22" class="edge">
+<title>proc~psfun_d_prec_build&#45;&gt;psb_erractionsave</title>
+<path fill="none" stroke="#00ffd4" d="M461.9372,-377.7944C478.4984,-379.5902 496.8659,-381.5818 513.878,-383.4265"/>
+<polygon fill="#00ffd4" stroke="#00ffd4" points="513.9479,-386.9545 524.2669,-384.553 514.7026,-379.9953 513.9479,-386.9545"/>
+</g>
+<!-- proc~psfun_z_quadratureplot -->
+<g id="call~~graph~~CallGraph_node19" class="node">
+<title>proc~psfun_z_quadratureplot</title>
+<g id="a_call~~graph~~CallGraph_node19"><a xlink:href=".././proc/psfun_z_quadratureplot.html" xlink:title="psfun_z_quadratureplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="139,-2722 13,-2722 13,-2698 139,-2698 139,-2722"/>
+<text text-anchor="middle" x="76" y="-2707.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_z_quadratureplot</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms -->
+<g id="call~~graph~~CallGraph_node20" class="node">
+<title>proc~get_parms</title>
+<g id="a_call~~graph~~CallGraph_node20"><a xlink:href=".././proc/get_parms.html" xlink:title="get_parms">
+<polygon fill="#d9534f" stroke="#d9534f" points="440.5,-1136 376.5,-1136 376.5,-1112 440.5,-1112 440.5,-1136"/>
+<text text-anchor="middle" x="408.5" y="-1121.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_parms</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms&#45;&gt;proc~pr_usage -->
+<g id="call~~graph~~CallGraph_edge26" class="edge">
+<title>proc~get_parms&#45;&gt;proc~pr_usage</title>
+<path fill="none" stroke="#00d4ff" d="M440.5065,-1124C467.5253,-1124 506.3149,-1124 535.2125,-1124"/>
+<polygon fill="#00d4ff" stroke="#00d4ff" points="535.3713,-1127.5001 545.3713,-1124 535.3712,-1120.5001 535.3713,-1127.5001"/>
+</g>
+<!-- proc~get_parms&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge24" class="edge">
+<title>proc~get_parms&#45;&gt;psb_info</title>
+<path fill="none" stroke="#00d4ff" d="M440.5865,-1132.8695C453.5779,-1137.1246 468.4433,-1142.8666 481,-1150 509.0648,-1165.9434 537.0882,-1190.4493 555.0308,-1207.5183"/>
+<polygon fill="#00d4ff" stroke="#00d4ff" points="552.9107,-1210.3374 562.5292,-1214.78 557.7805,-1205.3089 552.9107,-1210.3374"/>
+</g>
+<!-- proc~get_parms&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge25" class="edge">
+<title>proc~get_parms&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#00d4ff" d="M440.5051,-1117.0019C453.9234,-1112.9828 469.1301,-1106.9112 481,-1098 519.9806,-1068.7357 549.6003,-1018.6337 564.2756,-990.249"/>
+<polygon fill="#00d4ff" stroke="#00d4ff" points="567.4681,-991.6909 568.834,-981.1845 561.2143,-988.546 567.4681,-991.6909"/>
+</g>
+<!-- proc~get_parms&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge23" class="edge">
+<title>proc~get_parms&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#00d4ff" d="M412.798,-1111.8241C425.326,-1077.3375 464.284,-976.9074 517,-906 526.7307,-892.9114 539.8519,-880.314 551.1032,-870.5834"/>
+<polygon fill="#00d4ff" stroke="#00d4ff" points="553.4867,-873.1521 558.8901,-864.0387 548.9829,-867.7934 553.4867,-873.1521"/>
+</g>
+<!-- interface~horner -->
+<g id="call~~graph~~CallGraph_node21" class="node">
+<title>interface~horner</title>
+<g id="a_call~~graph~~CallGraph_node21"><a xlink:href=".././interface/horner.html" xlink:title="horner">
+<polygon fill="#a7506f" stroke="#a7506f" points="103,-2764 49,-2764 49,-2740 103,-2740 103,-2764"/>
+<text text-anchor="middle" x="76" y="-2749.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">horner</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_quadratureplot -->
+<g id="call~~graph~~CallGraph_node22" class="node">
+<title>proc~psfun_d_quadratureplot</title>
+<g id="a_call~~graph~~CallGraph_node22"><a xlink:href=".././proc/psfun_d_quadratureplot.html" xlink:title="psfun_d_quadratureplot">
+<polygon fill="#d9534f" stroke="#d9534f" points="139.5,-2806 12.5,-2806 12.5,-2782 139.5,-2782 139.5,-2806"/>
+<text text-anchor="middle" x="76" y="-2791.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_quadratureplot</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_dcg_vect -->
+<g id="call~~graph~~CallGraph_node23" class="node">
+<title>proc~psfun_dcg_vect</title>
+<g id="a_call~~graph~~CallGraph_node23"><a xlink:href=".././proc/psfun_dcg_vect.html" xlink:title="psfun_dcg_vect">
+<polygon fill="#d9534f" stroke="#d9534f" points="452.5,-616 364.5,-616 364.5,-592 452.5,-592 452.5,-616"/>
+<text text-anchor="middle" x="408.5" y="-601.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_dcg_vect</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge27" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_info</title>
+<path fill="none" stroke="#0054ff" d="M452.5885,-607.8802C463.4184,-610.9823 473.9226,-616.2299 481,-625 553.7433,-715.1415 478.3352,-1035.8115 517,-1145 525.325,-1168.5095 542.3724,-1191.4172 555.7544,-1207.0168"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="553.4803,-1209.7277 562.733,-1214.8889 558.7183,-1205.0841 553.4803,-1209.7277"/>
+</g>
+<!-- psb_check_conv -->
+<g id="call~~graph~~CallGraph_node40" class="node">
+<title>psb_check_conv</title>
+<polygon fill="#777777" stroke="#777777" points="620.5,-822 528.5,-822 528.5,-798 620.5,-798 620.5,-822"/>
+<text text-anchor="middle" x="574.5" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_check_conv</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_check_conv -->
+<g id="call~~graph~~CallGraph_edge31" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_check_conv</title>
+<path fill="none" stroke="#0054ff" d="M452.5171,-608.8187C463.0851,-611.9413 473.477,-616.9645 481,-625 532.0016,-679.4759 467.8861,-732.8162 517,-789 518.0055,-790.1502 519.0793,-791.2374 520.2107,-792.2652"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="518.252,-795.1684 528.3977,-798.2207 522.3698,-789.5077 518.252,-795.1684"/>
+</g>
+<!-- psb_get_debug_unit -->
+<g id="call~~graph~~CallGraph_node43" class="node">
+<title>psb_get_debug_unit</title>
+<polygon fill="#777777" stroke="#777777" points="629.5,-780 519.5,-780 519.5,-756 629.5,-756 629.5,-780"/>
+<text text-anchor="middle" x="574.5" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_get_debug_unit</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_get_debug_unit -->
+<g id="call~~graph~~CallGraph_edge33" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_get_debug_unit</title>
+<path fill="none" stroke="#0054ff" d="M452.5156,-609.2986C462.9584,-612.4239 473.29,-617.3284 481,-625 521.0751,-664.8752 478.3082,-705.7811 517,-747 518.0456,-748.1139 519.155,-749.1688 520.3179,-750.1681"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="518.4528,-753.1345 528.6568,-755.986 522.4582,-747.3936 518.4528,-753.1345"/>
+</g>
+<!-- psb_chkvect -->
+<g id="call~~graph~~CallGraph_node50" class="node">
+<title>psb_chkvect</title>
+<polygon fill="#777777" stroke="#777777" points="610.5,-738 538.5,-738 538.5,-714 610.5,-714 610.5,-738"/>
+<text text-anchor="middle" x="574.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_chkvect</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_chkvect -->
+<g id="call~~graph~~CallGraph_edge40" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_chkvect</title>
+<path fill="none" stroke="#0054ff" d="M452.5819,-610.2682C462.7834,-613.384 472.9847,-618.0415 481,-625 510.4424,-650.5606 488.4465,-678.4501 517,-705 520.5583,-708.3086 524.6795,-711.1052 529.0491,-713.4671"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="527.7209,-716.709 538.2665,-717.7298 530.6592,-710.3555 527.7209,-716.709"/>
+</g>
+<!-- psb_init_conv -->
+<g id="call~~graph~~CallGraph_node55" class="node">
+<title>psb_init_conv</title>
+<polygon fill="#777777" stroke="#777777" points="613.5,-696 535.5,-696 535.5,-672 613.5,-672 613.5,-696"/>
+<text text-anchor="middle" x="574.5" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_init_conv</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_init_conv -->
+<g id="call~~graph~~CallGraph_edge32" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_init_conv</title>
+<path fill="none" stroke="#0054ff" d="M452.6298,-612.7434C462.3906,-615.7587 472.383,-619.7503 481,-625 500.8677,-637.104 497.5567,-650.2254 517,-663 519.8853,-664.8957 522.9641,-666.6484 526.141,-668.2639"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="524.7261,-671.4655 535.2743,-672.4583 527.6475,-665.1042 524.7261,-671.4655"/>
+</g>
+<!-- psb_geaxpby -->
+<g id="call~~graph~~CallGraph_node60" class="node">
+<title>psb_geaxpby</title>
+<polygon fill="#777777" stroke="#777777" points="612.5,-486 536.5,-486 536.5,-462 612.5,-462 612.5,-486"/>
+<text text-anchor="middle" x="574.5" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geaxpby</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_geaxpby -->
+<g id="call~~graph~~CallGraph_edge36" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_geaxpby</title>
+<path fill="none" stroke="#0054ff" d="M452.739,-594.5444C462.9366,-590.7286 473.0968,-585.4062 481,-578 510.34,-550.5053 487.7404,-522.5801 517,-495 520.0886,-492.0887 523.6129,-489.5747 527.3618,-487.4048"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="528.9953,-490.5018 536.4177,-482.9415 525.9007,-484.223 528.9953,-490.5018"/>
+</g>
+<!-- psb_gedot -->
+<g id="call~~graph~~CallGraph_node67" class="node">
+<title>psb_gedot</title>
+<polygon fill="#777777" stroke="#777777" points="606,-654 543,-654 543,-630 606,-630 606,-654"/>
+<text text-anchor="middle" x="574.5" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_gedot</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_gedot -->
+<g id="call~~graph~~CallGraph_edge30" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_gedot</title>
+<path fill="none" stroke="#0054ff" d="M452.5491,-614.0835C477.4264,-619.7783 508.3414,-626.8553 532.8196,-632.4587"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="532.3509,-635.9419 542.8798,-634.7616 533.913,-629.1184 532.3509,-635.9419"/>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_errpush -->
+<g id="call~~graph~~CallGraph_edge34" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#0054ff" d="M452.6759,-595.5169C463.1165,-591.6734 473.4069,-586.0946 481,-578 520.5532,-535.8341 477.5699,-495.2811 517,-453 520.3568,-449.4005 524.3809,-446.416 528.7211,-443.9419"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="530.434,-447.0029 537.961,-439.5467 527.4271,-440.6816 530.434,-447.0029"/>
+</g>
+<!-- psb_spmm -->
+<g id="call~~graph~~CallGraph_node74" class="node">
+<title>psb_spmm</title>
+<polygon fill="#777777" stroke="#777777" points="607,-528 542,-528 542,-504 607,-504 607,-528"/>
+<text text-anchor="middle" x="574.5" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_spmm</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_spmm -->
+<g id="call~~graph~~CallGraph_edge37" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_spmm</title>
+<path fill="none" stroke="#0054ff" d="M452.7815,-592.1348C462.5353,-588.45 472.4864,-583.7906 481,-578 501.0512,-564.3619 496.9886,-550.6965 517,-537 521.6591,-533.8111 526.8607,-531.0414 532.179,-528.6542"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="533.8317,-531.7611 541.786,-524.7625 531.2034,-525.2732 533.8317,-531.7611"/>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge28" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#0054ff" d="M452.7539,-608.6019C463.32,-611.7261 473.6518,-616.8043 481,-625 543.0456,-694.2009 457.3508,-759.7231 517,-831 521.5368,-836.4211 527.5978,-840.4428 534.0847,-843.4264"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="533.1743,-846.8243 543.7657,-847.0969 535.656,-840.2789 533.1743,-846.8243"/>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_erractionrestore -->
+<g id="call~~graph~~CallGraph_edge29" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_erractionrestore</title>
+<path fill="none" stroke="#0054ff" d="M410.6955,-591.8247C418.2343,-553.4661 446.5889,-433.8373 517,-369 518.3168,-367.7874 519.7093,-366.6435 521.1617,-365.5644"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="523.3729,-368.3117 530.0273,-360.0673 519.684,-362.3625 523.3729,-368.3117"/>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_erractionsave -->
+<g id="call~~graph~~CallGraph_edge35" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_erractionsave</title>
+<path fill="none" stroke="#0054ff" d="M412.0874,-591.6497C422.5268,-557.8262 456.0765,-462.7761 517,-411 518.5488,-409.6838 520.187,-408.447 521.8928,-407.2852"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="523.9824,-410.1197 530.8821,-402.0795 520.4744,-404.0621 523.9824,-410.1197"/>
+</g>
+<!-- psb_end_conv -->
+<g id="call~~graph~~CallGraph_node86" class="node">
+<title>psb_end_conv</title>
+<polygon fill="#777777" stroke="#777777" points="615.5,-612 533.5,-612 533.5,-588 615.5,-588 615.5,-612"/>
+<text text-anchor="middle" x="574.5" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_end_conv</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_end_conv -->
+<g id="call~~graph~~CallGraph_edge38" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_end_conv</title>
+<path fill="none" stroke="#0054ff" d="M452.5491,-602.9386C474.289,-602.4147 500.6397,-601.7798 523.2762,-601.2343"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="523.4728,-604.7307 533.3855,-600.9907 523.3041,-597.7327 523.4728,-604.7307"/>
+</g>
+<!-- psb_get_debug_level -->
+<g id="call~~graph~~CallGraph_node88" class="node">
+<title>psb_get_debug_level</title>
+<polygon fill="#777777" stroke="#777777" points="632,-570 517,-570 517,-546 632,-546 632,-570"/>
+<text text-anchor="middle" x="574.5" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_get_debug_level</text>
+</g>
+<!-- proc~psfun_dcg_vect&#45;&gt;psb_get_debug_level -->
+<g id="call~~graph~~CallGraph_edge39" class="edge">
+<title>proc~psfun_dcg_vect&#45;&gt;psb_get_debug_level</title>
+<path fill="none" stroke="#0054ff" d="M452.1145,-591.914C473.3687,-586.0243 499.1084,-578.8916 521.4877,-572.6901"/>
+<polygon fill="#0054ff" stroke="#0054ff" points="522.4746,-576.0487 531.1767,-570.0052 520.6052,-569.3029 522.4746,-576.0487"/>
+</g>
+<!-- proc~psfun_d_prec_init -->
+<g id="call~~graph~~CallGraph_node24" class="node">
+<title>proc~psfun_d_prec_init</title>
+<g id="a_call~~graph~~CallGraph_node24"><a xlink:href=".././proc/psfun_d_prec_init.html" xlink:title="psfun_d_prec_init">
+<polygon fill="#d9534f" stroke="#d9534f" points="457,-342 360,-342 360,-318 457,-318 457,-342"/>
+<text text-anchor="middle" x="408.5" y="-327.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_prec_init</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_prec_init&#45;&gt;psb_errpush -->
+<g id="call~~graph~~CallGraph_edge42" class="edge">
+<title>proc~psfun_d_prec_init&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#002aff" d="M457.3261,-338.679C465.7621,-341.6526 474.0434,-345.6436 481,-351 505.6406,-369.9724 493.0209,-391.1982 517,-411 520.5058,-413.895 524.4456,-416.4089 528.5766,-418.5882"/>
+<polygon fill="#002aff" stroke="#002aff" points="527.283,-421.8457 537.8308,-422.8427 530.207,-415.4856 527.283,-421.8457"/>
+</g>
+<!-- proc~psfun_d_prec_init&#45;&gt;psb_erractionrestore -->
+<g id="call~~graph~~CallGraph_edge41" class="edge">
+<title>proc~psfun_d_prec_init&#45;&gt;psb_erractionrestore</title>
+<path fill="none" stroke="#002aff" d="M457.4076,-335.3032C473.2474,-337.0208 491.0923,-338.9558 507.9874,-340.7878"/>
+<polygon fill="#002aff" stroke="#002aff" points="508.0388,-344.3138 518.3578,-341.9123 508.7935,-337.3546 508.0388,-344.3138"/>
+</g>
+<!-- proc~psfun_d_prec_init&#45;&gt;psb_erractionsave -->
+<g id="call~~graph~~CallGraph_edge43" class="edge">
+<title>proc~psfun_d_prec_init&#45;&gt;psb_erractionsave</title>
+<path fill="none" stroke="#002aff" d="M454.9447,-342.0911C463.6958,-344.7515 472.7012,-347.7545 481,-351 497.6598,-357.5153 500.5721,-361.9202 517,-369 521.1754,-370.7994 525.561,-372.5839 529.9701,-374.3082"/>
+<polygon fill="#002aff" stroke="#002aff" points="528.9961,-377.6824 539.5871,-377.9691 531.4866,-371.1403 528.9961,-377.6824"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge45" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_info</title>
+<path fill="none" stroke="#0000ff" d="M414.7992,-658.3377C429.1619,-687.0692 464.3741,-761.0226 481,-827 515.7562,-964.9243 466.6097,-1011.989 517,-1145 525.8355,-1168.3224 542.8214,-1191.2526 556.0505,-1206.9083"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="553.73,-1209.573 562.9379,-1214.8138 559.008,-1204.9748 553.73,-1209.573"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_toupper -->
+<g id="call~~graph~~CallGraph_edge44" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#0000ff" d="M414.9246,-658.307C429.5513,-686.9739 465.2803,-760.8009 481,-827 524.3873,-1009.7132 499.5753,-1061.0162 517,-1248 536.8821,-1461.3539 564.0233,-1719.297 572.1245,-1795.6763"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="568.6815,-1796.3986 573.2181,-1805.9731 575.6423,-1795.6593 568.6815,-1796.3986"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_erractionrestore -->
+<g id="call~~graph~~CallGraph_edge46" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_erractionrestore</title>
+<path fill="none" stroke="#0000ff" d="M460.7674,-638.8254C468.4549,-635.677 475.5919,-631.2377 481,-625 556.2664,-538.1879 444.7383,-458.3288 517,-369 517.7185,-368.1118 518.4781,-367.2611 519.274,-366.4464"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="521.6618,-369.0186 527.2908,-360.0428 517.2931,-363.5493 521.6618,-369.0186"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_erractionsave -->
+<g id="call~~graph~~CallGraph_edge47" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_erractionsave</title>
+<path fill="none" stroke="#0000ff" d="M460.6249,-638.7002C468.3289,-635.5663 475.5084,-631.1642 481,-625 545.1568,-552.9859 455.3367,-485.1604 517,-411 517.7304,-410.1215 518.5009,-409.2798 519.3068,-408.4733"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="521.6879,-411.0536 527.3897,-402.1239 517.3638,-405.5489 521.6879,-411.0536"/>
+</g>
+<!-- proc~psfun_d_plot_info -->
+<g id="call~~graph~~CallGraph_node26" class="node">
+<title>proc~psfun_d_plot_info</title>
+<g id="a_call~~graph~~CallGraph_node26"><a xlink:href=".././proc/psfun_d_plot_info.html" xlink:title="psfun_d_plot_info">
+<polygon fill="#d9534f" stroke="#d9534f" points="124.5,-2848 27.5,-2848 27.5,-2824 124.5,-2824 124.5,-2848"/>
+<text text-anchor="middle" x="76" y="-2833.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_plot_info</text>
+</a>
+</g>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge49" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_info</title>
+<path fill="none" stroke="#5400ff" d="M430.989,-860.1332C447.6211,-870.3526 469.3303,-886.567 481,-907 534.0557,-999.898 477.2358,-1045.6836 517,-1145 526.27,-1168.1532 543.2035,-1191.1038 556.3025,-1206.8101"/>
+<polygon fill="#5400ff" stroke="#5400ff" points="553.9439,-1209.4362 563.1122,-1214.7459 559.2562,-1204.8776 553.9439,-1209.4362"/>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge50" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#5400ff" d="M443.5067,-854.6807C456.474,-858.5661 470.5485,-864.6247 481,-874 508.2255,-898.4223 489.8458,-923.4984 517,-948 521.9191,-952.4386 527.8525,-955.9608 534.0144,-958.7496"/>
+<polygon fill="#5400ff" stroke="#5400ff" points="533.1842,-962.1826 543.7725,-962.5549 535.7274,-955.6609 533.1842,-962.1826"/>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge48" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#5400ff" d="M443.7043,-848.8483C470.0341,-849.4827 506.0983,-850.3518 533.6894,-851.0166"/>
+<polygon fill="#5400ff" stroke="#5400ff" points="533.7297,-854.5185 543.8112,-851.2605 533.8984,-847.5205 533.7297,-854.5185"/>
+</g>
+<!-- proc~psfun_d_parallel_apply -->
+<g id="call~~graph~~CallGraph_node29" class="node">
+<title>proc~psfun_d_parallel_apply</title>
+<g id="a_call~~graph~~CallGraph_node29"><a xlink:href=".././proc/psfun_d_parallel_apply.html" xlink:title="psfun_d_parallel_apply">
+<polygon fill="#d9534f" stroke="#d9534f" points="470,-2426 347,-2426 347,-2402 470,-2402 470,-2426"/>
+<text text-anchor="middle" x="408.5" y="-2411.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_d_parallel_apply</text>
+</a>
+</g>
+</g>
+<!-- proc~psfun_d_parallel_apply&#45;&gt;interface~psfun_d_lanczos -->
+<g id="call~~graph~~CallGraph_edge53" class="edge">
+<title>proc~psfun_d_parallel_apply&#45;&gt;interface~psfun_d_lanczos</title>
+<path fill="none" stroke="#aa00ff" d="M470.3123,-2421.4473C485.8158,-2423.3152 502.3763,-2425.3104 517.6265,-2427.1478"/>
+<polygon fill="#aa00ff" stroke="#aa00ff" points="517.5989,-2430.6697 527.9458,-2428.3911 518.4363,-2423.7199 517.5989,-2430.6697"/>
+</g>
+<!-- proc~psfun_d_parallel_apply&#45;&gt;interface~psfun_d_arnoldi -->
+<g id="call~~graph~~CallGraph_edge52" class="edge">
+<title>proc~psfun_d_parallel_apply&#45;&gt;interface~psfun_d_arnoldi</title>
+<path fill="none" stroke="#aa00ff" d="M470.3123,-2405.808C486.4942,-2403.6634 503.8276,-2401.3662 519.6206,-2399.2732"/>
+<polygon fill="#aa00ff" stroke="#aa00ff" points="520.2954,-2402.7144 529.7489,-2397.9309 519.3757,-2395.7751 520.2954,-2402.7144"/>
+</g>
+<!-- proc~psfun_d_parallel_apply&#45;&gt;psb_toupper -->
+<g id="call~~graph~~CallGraph_edge51" class="edge">
+<title>proc~psfun_d_parallel_apply&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#aa00ff" d="M462.9747,-2401.9092C469.8217,-2398.3937 476.1218,-2393.8563 481,-2388 516.9599,-2344.8294 561.6163,-1940.3995 572.1832,-1840.3182"/>
+<polygon fill="#aa00ff" stroke="#aa00ff" points="575.6883,-1840.4518 573.2505,-1830.1412 568.7265,-1839.7216 575.6883,-1840.4518"/>
+</g>
+<!-- program~serialtest -->
+<g id="call~~graph~~CallGraph_node30" class="node">
+<title>program~serialtest</title>
+<g id="a_call~~graph~~CallGraph_node30"><a xlink:href=".././program/serialtest.html" xlink:title="serialtest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="103.5,-2106 48.5,-2106 48.5,-2082 103.5,-2082 103.5,-2106"/>
+<text text-anchor="middle" x="76" y="-2091.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">serialtest</text>
+</a>
+</g>
+</g>
+<!-- program~serialtest&#45;&gt;proc~get_parms~3 -->
+<g id="call~~graph~~CallGraph_edge60" class="edge">
+<title>program~serialtest&#45;&gt;proc~get_parms~3</title>
+<path fill="none" stroke="#d400ff" d="M103.5164,-2095.1404C119.609,-2097.226 139.2103,-2102.4303 152,-2115 192.3206,-2154.627 148.9338,-2196.1358 188,-2237 235.4123,-2286.5944 316.6645,-2303.8322 366.187,-2309.8192"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="365.9248,-2313.3115 376.2493,-2310.9336 366.6954,-2306.354 365.9248,-2313.3115"/>
+</g>
+<!-- program~serialtest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge54" class="edge">
+<title>program~serialtest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#d400ff" d="M103.6272,-2097.5919C118.8023,-2100.5206 137.4407,-2105.7523 152,-2115 172.753,-2128.1817 165.6638,-2146.7268 188,-2157 233.2238,-2177.8 256.4322,-2181.0764 300,-2157 432.3195,-2083.8777 428.7553,-2010.8654 481,-1869 524.5701,-1750.6895 563.4403,-1348.3342 572.5104,-1249.2066"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="576.0066,-1249.4058 573.4249,-1239.1304 569.0353,-1248.7731 576.0066,-1249.4058"/>
+</g>
+<!-- mm_mat_read -->
+<g id="call~~graph~~CallGraph_node38" class="node">
+<title>mm_mat_read</title>
+<polygon fill="#777777" stroke="#777777" points="285,-1756 203,-1756 203,-1732 285,-1732 285,-1756"/>
+<text text-anchor="middle" x="244" y="-1741.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_mat_read</text>
+</g>
+<!-- program~serialtest&#45;&gt;mm_mat_read -->
+<g id="call~~graph~~CallGraph_edge56" class="edge">
+<title>program~serialtest&#45;&gt;mm_mat_read</title>
+<path fill="none" stroke="#d400ff" d="M103.5808,-2092.9246C119.6969,-2090.8628 139.3003,-2085.6606 152,-2073 196.3709,-2028.7656 230.1664,-1833.455 240.6202,-1766.5643"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="244.1382,-1766.7143 242.1977,-1756.2987 237.2194,-1765.6511 244.1382,-1766.7143"/>
+</g>
+<!-- psb_exit -->
+<g id="call~~graph~~CallGraph_node61" class="node">
+<title>psb_exit</title>
+<polygon fill="#777777" stroke="#777777" points="271,-2064 217,-2064 217,-2040 271,-2040 271,-2064"/>
+<text text-anchor="middle" x="244" y="-2049.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_exit</text>
+</g>
+<!-- program~serialtest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge61" class="edge">
+<title>program~serialtest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#d400ff" d="M103.7418,-2087.0646C131.8755,-2080.0311 175.5916,-2069.1021 206.7353,-2061.3162"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="207.9219,-2064.6273 216.7744,-2058.8064 206.2241,-2057.8363 207.9219,-2064.6273"/>
+</g>
+<!-- psb_wtime -->
+<g id="call~~graph~~CallGraph_node65" class="node">
+<title>psb_wtime</title>
+<polygon fill="#777777" stroke="#777777" points="276,-1714 212,-1714 212,-1690 276,-1690 276,-1714"/>
+<text text-anchor="middle" x="244" y="-1699.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_wtime</text>
+</g>
+<!-- program~serialtest&#45;&gt;psb_wtime -->
+<g id="call~~graph~~CallGraph_edge55" class="edge">
+<title>program~serialtest&#45;&gt;psb_wtime</title>
+<path fill="none" stroke="#d400ff" d="M103.634,-2093.7435C120.1913,-2092.0282 140.2455,-2086.9031 152,-2073 252.9617,-1953.5836 92.4618,-1846.7981 188,-1723 191.7795,-1718.1026 196.8328,-1714.3473 202.3624,-1711.4678"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="204.1303,-1714.5203 211.9772,-1707.4015 201.4037,-1708.0732 204.1303,-1714.5203"/>
+</g>
+<!-- psb_init -->
+<g id="call~~graph~~CallGraph_node73" class="node">
+<title>psb_init</title>
+<polygon fill="#777777" stroke="#777777" points="271,-2148 217,-2148 217,-2124 271,-2124 271,-2148"/>
+<text text-anchor="middle" x="244" y="-2133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_init</text>
+</g>
+<!-- program~serialtest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge59" class="edge">
+<title>program~serialtest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#d400ff" d="M103.7418,-2100.9354C131.8755,-2107.9689 175.5916,-2118.8979 206.7353,-2126.6838"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="206.2241,-2130.1637 216.7744,-2129.1936 207.9219,-2123.3727 206.2241,-2130.1637"/>
+</g>
+<!-- psb_get_errstatus -->
+<g id="call~~graph~~CallGraph_node80" class="node">
+<title>psb_get_errstatus</title>
+<polygon fill="#777777" stroke="#777777" points="293.5,-2106 194.5,-2106 194.5,-2082 293.5,-2082 293.5,-2106"/>
+<text text-anchor="middle" x="244" y="-2091.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_get_errstatus</text>
+</g>
+<!-- program~serialtest&#45;&gt;psb_get_errstatus -->
+<g id="call~~graph~~CallGraph_edge57" class="edge">
+<title>program~serialtest&#45;&gt;psb_get_errstatus</title>
+<path fill="none" stroke="#d400ff" d="M103.7418,-2094C125.5585,-2094 156.7457,-2094 184.174,-2094"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="184.4748,-2097.5001 194.4748,-2094 184.4747,-2090.5001 184.4748,-2097.5001"/>
+</g>
+<!-- mm_array_write -->
+<g id="call~~graph~~CallGraph_node81" class="node">
+<title>mm_array_write</title>
+<polygon fill="#777777" stroke="#777777" points="289,-2228 199,-2228 199,-2204 289,-2204 289,-2228"/>
+<text text-anchor="middle" x="244" y="-2213.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_array_write</text>
+</g>
+<!-- program~serialtest&#45;&gt;mm_array_write -->
+<g id="call~~graph~~CallGraph_edge58" class="edge">
+<title>program~serialtest&#45;&gt;mm_array_write</title>
+<path fill="none" stroke="#d400ff" d="M103.5529,-2096.0134C119.2612,-2098.4284 138.4534,-2103.6722 152,-2115 180.3644,-2138.7186 161.6877,-2164.0236 188,-2190 191.3968,-2193.3535 195.3064,-2196.327 199.4475,-2198.9513"/>
+<polygon fill="#d400ff" stroke="#d400ff" points="197.75,-2202.0121 208.1829,-2203.8574 201.1778,-2195.9088 197.75,-2202.0121"/>
+</g>
+<!-- program~utiltest -->
+<g id="call~~graph~~CallGraph_node31" class="node">
+<title>program~utiltest</title>
+<g id="a_call~~graph~~CallGraph_node31"><a xlink:href=".././program/utiltest.html" xlink:title="utiltest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="103,-2148 49,-2148 49,-2124 103,-2124 103,-2148"/>
+<text text-anchor="middle" x="76" y="-2133.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">utiltest</text>
+</a>
+</g>
+</g>
+<!-- program~utiltest&#45;&gt;interface~ellipj -->
+<g id="call~~graph~~CallGraph_edge66" class="edge">
+<title>program~utiltest&#45;&gt;interface~ellipj</title>
+<path fill="none" stroke="#ff00ff" d="M80.9917,-2148.0626C94.186,-2178.6417 132.7996,-2260.1551 188,-2308 193.7357,-2312.9714 200.5831,-2317.1819 207.4883,-2320.6721"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="206.2949,-2323.976 216.8413,-2324.9886 209.2283,-2317.6203 206.2949,-2323.976"/>
+</g>
+<!-- program~utiltest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge62" class="edge">
+<title>program~utiltest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff00ff" d="M84.4402,-2148.0462C101.1256,-2170.672 140.83,-2218.8725 188,-2237 234.4648,-2254.8565 255.0592,-2258.4045 300,-2237 415.2454,-2182.1108 431.2875,-2131.5712 481,-2014 496.3778,-1977.6313 559.3724,-1373.5383 572.2098,-1249.25"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="575.7179,-1249.3508 573.2625,-1239.0445 568.7548,-1248.6326 575.7179,-1249.3508"/>
+</g>
+<!-- program~utiltest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge65" class="edge">
+<title>program~utiltest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff00ff" d="M103.2665,-2132.4774C118.5062,-2129.5622 137.3251,-2124.3211 152,-2115 172.753,-2101.8183 167.8552,-2087.0937 188,-2073 193.7734,-2068.9608 200.4209,-2065.5875 207.0733,-2062.8107"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="208.6072,-2065.9727 216.7224,-2059.1613 206.1308,-2059.4253 208.6072,-2065.9727"/>
+</g>
+<!-- program~utiltest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge64" class="edge">
+<title>program~utiltest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff00ff" d="M103.366,-2136C131.5173,-2136 175.5535,-2136 206.8429,-2136"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="206.9241,-2139.5001 216.9241,-2136 206.924,-2132.5001 206.9241,-2139.5001"/>
+</g>
+<!-- program~utiltest&#45;&gt;psb_get_errstatus -->
+<g id="call~~graph~~CallGraph_edge63" class="edge">
+<title>program~utiltest&#45;&gt;psb_get_errstatus</title>
+<path fill="none" stroke="#ff00ff" d="M103.366,-2129.1585C125.7392,-2123.5652 158.1458,-2115.4636 186.213,-2108.4468"/>
+<polygon fill="#ff00ff" stroke="#ff00ff" points="187.0836,-2111.8369 195.9361,-2106.016 185.3858,-2105.0459 187.0836,-2111.8369"/>
+</g>
+<!-- program~psblastest -->
+<g id="call~~graph~~CallGraph_node32" class="node">
+<title>program~psblastest</title>
+<g id="a_call~~graph~~CallGraph_node32"><a xlink:href=".././program/psblastest.html" xlink:title="psblastest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="106.5,-2386 45.5,-2386 45.5,-2362 106.5,-2362 106.5,-2386"/>
+<text text-anchor="middle" x="76" y="-2371.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psblastest</text>
+</a>
+</g>
+</g>
+<!-- program~psblastest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge67" class="edge">
+<title>program~psblastest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff00d4" d="M106.7915,-2375.8562C192.3605,-2380.2909 430.0745,-2387.4608 481,-2334 522.2462,-2290.7003 511.9983,-1856.5911 517,-1797 534.9223,-1583.4725 563.4023,-1325.648 571.9769,-1249.3106"/>
+<polygon fill="#ff00d4" stroke="#ff00d4" points="575.4947,-1249.3486 573.136,-1239.0197 568.5387,-1248.5651 575.4947,-1249.3486"/>
+</g>
+<!-- psb_rcv -->
+<g id="call~~graph~~CallGraph_node44" class="node">
+<title>psb_rcv</title>
+<polygon fill="#777777" stroke="#777777" points="271,-2468 217,-2468 217,-2444 271,-2444 271,-2468"/>
+<text text-anchor="middle" x="244" y="-2453.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_rcv</text>
+</g>
+<!-- program~psblastest&#45;&gt;psb_rcv -->
+<g id="call~~graph~~CallGraph_edge69" class="edge">
+<title>program~psblastest&#45;&gt;psb_rcv</title>
+<path fill="none" stroke="#ff00d4" d="M106.8383,-2378.4005C121.3324,-2381.4667 138.3778,-2386.577 152,-2395 172.3428,-2407.5785 168.2381,-2421.5272 188,-2435 193.8218,-2438.9691 200.492,-2442.3095 207.1518,-2445.0757"/>
+<polygon fill="#ff00d4" stroke="#ff00d4" points="206.2101,-2448.4613 216.8016,-2448.7239 208.6855,-2441.9136 206.2101,-2448.4613"/>
+</g>
+<!-- psb_snd -->
+<g id="call~~graph~~CallGraph_node57" class="node">
+<title>psb_snd</title>
+<polygon fill="#777777" stroke="#777777" points="271,-2426 217,-2426 217,-2402 271,-2402 271,-2426"/>
+<text text-anchor="middle" x="244" y="-2411.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_snd</text>
+</g>
+<!-- program~psblastest&#45;&gt;psb_snd -->
+<g id="call~~graph~~CallGraph_edge68" class="edge">
+<title>program~psblastest&#45;&gt;psb_snd</title>
+<path fill="none" stroke="#ff00d4" d="M106.8138,-2381.3366C135.0309,-2388.055 176.8504,-2398.012 206.8936,-2405.1651"/>
+<polygon fill="#ff00d4" stroke="#ff00d4" points="206.4487,-2408.657 216.9875,-2407.5685 208.0701,-2401.8473 206.4487,-2408.657"/>
+</g>
+<!-- program~psblastest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge71" class="edge">
+<title>program~psblastest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff00d4" d="M80.168,-2361.9528C99.1474,-2307.2093 176.9501,-2084.0781 188,-2073 193.3437,-2067.6426 200.1831,-2063.6336 207.2336,-2060.6395"/>
+<polygon fill="#ff00d4" stroke="#ff00d4" points="208.6472,-2063.85 216.858,-2057.1543 206.2638,-2057.2683 208.6472,-2063.85"/>
+</g>
+<!-- program~psblastest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge70" class="edge">
+<title>program~psblastest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff00d4" d="M82.553,-2361.7239C98.7018,-2331.9121 142.4206,-2253.8243 188,-2195 198.9637,-2180.8504 212.7986,-2166.2489 223.974,-2155.1116"/>
+<polygon fill="#ff00d4" stroke="#ff00d4" points="226.5321,-2157.5051 231.2179,-2148.0028 221.6291,-2152.509 226.5321,-2157.5051"/>
+</g>
+<!-- program~shiftedtest -->
+<g id="call~~graph~~CallGraph_node33" class="node">
+<title>program~shiftedtest</title>
+<g id="a_call~~graph~~CallGraph_node33"><a xlink:href=".././program/shiftedtest.html" xlink:title="shiftedtest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="106.5,-1050 45.5,-1050 45.5,-1026 106.5,-1026 106.5,-1050"/>
+<text text-anchor="middle" x="76" y="-1035.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">shiftedtest</text>
+</a>
+</g>
+</g>
+<!-- program~shiftedtest&#45;&gt;interface~psb_krylov -->
+<g id="call~~graph~~CallGraph_edge74" class="edge">
+<title>program~shiftedtest&#45;&gt;interface~psb_krylov</title>
+<path fill="none" stroke="#ff00aa" d="M77.9135,-1025.9297C87.7403,-965.2204 134.163,-693.6563 188,-630 192.0882,-625.1661 197.2709,-621.1787 202.8253,-617.9046"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="204.453,-621.0034 211.7558,-613.3275 201.2601,-614.7739 204.453,-621.0034"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;interface~get_parms -->
+<g id="call~~graph~~CallGraph_edge80" class="edge">
+<title>program~shiftedtest&#45;&gt;interface~get_parms</title>
+<path fill="none" stroke="#ff00aa" d="M76.794,-1025.8865C80.4717,-979.1371 99.666,-808.1937 188,-710 192.0873,-705.4564 197.1318,-701.647 202.5043,-698.4702"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="204.4623,-701.3984 211.7445,-693.703 201.2528,-695.1776 204.4623,-701.3984"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge72" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff00aa" d="M77.805,-1025.8305C84.2771,-987.1191 110.2257,-866.58 188,-819 230.462,-793.023 262.9204,-785.7896 300,-819 354.2922,-867.6267 290.4651,-1088.0898 336,-1145 385.367,-1206.6996 483.6565,-1222.1592 537.3586,-1225.9107"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="537.2858,-1229.4125 547.4768,-1226.5151 537.7033,-1222.4249 537.2858,-1229.4125"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;mm_mat_read -->
+<g id="call~~graph~~CallGraph_edge73" class="edge">
+<title>program~shiftedtest&#45;&gt;mm_mat_read</title>
+<path fill="none" stroke="#ff00aa" d="M80.3237,-1050.1389C93.5192,-1087.733 133.4962,-1205.7951 152,-1307 168.6886,-1398.2769 131.9058,-1649.0851 188,-1723 189.8243,-1725.4038 191.9561,-1727.5325 194.302,-1729.4175"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="192.6524,-1732.5164 202.9679,-1734.9336 196.4113,-1726.6112 192.6524,-1732.5164"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_toupper -->
+<g id="call~~graph~~CallGraph_edge75" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#ff00aa" d="M90.7554,-1025.786C129.6654,-995.1035 236.4275,-920.9848 300,-975 337.7521,-1007.0766 323.0776,-1147.176 336,-1195 401.6314,-1437.8916 527.6271,-1717.1936 564.2701,-1796.1902"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="561.2569,-1798.0105 568.6518,-1805.5978 567.6024,-1795.055 561.2569,-1798.0105"/>
+</g>
+<!-- psb_geamax -->
+<g id="call~~graph~~CallGraph_node42" class="node">
+<title>psb_geamax</title>
+<polygon fill="#777777" stroke="#777777" points="281,-418 207,-418 207,-394 281,-394 281,-418"/>
+<text text-anchor="middle" x="244" y="-403.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geamax</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geamax -->
+<g id="call~~graph~~CallGraph_edge76" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geamax</title>
+<path fill="none" stroke="#ff00aa" d="M76.6245,-1025.93C80.8497,-948.6266 107.5562,-523.1563 188,-427 190.7733,-423.685 194.1253,-420.8929 197.7944,-418.5411"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="199.5775,-421.5582 206.8082,-413.8144 196.3266,-415.3588 199.5775,-421.5582"/>
+</g>
+<!-- hb_read -->
+<g id="call~~graph~~CallGraph_node45" class="node">
+<title>hb_read</title>
+<polygon fill="#777777" stroke="#777777" points="271,-852 217,-852 217,-828 271,-828 271,-852"/>
+<text text-anchor="middle" x="244" y="-837.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">hb_read</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;hb_read -->
+<g id="call~~graph~~CallGraph_edge77" class="edge">
+<title>program~shiftedtest&#45;&gt;hb_read</title>
+<path fill="none" stroke="#ff00aa" d="M80.9917,-1025.9374C94.186,-995.3583 132.7996,-913.8449 188,-866 193.7357,-861.0286 200.5831,-856.8181 207.4883,-853.3279"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="209.2283,-856.3797 216.8413,-849.0114 206.2949,-850.024 209.2283,-856.3797"/>
+</g>
+<!-- mm_array_read -->
+<g id="call~~graph~~CallGraph_node46" class="node">
+<title>mm_array_read</title>
+<polygon fill="#777777" stroke="#777777" points="288.5,-1550 199.5,-1550 199.5,-1526 288.5,-1526 288.5,-1550"/>
+<text text-anchor="middle" x="244" y="-1535.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_array_read</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;mm_array_read -->
+<g id="call~~graph~~CallGraph_edge78" class="edge">
+<title>program~shiftedtest&#45;&gt;mm_array_read</title>
+<path fill="none" stroke="#ff00aa" d="M79.951,-1050.2151C92.0735,-1088.0287 129.2905,-1206.6551 152,-1307 172.9022,-1399.3591 127.6574,-1444.0214 188,-1517 188.9925,-1518.2003 190.0609,-1519.3321 191.193,-1520.3992"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="189.3448,-1523.3864 199.4579,-1526.545 193.5218,-1517.7692 189.3448,-1523.3864"/>
+</g>
+<!-- psb_matdist -->
+<g id="call~~graph~~CallGraph_node47" class="node">
+<title>psb_matdist</title>
+<polygon fill="#777777" stroke="#777777" points="279,-1634 209,-1634 209,-1610 279,-1610 279,-1634"/>
+<text text-anchor="middle" x="244" y="-1619.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_matdist</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_matdist -->
+<g id="call~~graph~~CallGraph_edge79" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_matdist</title>
+<path fill="none" stroke="#ff00aa" d="M80.1647,-1050.1694C92.9024,-1087.8515 131.7019,-1206.1397 152,-1307 164.9861,-1371.5275 147.2843,-1549.2828 188,-1601 191.2095,-1605.0767 195.2996,-1608.362 199.8043,-1611.0095"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="198.3257,-1614.1821 208.8554,-1615.3552 201.3555,-1607.8717 198.3257,-1614.1821"/>
+</g>
+<!-- psb_errstatus_fatal -->
+<g id="call~~graph~~CallGraph_node48" class="node">
+<title>psb_errstatus_fatal</title>
+<polygon fill="#777777" stroke="#777777" points="296,-376 192,-376 192,-352 296,-352 296,-376"/>
+<text text-anchor="middle" x="244" y="-361.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_errstatus_fatal</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_errstatus_fatal -->
+<g id="call~~graph~~CallGraph_edge81" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_errstatus_fatal</title>
+<path fill="none" stroke="#ff00aa" d="M76.4709,-1025.8949C79.8278,-945.4704 102.5133,-488.379 188,-385 188.7279,-384.1198 189.4966,-383.2765 190.3013,-382.4685"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="192.6896,-385.0429 198.3842,-376.1085 188.361,-379.5416 192.6896,-385.0429"/>
+</g>
+<!-- psb_spfree -->
+<g id="call~~graph~~CallGraph_node51" class="node">
+<title>psb_spfree</title>
+<polygon fill="#777777" stroke="#777777" points="277,-1592 211,-1592 211,-1568 277,-1568 277,-1592"/>
+<text text-anchor="middle" x="244" y="-1577.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_spfree</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_spfree -->
+<g id="call~~graph~~CallGraph_edge82" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_spfree</title>
+<path fill="none" stroke="#ff00aa" d="M80.0752,-1050.1879C92.5551,-1087.9232 130.6916,-1206.3483 152,-1307 163.7161,-1362.342 152.5639,-1514.906 188,-1559 191.7085,-1563.6146 196.5429,-1567.2154 201.8177,-1570.025"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="200.4257,-1573.2363 210.9896,-1574.0458 203.2363,-1566.8253 200.4257,-1573.2363"/>
+</g>
+<!-- psb_geasb -->
+<g id="call~~graph~~CallGraph_node53" class="node">
+<title>psb_geasb</title>
+<polygon fill="#777777" stroke="#777777" points="276.5,-1508 211.5,-1508 211.5,-1484 276.5,-1484 276.5,-1508"/>
+<text text-anchor="middle" x="244" y="-1493.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geasb</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geasb -->
+<g id="call~~graph~~CallGraph_edge83" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geasb</title>
+<path fill="none" stroke="#ff00aa" d="M79.7677,-1050.2586C91.3627,-1088.1973 127.2227,-1207.1456 152,-1307 170.3903,-1381.1142 138.1346,-1417.1679 188,-1475 191.8659,-1479.4836 196.7876,-1483.0117 202.103,-1485.7875"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="200.7368,-1489.0099 211.3033,-1489.7847 203.5262,-1482.5897 200.7368,-1489.0099"/>
+</g>
+<!-- psb_set_errverbosity -->
+<g id="call~~graph~~CallGraph_node54" class="node">
+<title>psb_set_errverbosity</title>
+<polygon fill="#777777" stroke="#777777" points="300,-334 188,-334 188,-310 300,-310 300,-334"/>
+<text text-anchor="middle" x="244" y="-319.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_set_errverbosity</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_set_errverbosity -->
+<g id="call~~graph~~CallGraph_edge84" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_set_errverbosity</title>
+<path fill="none" stroke="#ff00aa" d="M76.3327,-1025.9356C78.8565,-942.6985 97.4323,-453.6551 188,-343 188.7234,-342.1161 189.4881,-341.2695 190.289,-340.4584"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="192.6798,-343.0298 198.3476,-334.0784 188.3347,-337.5416 192.6798,-343.0298"/>
+</g>
+<!-- distr_mtpart -->
+<g id="call~~graph~~CallGraph_node56" class="node">
+<title>distr_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="279,-1466 209,-1466 209,-1442 279,-1442 279,-1466"/>
+<text text-anchor="middle" x="244" y="-1451.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">distr_mtpart</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;distr_mtpart -->
+<g id="call~~graph~~CallGraph_edge85" class="edge">
+<title>program~shiftedtest&#45;&gt;distr_mtpart</title>
+<path fill="none" stroke="#ff00aa" d="M79.4603,-1050.2391C98.288,-1116.8275 187.5681,-1432.5309 188,-1433 191.3408,-1436.6283 195.3697,-1439.6332 199.7165,-1442.121"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="198.4341,-1445.3871 208.9666,-1446.5356 201.4492,-1439.0697 198.4341,-1445.3871"/>
+</g>
+<!-- psb_amx -->
+<g id="call~~graph~~CallGraph_node58" class="node">
+<title>psb_amx</title>
+<polygon fill="#777777" stroke="#777777" points="272,-1424 216,-1424 216,-1400 272,-1400 272,-1424"/>
+<text text-anchor="middle" x="244" y="-1409.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_amx</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_amx -->
+<g id="call~~graph~~CallGraph_edge86" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_amx</title>
+<path fill="none" stroke="#ff00aa" d="M79.2231,-1050.3218C94.8486,-1109.7131 162.9834,-1364.6597 188,-1391 192.9484,-1396.2102 199.3136,-1400.1381 205.9682,-1403.0962"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="205.201,-1406.5461 215.7934,-1406.7727 207.6542,-1399.9901 205.201,-1406.5461"/>
+</g>
+<!-- psb_geall -->
+<g id="call~~graph~~CallGraph_node59" class="node">
+<title>psb_geall</title>
+<polygon fill="#777777" stroke="#777777" points="273,-1382 215,-1382 215,-1358 273,-1358 273,-1382"/>
+<text text-anchor="middle" x="244" y="-1367.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geall</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geall -->
+<g id="call~~graph~~CallGraph_edge87" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geall</title>
+<path fill="none" stroke="#ff00aa" d="M76.8099,-1050.0062C80.5157,-1095.5456 99.7157,-1259.5514 188,-1349 192.8516,-1353.9155 198.9626,-1357.6944 205.351,-1360.5955"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="204.2056,-1363.9051 214.7949,-1364.2478 206.7306,-1357.3763 204.2056,-1363.9051"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geaxpby -->
+<g id="call~~graph~~CallGraph_edge88" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geaxpby</title>
+<path fill="none" stroke="#ff00aa" d="M76.771,-1025.7027C81.5306,-953.98 109.3397,-590.4041 188,-519 236.5242,-474.952 433.5059,-471.8234 526.0403,-472.8903"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="526.2121,-476.3929 536.2591,-473.0302 526.308,-469.3935 526.2121,-476.3929"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge89" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff00aa" d="M80.3591,-1050.1325C93.6564,-1087.7082 133.8952,-1205.723 152,-1307 187.9312,-1507.997 160.4034,-1562.6901 188,-1765 201.5903,-1864.6303 227.6742,-1981.8981 238.783,-2029.8683"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="235.4137,-2030.8319 241.0934,-2039.7757 242.2308,-2029.2421 235.4137,-2030.8319"/>
+</g>
+<!-- psb_sum -->
+<g id="call~~graph~~CallGraph_node62" class="node">
+<title>psb_sum</title>
+<polygon fill="#777777" stroke="#777777" points="272,-1340 216,-1340 216,-1316 272,-1316 272,-1340"/>
+<text text-anchor="middle" x="244" y="-1325.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_sum</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_sum -->
+<g id="call~~graph~~CallGraph_edge90" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_sum</title>
+<path fill="none" stroke="#ff00aa" d="M80.3898,-1050.2402C93.4923,-1085.8989 134.7367,-1192.0378 188,-1269 198.056,-1283.5303 211.66,-1297.9515 222.9414,-1308.899"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="220.6428,-1311.5427 230.3084,-1315.8818 225.4583,-1306.4622 220.6428,-1311.5427"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_wtime -->
+<g id="call~~graph~~CallGraph_edge91" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_wtime</title>
+<path fill="none" stroke="#ff00aa" d="M80.2323,-1050.1561C93.1645,-1087.7998 132.4643,-1205.9892 152,-1307 180.5182,-1454.4556 124.9781,-1506.6743 188,-1643 195.2224,-1658.623 208.2602,-1672.7428 219.9393,-1683.2497"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="217.8499,-1686.0685 227.7197,-1689.9205 222.4062,-1680.7544 217.8499,-1686.0685"/>
+</g>
+<!-- psb_realloc -->
+<g id="call~~graph~~CallGraph_node66" class="node">
+<title>psb_realloc</title>
+<polygon fill="#777777" stroke="#777777" points="277.5,-1260 210.5,-1260 210.5,-1236 277.5,-1236 277.5,-1260"/>
+<text text-anchor="middle" x="244" y="-1245.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_realloc</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_realloc -->
+<g id="call~~graph~~CallGraph_edge92" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_realloc</title>
+<path fill="none" stroke="#ff00aa" d="M79.9218,-1050.0688C91.2568,-1083.1263 127.1849,-1176.0556 188,-1227 191.9288,-1230.2911 196.4244,-1233.0938 201.1222,-1235.4741"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="199.7493,-1238.6939 210.3097,-1239.5482 202.587,-1232.2949 199.7493,-1238.6939"/>
+</g>
+<!-- 4 -->
+<g id="call~~graph~~CallGraph_node68" class="node">
+<title>4</title>
+<polygon fill="#777777" stroke="#777777" points="271,-292 217,-292 217,-268 271,-268 271,-292"/>
+<text text-anchor="middle" x="244" y="-277.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">4</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;4 -->
+<g id="call~~graph~~CallGraph_edge93" class="edge">
+<title>program~shiftedtest&#45;&gt;4</title>
+<path fill="none" stroke="#ff00aa" d="M76.2147,-1025.772C77.9674,-939.2018 92.4161,-418.8575 188,-301 192.9012,-294.9566 199.7316,-290.6519 206.9416,-287.5858"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="208.5737,-290.7234 216.8634,-284.1255 206.2685,-284.1138 208.5737,-290.7234"/>
+</g>
+<!-- psb_gefree -->
+<g id="call~~graph~~CallGraph_node69" class="node">
+<title>psb_gefree</title>
+<polygon fill="#777777" stroke="#777777" points="277.5,-1218 210.5,-1218 210.5,-1194 277.5,-1194 277.5,-1218"/>
+<text text-anchor="middle" x="244" y="-1203.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_gefree</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_gefree -->
+<g id="call~~graph~~CallGraph_edge94" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_gefree</title>
+<path fill="none" stroke="#ff00aa" d="M82.1209,-1050.1125C96.7165,-1077.8472 136.2443,-1146.5263 188,-1185 191.9582,-1187.9424 196.3755,-1190.5159 200.9453,-1192.7561"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="199.8758,-1196.108 210.4412,-1196.8976 202.6742,-1189.6917 199.8758,-1196.108"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_errpush -->
+<g id="call~~graph~~CallGraph_edge95" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#ff00aa" d="M76.7165,-1025.7213C82.5635,-927.5918 123.854,-272.9894 188,-217 225.5017,-184.2669 261.4359,-185.5256 300,-217 361.8554,-267.4839 278.4345,-337.6743 336,-393 362.6656,-418.6281 465.7175,-427.454 527.2983,-430.4655"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="527.3978,-433.9735 537.5466,-430.9319 527.7161,-426.9808 527.3978,-433.9735"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge96" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#ff00aa" d="M76.969,-1025.887C81.0756,-983.6637 101.0883,-842.4816 188,-786 229.7383,-758.8754 258.3839,-758.6883 300,-786 333.6165,-808.0617 305.4787,-842.8229 336,-869 386.5692,-912.3714 424.3185,-871.9925 481,-907 501.6319,-919.7426 496.9886,-934.3035 517,-948 522.2949,-951.6241 528.2905,-954.7067 534.3618,-957.3018"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="533.2857,-960.6384 543.8748,-960.9863 535.8139,-954.1108 533.2857,-960.6384"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge97" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff00aa" d="M80.5115,-1050.1066C94.2476,-1087.6077 135.6152,-1205.4305 152,-1307 166.3119,-1395.7199 135.1807,-2042.2939 188,-2115 192.7631,-2121.5564 199.8269,-2126.0669 207.3458,-2129.1697"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="206.3805,-2132.5374 216.9744,-2132.395 208.6039,-2125.8999 206.3805,-2132.5374"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_spmm -->
+<g id="call~~graph~~CallGraph_edge98" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_spmm</title>
+<path fill="none" stroke="#ff00aa" d="M77.2465,-1025.5712C84.1669,-959.1157 120.0286,-646.3908 188,-583 283.566,-493.8741 453.0144,-500.7145 531.8967,-509.7314"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="531.6107,-513.2222 541.9591,-510.9505 532.4528,-506.273 531.6107,-513.2222"/>
+</g>
+<!-- psb_barrier -->
+<g id="call~~graph~~CallGraph_node75" class="node">
+<title>psb_barrier</title>
+<polygon fill="#777777" stroke="#777777" points="277.5,-1176 210.5,-1176 210.5,-1152 277.5,-1152 277.5,-1176"/>
+<text text-anchor="middle" x="244" y="-1161.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_barrier</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_barrier -->
+<g id="call~~graph~~CallGraph_edge99" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_barrier</title>
+<path fill="none" stroke="#ff00aa" d="M85.9174,-1050.0094C104.1265,-1071.3808 144.9859,-1116.2738 188,-1143 192.0846,-1145.5379 196.524,-1147.8448 201.0563,-1149.9213"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="199.8313,-1153.2031 210.4057,-1153.86 202.5489,-1146.7521 199.8313,-1153.2031"/>
+</g>
+<!-- psb_scatter -->
+<g id="call~~graph~~CallGraph_node76" class="node">
+<title>psb_scatter</title>
+<polygon fill="#777777" stroke="#777777" points="278,-1008 210,-1008 210,-984 278,-984 278,-1008"/>
+<text text-anchor="middle" x="244" y="-993.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_scatter</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_scatter -->
+<g id="call~~graph~~CallGraph_edge100" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_scatter</title>
+<path fill="none" stroke="#ff00aa" d="M106.8138,-1030.2966C132.9125,-1023.7719 170.6479,-1014.338 199.9387,-1007.0153"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="201.0616,-1010.3424 209.9142,-1004.5215 199.3638,-1003.5514 201.0616,-1010.3424"/>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge101" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#ff00aa" d="M77.7171,-1025.6472C86.2812,-966.0098 126.429,-708.8693 188,-663 242.3672,-622.4974 433.7808,-699.3524 481,-748 509.0055,-776.8527 487.7404,-803.4199 517,-831 521.9881,-835.7018 528.1128,-839.3674 534.4847,-842.2205"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="533.3038,-845.5163 543.8935,-845.8453 535.8204,-838.9843 533.3038,-845.5163"/>
+</g>
+<!-- psb_cdfree -->
+<g id="call~~graph~~CallGraph_node79" class="node">
+<title>psb_cdfree</title>
+<polygon fill="#777777" stroke="#777777" points="277,-1134 211,-1134 211,-1110 277,-1110 277,-1134"/>
+<text text-anchor="middle" x="244" y="-1119.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_cdfree</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_cdfree -->
+<g id="call~~graph~~CallGraph_edge102" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_cdfree</title>
+<path fill="none" stroke="#ff00aa" d="M95.3456,-1050.0908C117.2992,-1063.5233 154.4242,-1085.3741 188,-1101 192.3039,-1103.003 196.8566,-1104.9603 201.4319,-1106.8244"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="200.1958,-1110.0992 210.7829,-1110.5046 202.7594,-1103.5855 200.1958,-1110.0992"/>
+</g>
+<!-- psb_genrm2 -->
+<g id="call~~graph~~CallGraph_node83" class="node">
+<title>psb_genrm2</title>
+<polygon fill="#777777" stroke="#777777" points="280.5,-250 207.5,-250 207.5,-226 280.5,-226 280.5,-250"/>
+<text text-anchor="middle" x="244" y="-235.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_genrm2</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_genrm2 -->
+<g id="call~~graph~~CallGraph_edge103" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_genrm2</title>
+<path fill="none" stroke="#ff00aa" d="M76.1028,-1025.9441C77.0907,-937.1355 87.2672,-384.2292 188,-259 190.8595,-255.4452 194.387,-252.492 198.269,-250.0386"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="199.9285,-253.1209 207.212,-245.4266 196.72,-246.8994 199.9285,-253.1209"/>
+</g>
+<!-- build_mtpart -->
+<g id="call~~graph~~CallGraph_node84" class="node">
+<title>build_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="280,-1092 208,-1092 208,-1068 280,-1068 280,-1092"/>
+<text text-anchor="middle" x="244" y="-1077.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">build_mtpart</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;build_mtpart -->
+<g id="call~~graph~~CallGraph_edge104" class="edge">
+<title>program~shiftedtest&#45;&gt;build_mtpart</title>
+<path fill="none" stroke="#ff00aa" d="M106.8138,-1045.7034C132.3194,-1052.0798 168.9386,-1061.2347 197.9288,-1068.4822"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="197.2837,-1071.9286 207.834,-1070.9585 198.9815,-1065.1376 197.2837,-1071.9286"/>
+</g>
+<!-- psb_gather -->
+<g id="call~~graph~~CallGraph_node87" class="node">
+<title>psb_gather</title>
+<polygon fill="#777777" stroke="#777777" points="277.5,-460 210.5,-460 210.5,-436 277.5,-436 277.5,-460"/>
+<text text-anchor="middle" x="244" y="-445.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_gather</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_gather -->
+<g id="call~~graph~~CallGraph_edge105" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_gather</title>
+<path fill="none" stroke="#ff00aa" d="M76.9192,-1025.988C82.7452,-952.6024 116.5997,-564.8526 188,-474 191.6491,-469.3568 196.3211,-465.5079 201.4069,-462.3265"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="203.0934,-465.3937 210.2489,-457.5803 199.7827,-459.2261 203.0934,-465.3937"/>
+</g>
+<!-- getv_mtpart -->
+<g id="call~~graph~~CallGraph_node89" class="node">
+<title>getv_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="279,-1050 209,-1050 209,-1026 279,-1026 279,-1050"/>
+<text text-anchor="middle" x="244" y="-1035.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">getv_mtpart</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;getv_mtpart -->
+<g id="call~~graph~~CallGraph_edge106" class="edge">
+<title>program~shiftedtest&#45;&gt;getv_mtpart</title>
+<path fill="none" stroke="#ff00aa" d="M106.8138,-1038C132.4611,-1038 169.3459,-1038 198.4113,-1038"/>
+<polygon fill="#ff00aa" stroke="#ff00aa" points="198.7305,-1041.5001 208.7305,-1038 198.7305,-1034.5001 198.7305,-1041.5001"/>
+</g>
+<!-- program~arnolditest -->
+<g id="call~~graph~~CallGraph_node34" class="node">
+<title>program~arnolditest</title>
+<g id="a_call~~graph~~CallGraph_node34"><a xlink:href=".././program/arnolditest.html" xlink:title="arnolditest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="107,-1550 45,-1550 45,-1526 107,-1526 107,-1550"/>
+<text text-anchor="middle" x="76" y="-1535.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">arnolditest</text>
+</a>
+</g>
+</g>
+<!-- program~arnolditest&#45;&gt;proc~get_parms -->
+<g id="call~~graph~~CallGraph_edge115" class="edge">
+<title>program~arnolditest&#45;&gt;proc~get_parms</title>
+<path fill="none" stroke="#ff007f" d="M78.1266,-1550.1766C88.0873,-1605.6686 132.0072,-1833.6427 188,-1874 228.3818,-1903.1056 263.3694,-1907.705 300,-1874 335.4448,-1841.3861 328.6284,-1489.5989 336,-1442 353.4759,-1329.1574 388.406,-1196.7717 402.4484,-1145.651"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="405.8219,-1146.5833 405.1141,-1136.0122 399.0751,-1144.7174 405.8219,-1146.5833"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge107" class="edge">
+<title>program~arnolditest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff007f" d="M77.854,-1550.2828C86.9043,-1608.438 128.4341,-1855.1135 188,-1899 228.0752,-1928.5263 258.6792,-1926.7564 300,-1899 533.4604,-1742.1777 568.4882,-1348.1032 573.633,-1249.591"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="577.1426,-1249.4654 574.114,-1239.3126 570.1502,-1249.1381 577.1426,-1249.4654"/>
+</g>
+<!-- program~arnolditest&#45;&gt;mm_mat_read -->
+<g id="call~~graph~~CallGraph_edge108" class="edge">
+<title>program~arnolditest&#45;&gt;mm_mat_read</title>
+<path fill="none" stroke="#ff007f" d="M80.1651,-1550.2842C91.8749,-1583.0451 128.188,-1673.3738 188,-1723 189.7855,-1724.4814 191.6859,-1725.8642 193.6675,-1727.1543"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="192.3342,-1730.4183 202.7721,-1732.2354 195.7456,-1724.3058 192.3342,-1730.4183"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_toupper -->
+<g id="call~~graph~~CallGraph_edge109" class="edge">
+<title>program~arnolditest&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#ff007f" d="M77.3647,-1550.278C84.6347,-1613.2266 121.0149,-1898.7934 188,-1950 307.1441,-2041.0793 493.2367,-1891.5603 554.3279,-1836.832"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="556.7315,-1839.3771 561.7831,-1830.0641 552.0264,-1834.1942 556.7315,-1839.3771"/>
+</g>
+<!-- program~arnolditest&#45;&gt;hb_read -->
+<g id="call~~graph~~CallGraph_edge110" class="edge">
+<title>program~arnolditest&#45;&gt;hb_read</title>
+<path fill="none" stroke="#ff007f" d="M82.4594,-1525.5839C97.5419,-1495.9559 135.078,-1418.4062 152,-1349 191.5554,-1186.7619 147.5624,-1137.0204 188,-975 198.4609,-933.0865 219.7755,-887.2139 232.8809,-861.1854"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="236.0233,-862.7277 237.462,-852.231 229.7915,-859.5395 236.0233,-862.7277"/>
+</g>
+<!-- program~arnolditest&#45;&gt;mm_array_read -->
+<g id="call~~graph~~CallGraph_edge111" class="edge">
+<title>program~arnolditest&#45;&gt;mm_array_read</title>
+<path fill="none" stroke="#ff007f" d="M107.2058,-1538C130.1765,-1538 162.0052,-1538 189.1808,-1538"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="189.3402,-1541.5001 199.3401,-1538 189.3401,-1534.5001 189.3402,-1541.5001"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_matdist -->
+<g id="call~~graph~~CallGraph_edge112" class="edge">
+<title>program~arnolditest&#45;&gt;psb_matdist</title>
+<path fill="none" stroke="#ff007f" d="M95.3456,-1550.0908C117.2992,-1563.5233 154.4242,-1585.3741 188,-1601 191.8126,-1602.7743 195.8204,-1604.5129 199.8663,-1606.1825"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="198.7164,-1609.4918 209.3018,-1609.9377 201.3049,-1602.988 198.7164,-1609.4918"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_spfree -->
+<g id="call~~graph~~CallGraph_edge113" class="edge">
+<title>program~arnolditest&#45;&gt;psb_spfree</title>
+<path fill="none" stroke="#ff007f" d="M107.2058,-1545.8014C133.6045,-1552.4011 171.7021,-1561.9255 200.9914,-1569.2478"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="200.4,-1572.7077 210.9504,-1571.7376 202.0978,-1565.9167 200.4,-1572.7077"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_geasb -->
+<g id="call~~graph~~CallGraph_edge114" class="edge">
+<title>program~arnolditest&#45;&gt;psb_geasb</title>
+<path fill="none" stroke="#ff007f" d="M107.2058,-1530.1986C133.6894,-1523.5777 171.9472,-1514.0132 201.2736,-1506.6816"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="202.3878,-1510.0109 211.2403,-1504.1899 200.69,-1503.2199 202.3878,-1510.0109"/>
+</g>
+<!-- program~arnolditest&#45;&gt;distr_mtpart -->
+<g id="call~~graph~~CallGraph_edge116" class="edge">
+<title>program~arnolditest&#45;&gt;distr_mtpart</title>
+<path fill="none" stroke="#ff007f" d="M95.3456,-1525.9092C117.2992,-1512.4767 154.4242,-1490.6259 188,-1475 191.8126,-1473.2257 195.8204,-1471.4871 199.8663,-1469.8175"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="201.3049,-1473.012 209.3018,-1466.0623 198.7164,-1466.5082 201.3049,-1473.012"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_amx -->
+<g id="call~~graph~~CallGraph_edge117" class="edge">
+<title>program~arnolditest&#45;&gt;psb_amx</title>
+<path fill="none" stroke="#ff007f" d="M85.9174,-1525.9906C104.1265,-1504.6192 144.9859,-1459.7262 188,-1433 193.6142,-1429.5117 199.8989,-1426.4597 206.1735,-1423.8428"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="207.8522,-1426.947 215.9274,-1420.0884 205.3376,-1420.4143 207.8522,-1426.947"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_geall -->
+<g id="call~~graph~~CallGraph_edge118" class="edge">
+<title>program~arnolditest&#45;&gt;psb_geall</title>
+<path fill="none" stroke="#ff007f" d="M82.1209,-1525.8875C96.7165,-1498.1528 136.2443,-1429.4737 188,-1391 193.1952,-1387.1381 199.1812,-1383.9117 205.2647,-1381.2403"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="206.7803,-1384.4053 214.8052,-1377.4878 204.218,-1377.891 206.7803,-1384.4053"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge119" class="edge">
+<title>program~arnolditest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff007f" d="M76.9288,-1550.2051C81.4791,-1604.5102 104.6888,-1828.5124 188,-1988 196.7477,-2004.7463 210.743,-2020.7426 222.5537,-2032.5541"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="220.3001,-2035.2436 229.9225,-2039.6776 225.1654,-2030.2107 220.3001,-2035.2436"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_sum -->
+<g id="call~~graph~~CallGraph_edge120" class="edge">
+<title>program~arnolditest&#45;&gt;psb_sum</title>
+<path fill="none" stroke="#ff007f" d="M79.9218,-1525.9312C91.2568,-1492.8737 127.1849,-1399.9444 188,-1349 193.3479,-1344.5201 199.7459,-1340.9453 206.2746,-1338.1089"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="207.7322,-1341.2989 215.8262,-1334.4624 205.2355,-1334.7593 207.7322,-1341.2989"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_wtime -->
+<g id="call~~graph~~CallGraph_edge121" class="edge">
+<title>program~arnolditest&#45;&gt;psb_wtime</title>
+<path fill="none" stroke="#ff007f" d="M83.2204,-1550.2591C99.1626,-1576.434 139.8049,-1638.4527 188,-1676 192.4393,-1679.4585 197.4129,-1682.592 202.5151,-1685.3882"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="201.2464,-1688.6686 211.7502,-1690.0548 204.4034,-1682.4209 201.2464,-1688.6686"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_realloc -->
+<g id="call~~graph~~CallGraph_edge122" class="edge">
+<title>program~arnolditest&#45;&gt;psb_realloc</title>
+<path fill="none" stroke="#ff007f" d="M80.3898,-1525.7598C93.4923,-1490.1011 134.7367,-1383.9622 188,-1307 198.056,-1292.4697 211.66,-1278.0485 222.9414,-1267.101"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="225.4583,-1269.5378 230.3084,-1260.1182 220.6428,-1264.4573 225.4583,-1269.5378"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_gefree -->
+<g id="call~~graph~~CallGraph_edge123" class="edge">
+<title>program~arnolditest&#45;&gt;psb_gefree</title>
+<path fill="none" stroke="#ff007f" d="M81.3918,-1525.7711C94.4483,-1495.9209 128.4215,-1416.8106 152,-1349 170.567,-1295.6023 149.4859,-1268.385 188,-1227 191.7579,-1222.9619 196.3678,-1219.6955 201.3141,-1217.0543"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="202.7804,-1220.2326 210.4697,-1212.9438 199.9134,-1213.8467 202.7804,-1220.2326"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_errpush -->
+<g id="call~~graph~~CallGraph_edge124" class="edge">
+<title>program~arnolditest&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#ff007f" d="M77.5643,-1550.0385C83.4144,-1589.496 107.9465,-1715.2306 188,-1765 230.274,-1791.2819 264.27,-1799.6583 300,-1765 347.1567,-1719.2577 305.128,-640.9917 336,-583 359.2709,-539.2866 473.2244,-476.1536 517,-453 520.6991,-451.0435 524.6205,-449.1921 528.6084,-447.4596"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="530.0266,-450.6612 537.9608,-443.6399 527.3798,-444.1808 530.0266,-450.6612"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge125" class="edge">
+<title>program~arnolditest&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#ff007f" d="M78.6548,-1550.1752C90.1645,-1601.7279 137.4492,-1800.9958 188,-1836 228.9241,-1864.3381 263.9488,-1870.324 300,-1836 359.0566,-1779.7727 293.1017,-1172.3465 336,-1103 380.4563,-1031.1349 478.3253,-994.436 533.886,-978.7356"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="535.0201,-982.0541 543.7456,-976.0446 533.1769,-975.3011 535.0201,-982.0541"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge126" class="edge">
+<title>program~arnolditest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff007f" d="M77.6204,-1550.0364C88.325,-1628.8661 149.6224,-2069.6095 188,-2115 192.9777,-2120.8873 199.7788,-2125.1261 206.9269,-2128.1774"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="206.1559,-2131.6168 216.7507,-2131.6455 208.4862,-2125.0161 206.1559,-2131.6168"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_barrier -->
+<g id="call~~graph~~CallGraph_edge127" class="edge">
+<title>program~arnolditest&#45;&gt;psb_barrier</title>
+<path fill="none" stroke="#ff007f" d="M81.7026,-1525.873C95.4489,-1496.2491 130.8381,-1417.6032 152,-1349 173.9965,-1277.6912 139.1282,-1241.3945 188,-1185 191.655,-1180.7823 196.2439,-1177.41 201.2134,-1174.714"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="202.7687,-1177.8522 210.45,-1170.555 199.8947,-1171.4694 202.7687,-1177.8522"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_scatter -->
+<g id="call~~graph~~CallGraph_edge128" class="edge">
+<title>program~arnolditest&#45;&gt;psb_scatter</title>
+<path fill="none" stroke="#ff007f" d="M82.4036,-1525.5701C97.3656,-1495.9123 134.6601,-1418.303 152,-1349 170.0124,-1277.0089 142.4994,-1075.6247 188,-1017 191.4219,-1012.5911 195.8756,-1009.1078 200.7769,-1006.3558"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="202.3231,-1009.4974 209.9565,-1002.1501 199.4074,-1003.1335 202.3231,-1009.4974"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge129" class="edge">
+<title>program~arnolditest&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#ff007f" d="M76.8029,-1550.1821C80.3802,-1593.321 98.9073,-1739.3711 188,-1798 229.5819,-1825.3637 264.1557,-1832.54 300,-1798 377.7427,-1723.0862 258.2573,-901.9138 336,-827 382.4056,-782.283 417.1047,-818.6053 481,-827 498.6593,-829.3201 517.7248,-834.0051 534.0045,-838.6987"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="533.1602,-842.0992 543.7433,-841.6012 535.1596,-835.3908 533.1602,-842.0992"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_cdfree -->
+<g id="call~~graph~~CallGraph_edge130" class="edge">
+<title>program~arnolditest&#45;&gt;psb_cdfree</title>
+<path fill="none" stroke="#ff007f" d="M81.8932,-1525.9295C96.0627,-1496.4312 132.3204,-1418.0431 152,-1349 177.4771,-1259.6169 128.658,-1214.5328 188,-1143 191.6462,-1138.6047 196.3106,-1135.1287 201.3872,-1132.3799"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="203.125,-1135.4376 210.8397,-1128.1758 200.2803,-1129.0417 203.125,-1135.4376"/>
+</g>
+<!-- program~arnolditest&#45;&gt;psb_get_errstatus -->
+<g id="call~~graph~~CallGraph_edge131" class="edge">
+<title>program~arnolditest&#45;&gt;psb_get_errstatus</title>
+<path fill="none" stroke="#ff007f" d="M76.9924,-1550.3968C83.0124,-1622.7392 116.7776,-1990.0029 188,-2073 188.8558,-2073.9973 189.7639,-2074.9473 190.7169,-2075.8522"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="188.6948,-2078.7111 198.7841,-2081.9451 192.9137,-2073.1253 188.6948,-2078.7111"/>
+</g>
+<!-- program~arnolditest&#45;&gt;build_mtpart -->
+<g id="call~~graph~~CallGraph_edge132" class="edge">
+<title>program~arnolditest&#45;&gt;build_mtpart</title>
+<path fill="none" stroke="#ff007f" d="M82.0215,-1525.9651C96.476,-1496.5458 133.3186,-1418.3198 152,-1349 180.9818,-1241.4593 118.1322,-1187.7377 188,-1101 190.9372,-1097.3536 194.5772,-1094.3402 198.5813,-1091.85"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="200.4514,-1094.8265 207.7969,-1087.1915 197.2934,-1088.5793 200.4514,-1094.8265"/>
+</g>
+<!-- program~arnolditest&#45;&gt;getv_mtpart -->
+<g id="call~~graph~~CallGraph_edge133" class="edge">
+<title>program~arnolditest&#45;&gt;getv_mtpart</title>
+<path fill="none" stroke="#ff007f" d="M82.1137,-1525.9894C96.7727,-1496.6242 134.0352,-1418.509 152,-1349 168.2497,-1286.1268 147.7875,-1109.9906 188,-1059 191.2128,-1054.926 195.305,-1051.6423 199.8108,-1048.9957"/>
+<polygon fill="#ff007f" stroke="#ff007f" points="201.3623,-1052.1334 208.8631,-1044.6509 198.3333,-1045.8226 201.3623,-1052.1334"/>
+</g>
+<!-- program~lanczostest -->
+<g id="call~~graph~~CallGraph_node35" class="node">
+<title>program~lanczostest</title>
+<g id="a_call~~graph~~CallGraph_node35"><a xlink:href=".././program/lanczostest.html" xlink:title="lanczostest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="109,-1340 43,-1340 43,-1316 109,-1316 109,-1340"/>
+<text text-anchor="middle" x="76" y="-1325.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">lanczostest</text>
+</a>
+</g>
+</g>
+<!-- program~lanczostest&#45;&gt;proc~get_parms~2 -->
+<g id="call~~graph~~CallGraph_edge145" class="edge">
+<title>program~lanczostest&#45;&gt;proc~get_parms~2</title>
+<path fill="none" stroke="#ff0055" d="M79.612,-1315.9898C90.9026,-1278.2904 126.3084,-1158.8737 152,-1059 169.6191,-990.5073 132.6229,-947.9893 188,-904 214.6821,-882.8048 309.8609,-902.387 366.0737,-916.4945"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="365.536,-919.9695 376.0912,-919.0539 367.2688,-913.1873 365.536,-919.9695"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge134" class="edge">
+<title>program~lanczostest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff0055" d="M109.094,-1321.2949C198.3834,-1303.2042 443.7852,-1253.4838 537.4786,-1234.5008"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="538.2539,-1237.9149 547.3597,-1232.4988 536.8638,-1231.0543 538.2539,-1237.9149"/>
+</g>
+<!-- program~lanczostest&#45;&gt;mm_mat_read -->
+<g id="call~~graph~~CallGraph_edge135" class="edge">
+<title>program~lanczostest&#45;&gt;mm_mat_read</title>
+<path fill="none" stroke="#ff0055" d="M81.8932,-1340.0705C96.0627,-1369.5688 132.3204,-1447.9569 152,-1517 177.4771,-1606.3831 128.658,-1651.4672 188,-1723 189.7402,-1725.0978 191.7124,-1726.9861 193.8506,-1728.6859"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="192.4625,-1731.9502 202.7815,-1734.3519 196.2125,-1726.0394 192.4625,-1731.9502"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_toupper -->
+<g id="call~~graph~~CallGraph_edge136" class="edge">
+<title>program~lanczostest&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#ff0055" d="M81.4295,-1340.2159C94.5696,-1370.0371 128.7146,-1449.0881 152,-1517 170.8899,-1572.0924 147.8345,-1600.825 188,-1643 224.2511,-1681.0647 251.483,-1660.7722 300,-1681 390.9822,-1718.9325 493.8801,-1773.621 543.914,-1801.0133"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="542.4623,-1804.2091 552.9119,-1805.9576 545.8334,-1798.0743 542.4623,-1804.2091"/>
+</g>
+<!-- program~lanczostest&#45;&gt;hb_read -->
+<g id="call~~graph~~CallGraph_edge137" class="edge">
+<title>program~lanczostest&#45;&gt;hb_read</title>
+<path fill="none" stroke="#ff0055" d="M79.886,-1315.7699C91.8214,-1277.9133 128.5571,-1159.1761 152,-1059 171.8825,-974.0382 134.4827,-934.9182 188,-866 193.0386,-859.5115 200.0794,-854.5777 207.472,-850.8493"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="209.128,-853.9457 216.8998,-846.745 206.3339,-847.5275 209.128,-853.9457"/>
+</g>
+<!-- program~lanczostest&#45;&gt;mm_array_read -->
+<g id="call~~graph~~CallGraph_edge138" class="edge">
+<title>program~lanczostest&#45;&gt;mm_array_read</title>
+<path fill="none" stroke="#ff0055" d="M79.9218,-1340.0688C91.2568,-1373.1263 127.1849,-1466.0556 188,-1517 189.7138,-1518.4356 191.5355,-1519.7783 193.4347,-1521.0336"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="191.7413,-1524.0969 202.1649,-1525.9939 195.1994,-1518.0107 191.7413,-1524.0969"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_matdist -->
+<g id="call~~graph~~CallGraph_edge139" class="edge">
+<title>program~lanczostest&#45;&gt;psb_matdist</title>
+<path fill="none" stroke="#ff0055" d="M80.9757,-1340.3157C102.3532,-1393.2056 185.4373,-1598.5144 188,-1601 191.4519,-1604.348 195.4875,-1607.1719 199.7828,-1609.5518"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="198.3232,-1612.7331 208.8602,-1613.8389 201.3126,-1606.4035 198.3232,-1612.7331"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_spfree -->
+<g id="call~~graph~~CallGraph_edge140" class="edge">
+<title>program~lanczostest&#45;&gt;psb_spfree</title>
+<path fill="none" stroke="#ff0055" d="M80.5176,-1340.1821C96.6357,-1383.0969 152.2586,-1526.4266 188,-1559 191.9283,-1562.5801 196.5246,-1565.5681 201.3647,-1568.0577"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="200.2999,-1571.4137 210.8613,-1572.2555 203.13,-1565.0113 200.2999,-1571.4137"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_geasb -->
+<g id="call~~graph~~CallGraph_edge141" class="edge">
+<title>program~lanczostest&#45;&gt;psb_geasb</title>
+<path fill="none" stroke="#ff0055" d="M82.1209,-1340.1125C96.7165,-1367.8472 136.2443,-1436.5263 188,-1475 192.2147,-1478.1331 196.95,-1480.8479 201.8355,-1483.1874"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="200.7473,-1486.5284 211.3186,-1487.2351 203.4953,-1480.0903 200.7473,-1486.5284"/>
+</g>
+<!-- program~lanczostest&#45;&gt;distr_mtpart -->
+<g id="call~~graph~~CallGraph_edge142" class="edge">
+<title>program~lanczostest&#45;&gt;distr_mtpart</title>
+<path fill="none" stroke="#ff0055" d="M85.9174,-1340.0094C104.1265,-1361.3808 144.9859,-1406.2738 188,-1433 191.6215,-1435.2502 195.522,-1437.3188 199.5189,-1439.2062"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="198.3662,-1442.521 208.9337,-1443.2815 201.1469,-1436.097 198.3662,-1442.521"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_amx -->
+<g id="call~~graph~~CallGraph_edge143" class="edge">
+<title>program~lanczostest&#45;&gt;psb_amx</title>
+<path fill="none" stroke="#ff0055" d="M95.3456,-1340.0908C117.2992,-1353.5233 154.4242,-1375.3741 188,-1391 193.8071,-1393.7026 200.0673,-1396.3221 206.2249,-1398.7416"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="205.1459,-1402.0758 215.7369,-1402.3623 207.6362,-1395.5337 205.1459,-1402.0758"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_geall -->
+<g id="call~~graph~~CallGraph_edge144" class="edge">
+<title>program~lanczostest&#45;&gt;psb_geall</title>
+<path fill="none" stroke="#ff0055" d="M109.1914,-1336.2978C136.7353,-1343.1838 175.954,-1352.9885 204.9941,-1360.2485"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="204.2553,-1363.6715 214.8056,-1362.7014 205.9531,-1356.8805 204.2553,-1363.6715"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge146" class="edge">
+<title>program~lanczostest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff0055" d="M82.0215,-1340.0349C96.476,-1369.4542 133.3186,-1447.6802 152,-1517 180.9818,-1624.5407 169.3295,-1655.1986 188,-1765 204.8559,-1864.1301 229.1521,-1981.6718 239.2847,-2029.7915"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="235.893,-2030.6705 241.3845,-2039.7311 242.7419,-2029.2236 235.893,-2030.6705"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_sum -->
+<g id="call~~graph~~CallGraph_edge147" class="edge">
+<title>program~lanczostest&#45;&gt;psb_sum</title>
+<path fill="none" stroke="#ff0055" d="M109.1914,-1328C136.9557,-1328 176.5823,-1328 205.6892,-1328"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="205.8954,-1331.5001 215.8954,-1328 205.8953,-1324.5001 205.8954,-1331.5001"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_wtime -->
+<g id="call~~graph~~CallGraph_edge148" class="edge">
+<title>program~lanczostest&#45;&gt;psb_wtime</title>
+<path fill="none" stroke="#ff0055" d="M81.6736,-1340.136C95.3555,-1369.7798 130.6127,-1448.4667 152,-1517 173.5847,-1586.1656 142.4748,-1619.6331 188,-1676 192.022,-1680.9799 197.215,-1685.0512 202.8137,-1688.367"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="201.3383,-1691.5435 211.8356,-1692.9774 204.5236,-1685.3102 201.3383,-1691.5435"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_realloc -->
+<g id="call~~graph~~CallGraph_edge149" class="edge">
+<title>program~lanczostest&#45;&gt;psb_realloc</title>
+<path fill="none" stroke="#ff0055" d="M100.8611,-1315.8852C123.5245,-1304.8719 157.951,-1288.2187 188,-1274 194.6612,-1270.848 201.7834,-1267.5138 208.6386,-1264.3226"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="210.1572,-1267.4765 217.7528,-1260.0902 207.2088,-1261.1277 210.1572,-1267.4765"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_gefree -->
+<g id="call~~graph~~CallGraph_edge150" class="edge">
+<title>program~lanczostest&#45;&gt;psb_gefree</title>
+<path fill="none" stroke="#ff0055" d="M86.6061,-1315.8201C105.2532,-1295.0555 145.9399,-1252.5728 188,-1227 192.1089,-1224.5018 196.5639,-1222.2201 201.1053,-1220.1585"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="202.5946,-1223.3294 210.4652,-1216.2368 199.8895,-1216.8732 202.5946,-1223.3294"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_errpush -->
+<g id="call~~graph~~CallGraph_edge151" class="edge">
+<title>program~lanczostest&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#ff0055" d="M80.3724,-1315.8699C93.7078,-1278.3009 134.0449,-1160.3037 152,-1059 170.5131,-954.5481 125.0768,-668.4027 188,-583 269.5288,-472.3447 444.2134,-442.756 527.9142,-434.8619"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="528.2447,-438.3464 537.8993,-433.983 527.6309,-431.3734 528.2447,-438.3464"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_abort -->
+<g id="call~~graph~~CallGraph_edge152" class="edge">
+<title>program~lanczostest&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#ff0055" d="M79.4226,-1315.8557C96.6213,-1255.0203 173.3617,-985.8884 188,-975 241.6183,-935.1169 445.7223,-953.6564 533.7226,-963.8565"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="533.5192,-967.3568 543.8608,-965.0546 534.3407,-960.4051 533.5192,-967.3568"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge153" class="edge">
+<title>program~lanczostest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff0055" d="M82.6257,-1340.3771C98.0677,-1369.921 136.3242,-1447.3018 152,-1517 166.6062,-1581.9425 148.4576,-2061.4532 188,-2115 192.7707,-2121.4603 199.7703,-2125.9338 207.2166,-2129.0314"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="206.1589,-2132.3684 216.7533,-2132.2651 208.4068,-2125.7392 206.1589,-2132.3684"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_barrier -->
+<g id="call~~graph~~CallGraph_edge154" class="edge">
+<title>program~lanczostest&#45;&gt;psb_barrier</title>
+<path fill="none" stroke="#ff0055" d="M82.4313,-1315.8182C97.3867,-1288.5937 137.134,-1222.2879 188,-1185 191.9778,-1182.084 196.4074,-1179.5272 200.9842,-1177.2966"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="202.712,-1180.362 210.4878,-1173.1656 199.9215,-1173.9422 202.712,-1180.362"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_scatter -->
+<g id="call~~graph~~CallGraph_edge155" class="edge">
+<title>program~lanczostest&#45;&gt;psb_scatter</title>
+<path fill="none" stroke="#ff0055" d="M76.8099,-1315.9938C80.5157,-1270.4544 99.7157,-1106.4486 188,-1017 191.6447,-1013.3073 196.0001,-1010.256 200.6499,-1007.7365"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="202.2156,-1010.8691 209.8452,-1003.518 199.2966,-1004.5067 202.2156,-1010.8691"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_bcast -->
+<g id="call~~graph~~CallGraph_edge156" class="edge">
+<title>program~lanczostest&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#ff0055" d="M80.044,-1315.8054C92.4342,-1278.051 130.3398,-1159.5766 152,-1059 163.3541,-1006.2788 150.2191,-857.4844 188,-819 279.5592,-725.7358 360.5986,-743.1592 481,-794 502.1367,-802.9252 497.7411,-818.5294 517,-831 522.3273,-834.4496 528.2982,-837.4325 534.3225,-839.9788"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="533.1591,-843.2814 543.7483,-843.625 535.6846,-836.7529 533.1591,-843.2814"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_cdfree -->
+<g id="call~~graph~~CallGraph_edge157" class="edge">
+<title>program~lanczostest&#45;&gt;psb_cdfree</title>
+<path fill="none" stroke="#ff0055" d="M80.1651,-1315.7158C91.8749,-1282.9549 128.188,-1192.6262 188,-1143 192.0417,-1139.6466 196.6722,-1136.7986 201.5012,-1134.3871"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="203.166,-1137.4793 210.9295,-1130.2697 200.3645,-1131.0644 203.166,-1137.4793"/>
+</g>
+<!-- program~lanczostest&#45;&gt;psb_get_errstatus -->
+<g id="call~~graph~~CallGraph_edge158" class="edge">
+<title>program~lanczostest&#45;&gt;psb_get_errstatus</title>
+<path fill="none" stroke="#ff0055" d="M82.6046,-1340.3819C98.0011,-1369.936 136.1663,-1447.3375 152,-1517 165.721,-1577.3674 151.1117,-2023.2833 188,-2073 188.5684,-2073.7661 189.1682,-2074.5043 189.7963,-2075.2155"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="187.6205,-2077.9611 197.475,-2081.8523 192.1979,-2072.6651 187.6205,-2077.9611"/>
+</g>
+<!-- program~lanczostest&#45;&gt;build_mtpart -->
+<g id="call~~graph~~CallGraph_edge159" class="edge">
+<title>program~lanczostest&#45;&gt;build_mtpart</title>
+<path fill="none" stroke="#ff0055" d="M78.6051,-1315.9926C87.2989,-1278.7059 118.7628,-1163.6646 188,-1101 191.2045,-1098.0997 194.8474,-1095.5874 198.7015,-1093.4136"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="200.491,-1096.436 207.9705,-1088.9322 197.4441,-1090.1339 200.491,-1096.436"/>
+</g>
+<!-- program~lanczostest&#45;&gt;getv_mtpart -->
+<g id="call~~graph~~CallGraph_edge160" class="edge">
+<title>program~lanczostest&#45;&gt;getv_mtpart</title>
+<path fill="none" stroke="#ff0055" d="M77.5893,-1315.9071C83.6925,-1274.2147 109.366,-1134.8714 188,-1059 191.4606,-1055.661 195.5018,-1052.8428 199.8003,-1050.4663"/>
+<polygon fill="#ff0055" stroke="#ff0055" points="201.3301,-1053.6146 208.8815,-1046.1831 198.3439,-1047.2835 201.3301,-1053.6146"/>
+</g>
+<!-- program~quadraturetest -->
+<g id="call~~graph~~CallGraph_node36" class="node">
+<title>program~quadraturetest</title>
+<g id="a_call~~graph~~CallGraph_node36"><a xlink:href=".././program/quadraturetest.html" xlink:title="quadraturetest">
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="117,-2064 35,-2064 35,-2040 117,-2040 117,-2064"/>
+<text text-anchor="middle" x="76" y="-2049.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">quadraturetest</text>
+</a>
+</g>
+</g>
+<!-- program~quadraturetest&#45;&gt;psb_info -->
+<g id="call~~graph~~CallGraph_edge162" class="edge">
+<title>program~quadraturetest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff002a" d="M112.9016,-2039.917C195.3688,-2010.7579 394.1656,-1928.0191 481,-1783 536.7538,-1689.8875 566.0737,-1340.9035 572.921,-1249.1922"/>
+<polygon fill="#ff002a" stroke="#ff002a" points="576.4205,-1249.3257 573.6608,-1239.0966 569.4392,-1248.814 576.4205,-1249.3257"/>
+</g>
+<!-- program~quadraturetest&#45;&gt;psb_exit -->
+<g id="call~~graph~~CallGraph_edge164" class="edge">
+<title>program~quadraturetest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff002a" d="M117.0974,-2052C144.5397,-2052 180.3328,-2052 206.907,-2052"/>
+<polygon fill="#ff002a" stroke="#ff002a" points="206.9613,-2055.5001 216.9613,-2052 206.9612,-2048.5001 206.9613,-2055.5001"/>
+</g>
+<!-- program~quadraturetest&#45;&gt;psb_init -->
+<g id="call~~graph~~CallGraph_edge163" class="edge">
+<title>program~quadraturetest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff002a" d="M117.3066,-2058.7062C129.1198,-2061.838 141.6005,-2066.3945 152,-2073 172.753,-2086.1817 167.8552,-2100.9063 188,-2115 193.7734,-2119.0392 200.4209,-2122.4125 207.0733,-2125.1893"/>
+<polygon fill="#ff002a" stroke="#ff002a" points="206.1308,-2128.5747 216.7224,-2128.8387 208.6072,-2122.0273 206.1308,-2128.5747"/>
+</g>
+<!-- program~quadraturetest&#45;&gt;psb_get_errstatus -->
+<g id="call~~graph~~CallGraph_edge161" class="edge">
+<title>program~quadraturetest&#45;&gt;psb_get_errstatus</title>
+<path fill="none" stroke="#ff002a" d="M117.0974,-2062.2744C137.829,-2067.4573 163.3266,-2073.8317 186.0149,-2079.5037"/>
+<polygon fill="#ff002a" stroke="#ff002a" points="185.3278,-2082.9396 195.8782,-2081.9695 187.0256,-2076.1486 185.3278,-2082.9396"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+        </div>
+      </div>
+
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> PSFUN was developed by Fabio Durastante</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>

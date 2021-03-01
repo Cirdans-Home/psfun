@@ -1,0 +1,2386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   <meta name="description" content="A library for distributed computation of matrix functions powered by PSCTOOLKIT PSFUN Parallel Sparse Function">
+    
+    <meta name="author" content="Fabio Durastante" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>shiftedtest &ndash; PSFUN</title>
+
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/local.css" rel="stylesheet">
+    
+    <link  href="../tipuesearch/tipuesearch.css" rel="stylesheet">
+    
+    
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="../js/jquery-2.1.3.min.js"></script>
+    <script src="../js/svg-pan-zoom.min.js"></script>
+
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../index.html">PSFUN <small>0.1</small></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+        
+            <li><a href='../page/index.html'>Matrix Functions</a></li>
+      
+            <li class="dropdown hidden-xs visible-sm visible-md hidden-lg">
+              <a href="#" class="dropdown-toggle"
+              data-toggle="dropdown" role="button"
+              aria-haspopup="true"
+     aria-expanded="false">Contents <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+              
+            <li><a href="../lists/files.html">Source Files</a></li>
+        
+        
+        
+            <li><a href="../lists/modules.html">Modules</a></li>
+        
+            
+                                
+            <li><a href="../lists/procedures.html">Procedures</a></li>
+        
+        
+            <li><a href="../lists/absint.html">Abstract Interfaces</a></li>
+               
+            <li><a href="../lists/types.html">Derived Types</a></li>
+        
+        
+            <li><a href="../lists/programs.html">Programs</a></li>
+        
+            </ul>
+            </li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/files.html">Source Files</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/modules.html">Modules</a></li>
+
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/procedures.html">Procedures</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/absint.html">Abstract Interfaces</a></li>
+                             
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/types.html">Derived Types</a></li>
+
+
+<li class="visible-xs hidden-sm visible-lg"><a href="../lists/programs.html">Programs</a></li>
+
+          </ul>
+        
+        <form action="../search.html" class="navbar-form navbar-right" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+        </div>
+<!--
+        <button type="submit" class="btn btn-default">Submit</button>
+-->
+        </form>
+        
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    
+  
+  <div class="row">
+    <h1>shiftedtest
+    <small>Program</small>
+    
+    </h1>
+    
+<div class="row">
+  <div class="col-lg-12">
+<div class="well well-sm">
+  <ul class="list-inline" style="margin-bottom:0px;display:inline">
+     
+     
+     
+     
+    
+    
+     <li><i class="fa fa-list-ol"></i>
+       <a data-toggle="tooltip"
+    data-placement="bottom" data-html="true"
+    title="21.0% of total for programs.">198 statements</a>
+     </li> 
+     
+     
+     
+    <li><i class="fa fa-code"></i><a href="../src/shiftedtest.f90"> Source File</a></li>
+     
+     
+  </ul>
+  <ol class="breadcrumb in-well text-right">
+  
+    
+     <li><a href='../sourcefile/shiftedtest.f90.html'>shiftedtest.f90</a></li>
+    
+  
+     <li class="active">shiftedtest</li>
+  </ol>
+</div>
+</div>
+</div>
+<script>
+  $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+  })
+</script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+    
+<div id="sidebar">
+  
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-0">Variables</a></h3></div>
+  <div id="vars-0" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-a~12">a</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-afmt~4">afmt</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-amatsize">amatsize</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-aux_a">aux_a</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-aux_b">aux_b</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-b_amax">b_amax</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-b_col">b_col</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-b_col_glob">b_col_glob</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-cond~3">cond</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ctxt~8">ctxt</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-d">d</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-desc_a~8">desc_a</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-descsize">descsize</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-dim">dim</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-eps~9">eps</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-err~6">err</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-err_act">err_act</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-eta~9">eta</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-filefmt~4">filefmt</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-fname~5">fname</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-fnout">fnout</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-i~2">i</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iam~2">iam</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ierr">ierr</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ii">ii</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-info~18">info</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-internal">internal</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iparm">iparm</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ipv">ipv</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ircode">ircode</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-irst~3">irst</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-istopc~2">istopc</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iter~7">iter</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-itmax~9">itmax</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-itrace~9">itrace</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iunit">iunit</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ivg">ivg</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-j">j</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-kmethd~3">kmethd</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-lnp">lnp</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-m">m</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-m_problem">m_problem</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-methd">methd</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-mtrx_file~2">mtrx_file</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-n_row">n_row</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-name~2">name</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ne">ne</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nnzero">nnzero</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-np~2">np</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nrhs">nrhs</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nrow">nrow</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nv">nv</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-part~4">part</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-prec~7">prec</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-precsize">precsize</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ptype~3">ptype</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-r_amax">r_amax</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-r_col">r_col</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-r_col_glob">r_col_glob</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-resmx">resmx</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-resmxp">resmxp</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-rhs_file~4">rhs_file</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-scale">scale</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-t1">t1</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-t2">t2</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-tprec">tprec</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-x_col">x_col</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-x_col_glob">x_col_glob</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-zeta~4">zeta</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+    
+  
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Uses</h3>
+      </div>
+      <ul class="list-group">
+      
+      <li class="list-group-item">
+  <ul class="list-inline">
+    
+    <li>psb_base_mod</li>
+    
+    <li>psb_prec_mod</li>
+    
+    <li>psb_krylov_mod</li>
+    
+    <li>psb_util_mod</li>
+    
+    <li><a href='../module/psfun_krylov_mod.html'>psfun_krylov_mod</a></li>
+    
+    <li><a href='../module/getp.html'>getp</a></li>
+    
+  </ul>
+      </li>
+      
+      
+      
+      <li class="list-group-item">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~shiftedtest~~UsesGraph Pages: 1 -->
+<svg id="programshiftedtestUsesGraph" width="327pt" height="226pt"
+ viewBox="0.00 0.00 327.00 226.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~shiftedtest~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 222)">
+<title>program~~shiftedtest~~UsesGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-222 323,-222 323,4 -4,4"/>
+<!-- program~shiftedtest -->
+<g id="program~~shiftedtest~~UsesGraph_node1" class="node">
+<title>program~shiftedtest</title>
+<polygon fill="none" stroke="#000000" points="319,-128 258,-128 258,-104 319,-104 319,-128"/>
+<text text-anchor="middle" x="288.5" y="-113.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">shiftedtest</text>
+</g>
+<!-- psb_prec_mod -->
+<g id="program~~shiftedtest~~UsesGraph_node2" class="node">
+<title>psb_prec_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="85,-218 1,-218 1,-194 85,-194 85,-218"/>
+<text text-anchor="middle" x="43" y="-203.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_prec_mod</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_prec_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge1" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M282.7726,-128.0422C273.1706,-146.6803 251.8962,-181.9334 222,-197 182.8862,-216.7119 132.666,-217.4672 95.3796,-214.1531"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.5282,-210.6503 85.2259,-213.1228 94.8214,-217.6145 95.5282,-210.6503"/>
+</g>
+<!-- module~psfun_krylov_mod -->
+<g id="program~~shiftedtest~~UsesGraph_node3" class="node">
+<title>module~psfun_krylov_mod</title>
+<g id="a_program~~shiftedtest~~UsesGraph_node3"><a xlink:href=".././module/psfun_krylov_mod.html" xlink:title="psfun_krylov_mod">
+<polygon fill="#337ab7" stroke="#337ab7" points="222,-188 122,-188 122,-164 222,-164 222,-188"/>
+<text text-anchor="middle" x="172" y="-173.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_krylov_mod</text>
+</a>
+</g>
+</g>
+<!-- program~shiftedtest&#45;&gt;module~psfun_krylov_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge6" class="edge">
+<title>program~shiftedtest&#45;&gt;module~psfun_krylov_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M264.9245,-128.1419C247.5546,-137.0878 223.7171,-149.3646 204.5346,-159.244"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="202.8281,-156.1859 195.5405,-163.8762 206.0332,-162.409 202.8281,-156.1859"/>
+</g>
+<!-- psb_base_mod -->
+<g id="program~~shiftedtest~~UsesGraph_node4" class="node">
+<title>psb_base_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="86,-167 0,-167 0,-143 86,-143 86,-167"/>
+<text text-anchor="middle" x="43" y="-152.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_base_mod</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_base_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge3" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M257.9036,-120.8605C217.499,-127.2792 145.7022,-138.6848 96.2897,-146.5344"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="95.7405,-143.0777 86.4135,-148.1034 96.8388,-149.991 95.7405,-143.0777"/>
+</g>
+<!-- psb_util_mod -->
+<g id="program~~shiftedtest~~UsesGraph_node5" class="node">
+<title>psb_util_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="210,-108 134,-108 134,-84 210,-84 210,-108"/>
+<text text-anchor="middle" x="172" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_util_mod</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_util_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge4" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_util_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M257.891,-110.7452C246.4008,-108.7727 233.0426,-106.4794 220.3334,-104.2976"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="220.776,-100.8224 210.328,-102.5799 219.5916,-107.7215 220.776,-100.8224"/>
+</g>
+<!-- psb_krylov_mod -->
+<g id="program~~shiftedtest~~UsesGraph_node6" class="node">
+<title>psb_krylov_mod</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="217.5,-66 126.5,-66 126.5,-42 217.5,-42 217.5,-66"/>
+<text text-anchor="middle" x="172" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_krylov_mod</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_krylov_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge5" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_krylov_mod</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M270.5935,-103.9078C257.4525,-95.2965 239.0062,-83.7471 222,-75 218.753,-73.3299 215.3424,-71.6839 211.8921,-70.093"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="213.3117,-66.8939 202.752,-66.0318 210.4693,-73.2908 213.3117,-66.8939"/>
+</g>
+<!-- module~getp -->
+<g id="program~~shiftedtest~~UsesGraph_node7" class="node">
+<title>module~getp</title>
+<g id="a_program~~shiftedtest~~UsesGraph_node7"><a xlink:href=".././module/getp.html" xlink:title="getp">
+<polygon fill="#337ab7" stroke="#337ab7" points="199,-24 145,-24 145,0 199,0 199,-24"/>
+<text text-anchor="middle" x="172" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">getp</text>
+</a>
+</g>
+</g>
+<!-- program~shiftedtest&#45;&gt;module~getp -->
+<g id="program~~shiftedtest~~UsesGraph_edge2" class="edge">
+<title>program~shiftedtest&#45;&gt;module~getp</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M281.5902,-103.9861C270.8737,-86.287 248.6766,-53.1316 222,-33 217.8326,-29.855 213.1245,-27.0872 208.3056,-24.6806"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="209.5699,-21.4115 199.0149,-20.494 206.694,-27.7934 209.5699,-21.4115"/>
+</g>
+<!-- module~psfun_krylov_mod&#45;&gt;psb_prec_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge8" class="edge">
+<title>module~psfun_krylov_mod&#45;&gt;psb_prec_mod</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M121.7559,-187.6847C113.0178,-189.7168 103.9124,-191.8343 95.1253,-193.8778"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="94.3235,-190.4708 85.3762,-196.1451 95.9091,-197.2889 94.3235,-190.4708"/>
+</g>
+<!-- module~psfun_krylov_mod&#45;&gt;psb_base_mod -->
+<g id="program~~shiftedtest~~UsesGraph_edge7" class="edge">
+<title>module~psfun_krylov_mod&#45;&gt;psb_base_mod</title>
+<path fill="none" stroke="#ffff00" stroke-dasharray="5,2" d="M121.7559,-167.8207C113.4069,-166.4616 104.7226,-165.0479 96.3009,-163.6769"/>
+<polygon fill="#ffff00" stroke="#ffff00" points="96.6314,-160.1847 86.199,-162.0324 95.5067,-167.0938 96.6314,-160.1847"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="490pt" height="32pt"
+ viewBox="0.00 0.00 489.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 485.5,-28 485.5,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24 0,-24 0,0 54,0 54,-24"/>
+<text text-anchor="middle" x="27" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="139.5,-24 72.5,-24 72.5,0 139.5,0 139.5,-24"/>
+<text text-anchor="middle" x="106" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="222,-24 158,-24 158,0 222,0 222,-24"/>
+<text text-anchor="middle" x="190" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="294,-24 240,-24 240,0 294,0 294,-24"/>
+<text text-anchor="middle" x="267" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="366,-24 312,-24 312,0 366,0 366,-24"/>
+<text text-anchor="middle" x="339" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="481.5,-24 384.5,-24 384.5,0 481.5,0 481.5,-24"/>
+<text text-anchor="middle" x="433" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a submodule to the (sub)module which it is
+    descended from. Dashed arrows point from a module or program unit to 
+    modules which it uses. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </li>
+      
+      </ul>
+    </div>
+    
+
+    <p>Test program for the shifted Krylov methods from <a href="../module/psfun_krylov_mod.html">psfun_krylov_mod</a></p>
+    
+    <br>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+  <h3 class="panel-title">Calls</h3>
+      </div>
+      <div class="panel-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: program~~shiftedtest~~CallsGraph Pages: 1 -->
+<svg id="programshiftedtestCallsGraph" width="505pt" height="1488pt"
+ viewBox="0.00 0.00 505.00 1488.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~shiftedtest~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 1484)">
+<title>program~~shiftedtest~~CallsGraph</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-1484 501,-1484 501,4 -4,4"/>
+<!-- program~shiftedtest -->
+<g id="program~~shiftedtest~~CallsGraph_node1" class="node">
+<title>program~shiftedtest</title>
+<polygon fill="none" stroke="#000000" points="61,-738 0,-738 0,-714 61,-714 61,-738"/>
+<text text-anchor="middle" x="30.5" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">shiftedtest</text>
+</g>
+<!-- psb_info -->
+<g id="program~~shiftedtest~~CallsGraph_node2" class="node">
+<title>psb_info</title>
+<polygon fill="#777777" stroke="#777777" points="468,-1354 414,-1354 414,-1330 468,-1330 468,-1354"/>
+<text text-anchor="middle" x="441" y="-1339.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_info</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_info -->
+<g id="program~~shiftedtest~~CallsGraph_edge1" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff0000" d="M30.9629,-738.1179C34.148,-818.4544 53.9797,-1272.3097 97,-1314 180.0505,-1394.4828 333.4081,-1369.5235 403.8509,-1352.3674"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="404.7817,-1355.7423 413.6242,-1349.9062 403.0723,-1348.9542 404.7817,-1355.7423"/>
+</g>
+<!-- mm_mat_read -->
+<g id="program~~shiftedtest~~CallsGraph_node3" class="node">
+<title>mm_mat_read</title>
+<polygon fill="#777777" stroke="#777777" points="194,-1200 112,-1200 112,-1176 194,-1176 194,-1200"/>
+<text text-anchor="middle" x="153" y="-1185.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_mat_read</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;mm_mat_read -->
+<g id="program~~shiftedtest~~CallsGraph_edge2" class="edge">
+<title>program~shiftedtest&#45;&gt;mm_mat_read</title>
+<path fill="none" stroke="#ff0000" d="M30.7186,-738.2113C32.0975,-802.1895 41.4397,-1098.4122 97,-1167 98.8688,-1169.307 101.0188,-1171.3607 103.3638,-1173.1888"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="101.6305,-1176.2329 111.9631,-1178.5756 105.3466,-1170.3008 101.6305,-1176.2329"/>
+</g>
+<!-- interface~psb_krylov -->
+<g id="program~~shiftedtest~~CallsGraph_node4" class="node">
+<title>interface~psb_krylov</title>
+<g id="a_program~~shiftedtest~~CallsGraph_node4"><a xlink:href=".././interface/psb_krylov.html" xlink:title="psb_krylov">
+<polygon fill="#a7506f" stroke="#a7506f" points="185,-1436 121,-1436 121,-1412 185,-1412 185,-1436"/>
+<text text-anchor="middle" x="153" y="-1421.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_krylov</text>
+</a>
+</g>
+</g>
+<!-- program~shiftedtest&#45;&gt;interface~psb_krylov -->
+<g id="program~~shiftedtest~~CallsGraph_edge3" class="edge">
+<title>program~shiftedtest&#45;&gt;interface~psb_krylov</title>
+<path fill="none" stroke="#ff0000" d="M30.9864,-738.2376C34.5177,-824.7218 57.2121,-1341.9578 97,-1398 100.7871,-1403.3343 105.9514,-1407.6029 111.6208,-1411.0107"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="110.3201,-1414.2757 120.8206,-1415.6869 113.492,-1408.0356 110.3201,-1414.2757"/>
+</g>
+<!-- psb_toupper -->
+<g id="program~~shiftedtest~~CallsGraph_node5" class="node">
+<title>psb_toupper</title>
+<polygon fill="#777777" stroke="#777777" points="477.5,-1396 404.5,-1396 404.5,-1372 477.5,-1372 477.5,-1396"/>
+<text text-anchor="middle" x="441" y="-1381.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_toupper</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_toupper -->
+<g id="program~~shiftedtest~~CallsGraph_edge4" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#ff0000" d="M30.8901,-738.0882C33.6898,-821.3186 51.9165,-1307.5226 97,-1353 137.4247,-1393.7778 309.8844,-1390.8933 394.2063,-1386.8525"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="394.4705,-1390.3437 404.2813,-1386.3439 394.1176,-1383.3526 394.4705,-1390.3437"/>
+</g>
+<!-- psb_geamax -->
+<g id="program~~shiftedtest~~CallsGraph_node6" class="node">
+<title>psb_geamax</title>
+<polygon fill="#777777" stroke="#777777" points="190,-1158 116,-1158 116,-1134 190,-1134 190,-1158"/>
+<text text-anchor="middle" x="153" y="-1143.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geamax</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geamax -->
+<g id="program~~shiftedtest~~CallsGraph_edge5" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geamax</title>
+<path fill="none" stroke="#ff0000" d="M30.9324,-738.2275C33.2957,-798.5057 46.4621,-1063.5903 97,-1125 99.7464,-1128.3373 103.0803,-1131.1445 106.7379,-1133.5057"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="105.2571,-1136.6816 115.7359,-1138.2457 108.5196,-1130.4883 105.2571,-1136.6816"/>
+</g>
+<!-- hb_read -->
+<g id="program~~shiftedtest~~CallsGraph_node7" class="node">
+<title>hb_read</title>
+<polygon fill="#777777" stroke="#777777" points="180,-1116 126,-1116 126,-1092 180,-1092 180,-1116"/>
+<text text-anchor="middle" x="153" y="-1101.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">hb_read</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;hb_read -->
+<g id="program~~shiftedtest~~CallsGraph_edge6" class="edge">
+<title>program~shiftedtest&#45;&gt;hb_read</title>
+<path fill="none" stroke="#ff0000" d="M31.1838,-738.0468C34.5894,-794.067 51.4117,-1028.6659 97,-1083 101.9554,-1088.9061 108.7472,-1093.1528 115.8932,-1096.2058"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="115.1234,-1099.6456 125.7182,-1099.6729 117.4528,-1093.0445 115.1234,-1099.6456"/>
+</g>
+<!-- mm_array_read -->
+<g id="program~~shiftedtest~~CallsGraph_node8" class="node">
+<title>mm_array_read</title>
+<polygon fill="#777777" stroke="#777777" points="197.5,-1074 108.5,-1074 108.5,-1050 197.5,-1050 197.5,-1074"/>
+<text text-anchor="middle" x="153" y="-1059.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">mm_array_read</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;mm_array_read -->
+<g id="program~~shiftedtest~~CallsGraph_edge7" class="edge">
+<title>program~shiftedtest&#45;&gt;mm_array_read</title>
+<path fill="none" stroke="#ff0000" d="M31.5359,-738.3482C36.1572,-790.7062 56.4665,-993.8461 97,-1041 97.9941,-1042.1565 99.0585,-1043.2494 100.1818,-1044.2823"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="98.1981,-1047.1679 108.3306,-1050.2636 102.3402,-1041.5248 98.1981,-1047.1679"/>
+</g>
+<!-- psb_matdist -->
+<g id="program~~shiftedtest~~CallsGraph_node9" class="node">
+<title>psb_matdist</title>
+<polygon fill="#777777" stroke="#777777" points="188,-1032 118,-1032 118,-1008 188,-1008 188,-1032"/>
+<text text-anchor="middle" x="153" y="-1017.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_matdist</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_matdist -->
+<g id="program~~shiftedtest~~CallsGraph_edge8" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_matdist</title>
+<path fill="none" stroke="#ff0000" d="M31.9631,-738.2959C37.8747,-786.0911 61.3969,-958.8527 97,-999 100.2724,-1002.6901 104.2584,-1005.7338 108.5805,-1008.2439"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.2748,-1011.4997 117.8033,-1012.6831 110.3107,-1005.1923 107.2748,-1011.4997"/>
+</g>
+<!-- psb_errstatus_fatal -->
+<g id="program~~shiftedtest~~CallsGraph_node10" class="node">
+<title>psb_errstatus_fatal</title>
+<polygon fill="#777777" stroke="#777777" points="205,-990 101,-990 101,-966 205,-966 205,-990"/>
+<text text-anchor="middle" x="153" y="-975.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_errstatus_fatal</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_errstatus_fatal -->
+<g id="program~~shiftedtest~~CallsGraph_edge10" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_errstatus_fatal</title>
+<path fill="none" stroke="#ff0000" d="M32.5198,-738.1351C39.8531,-780.891 66.2626,-923.7508 97,-957 97.9119,-957.9864 98.8746,-958.9268 99.8808,-959.8232"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="98.1527,-962.8907 108.3199,-965.8707 102.2302,-957.2008 98.1527,-962.8907"/>
+</g>
+<!-- interface~get_parms -->
+<g id="program~~shiftedtest~~CallsGraph_node11" class="node">
+<title>interface~get_parms</title>
+<g id="a_program~~shiftedtest~~CallsGraph_node11"><a xlink:href=".././interface/get_parms.html" xlink:title="get_parms">
+<polygon fill="#a7506f" stroke="#a7506f" points="185,-1280 121,-1280 121,-1256 185,-1256 185,-1280"/>
+<text text-anchor="middle" x="153" y="-1265.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_parms</text>
+</a>
+</g>
+</g>
+<!-- program~shiftedtest&#45;&gt;interface~get_parms -->
+<g id="program~~shiftedtest~~CallsGraph_edge9" class="edge">
+<title>program~shiftedtest&#45;&gt;interface~get_parms</title>
+<path fill="none" stroke="#ff0000" d="M31.3619,-738.1149C36.7072,-811.9673 66.1117,-1199.8265 97,-1242 100.8655,-1247.2778 106.0707,-1251.5168 111.7572,-1254.9124"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="110.464,-1258.1809 120.9658,-1259.5822 113.63,-1251.9378 110.464,-1258.1809"/>
+</g>
+<!-- psb_spfree -->
+<g id="program~~shiftedtest~~CallsGraph_node12" class="node">
+<title>psb_spfree</title>
+<polygon fill="#777777" stroke="#777777" points="186,-948 120,-948 120,-924 186,-924 186,-948"/>
+<text text-anchor="middle" x="153" y="-933.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_spfree</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_spfree -->
+<g id="program~~shiftedtest~~CallsGraph_edge11" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_spfree</title>
+<path fill="none" stroke="#ff0000" d="M31.3379,-738.4693C34.2304,-771.7384 46.609,-863.5679 97,-915 100.9058,-918.9865 105.6402,-922.2248 110.683,-924.8532"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.4189,-928.121 119.9808,-928.9558 112.2448,-921.7167 109.4189,-928.121"/>
+</g>
+<!-- psb_geasb -->
+<g id="program~~shiftedtest~~CallsGraph_node13" class="node">
+<title>psb_geasb</title>
+<polygon fill="#777777" stroke="#777777" points="185.5,-906 120.5,-906 120.5,-882 185.5,-882 185.5,-906"/>
+<text text-anchor="middle" x="153" y="-891.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geasb</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geasb -->
+<g id="program~~shiftedtest~~CallsGraph_edge12" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geasb</title>
+<path fill="none" stroke="#ff0000" d="M32.6977,-738.1123C38.3427,-765.8467 55.8957,-834.5252 97,-873 101.0746,-876.8139 105.9068,-879.952 110.999,-882.53"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.7717,-885.8129 120.338,-886.5904 112.5628,-879.3934 109.7717,-885.8129"/>
+</g>
+<!-- psb_set_errverbosity -->
+<g id="program~~shiftedtest~~CallsGraph_node14" class="node">
+<title>psb_set_errverbosity</title>
+<polygon fill="#777777" stroke="#777777" points="209,-864 97,-864 97,-840 209,-840 209,-864"/>
+<text text-anchor="middle" x="153" y="-849.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_set_errverbosity</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_set_errverbosity -->
+<g id="program~~shiftedtest~~CallsGraph_edge13" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_set_errverbosity</title>
+<path fill="none" stroke="#ff0000" d="M35.1374,-738.1824C43.9649,-759.8283 65.186,-805.1415 97,-831 98.7349,-832.4101 100.5741,-833.7316 102.4877,-834.9693"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="100.8263,-838.0503 111.2627,-839.8754 104.2423,-831.9403 100.8263,-838.0503"/>
+</g>
+<!-- distr_mtpart -->
+<g id="program~~shiftedtest~~CallsGraph_node15" class="node">
+<title>distr_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="188,-822 118,-822 118,-798 188,-798 188,-822"/>
+<text text-anchor="middle" x="153" y="-807.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">distr_mtpart</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;distr_mtpart -->
+<g id="program~~shiftedtest~~CallsGraph_edge14" class="edge">
+<title>program~shiftedtest&#45;&gt;distr_mtpart</title>
+<path fill="none" stroke="#ff0000" d="M40.6397,-738.1955C52.7842,-752.1333 74.343,-774.8402 97,-789 100.6156,-791.2596 104.5121,-793.3347 108.5064,-795.2262"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="107.3506,-798.5399 117.9176,-799.3072 110.1355,-792.1177 107.3506,-798.5399"/>
+</g>
+<!-- psb_amx -->
+<g id="program~~shiftedtest~~CallsGraph_node16" class="node">
+<title>psb_amx</title>
+<polygon fill="#777777" stroke="#777777" points="181,-780 125,-780 125,-756 181,-756 181,-780"/>
+<text text-anchor="middle" x="153" y="-765.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_amx</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_amx -->
+<g id="program~~shiftedtest~~CallsGraph_edge15" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_amx</title>
+<path fill="none" stroke="#ff0000" d="M61.0959,-736.49C77.4462,-742.0958 97.7229,-749.0479 115.0674,-754.9945"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="114.2942,-758.4294 124.8888,-758.3619 116.5645,-751.8078 114.2942,-758.4294"/>
+</g>
+<!-- psb_geall -->
+<g id="program~~shiftedtest~~CallsGraph_node17" class="node">
+<title>psb_geall</title>
+<polygon fill="#777777" stroke="#777777" points="182,-738 124,-738 124,-714 182,-714 182,-738"/>
+<text text-anchor="middle" x="153" y="-723.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geall</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geall -->
+<g id="program~~shiftedtest~~CallsGraph_edge16" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geall</title>
+<path fill="none" stroke="#ff0000" d="M61.0959,-726C76.9412,-726 96.4743,-726 113.4523,-726"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="113.6375,-729.5001 123.6375,-726 113.6375,-722.5001 113.6375,-729.5001"/>
+</g>
+<!-- psb_geaxpby -->
+<g id="program~~shiftedtest~~CallsGraph_node18" class="node">
+<title>psb_geaxpby</title>
+<polygon fill="#777777" stroke="#777777" points="191,-696 115,-696 115,-672 191,-672 191,-696"/>
+<text text-anchor="middle" x="153" y="-681.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_geaxpby</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_geaxpby -->
+<g id="program~~shiftedtest~~CallsGraph_edge17" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_geaxpby</title>
+<path fill="none" stroke="#ff0000" d="M61.0959,-715.51C75.298,-710.6407 92.4627,-704.7557 108.0948,-699.3961"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.2655,-702.6948 117.5898,-696.1407 106.9951,-696.0732 109.2655,-702.6948"/>
+</g>
+<!-- psb_exit -->
+<g id="program~~shiftedtest~~CallsGraph_node19" class="node">
+<title>psb_exit</title>
+<polygon fill="#777777" stroke="#777777" points="180,-654 126,-654 126,-630 180,-630 180,-654"/>
+<text text-anchor="middle" x="153" y="-639.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_exit</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_exit -->
+<g id="program~~shiftedtest~~CallsGraph_edge18" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_exit</title>
+<path fill="none" stroke="#ff0000" d="M40.6397,-713.8045C52.7842,-699.8667 74.343,-677.1598 97,-663 102.916,-659.3027 109.584,-656.0996 116.2017,-653.3861"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="117.6579,-656.5772 125.7681,-649.76 115.1768,-650.0316 117.6579,-656.5772"/>
+</g>
+<!-- psb_sum -->
+<g id="program~~shiftedtest~~CallsGraph_node20" class="node">
+<title>psb_sum</title>
+<polygon fill="#777777" stroke="#777777" points="181,-612 125,-612 125,-588 181,-588 181,-612"/>
+<text text-anchor="middle" x="153" y="-597.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_sum</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_sum -->
+<g id="program~~shiftedtest~~CallsGraph_edge19" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_sum</title>
+<path fill="none" stroke="#ff0000" d="M35.1374,-713.8176C43.9649,-692.1717 65.186,-646.8585 97,-621 102.4136,-616.5998 108.8429,-613.0628 115.3819,-610.239"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="116.8395,-613.429 124.9352,-606.5945 114.3444,-606.8888 116.8395,-613.429"/>
+</g>
+<!-- psb_wtime -->
+<g id="program~~shiftedtest~~CallsGraph_node21" class="node">
+<title>psb_wtime</title>
+<polygon fill="#777777" stroke="#777777" points="185,-570 121,-570 121,-546 185,-546 185,-570"/>
+<text text-anchor="middle" x="153" y="-555.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_wtime</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_wtime -->
+<g id="program~~shiftedtest~~CallsGraph_edge20" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_wtime</title>
+<path fill="none" stroke="#ff0000" d="M32.6977,-713.8877C38.3427,-686.1533 55.8957,-617.4748 97,-579 101.1693,-575.0974 106.132,-571.9024 111.3546,-569.291"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="113.1064,-572.3484 120.921,-565.1942 110.3506,-565.9136 113.1064,-572.3484"/>
+</g>
+<!-- psb_realloc -->
+<g id="program~~shiftedtest~~CallsGraph_node22" class="node">
+<title>psb_realloc</title>
+<polygon fill="#777777" stroke="#777777" points="186.5,-528 119.5,-528 119.5,-504 186.5,-504 186.5,-528"/>
+<text text-anchor="middle" x="153" y="-513.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_realloc</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_realloc -->
+<g id="program~~shiftedtest~~CallsGraph_edge21" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_realloc</title>
+<path fill="none" stroke="#ff0000" d="M31.3379,-713.5307C34.2304,-680.2616 46.609,-588.4321 97,-537 100.7196,-533.2035 105.1907,-530.0857 109.9639,-527.5269"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.7262,-530.5713 119.3975,-523.2637 108.8435,-524.1925 111.7262,-530.5713"/>
+</g>
+<!-- 4 -->
+<g id="program~~shiftedtest~~CallsGraph_node23" class="node">
+<title>4</title>
+<polygon fill="#777777" stroke="#777777" points="180,-486 126,-486 126,-462 180,-462 180,-486"/>
+<text text-anchor="middle" x="153" y="-471.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">4</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;4 -->
+<g id="program~~shiftedtest~~CallsGraph_edge22" class="edge">
+<title>program~shiftedtest&#45;&gt;4</title>
+<path fill="none" stroke="#ff0000" d="M32.5198,-713.8649C39.8531,-671.109 66.2626,-528.2492 97,-495 102.185,-489.3912 109.0142,-485.2719 116.1145,-482.249"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="117.6001,-485.4348 125.8359,-478.7698 115.2413,-478.8442 117.6001,-485.4348"/>
+</g>
+<!-- psb_gefree -->
+<g id="program~~shiftedtest~~CallsGraph_node24" class="node">
+<title>psb_gefree</title>
+<polygon fill="#777777" stroke="#777777" points="186.5,-444 119.5,-444 119.5,-420 186.5,-420 186.5,-444"/>
+<text text-anchor="middle" x="153" y="-429.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_gefree</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_gefree -->
+<g id="program~~shiftedtest~~CallsGraph_edge23" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_gefree</title>
+<path fill="none" stroke="#ff0000" d="M31.9631,-713.7041C37.8747,-665.9089 61.3969,-493.1473 97,-453 100.6599,-448.8729 105.2125,-445.5544 110.1295,-442.8866"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.5934,-446.0659 119.2598,-438.7531 108.7064,-439.6889 111.5934,-446.0659"/>
+</g>
+<!-- psb_errpush -->
+<g id="program~~shiftedtest~~CallsGraph_node25" class="node">
+<title>psb_errpush</title>
+<polygon fill="#777777" stroke="#777777" points="189.5,-402 116.5,-402 116.5,-378 189.5,-378 189.5,-402"/>
+<text text-anchor="middle" x="153" y="-387.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_errpush</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_errpush -->
+<g id="program~~shiftedtest~~CallsGraph_edge24" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_errpush</title>
+<path fill="none" stroke="#ff0000" d="M31.5359,-713.6518C36.1572,-661.2938 56.4665,-458.1539 97,-411 99.8555,-407.6781 103.2906,-404.8808 107.0369,-402.5254"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="108.9321,-405.4861 116.2162,-397.7924 105.7241,-399.2644 108.9321,-405.4861"/>
+</g>
+<!-- psb_abort -->
+<g id="program~~shiftedtest~~CallsGraph_node26" class="node">
+<title>psb_abort</title>
+<polygon fill="#777777" stroke="#777777" points="471.5,-1305 410.5,-1305 410.5,-1281 471.5,-1281 471.5,-1305"/>
+<text text-anchor="middle" x="441" y="-1290.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_abort</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_abort -->
+<g id="program~~shiftedtest~~CallsGraph_edge25" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#ff0000" d="M30.9922,-738.1403C34.2958,-816.664 54.4169,-1250.7052 97,-1289 140.4578,-1328.0814 318.5245,-1309.7449 399.9825,-1298.9412"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="400.9094,-1302.3477 410.3493,-1297.5374 399.97,-1295.411 400.9094,-1302.3477"/>
+</g>
+<!-- psb_init -->
+<g id="program~~shiftedtest~~CallsGraph_node27" class="node">
+<title>psb_init</title>
+<polygon fill="#777777" stroke="#777777" points="180,-360 126,-360 126,-336 180,-336 180,-360"/>
+<text text-anchor="middle" x="153" y="-345.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_init</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_init -->
+<g id="program~~shiftedtest~~CallsGraph_edge26" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_init</title>
+<path fill="none" stroke="#ff0000" d="M31.1838,-713.9532C34.5894,-657.933 51.4117,-423.3341 97,-369 101.9554,-363.0939 108.7472,-358.8472 115.8932,-355.7942"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="117.4528,-358.9555 125.7182,-352.3271 115.1234,-352.3544 117.4528,-358.9555"/>
+</g>
+<!-- psb_spmm -->
+<g id="program~~shiftedtest~~CallsGraph_node28" class="node">
+<title>psb_spmm</title>
+<polygon fill="#777777" stroke="#777777" points="185.5,-318 120.5,-318 120.5,-294 185.5,-294 185.5,-318"/>
+<text text-anchor="middle" x="153" y="-303.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_spmm</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_spmm -->
+<g id="program~~shiftedtest~~CallsGraph_edge27" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_spmm</title>
+<path fill="none" stroke="#ff0000" d="M30.9324,-713.7725C33.2957,-653.4943 46.4621,-388.4097 97,-327 100.8042,-322.3774 105.7354,-318.7719 111.0929,-315.9597"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="112.6012,-319.1207 120.3882,-311.9364 109.8206,-312.6966 112.6012,-319.1207"/>
+</g>
+<!-- psb_barrier -->
+<g id="program~~shiftedtest~~CallsGraph_node29" class="node">
+<title>psb_barrier</title>
+<polygon fill="#777777" stroke="#777777" points="186.5,-276 119.5,-276 119.5,-252 186.5,-252 186.5,-276"/>
+<text text-anchor="middle" x="153" y="-261.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_barrier</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_barrier -->
+<g id="program~~shiftedtest~~CallsGraph_edge28" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_barrier</title>
+<path fill="none" stroke="#ff0000" d="M30.7186,-713.7887C32.0975,-649.8105 41.4397,-353.5878 97,-285 100.5538,-280.6129 105.1244,-277.142 110.1195,-274.3961"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.7623,-277.4948 119.4411,-270.1951 108.8861,-271.113 111.7623,-277.4948"/>
+</g>
+<!-- psb_scatter -->
+<g id="program~~shiftedtest~~CallsGraph_node30" class="node">
+<title>psb_scatter</title>
+<polygon fill="#777777" stroke="#777777" points="187,-234 119,-234 119,-210 187,-210 187,-234"/>
+<text text-anchor="middle" x="153" y="-219.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_scatter</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_scatter -->
+<g id="program~~shiftedtest~~CallsGraph_edge29" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_scatter</title>
+<path fill="none" stroke="#ff0000" d="M31.4414,-713.7117C37.0203,-642.1595 66.5415,-281.098 97,-243 100.3584,-238.7992 104.6504,-235.4387 109.3605,-232.7503"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.2047,-235.7528 118.7985,-228.3646 108.2548,-229.4047 111.2047,-235.7528"/>
+</g>
+<!-- psb_bcast -->
+<g id="program~~shiftedtest~~CallsGraph_node31" class="node">
+<title>psb_bcast</title>
+<polygon fill="#777777" stroke="#777777" points="471.5,-1248 410.5,-1248 410.5,-1224 471.5,-1224 471.5,-1248"/>
+<text text-anchor="middle" x="441" y="-1233.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_bcast</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_bcast -->
+<g id="program~~shiftedtest~~CallsGraph_edge30" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#ff0000" d="M31.2918,-738.4261C36.0191,-810.763 61.5158,-1175.5329 97,-1209 139.6463,-1249.222 318.1423,-1243.7248 399.8475,-1238.9051"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="400.4806,-1242.3728 410.2463,-1238.2642 400.0499,-1235.386 400.4806,-1242.3728"/>
+</g>
+<!-- psb_cdfree -->
+<g id="program~~shiftedtest~~CallsGraph_node32" class="node">
+<title>psb_cdfree</title>
+<polygon fill="#777777" stroke="#777777" points="186,-192 120,-192 120,-168 186,-168 186,-192"/>
+<text text-anchor="middle" x="153" y="-177.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_cdfree</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_cdfree -->
+<g id="program~~shiftedtest~~CallsGraph_edge31" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_cdfree</title>
+<path fill="none" stroke="#ff0000" d="M31.3045,-713.6409C36.3073,-638.3038 64.0221,-242.7101 97,-201 100.6717,-196.356 105.4857,-192.739 110.751,-189.9218"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="112.1683,-193.1221 119.9162,-185.8957 109.353,-186.7132 112.1683,-193.1221"/>
+</g>
+<!-- psb_genrm2 -->
+<g id="program~~shiftedtest~~CallsGraph_node33" class="node">
+<title>psb_genrm2</title>
+<polygon fill="#777777" stroke="#777777" points="189.5,-150 116.5,-150 116.5,-126 189.5,-126 189.5,-150"/>
+<text text-anchor="middle" x="153" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_genrm2</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_genrm2 -->
+<g id="program~~shiftedtest~~CallsGraph_edge32" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_genrm2</title>
+<path fill="none" stroke="#ff0000" d="M31.166,-713.9426C35.5717,-635.9338 61.4414,-204.404 97,-159 99.8499,-155.361 103.402,-152.3525 107.3259,-149.8654"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.0876,-152.8952 116.3816,-145.211 105.8876,-146.6695 109.0876,-152.8952"/>
+</g>
+<!-- build_mtpart -->
+<g id="program~~shiftedtest~~CallsGraph_node34" class="node">
+<title>build_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="189,-108 117,-108 117,-84 189,-84 189,-108"/>
+<text text-anchor="middle" x="153" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">build_mtpart</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;build_mtpart -->
+<g id="program~~shiftedtest~~CallsGraph_edge33" class="edge">
+<title>program~shiftedtest&#45;&gt;build_mtpart</title>
+<path fill="none" stroke="#ff0000" d="M31.0682,-713.8501C34.981,-632.2726 58.9145,-166.0326 97,-117 99.9877,-113.1536 103.7605,-110.0117 107.9306,-107.4453"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="109.5476,-110.5499 116.9236,-102.9442 106.4146,-104.2901 109.5476,-110.5499"/>
+</g>
+<!-- psb_gather -->
+<g id="program~~shiftedtest~~CallsGraph_node35" class="node">
+<title>psb_gather</title>
+<polygon fill="#777777" stroke="#777777" points="186.5,-66 119.5,-66 119.5,-42 186.5,-42 186.5,-66"/>
+<text text-anchor="middle" x="153" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_gather</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;psb_gather -->
+<g id="program~~shiftedtest~~CallsGraph_edge34" class="edge">
+<title>program~shiftedtest&#45;&gt;psb_gather</title>
+<path fill="none" stroke="#ff0000" d="M30.9787,-713.8419C34.4159,-629.0325 56.3705,-127.6857 97,-75 100.4478,-70.5291 104.9574,-67.01 109.9222,-64.2402"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="111.5604,-67.3403 119.2194,-60.0198 108.6669,-60.9663 111.5604,-67.3403"/>
+</g>
+<!-- getv_mtpart -->
+<g id="program~~shiftedtest~~CallsGraph_node36" class="node">
+<title>getv_mtpart</title>
+<polygon fill="#777777" stroke="#777777" points="188,-24 118,-24 118,0 188,0 188,-24"/>
+<text text-anchor="middle" x="153" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">getv_mtpart</text>
+</g>
+<!-- program~shiftedtest&#45;&gt;getv_mtpart -->
+<g id="program~~shiftedtest~~CallsGraph_edge35" class="edge">
+<title>program~shiftedtest&#45;&gt;getv_mtpart</title>
+<path fill="none" stroke="#ff0000" d="M30.8971,-713.913C33.8768,-626.215 53.8097,-89.3628 97,-33 100.1558,-28.8817 104.2132,-25.571 108.7,-22.9096"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="110.2486,-26.0486 117.7335,-18.55 107.2061,-19.7443 110.2486,-26.0486"/>
+</g>
+<!-- proc~psfun_dkrylov_vect -->
+<g id="program~~shiftedtest~~CallsGraph_node37" class="node">
+<title>proc~psfun_dkrylov_vect</title>
+<g id="a_program~~shiftedtest~~CallsGraph_node37"><a xlink:href=".././proc/psfun_dkrylov_vect.html" xlink:title="psfun_dkrylov_vect">
+<polygon fill="#d9534f" stroke="#d9534f" points="349,-1436 245,-1436 245,-1412 349,-1412 349,-1436"/>
+<text text-anchor="middle" x="297" y="-1421.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psfun_dkrylov_vect</text>
+</a>
+</g>
+</g>
+<!-- interface~psb_krylov&#45;&gt;proc~psfun_dkrylov_vect -->
+<g id="program~~shiftedtest~~CallsGraph_edge36" class="edge">
+<title>interface~psb_krylov&#45;&gt;proc~psfun_dkrylov_vect</title>
+<path fill="none" stroke="#ff5700" stroke-dasharray="5,2" d="M185.3164,-1424C199.8057,-1424 217.4131,-1424 234.3228,-1424"/>
+<polygon fill="#ff5700" stroke="#ff5700" points="234.7272,-1427.5001 244.7271,-1424 234.7271,-1420.5001 234.7272,-1427.5001"/>
+</g>
+<!-- proc~get_dparms -->
+<g id="program~~shiftedtest~~CallsGraph_node38" class="node">
+<title>proc~get_dparms</title>
+<g id="a_program~~shiftedtest~~CallsGraph_node38"><a xlink:href=".././proc/get_dparms.html" xlink:title="get_dparms">
+<polygon fill="#d9534f" stroke="#d9534f" points="332,-1280 262,-1280 262,-1256 332,-1256 332,-1280"/>
+<text text-anchor="middle" x="297" y="-1265.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">get_dparms</text>
+</a>
+</g>
+</g>
+<!-- interface~get_parms&#45;&gt;proc~get_dparms -->
+<g id="program~~shiftedtest~~CallsGraph_edge37" class="edge">
+<title>interface~get_parms&#45;&gt;proc~get_dparms</title>
+<path fill="none" stroke="#74ff00" stroke-dasharray="5,2" d="M185.3164,-1268C204.8419,-1268 230.0298,-1268 251.5421,-1268"/>
+<polygon fill="#74ff00" stroke="#74ff00" points="251.7665,-1271.5001 261.7664,-1268 251.7664,-1264.5001 251.7665,-1271.5001"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_info -->
+<g id="program~~shiftedtest~~CallsGraph_edge39" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_info</title>
+<path fill="none" stroke="#ff0000" d="M311.8459,-1411.9915C328.7778,-1398.7153 357.6638,-1377.3168 385,-1363 391.1182,-1359.7957 397.8376,-1356.8388 404.4328,-1354.2171"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="405.8082,-1357.4389 413.9221,-1350.626 403.3306,-1350.892 405.8082,-1357.4389"/>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_toupper -->
+<g id="program~~shiftedtest~~CallsGraph_edge38" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_toupper</title>
+<path fill="none" stroke="#ff0000" d="M340.2047,-1411.9987C357.2408,-1407.2664 376.852,-1401.8189 394.2216,-1396.994"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="395.4546,-1400.2841 404.153,-1394.2353 393.5811,-1393.5395 395.4546,-1400.2841"/>
+</g>
+<!-- psb_erractionrestore -->
+<g id="program~~shiftedtest~~CallsGraph_node39" class="node">
+<title>psb_erractionrestore</title>
+<polygon fill="#777777" stroke="#777777" points="497,-1480 385,-1480 385,-1456 497,-1456 497,-1480"/>
+<text text-anchor="middle" x="441" y="-1465.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_erractionrestore</text>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_erractionrestore -->
+<g id="program~~shiftedtest~~CallsGraph_edge40" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_erractionrestore</title>
+<path fill="none" stroke="#ff0000" d="M336.3486,-1436.0232C353.4924,-1441.2616 373.7697,-1447.4574 391.8886,-1452.9937"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="391.1126,-1456.4163 401.6989,-1455.9913 393.1582,-1449.7219 391.1126,-1456.4163"/>
+</g>
+<!-- psb_erractionsave -->
+<g id="program~~shiftedtest~~CallsGraph_node40" class="node">
+<title>psb_erractionsave</title>
+<polygon fill="#777777" stroke="#777777" points="491,-1438 391,-1438 391,-1414 491,-1414 491,-1438"/>
+<text text-anchor="middle" x="441" y="-1423.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_erractionsave</text>
+</g>
+<!-- proc~psfun_dkrylov_vect&#45;&gt;psb_erractionsave -->
+<g id="program~~shiftedtest~~CallsGraph_edge41" class="edge">
+<title>proc~psfun_dkrylov_vect&#45;&gt;psb_erractionsave</title>
+<path fill="none" stroke="#ff0000" d="M349.3947,-1424.7277C359.5271,-1424.8684 370.2203,-1425.0169 380.5846,-1425.1609"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="380.7587,-1428.6636 390.8064,-1425.3029 380.856,-1421.6642 380.7587,-1428.6636"/>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_info -->
+<g id="program~~shiftedtest~~CallsGraph_edge43" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_info</title>
+<path fill="none" stroke="#00ffff" d="M319.7332,-1280.0266C337.4679,-1289.374 362.7438,-1302.6202 385,-1314 392.2812,-1317.723 400.1194,-1321.676 407.5582,-1325.4023"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="406.1853,-1328.6288 416.6953,-1329.9667 409.3135,-1322.3667 406.1853,-1328.6288"/>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_abort -->
+<g id="program~~shiftedtest~~CallsGraph_edge44" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_abort</title>
+<path fill="none" stroke="#00ffff" d="M332.2264,-1274.1157C352.691,-1277.6686 378.5737,-1282.1621 399.9567,-1285.8744"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="399.5976,-1289.3644 410.049,-1287.6266 400.7951,-1282.4675 399.5976,-1289.3644"/>
+</g>
+<!-- proc~get_dparms&#45;&gt;psb_bcast -->
+<g id="program~~shiftedtest~~CallsGraph_edge42" class="edge">
+<title>proc~get_dparms&#45;&gt;psb_bcast</title>
+<path fill="none" stroke="#00ffff" d="M332.2264,-1260.1719C352.784,-1255.6035 378.8091,-1249.8202 400.2481,-1245.056"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="401.0464,-1248.464 410.049,-1242.878 399.5278,-1241.6307 401.0464,-1248.464"/>
+</g>
+</g>
+</svg>
+</div><div><a type="button" class="graph-help" data-toggle="modal" href="#graph-help-text">Help</a></div><div class="modal fade" id="graph-help-text" tabindex="-1" role="dialog"><div class="modal-dialog modal-lg" role="document"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title" id="-graph-help-label">Graph Key</h4></div><div class="modal-body">
+    <p>Nodes of different colours represent the following: </p>
+    <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 2.40.1 (20161225.0304)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="560pt" height="32pt"
+ viewBox="0.00 0.00 559.50 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>Graph Key</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-28 555.5,-28 555.5,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="64,-24 0,-24 0,0 64,0 64,-24"/>
+<text text-anchor="middle" x="32" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="136,-24 82,-24 82,0 136,0 136,-24"/>
+<text text-anchor="middle" x="109" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="209.5,-24 154.5,-24 154.5,0 209.5,0 209.5,-24"/>
+<text text-anchor="middle" x="182" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Interface</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node4" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="364,-24 228,-24 228,0 364,0 364,-24"/>
+<text text-anchor="middle" x="296" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="436,-24 382,-24 382,0 436,0 436,-24"/>
+<text text-anchor="middle" x="409" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="#000000" points="551.5,-24 454.5,-24 454.5,0 551.5,0 551.5,-24"/>
+<text text-anchor="middle" x="503" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+    
+    <p>Solid arrows point from a procedure to one which it calls. Dashed 
+    arrows point from an interface to procedures which implement that interface.
+    This could include the module procedures in a generic interface or the
+    implementation in a submodule of an interface in a parent module. Where possible, edges connecting nodes are given different colours to make them easier to distinguish in large graphs.
+    </p>
+    </div></div></div></div>
+      </div>
+    </div>
+     
+    <br>
+
+     <section class="visible-xs visible-sm hidden-md">
+       
+<h3>Contents</h3>
+ 
+
+
+
+<div class="panel panel-primary">
+  <div class="panel-heading text-left"><h3 class="panel-title"><a data-toggle="collapse" href="#vars-1">Variables</a></h3></div>
+  <div id="vars-1" class="panel-collapse collapse">
+    <div class="list-group">
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-a~12">a</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-afmt~4">afmt</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-amatsize">amatsize</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-aux_a">aux_a</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-aux_b">aux_b</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-b_amax">b_amax</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-b_col">b_col</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-b_col_glob">b_col_glob</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-cond~3">cond</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ctxt~8">ctxt</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-d">d</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-desc_a~8">desc_a</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-descsize">descsize</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-dim">dim</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-eps~9">eps</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-err~6">err</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-err_act">err_act</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-eta~9">eta</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-filefmt~4">filefmt</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-fname~5">fname</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-fnout">fnout</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-i~2">i</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iam~2">iam</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ierr">ierr</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ii">ii</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-info~18">info</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-internal">internal</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iparm">iparm</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ipv">ipv</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ircode">ircode</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-irst~3">irst</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-istopc~2">istopc</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iter~7">iter</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-itmax~9">itmax</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-itrace~9">itrace</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-iunit">iunit</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ivg">ivg</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-j">j</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-kmethd~3">kmethd</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-lnp">lnp</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-m">m</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-m_problem">m_problem</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-methd">methd</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-mtrx_file~2">mtrx_file</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-n_row">n_row</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-name~2">name</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ne">ne</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nnzero">nnzero</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-np~2">np</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nrhs">nrhs</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nrow">nrow</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-nv">nv</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-part~4">part</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-prec~7">prec</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-precsize">precsize</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-ptype~3">ptype</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-r_amax">r_amax</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-r_col">r_col</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-r_col_glob">r_col_glob</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-resmx">resmx</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-resmxp">resmxp</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-rhs_file~4">rhs_file</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-scale">scale</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-t1">t1</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-t2">t2</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-tprec">tprec</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-x_col">x_col</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-x_col_glob">x_col_glob</a>
+      
+      <a class="list-group-item" href="../program/shiftedtest.html#variable-zeta~4">zeta</a>
+      
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     </section>
+     <br class="visible-xs visible-sm hidden-md">
+
+     
+
+    
+    <section>
+    <h2>Variables</h2>
+    
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+
+<th>Attributes</th><th></th><th>Name</th><th></th><th>Initial</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-a~12"></span>type(psb_dspmat_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-afmt~4"></span>character(len=5)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>afmt</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-amatsize"></span>integer(kind=psb_epk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>amatsize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-aux_a"></span>type(psb_ldspmat_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>aux_a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-aux_b"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>allocatable, target</td><td>::</td>
+  <td><strong>aux_b</strong>(:,:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-b_amax"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>b_amax</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-b_col"></span>type(psb_d_vect_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>b_col</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-b_col_glob"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>pointer</td><td>::</td>
+  <td><strong>b_col_glob</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-cond~3"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>cond</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ctxt~8"></span>type(psb_ctxt_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ctxt</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-d"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>allocatable, target</td><td>::</td>
+  <td><strong>d</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-desc_a~8"></span>type(psb_desc_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>desc_a</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-descsize"></span>integer(kind=psb_epk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>descsize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-dim"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>dim</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eps~9"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>eps</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-err~6"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>err</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-err_act"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>err_act</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-eta~9"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>eta</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-filefmt~4"></span>character(len=2)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>filefmt</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fname~5"></span>character(len=40)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>fname</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-fnout"></span>character(len=40)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>fnout</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-i~2"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>i</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iam~2"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>iam</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ierr"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ierr</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ii"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ii</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-info~18"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>info</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-internal"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>internal</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iparm"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>iparm</strong>(20)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ipv"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>ipv</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ircode"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ircode</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-irst~3"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>irst</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-istopc~2"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>istopc</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iter~7"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>iter</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itmax~9"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>itmax</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itrace~9"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>itrace</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-iunit"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>parameter</td><td>::</td>
+  <td><strong>iunit</strong></td><td> =</td><td>12</td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ivg"></span>integer(kind=psb_ipk_),</td>
+  
+  
+  <td>allocatable</td><td>::</td>
+  <td><strong>ivg</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-j"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>j</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-kmethd~3"></span>character(len=40)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>kmethd</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-lnp"></span>integer(kind=psb_lpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>lnp</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>m</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-m_problem"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>m_problem</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-methd"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>methd</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-mtrx_file~2"></span>character(len=40)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>mtrx_file</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-n_row"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>n_row</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-name~2"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>name</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ne"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ne</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nnzero"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>nnzero</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-np~2"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>np</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nrhs"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>nrhs</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nrow"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>nrow</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-nv"></span>integer(kind=psb_ipk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>nv</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-part~4"></span>character(len=20)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>part</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-prec~7"></span>type(psb_dprec_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>prec</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-precsize"></span>integer(kind=psb_epk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>precsize</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-ptype~3"></span>character(len=40)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>ptype</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_amax"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>r_amax</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_col"></span>type(psb_d_vect_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>r_col</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-r_col_glob"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>allocatable, save</td><td>::</td>
+  <td><strong>r_col_glob</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-resmx"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>resmx</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-resmxp"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>resmxp</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-rhs_file~4"></span>character(len=40)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>rhs_file</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-scale"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>scale</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-t1"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>t1</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-t2"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>t2</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tprec"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>tprec</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_col"></span>type(psb_d_vect_type)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>x_col</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-x_col_glob"></span>real(kind=psb_dpk_),</td>
+  
+  
+  <td>allocatable, save</td><td>::</td>
+  <td><strong>x_col_glob</strong>(:)</td><td></td><td></td><td></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-zeta~4"></span>real(kind=psb_dpk_)</td>
+  
+  
+  <td></td><td>::</td>
+  <td><strong>zeta</strong></td><td></td><td></td><td></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+    </section>
+    <br>
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+
+    
+    
+    
+    
+    </div>
+  </div>
+
+  
+    <hr>    
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-md-4"><p>&copy; 2021 <a rel="license" href="http://www.freebsd.org/copyright/freebsd-doc-license.html">FreeBSD Documentation License</a>
+                                          </p></div>
+        <div class="col-xs-6 col-md-4 col-md-push-4">
+          <p class="text-right">
+            Documentation generated by 
+            <a href="https://github.com/cmacmackin/ford">FORD</a>
+            
+          </p>
+        </div>
+        <div class="col-xs-12 col-md-4 col-md-pull-4"><p class="text-center"> PSFUN was developed by Fabio Durastante</p></div>
+      </div>
+      <br>
+      </div> <!-- /container -->    
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+<!--
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+-->
+    <script src="../js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../js/ie10-viewport-bug-workaround.js"></script>
+
+    <!-- MathJax JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
+        jax: ['input/TeX','input/MathML','output/HTML-CSS'],
+        extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
+      });
+    </script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    
+    <script src="../tipuesearch/tipuesearch_content.js"></script>
+    <script src="../tipuesearch/tipuesearch_set.js"></script>
+    <script src="../tipuesearch/tipuesearch.js"></script>
+    
+    
+  </body>
+</html>
