@@ -136,7 +136,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title=" 6.6% of total for procedures.">74 statements</a>
+    title=" 6.4% of total for procedures.">74 statements</a>
      </li> 
      
      
@@ -385,7 +385,7 @@ subroutine get_parms(ctxt, mname, rhs_file, filefmt, part, afmt, fname, variant,
   
 <tr>
   
-  <td><span class="anchor" id="variable-itmax~4"></span>integer(kind=psb_ipk_),</td>
+  <td><span class="anchor" id="variable-itmax~5"></span>integer(kind=psb_ipk_),</td>
   <td>intent(out)</td>
   <td></td>
   
@@ -400,7 +400,7 @@ subroutine get_parms(ctxt, mname, rhs_file, filefmt, part, afmt, fname, variant,
   
 <tr>
   
-  <td><span class="anchor" id="variable-itrace~4"></span>integer(kind=psb_ipk_),</td>
+  <td><span class="anchor" id="variable-itrace~5"></span>integer(kind=psb_ipk_),</td>
   <td>intent(out)</td>
   <td></td>
   
@@ -455,18 +455,15 @@ subroutine get_parms(ctxt, mname, rhs_file, filefmt, part, afmt, fname, variant,
 <polygon fill="none" stroke="#000000" points="64,-87 0,-87 0,-63 64,-63 64,-87"/>
 <text text-anchor="middle" x="32" y="-72.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#000000">get_parms</text>
 </g>
-<!-- proc~pr_usage~2 -->
+<!-- psb_bcast -->
 <g id="proc~~get_parms~2~~CallsGraph_node2" class="node">
-<title>proc~pr_usage~2</title>
-<g id="a_proc~~get_parms~2~~CallsGraph_node2"><a xlink:href=".././proc/pr_usage~2.html" xlink:title="pr_usage">
-<polygon fill="#d9534f" stroke="#d9534f" points="159.5,-150 101.5,-150 101.5,-126 159.5,-126 159.5,-150"/>
-<text text-anchor="middle" x="130.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr_usage</text>
-</a>
+<title>psb_bcast</title>
+<polygon fill="#777777" stroke="#777777" points="161,-150 100,-150 100,-126 161,-126 161,-150"/>
+<text text-anchor="middle" x="130.5" y="-135.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_bcast</text>
 </g>
-</g>
-<!-- proc~get_parms~2&#45;&gt;proc~pr_usage~2 -->
+<!-- proc~get_parms~2&#45;&gt;psb_bcast -->
 <g id="proc~~get_parms~2~~CallsGraph_edge1" class="edge">
-<title>proc~get_parms~2&#45;&gt;proc~pr_usage~2</title>
+<title>proc~get_parms~2&#45;&gt;psb_bcast</title>
 <path fill="none" stroke="#ff0000" d="M50.9918,-87.147C65.7086,-96.5598 86.3106,-109.7368 102.8555,-120.3187"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="101.2564,-123.4506 111.5665,-125.8903 105.0281,-117.5536 101.2564,-123.4506"/>
 </g>
@@ -477,32 +474,35 @@ subroutine get_parms(ctxt, mname, rhs_file, filefmt, part, afmt, fname, variant,
 <text text-anchor="middle" x="130.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_info</text>
 </g>
 <!-- proc~get_parms~2&#45;&gt;psb_info -->
-<g id="proc~~get_parms~2~~CallsGraph_edge2" class="edge">
+<g id="proc~~get_parms~2~~CallsGraph_edge3" class="edge">
 <title>proc~get_parms~2&#45;&gt;psb_info</title>
 <path fill="none" stroke="#ff0000" d="M64.2526,-81.8762C73.5646,-83.8615 83.8006,-86.0438 93.3832,-88.0868"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="92.9401,-91.5709 103.4501,-90.233 94.3997,-84.7247 92.9401,-91.5709"/>
 </g>
-<!-- psb_abort -->
+<!-- proc~pr_usage~2 -->
 <g id="proc~~get_parms~2~~CallsGraph_node4" class="node">
+<title>proc~pr_usage~2</title>
+<g id="a_proc~~get_parms~2~~CallsGraph_node4"><a xlink:href=".././proc/pr_usage~2.html" xlink:title="pr_usage">
+<polygon fill="#d9534f" stroke="#d9534f" points="159.5,-66 101.5,-66 101.5,-42 159.5,-42 159.5,-66"/>
+<text text-anchor="middle" x="130.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">pr_usage</text>
+</a>
+</g>
+</g>
+<!-- proc~get_parms~2&#45;&gt;proc~pr_usage~2 -->
+<g id="proc~~get_parms~2~~CallsGraph_edge2" class="edge">
+<title>proc~get_parms~2&#45;&gt;proc~pr_usage~2</title>
+<path fill="none" stroke="#ff0000" d="M64.2526,-68.1238C72.8948,-66.2813 82.3329,-64.2691 91.3059,-62.3561"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="92.1214,-65.761 101.1718,-60.2527 90.6618,-58.9148 92.1214,-65.761"/>
+</g>
+<!-- psb_abort -->
+<g id="proc~~get_parms~2~~CallsGraph_node5" class="node">
 <title>psb_abort</title>
-<polygon fill="#777777" stroke="#777777" points="161,-66 100,-66 100,-42 161,-42 161,-66"/>
-<text text-anchor="middle" x="130.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_abort</text>
+<polygon fill="#777777" stroke="#777777" points="161,-24 100,-24 100,0 161,0 161,-24"/>
+<text text-anchor="middle" x="130.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_abort</text>
 </g>
 <!-- proc~get_parms~2&#45;&gt;psb_abort -->
-<g id="proc~~get_parms~2~~CallsGraph_edge3" class="edge">
-<title>proc~get_parms~2&#45;&gt;psb_abort</title>
-<path fill="none" stroke="#ff0000" d="M64.2526,-68.1238C72.4793,-66.3699 81.4271,-64.4622 90.0085,-62.6327"/>
-<polygon fill="#ff0000" stroke="#ff0000" points="90.7983,-66.0431 99.8487,-60.5348 89.3386,-59.1969 90.7983,-66.0431"/>
-</g>
-<!-- psb_bcast -->
-<g id="proc~~get_parms~2~~CallsGraph_node5" class="node">
-<title>psb_bcast</title>
-<polygon fill="#777777" stroke="#777777" points="161,-24 100,-24 100,0 161,0 161,-24"/>
-<text text-anchor="middle" x="130.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="#ffffff">psb_bcast</text>
-</g>
-<!-- proc~get_parms~2&#45;&gt;psb_bcast -->
 <g id="proc~~get_parms~2~~CallsGraph_edge4" class="edge">
-<title>proc~get_parms~2&#45;&gt;psb_bcast</title>
+<title>proc~get_parms~2&#45;&gt;psb_abort</title>
 <path fill="none" stroke="#ff0000" d="M50.9918,-62.853C65.7086,-53.4402 86.3106,-40.2632 102.8555,-29.6813"/>
 <polygon fill="#ff0000" stroke="#ff0000" points="105.0281,-32.4464 111.5665,-24.1097 101.2564,-26.5494 105.0281,-32.4464"/>
 </g>

@@ -136,7 +136,7 @@
      <li><i class="fa fa-list-ol"></i>
        <a data-toggle="tooltip"
     data-placement="bottom" data-html="true"
-    title="<p>21.1% of total for derived types.</p>Including implementation: 143 statements, 15.1% of total for derived types.">12 statements</a>
+    title="<p>28.6% of total for derived types.</p>Including implementation: 195 statements, 19.5% of total for derived types.">18 statements</a>
      </li> 
      
      
@@ -181,11 +181,21 @@
   <div id="vars-0" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-irst">irst</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-istopc">istopc</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-itmax">itmax</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-itrace">itrace</a>
+      
       <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-kmethd">kmethd</a>
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-kname">kname</a>
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-prec~3">prec</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-tau">tau</a>
       
     </div>
   </div>
@@ -222,6 +232,8 @@
       <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-precinit">precinit</a>
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-set~2">set</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-setinteger">setinteger</a>
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-setstring">setstring</a>
       
@@ -332,11 +344,21 @@
   <div id="vars-1" class="panel-collapse collapse">
     <div class="list-group">
       
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-irst">irst</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-istopc">istopc</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-itmax">itmax</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-itrace">itrace</a>
+      
       <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-kmethd">kmethd</a>
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-kname">kname</a>
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-prec~3">prec</a>
+      
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#variable-tau">tau</a>
       
     </div>
   </div>
@@ -374,6 +396,8 @@
       
       <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-set~2">set</a>
       
+      <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-setinteger">setinteger</a>
+      
       <a class="list-group-item" href="../type/psfun_d_krylov.html#boundprocedure-setstring">setstring</a>
       
     </div>
@@ -406,11 +430,67 @@
   
 <tr>
   
+  <td><span class="anchor" id="variable-irst"></span>integer(kind=psb_ipk_),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>irst</strong></td><td> =</td><td>10</td><td><p>Size for subspace restarting (inner method)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-istopc"></span>integer(kind=psb_ipk_),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>istopc</strong></td><td> =</td><td>1</td><td><p>Stopping criterion (inner method)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itmax"></span>integer(kind=psb_ipk_),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>itmax</strong></td><td> =</td><td>200</td><td><p>Maximum number of iterations (inner method)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-itrace"></span>integer(kind=psb_ipk_),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>itrace</strong></td><td> =</td><td>0</td><td><p>Trace for the solution (inner method)</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
   <td><span class="anchor" id="variable-kmethd"></span>character(len=20),</td>
   
   <td>public</td>
   <td></td><td>::</td>
-  <td><strong>kmethd</strong></td><td></td><td></td><td><p>Method for the solution of the linear system</p></td>
+  <td><strong>kmethd</strong></td><td> =</td><td>'CG'</td><td><p>Method for the solution of the linear system</p></td>
   
 </tr>
 
@@ -439,6 +519,20 @@
   <td>public</td>
   <td></td><td>::</td>
   <td><strong>prec</strong></td><td></td><td></td><td><p>Preconditioner for the inner solution method</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" id="variable-tau"></span>real(kind=psb_dpk_),</td>
+  
+  <td>public</td>
+  <td></td><td>::</td>
+  <td><strong>tau</strong></td><td> =</td><td>dzero</td><td><p>Shift for shift-and-invert methods</p></td>
   
 </tr>
 
@@ -512,7 +606,7 @@ public subroutine <a href='../proc/psfun_d_parallel_apply.html'>psfun_d_parallel
 <tr>
   
   <td><span class="anchor" ></span>class(<a href='../type/psfun_d_krylov.html'>psfun_d_krylov</a>),</td>
-  <td>intent(in)</td>
+  <td>intent(inout)</td>
   <td></td>
   
   <td></td><td>::</td>
@@ -1100,7 +1194,7 @@ public subroutine <a href='../proc/psfun_d_prec_init.html'>psfun_d_prec_init</a>
     
      
 <div class="panel panel-default">
-  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set~2"></span><h3>generic, public :: <strong>set</strong>  => <a href='../type/psfun_d_krylov.html#boundprocedure-setstring'>setstring</a> 
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-set~2"></span><h3>generic, public :: <strong>set</strong>  => <a href='../type/psfun_d_krylov.html#boundprocedure-setstring'>setstring</a>, <a href='../type/psfun_d_krylov.html#boundprocedure-setinteger'>setinteger</a> 
     
   </h3></div>
   
@@ -1204,6 +1298,220 @@ private subroutine psfun_d_setstring(meth, what, val, info)
     
 
          
+      
+      </li>
+    
+      <li class="list-group-item">
+      
+         
+            
+    
+    <h3>
+private subroutine psfun_d_setinteger(meth, what, val, info)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>Set function for setting options defined by an integer</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/psfun_d_krylov.html'>psfun_d_krylov</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>meth</strong></td><td><p>Krylov method object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>what</strong></td><td><p>String of option to set</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>val</strong></td><td><p>Value of the integer</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>info</strong></td><td><p>Output flag</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+         
+      
+      </li>
+    
+  </ul>
+</div>
+
+    
+     
+<div class="panel panel-default">
+  <div class="panel-heading codesum"><span class="anchor" id="boundprocedure-setinteger"></span><h3>procedure, public, pass(meth) :: <strong>setinteger</strong>  => psfun_d_setinteger 
+    
+  </h3></div>
+  
+  <ul class="list-group">
+    
+      <li class="list-group-item">
+      
+        
+          
+    
+    <h3>
+private subroutine psfun_d_setinteger(meth, what, val, info)
+    
+    
+   
+</h3>
+    
+
+
+
+<p>Set function for setting options defined by an integer</p>
+    
+    <h4>Arguments</h4>
+    
+      
+      
+<table class="table table-striped varlist">
+<thead><tr><th>Type</th>
+<th>Intent</th><th>Optional</th>
+<th>Attributes</th><th></th><th>Name</th><th></th></thead>
+
+
+
+<tbody>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>class(<a href='../type/psfun_d_krylov.html'>psfun_d_krylov</a>),</td>
+  <td>intent(inout)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>meth</strong></td><td><p>Krylov method object</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>character(len=*),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>what</strong></td><td><p>String of option to set</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(in)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>val</strong></td><td><p>Value of the integer</p></td>
+  
+</tr>
+
+  
+  
+  
+  
+<tr>
+  
+  <td><span class="anchor" ></span>integer(kind=psb_ipk_),</td>
+  <td>intent(out)</td>
+  <td></td>
+  
+  <td></td><td>::</td>
+  <td><strong>info</strong></td><td><p>Output flag</p></td>
+  
+</tr>
+
+</tbody>
+</table>
+
+      
+    
+    
+
+        
       
       </li>
     

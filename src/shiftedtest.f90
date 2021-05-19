@@ -257,7 +257,7 @@ program shiftedtest
   call psb_sum(ctxt,descsize)
   call psb_sum(ctxt,precsize)
   if (iam == psb_root_) then
-    call prec%descr()
+    call prec%descr(info)
     write(psb_out_unit,'("Matrix: ",a)')mtrx_file
     write(psb_out_unit,'("η     : ",es12.5)')eta
     write(psb_out_unit,'("ζ     : ",es12.5)')zeta

@@ -34,6 +34,7 @@ module psfun_krylov_mod
   !! for PSBLAS (`psb_krylov_mod`)
   use psb_base_mod
   use psb_prec_mod
+  use amg_prec_mod
 
 interface psb_krylov
   !! We add the methods for the shifted system to the same interfaces in PSBLAS
