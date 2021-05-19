@@ -41,19 +41,25 @@ module psfun_d_krylov_mod
 
   type, public :: psfun_d_krylov
     character(len=20)     :: kname   = 'ARNOLDI' !! Name of the Krylov method
-    character(len=20)     :: kmethd !! Method for the solution of the linear system
-    type(amg_dprec_type)  :: prec   !! Preconditioner for the inner solution method
+    character(len=20)     :: kmethd  = 'CG' !! Method for the solution of the linear system
+    type(amg_dprec_type)  :: prec    !! Preconditioner for the inner solution method
+    real(psb_dpk_)        :: tau = dzero !! Shift for shift-and-invert methods
+    integer(psb_ipk_)     :: itmax = 200 !! Maximum number of iterations (inner method)
+    integer(psb_ipk_)     :: itrace = 0 !! Trace for the solution (inner method)
+    integer(psb_ipk_)     :: istopc = 1 !! Stopping criterion (inner method)
+    integer(psb_ipk_)     :: irst = 10 !! Size for subspace restarting (inner method)
   contains
     ! Set the options
     procedure, pass(meth) :: setstring  => psfun_d_setstring
-    generic, public :: set => setstring
+    procedure, pass(meth) :: setinteger => psfun_d_setinteger
+    generic, public :: set => setstring, setinteger
     procedure, pass(meth) :: apply      => psfun_d_parallel_apply
     procedure, pass(meth) :: plot       => psfun_d_plot_info
     procedure, pass(meth) :: precinit   => psfun_d_prec_init
     procedure, pass(meth) :: precbuild  => psfun_d_prec_build
   end type
 
-  private :: psfun_d_setstring
+  private :: psfun_d_setstring, psfun_d_setinteger
 
     !! The various Krylov methods are contained in associated submodules, the
     !! idea is to have different methods, associated to the same
@@ -120,6 +126,54 @@ module psfun_d_krylov_mod
       end subroutine psfun_d_lanczos
   end interface
 
+  interface
+      !! This interface contains the Shift-and-Invert method based on Arnoldi
+      !! orthogonalization.
+      module subroutine psfun_d_saiarnoldi(fun,a,kryl,prec,tau,desc_a, &
+          & initmax,initrace,inistop,y,x,eps,info,itmax,itrace,istop,iter,err,res)
+          !! Shift-and-invert method based on the Arnoldi orthogonalization procedure
+          !! the method builds a basis \( V_k \) for the shifted Krylov subspace
+          !!
+          !! \begin{equation*}
+          !! \mathcal{K}_( (A + \tau I)^{-1},x ) = \{ x,(A + \tau I)^{-1}x,\ldots,(A + \tau I)^{k-1}x\},
+          !! \end{equation*}
+          !!
+          !! and approximate \( y = f(\alpha A)x \approx \beta_1 f((H_k^{-1} - \tau I)^{-1}) e_1\),for
+          !! \(\beta_1 = \|x\|_2\), \(e_1\) the first vector of the canonical
+          !! base of \(\mathbb{R}^k\), and \(H_k\) the Hessemberg matrix given
+          !! by the projection of \(A\) into the subspace \(\mathcal{K}_( (A + \tau I)^{-1},x )\).
+          !!
+          !! To  march the algorithm one needs to solve at each step a shifted linear
+          !! system for which we employ the routines from [[psfun_krylov_mod]] and the
+          !! preconditioners from AMG4PSBLAS.
+          use psb_base_mod
+          use psfun_d_serial_mod
+          use psfun_krylov_mod
+          use psb_d_krylov_conv_mod, only: log_header, log_conv, log_end
+          implicit none
+
+          type(psfun_d_serial), intent(inout)  :: fun  !! Function object
+          type(psb_dspmat_type), intent(in)    :: a    !! Distribute sparse matrix
+          character(len=*), intent(in)         :: kryl !! Krylov method for the solution of inner systems
+          type(amg_dprec_type), intent(inout)  :: prec !! Preconditioner for the inner method
+          real(psb_dpk_), intent(in)           :: tau !! Shift parameter of the method
+          type(psb_desc_type), intent(in)      :: desc_a !! Descriptor for the sparse matrix
+          type(psb_d_vect_type), intent(inout) :: y !! Output vector
+          type(psb_d_vect_type), intent(inout) :: x !! Input vector
+          integer(psb_ipk_), intent(in)  :: initmax !! Maximum number of iteration (inner method)
+          integer(psb_ipk_), intent(in)  :: initrace !! Trace for logoutput (inner method)
+          integer(psb_ipk_), intent(in)  :: inistop !! Stop criterion (inner method)
+          real(psb_dpk_), intent(in)           :: eps !! Requested tolerance
+          integer(psb_ipk_), intent(out)       :: info  !! Output flag
+          integer(psb_ipk_), optional, intent(in)  :: itmax !! Maximum number of iteration
+          integer(psb_ipk_), optional, intent(in)  :: itrace !! Trace for logoutput
+          integer(psb_ipk_), optional, intent(in)  :: istop !! Stop criterion
+          integer(psb_ipk_), optional, intent(out) :: iter !! Number of iteration
+          real(psb_dpk_), optional, intent(out) :: err !! Last estimate error
+          real(psb_dpk_), optional, allocatable, intent(out) :: res(:) !! Vector of the residuals
+      end subroutine
+  end interface
+
 contains
 
   subroutine psfun_d_setstring(meth,what,val,info)
@@ -142,6 +196,32 @@ contains
 
   end subroutine psfun_d_setstring
 
+  subroutine psfun_d_setinteger(meth,what,val,info)
+      !! Set function for setting options defined by an integer
+      use psb_base_mod
+      implicit none
+
+      class(psfun_d_krylov), intent(inout) :: meth  !! Krylov method object
+      character(len=*), intent(in)         :: what  !! String of option to set
+      integer(psb_ipk_), intent(in)        :: val   !! Value of the integer
+      integer(psb_ipk_), intent(out)       :: info  !! Output flag
+
+      info = psb_success_
+      select case (psb_toupper(what))
+      case ("ITMAX")
+          meth%itmax = val
+      case ("ITRACE")
+          meth%itrace = val
+      case ("ISTOPC")
+          meth%istopc = val
+      case ("IRST")
+          meth%irst = val
+      case default
+          info = psb_err_invalid_args_combination_
+      end select
+
+  end subroutine psfun_d_setinteger
+
   subroutine psfun_d_parallel_apply(meth,fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
       !! This is the generic function for applying every implemented Krylov
       !! method. The general iteration parameters (like the number of iteration,
@@ -151,10 +231,12 @@ contains
       !! instead contained in the meth and fun objects. The Descriptor object
       !! `desc_a' contains the properties of the parallel environment.
       use psb_base_mod
+      use psb_prec_mod
+      use amg_prec_mod
       use psfun_d_serial_mod
       implicit none
 
-      class(psfun_d_krylov), intent(in)    :: meth !! Krylov method object
+      class(psfun_d_krylov), intent(inout) :: meth !! Krylov method object
       type(psfun_d_serial), intent(inout)  :: fun  !! Function object
       type(psb_dspmat_type), intent(in)    :: a    !! Distribute sparse matrix
       type(psb_desc_type), intent(in)      :: desc_a !! Descriptor for the sparse matrix
@@ -171,9 +253,15 @@ contains
 
       select case (psb_toupper(meth%kname))
       case ("ARNOLDI")
-          call psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
+          call psfun_d_arnoldi(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop, &
+          & iter,err,res)
       case ("LANCZOS")
-          call psfun_d_lanczos(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop,iter,err,res)
+          call psfun_d_lanczos(fun,a,desc_a,y,x,eps,info,itmax,itrace,istop, &
+          & iter,err,res)
+      CASE ("SAIARNOLDI")
+          call psfun_d_saiarnoldi(fun,a,meth%kmethd,meth%prec,meth%tau,desc_a, &
+          & meth%itmax,meth%itrace,meth%istopc,y,x,eps,info,itmax,itrace,istop,&
+          & iter,err,res)
       case default
           info = psb_err_invalid_args_combination_
       end select
