@@ -83,7 +83,6 @@ set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 # ---------------------------------------------------------------------------- #
 add_subdirectory(utils)
 add_subdirectory(serial)
-add_subdirectory(krylov)
 add_subdirectory(quadratures)
 add_subdirectory(examples)
 
