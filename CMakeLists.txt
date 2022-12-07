@@ -37,7 +37,7 @@ add_compile_options(${MPI_Fortran_COMPILE_FLAGS})
 # The user has to tell us where PSBLAS is installed : everyting is built on that
 # if PSBLAS is not found all shall fail
 set(PSBLAS_DIR /opt/psblas/LAMBDAI/mpich-343-gnu-9.4 CACHE PATH "/opt/psblas/LAMBDAI/mpich-343-gnu-9.4")
-set(AMG4PSBLAS_DIR /opt/psblas/LAMBDAI/mpich-343-gnu-9.4 CACHE PATH "/opt/psblas/LAMBDAI/mpich-343-gnu-9.4")
+set(AMG4PSBLAS_DIR /opt/amg4psblas/LAMBDAI/mpich-343-gnu-9.4 CACHE PATH "/opt/amg4psblas/LAMBDAI/mpich-343-gnu-9.4")
 find_package(PSBLAS REQUIRED)
 find_package(AMG4PSBLAS REQUIRED)
 

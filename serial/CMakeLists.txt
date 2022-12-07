@@ -23,9 +23,9 @@ set(SERIAL_SUBMODULES exponential/r8lib.f90
 set( CMAKE_Fortran_MODULE_DIRECTORY ${CMAKE_BINARY_DIR}/modules)
 add_library(psfun_serial psfun_d_serial_mod.F90 ${SERIAL_SUBMODULES})
 add_compile_definitions(${PSBFDEFINES})
-target_include_directories(psfun_serial PUBLIC ${PSBLAS_MODULES} ${AUXILINCLUDE})
-target_include_directories(psfun_serial PUBLIC ${PSBLAS_INCLUDE})
-target_link_libraries(psfun_serial PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS} ${AUXILLINK})
+target_include_directories(psfun_serial PUBLIC  ${AMG4PSBLAS_MODULES} ${PSBLAS_MODULES} ${AUXILINCLUDE})
+target_include_directories(psfun_serial PUBLIC  ${AMG4PSBLAS_INCLUDE} ${PSBLAS_INCLUDE})
+target_link_libraries(psfun_serial PUBLIC ${LINKED_LIBRARIES} ${LINK_AMG4PSBLAS} ${LINK_PSBLAS} ${AUXILLINK})
 
 if(MPI_COMPILE_FLAGS)
   set_target_properties(psfun_serial PROPERTIES
