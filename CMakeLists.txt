@@ -36,15 +36,15 @@ add_compile_options(${MPI_Fortran_COMPILE_FLAGS})
 
 # The user has to tell us where PSBLAS is installed : everyting is built on that
 # if PSBLAS is not found all shall fail
-set(PSBLAS_DIR /opt/psblas/LAMBDAI/mpich-343-gnu-9.4 CACHE PATH "/opt/psblas/LAMBDAI/mpich-343-gnu-9.4")
-set(AMG4PSBLAS_DIR /opt/amg4psblas/LAMBDAI/mpich-343-gnu-9.4 CACHE PATH "/opt/amg4psblas/LAMBDAI/mpich-343-gnu-9.4")
+set(PSBLAS_DIR /opt/psblas/LAMBDAI/sys CACHE PATH "/opt/psblas/LAMBDAI/sys")
+set(AMG4PSBLAS_DIR /opt/amg4psblas/LAMBDAI/sys CACHE PATH "/opt/amg4psblas/LAMBDAI/sys")
 find_package(PSBLAS REQUIRED)
 find_package(AMG4PSBLAS REQUIRED)
 
 #------------------------------------------------------------------------------#
 # Options to be set by the user
 #------------------------------------------------------------------------------#
-option(BUILD_EXAMPLES "Build example programs" OFF)
+option(BUILD_EXAMPLES "Build example programs" ON)
 option(EXTERNAL_PHI "Use Koikari codes for Phi Functiions" OFF)
 option(BUILD_DOCUMENTATION "Build FORD Documentation" ON)
 option(GNUPLOT "Enable GNUPLOT plots" OFF)

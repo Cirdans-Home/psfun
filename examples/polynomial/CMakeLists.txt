@@ -11,8 +11,8 @@ target_include_directories(arnolditest PUBLIC ${PSBLAS_INCLUDE})
 # We need to compile against the SERIAL and KRYLOV part of the library
 target_include_directories(arnolditest PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(arnolditest PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-target_link_libraries(arnolditest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS}
-        ${LINK_AMG4PSBLAS} ${LINKED_LIBRARIES_AMG4PSBLAS}
+target_link_libraries(arnolditest PUBLIC ${LINKED_LIBRARIES} ${LINK_AMG4PSBLAS}
+        ${LINK_PSBLAS} ${LINKED_LIBRARIES_AMG4PSBLAS}
         psfun_serial psfun_krylov psfun_utils)
 
 add_custom_command(
@@ -34,8 +34,8 @@ target_include_directories(lanczostest PUBLIC ${PSBLAS_INCLUDE})
 # We need to compile against the SERIAL and KRYLOV part of the library
 target_include_directories(arnolditest PUBLIC ${CMAKE_Fortran_MODULE_DIRECTORY})
 target_include_directories(arnolditest PUBLIC ${CMAKE_LIBRARY_OUTPUT_DIRECTORY})
-target_link_libraries(lanczostest PUBLIC ${LINKED_LIBRARIES} ${LINK_PSBLAS}
-        ${LINK_AMG4PSBLAS} ${LINKED_LIBRARIES_AMG4PSBLAS}
+target_link_libraries(lanczostest PUBLIC ${LINKED_LIBRARIES} ${LINK_AMG4PSBLAS}
+        ${LINK_PSBLAS} ${LINKED_LIBRARIES_AMG4PSBLAS}
         psfun_serial psfun_krylov psfun_utils)
 
 add_custom_command(
